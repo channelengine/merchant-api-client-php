@@ -60,6 +60,11 @@ namespace ChannelEngineApiClient\Client {
         const ORDERS_PATH 				= 'orders/';
         const SHIPMENTS_PATH 			= 'shipments/';
         const RETURNS_PATH 				= 'returns/';
+        
+        const STATISTICS_PATH 			= 'statistics/';
+        const REVENUE_ACTION			= 'revenue/';
+        const CLICKCONVERSION_ACTION	= 'clickconversion/';
+        const ORDERS_ACTION				= 'orders/';
 		
 		/**
 		 * Create a new instance of the Kieskeurig Api client.
@@ -159,7 +164,82 @@ namespace ChannelEngineApiClient\Client {
 			$url = self::BASE_PATH . self::RETURNS_PATH;
 			$result = $this->makeRequest(HttpMethod::PUT, $url, '', JsonMapper::toJson($return));	
 			return JsonMapper::fromJson($result, 'ChannelEngineApiClient\Models\ReturnObject');
-		}		
+		}
+
+		/**
+		 * Get total revenues for the given dates
+		 * @param DateTime $dateFrom Filter statistics from the given date
+		 * @param DateTime $dateTo Filter statistics until the given date
+		 */
+		public function getStatisticsRevenue(\DateTime $dateFrom = null, \DateTime $dateTo = null)
+		{
+			$args = array();
+			$args = $this->addDateArgs($dateFrom, $dateTo, $args);
+
+			$url = self::BASE_PATH . self::STATISTICS_PATH . self::REVENUE_ACTION;
+			$result = $this->makeRequest(HttpMethod::GET, $url, $this->createQueryString($args));
+			return $result;
+		}
+
+		/**
+		 * Get click conversion rates for the given dates
+		 * @param DateTime $dateFrom Filter statistics from the given date
+		 * @param DateTime $dateTo Filter statistics until the given date
+		 */
+		public function getStatisticsClickConversion(\DateTime $dateFrom = null, \DateTime $dateTo = null)
+		{
+			$args = array();
+			$args = $this->addDateArgs($dateFrom, $dateTo, $args);
+
+			$url = self::BASE_PATH . self::STATISTICS_PATH . self::CLICKCONVERSION_ACTION;
+			$result = $this->makeRequest(HttpMethod::GET, $url, $this->createQueryString($args));
+			return $result;
+		}
+
+		/**
+		 * Get order counts by status for the given dates
+		 * @param DateTime $dateFrom Filter statistics from the given date
+		 * @param DateTime $dateTo Filter statistics until the given date
+		 */
+		public function getStatisticsOrders(\DateTime $dateFrom = null, \DateTime $dateTo = null)
+		{
+			$args = array();
+			$args = $this->addDateArgs($dateFrom, $dateTo, $args);
+
+			$url = self::BASE_PATH . self::STATISTICS_PATH . self::ORDERS_ACTION;
+			$result = $this->makeRequest(HttpMethod::GET, $url, $this->createQueryString($args));
+			return $result;
+		}
+
+		/**
+		 * Validates the HMAC hash for an URL
+		 */
+		public function validateCallbackHash()
+		{
+			$hash 		= isset($_SERVER['HTTP_X_CE_HASH']) ? $_SERVER['HTTP_X_CE_HASH'] : '';
+			$method 	= $_SERVER['REQUEST_METHOD'];
+			$url 		= strtok($_SERVER['REQUEST_URI'], '?');
+			$date 		= time();
+			$content 	= file_get_contents('php://input');
+
+			$hashParts = explode(':', $hash);
+			$signature = $hashParts[1];
+			
+			$representation = $this->buildRepresentation($method, $url, $date, $content);
+			$calculatedSignature = $this->calculateHmac($representation);
+
+			$result = ($calculatedSignature === $signature);
+			
+			if(!$result) {
+				http_response_code(403);
+				header('Content-Type: application/json');
+				exit(json_encode([
+					"representation" => $representation,
+					"received_signature" => $signature,
+					"calculated_signature" => $calculatedSignature
+				]));
+			}
+		}
 		
 		/* Private methods */
 		
@@ -236,9 +316,10 @@ namespace ChannelEngineApiClient\Client {
 		private function buildHeaders($method, $url, $content = null)
 		{
 			$date = time(); 
+			$representation = $this->buildRepresentation($method, $url, $date, $content);
 			$headers = array(
 				'Accept: application/json',
-				'Authorization: HMAC ' . $this->apiKey . ':' . $this->calculateHmac($method, $url, $date, $content),
+				'Authorization: HMAC ' . $this->apiKey . ':' . $this->calculateHmac($representation),
 				'Content-Type: application/json; charset=utf-8',
 				'Content-Length: ' . strlen($content),
 				'Content-MD5: ' . ((strlen($content) > 0) ? base64_encode(md5($content, true)) : ''),
@@ -258,19 +339,20 @@ namespace ChannelEngineApiClient\Client {
         apikey\n +
 		
 		*/
-		private function calculateHmac($method, $url, $date, $content = null)
+		private function buildRepresentation($method, $url, $date, $content = null)
 		{
-			$representation = array(
+			return array(
 				gmdate('m/d/Y H:i:s', $date),
 				$method,
 				$url,
 				(strlen($content) > 0) ? base64_encode(md5($content, true)) : '',
 				$this->apiKey
 			);
-			
-			
+		}
+
+		private function calculateHmac($representation)
+		{
 			$representationString = implode("\n", $representation);	
-			
 			$hash = hash_hmac('sha256', utf8_encode($representationString), utf8_encode($this->apiSecret), true);
 			$signature = base64_encode($hash);
 			

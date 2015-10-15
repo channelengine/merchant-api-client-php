@@ -48,6 +48,8 @@
 			$this->getOrdersExample();
 			$this->getReturnsExample();
 
+			//$this->getStatisticsExample();
+
 			// The following examples require real data to work.
 			// More information has been specified within the functions.
 			//$this->updateReturnExample();
@@ -275,6 +277,37 @@
 					$return = $this->client->postReturn($return);
 				}
 
+			}
+			catch(Exception $e)
+			{
+				// Print the exception
+				$this->printError($e->getMessage());	
+			}
+		}
+
+		private function getStatisticsExample()
+		{
+			try
+			{
+				// Example 1: Get revenue totals.
+				/*$revenue = $this->client->getStatisticsRevenue(
+					new DateTime('-1 year'),
+					new DateTime('+1 day')
+				);*/
+
+				// Example 2: Get click conversion rates.
+				$clickConversion = $this->client->getStatisticsClickConversion(
+					new DateTime('-1 year'),
+					new DateTime('+1 day')
+				);
+				
+				// Example 3: Get order counts
+				/*$orders = $this->client->getStatisticsOrders(
+					new DateTime('-1 week'),
+					new DateTime('+1 day')
+				);*/
+
+				print_r($clickConversion);
 			}
 			catch(Exception $e)
 			{
