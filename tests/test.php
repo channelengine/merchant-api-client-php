@@ -39,11 +39,12 @@
 
 		private $client;
 
-		function __construct()
-		{
+		public function __construct() {
 			// Instantiate the client with your personal api key and api secret.
 			$this->client = new ApiClient('64c99c1c512a68be177f173371c2243356431e42', 'e6c2cf76bc681a61e53682fc2d01640731dc7843', 'yourstore');
-			
+		}
+
+		public function handleRequest() {
 			// Run the examples
 			$this->getOrdersExample();
 			$this->getReturnsExample();
@@ -55,13 +56,10 @@
 			//$this->updateReturnExample();
 			//$this->postShipmentExample();
 			//$this->postReturnExample();
-
 		}
 
-		private function getOrdersExample()
-		{
-			try
-			{
+		private function getOrdersExample() {
+			try {
 				// Fetch order information from ChannelEngine
 
 				// Example 1: Get all open orders.
@@ -89,18 +87,14 @@
 
 				// Print the orders
 				$this->printOrders($orders);
-			}
-			catch(Exception $e)
-			{
+			} catch(Exception $e) {
 				// Print the exception
 				$this->printError($e->getMessage());	
 			}
 		}
 
-		private function getReturnsExample()
-		{
-			try
-			{
+		private function getReturnsExample() {
+			try {
 				// Some channels handle customer contact and the return procedure for you.
 				// In this case the return will be communicated to ChannelEngine.
 				// These returns can be fetched from ChannelEngine.
@@ -131,19 +125,15 @@
 
 				// Print the returns
 				$this->printReturns($returns);
-			}
-			catch(Exception $e)
-			{
+			} catch(Exception $e) {
 				// Print the exception
 				$this->printError($e->getMessage());	
 			}
 		}
 
 
-		private function updateReturnExample()
-		{
-			try
-			{
+		private function updateReturnExample() {
+			try {
 				// Some channels handle customer contact and the return procedure for you.
 				// In this case the return will be communicated to ChannelEngine.
 				// The status needs to be updated in ChannelEngine when you have received
@@ -155,8 +145,7 @@
 
 				// Note: Act as if we have a real order with 1 line
 				$returnLine = isset($returnLines[0]) ? $returnLines[0] : null;
-				if($returnLine != null)
-				{
+				if($returnLine != null) {
 
 					// Example 1: Mark all products as received
 					$returnLine->setAcceptedQuantity($returnLine->getQuantity());
@@ -169,18 +158,14 @@
 					// Send it to ChannelEngine
 					$return = $this->client->putReturn($return);
 				}
-			}
-			catch(Exception $e)
-			{
+			} catch(Exception $e) {
 				// Print the exception
 				$this->printError($e->getMessage());	
 			}
 		}
 
-		private function postShipmentExample()
-		{
-			try
-			{
+		private function postShipmentExample() {
+			try {
 				// Marking orders as shipped, partially shipped or not shipped is done
 				// by posting shipments.
 
@@ -190,8 +175,7 @@
 				
 				// Note: Act as if we have a real order with 1 line
 				$orderLineToShip = isset($orderLinesToShip[0]) ? $orderLinesToShip[0] : null;
-				if($orderLineToShip != null)
-				{
+				if($orderLineToShip != null) {
 
 					// Create the shipment
 					$shipment = new Shipment();
@@ -229,18 +213,14 @@
 
 					$shipment = $this->client->postShipment($shipment);
 				}
-			}
-			catch(Exception $e)
-			{
+			} catch(Exception $e) {
 				// Print the exception
 				$this->printError($e->getMessage());	
 			}
 		}
 
-		private function postReturnExample()
-		{
-			try
-			{
+		private function postReturnExample() {
+			try {
 				// Some channels expect you to handle customer contact and the
 				// return procedure of products yourself. In this case the return needs
 				// to be registered to ChannelEngine.
@@ -252,8 +232,7 @@
 
 				// Note: Act as if we have a real shipment with 1 line
 				$shipmentLine = isset($shipmentLines[0]) ? $shipmentLines[0] : null;
-				if($shipmentLine != null)
-				{
+				if($shipmentLine != null) {
 
 					// Create the return
 					$return = new ReturnObject();
@@ -277,18 +256,14 @@
 					$return = $this->client->postReturn($return);
 				}
 
-			}
-			catch(Exception $e)
-			{
+			} catch(Exception $e) {
 				// Print the exception
 				$this->printError($e->getMessage());	
 			}
 		}
 
-		private function getStatisticsExample()
-		{
-			try
-			{
+		private function getStatisticsExample() {
+			try {
 				// Example 1: Get revenue totals.
 				/*$revenue = $this->client->getStatisticsRevenue(
 					new DateTime('-1 year'),
@@ -308,9 +283,7 @@
 				);*/
 
 				print_r($clickConversion);
-			}
-			catch(Exception $e)
-			{
+			} catch(Exception $e) {
 				// Print the exception
 				$this->printError($e->getMessage());	
 			}
@@ -319,8 +292,7 @@
 		// Note: All code beyond this comment is solely used to output the examples to the browser,
 		// and is therefore not required to connect to ChannelEngine
 
-		private function printError($message)
-		{
+		private function printError($message) {
 			echo('<div style="color: #b94a48; border: 1px solid #eed3d7; background: #f2dede; margin: 5px; padding: 5px;">');
 			echo('<p><strong>An error occured while making the request</strong></p>');
 			echo('<p>The server returned the following message:</p>');
@@ -328,12 +300,9 @@
 			echo('</div>');
 		}
 		
-		private function printReturns($returns)
-		{
-			if(!is_null($returns))
-			{
-				foreach($returns as $return)
-				{
+		private function printReturns($returns) {
+			if(!is_null($returns)) {
+				foreach($returns as $return) {
 					?>
 						<div style="margin: 5px; padding: 10px; width: 500px; float: left; background: #eee; color: #f00">
 							<strong>Return</strong>
@@ -348,12 +317,9 @@
 			}	
 		}
 		
-		private function printOrders($orders)
-		{
-			if(!is_null($orders))
-			{
-				foreach($orders as $order)
-				{
+		private function printOrders($orders) {
+			if(!is_null($orders)) {
+				foreach($orders as $order) {
 					?>
 						<div style="margin: 5px; padding: 10px; width: 500px; float: left; background: #eee;">
 							<strong>Order</strong>
@@ -381,4 +347,5 @@
 	}
 
 	$examples = new Examples();
+	$examples->handleRequest();
 ?>
