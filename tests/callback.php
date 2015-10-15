@@ -29,17 +29,36 @@
 	use ChannelEngineApiClient\Enums\ShipmentLineStatus;
 	use ChannelEngineApiClient\Enums\ShipmentStatus;
 
-	$this->client = new ApiClient('64c99c1c512a68be177f173371c2243356431e42', 'e6c2cf76bc681a61e53682fc2d01640731dc7843', 'yourstore');
-	$client->validateCallbackHash();
-	$type = $_GET["type"];
+	class CallbackExample {
 
-	switch($type) {
-		case 'orders':
-			$orders = $client->getOrders();
-			break;
-		case 'returns':
-			$returns $client->getReturns();
-			break;
+		private $client;
+
+		public function __construct() {
+			$this->client = new ApiClient('64c99c1c512a68be177f173371c2243356431e42', 'e6c2cf76bc681a61e53682fc2d01640731dc7843', 'yourstore');
+		}
+
+		public function handleRequest() {
+			$type = isset($_GET['type']) ? $_GET['type'] : '';
+
+			try { 
+				$this->client->validateCallbackHash();
+			} catch(Exception $e) {
+				http_response_code(403);
+				exit($e->getMessage());
+			}
+
+			switch($type) {
+				case 'orders':
+					$orders = $this->client->getOrders();
+					break;
+				case 'returns':
+					$returns = $this->client->getReturns();
+					break;
+			}
+		}		
 	}
+
+	$example = new CallbackExample();
+	$example->handleRequest();
 
 	?>

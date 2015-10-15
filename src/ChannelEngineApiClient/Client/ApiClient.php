@@ -222,23 +222,23 @@ namespace ChannelEngineApiClient\Client {
 			$date 		= time();
 			$content 	= file_get_contents('php://input');
 
+			if(empty($hash)) throw new Exception('No X-CE-Hash header found');
+
 			$hashParts = explode(':', $hash);
+
+			if(count($hashParts) < 2) throw new Exception('Invalid X-CE-Hash header format: ' . $hash);
+
+			$apiKey = $hashParts[0];
 			$signature = $hashParts[1];
+
+			if($apiKey !== $this->apiKey)  throw new Exception('API Key does not match request. Received: ' . $apiKey . ' Local: ' . $this->apiKey);
 			
 			$representation = $this->buildRepresentation($method, $url, $date, $content);
 			$calculatedSignature = $this->calculateHmac($representation);
 
 			$result = ($calculatedSignature === $signature);
-			
-			if(!$result) {
-				http_response_code(403);
-				header('Content-Type: application/json');
-				exit(json_encode([
-					"representation" => $representation,
-					"received_signature" => $signature,
-					"calculated_signature" => $calculatedSignature
-				]));
-			}
+
+			if(!$result) throw new Exception('Invalid Signature. Received: ' .  $signature . ' Calculated: ' . $calculatedSignature . ' Representation: ' . implode("\r\n", $representation));
 		}
 		
 		/* Private methods */
