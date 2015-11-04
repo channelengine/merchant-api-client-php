@@ -218,7 +218,7 @@ namespace ChannelEngineApiClient\Client {
 		{
 			$hash 		= isset($_SERVER['HTTP_X_CE_HASH']) ? $_SERVER['HTTP_X_CE_HASH'] : '';
 			$method 	= $_SERVER['REQUEST_METHOD'];
-			$url 		= strtok($_SERVER['REQUEST_URI'], '?');
+			$url 		= strtolower(strtok($_SERVER['REQUEST_URI'], '?'));
 			$date 		= time();
 			$content 	= file_get_contents('php://input');
 
