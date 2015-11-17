@@ -219,7 +219,8 @@ namespace ChannelEngineApiClient\Client {
 			$hash 		= isset($_SERVER['HTTP_X_CE_HASH']) ? $_SERVER['HTTP_X_CE_HASH'] : '';
 			$method 	= $_SERVER['REQUEST_METHOD'];
 			$url 		= strtolower(strtok($_SERVER['REQUEST_URI'], '?'));
-			$date 		= time();
+			$serverDate = time();
+			$date		= strtotime(isset($_SERVER['HTTP_DATE']) ? $_SERVER['HTTP_DATE'] : 0);
 			$content 	= file_get_contents('php://input');
 
 			if(empty($hash)) throw new Exception('No X-CE-Hash header found');
@@ -233,6 +234,9 @@ namespace ChannelEngineApiClient\Client {
 
 			if($apiKey !== $this->apiKey)  throw new Exception('API Key does not match request. Received: ' . $apiKey . ' Local: ' . $this->apiKey);
 			
+			$maxDateOffset = 60 * 5; // 5 minutes
+			if($date >= $serverDate + $maxDateOffset || $date <= $serverDate - $maxDateOffset) throw new Exception('The request date has expired (offset > 5 minutes). Received: ' . $date . ' Local: ' . $serverDate);
+
 			$representation = $this->buildRepresentation($method, $url, $date, $content);
 			$calculatedSignature = $this->calculateHmac($representation);
 
