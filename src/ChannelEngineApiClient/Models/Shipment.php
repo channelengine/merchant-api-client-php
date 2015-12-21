@@ -16,8 +16,8 @@ namespace ChannelEngineApiClient\Models {
 		);
 	   
 		protected $orderId;
-    protected $createdAt;
-    protected $updatedAt;
+    	protected $createdAt;
+    	protected $updatedAt;
 		protected $trackTraceNo;
 		protected $trackTraceUrl;
 		protected $method;

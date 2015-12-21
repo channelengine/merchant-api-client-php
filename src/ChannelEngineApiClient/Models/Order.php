@@ -29,9 +29,9 @@ namespace ChannelEngineApiClient\Models {
 		protected $channelCustomerNo;
 		protected $billingAddress;
 		protected $cancellations;
-    protected $channelName;
-    protected $doSendMails;
-    protected $canShipPartialOrderLines;
+		protected $channelName;
+		protected $doSendMails;
+		protected $canShipPartialOrderLines;
 		
 		protected $merchantId;
 		protected $merchantOrderNo;
@@ -97,14 +97,14 @@ namespace ChannelEngineApiClient\Models {
 		function setCancellations($cancellations) { $this->cancellations = $cancellations; }
 		function getCancellations() { return $this->cancellations; }
 		
-    function setChannelName($channelName) { $this->channelName = $channelName; }
-    function getChannelName() { return $this->channelName; }
+		function setChannelName($channelName) { $this->channelName = $channelName; }
+		function getChannelName() { return $this->channelName; }
 
-    function setDoSendMails($doSendMails) { $this->doSendMails = $doSendMails; }
-    function getDoSendMails() { return $this->doSendMails; }
+		function setDoSendMails($doSendMails) { $this->doSendMails = $doSendMails; }
+		function getDoSendMails() { return $this->doSendMails; }
 
-    function setCanShipPartialOrderLines($canShipPartialOrderLines) { $this->canShipPartialOrderLines = $canShipPartialOrderLines; }
-    function getCanShipPartialOrderLines() { return $this->canShipPartialOrderLines; }
+		function setCanShipPartialOrderLines($canShipPartialOrderLines) { $this->canShipPartialOrderLines = $canShipPartialOrderLines; }
+		function getCanShipPartialOrderLines() { return $this->canShipPartialOrderLines; }
 
 		function setMerchantId($merchantId) { $this->merchantId = $merchantId; }
         function getMerchantId() { return $this->merchantId; }
