@@ -1,7 +1,6 @@
 <?php
 
 use ChannelEngineApiClient\Models\BaseModel;
-use ChannelEngineApiClient\Models\Address;
 
 namespace ChannelEngineApiClient\Models {
 
