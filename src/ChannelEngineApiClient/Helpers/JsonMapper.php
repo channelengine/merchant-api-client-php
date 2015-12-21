@@ -72,9 +72,9 @@ namespace ChannelEngineApiClient\Helpers {
 		
 		public static function convertFromObject($root, $d = 0, $mustexist = false)
 		{		
-			if($root instanceof \ChannelEngineApiClient\Helpers\Collection)
+			if($root instanceof \ChannelEngineApiClient\Helpers\Collection || is_array($root))
 			{
-				$root = $root->getArrayCopy();
+				$root = (is_array($root) ? $root : $root->getArrayCopy());
 				foreach($root as $key => $value)
 				{
 					if($value instanceof \ChannelEngineApiClient\Models\BaseModel || $value instanceof \ChannelEngineApiClient\Helpers\Collection)
