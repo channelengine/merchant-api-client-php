@@ -11,8 +11,12 @@ namespace ChannelEngineApiClient\Models {
 		);
 		
 		protected $message;
+		protected $modelState;
 		
 		function setMessage($message) { $this->message = $message; }
 		function getMessage() { return $this->message; }
+
+		function setModelState($modelState) { $this->modelState = $modelState; }
+		function getModelState() { return $this->modelState; }
 	}
 }
