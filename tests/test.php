@@ -19,6 +19,7 @@
 	use ChannelEngineApiClient\Models\Order;
 	use ChannelEngineApiClient\Models\OrderLine;
 	use ChannelEngineApiClient\Models\OrderExtraDataItem;
+	use ChannelEngineApiClient\Models\Product;
 	use ChannelEngineApiClient\Models\ReturnObject;
 	use ChannelEngineApiClient\Models\ReturnLine;
 	use ChannelEngineApiClient\Models\Shipment;
@@ -47,7 +48,7 @@
 		public function handleRequest() {
 			// Run the examples
 			$this->getOrdersExample();
-			$this->getReturnsExample();
+			//$this->getReturnsExample();
 
 			//$this->getStatisticsExample();
 
@@ -56,6 +57,7 @@
 			//$this->updateReturnExample();
 			//$this->postShipmentExample();
 			//$this->postReturnExample();
+			//$this->getProductsExample();
 		}
 
 		private function getOrdersExample() {
@@ -262,6 +264,39 @@
 			}
 		}
 
+		private function getProductsExample() {
+			try {
+
+				// Example 1: Search products by GTIN (EAN)
+				$products = $this->client->getProducts('8714302109119');
+				$products($this->printProducts($products));
+
+				// Example 2: Get a product by ID
+				$product = $this->client->getProduct(1);
+
+				// Example 3: Update a product
+				$product->setPrice(110.95);
+				$this->client->putProduct($product);
+
+				// Example 4: Sync product data
+				$product1 = new Product();
+				$product1->setEan('8714302109119');
+				$product1->setMerchantProductNo('10785');
+				$product1->setPrice(200);
+
+				$product2 = new Product();
+				$product2->setEan('086786257951');
+				$product2->setMerchantProductNo('10799');
+				$product2->setPrice(240);
+
+				$products = array($product1, $product2);
+
+			} catch(Exception $e) {
+				// Print the exception
+				$this->printError($e->getMessage());	
+			}
+		}
+
 		private function getStatisticsExample() {
 			try {
 				// Example 1: Get revenue totals.
@@ -291,6 +326,12 @@
 
 		// Note: All code beyond this comment is solely used to output the examples to the browser,
 		// and is therefore not required to connect to ChannelEngine
+		private function printDebug($data) {
+			echo('<pre>');
+			var_dump($data);
+			echo('</pre>');
+		}
+
 
 		private function printError($message) {
 			echo('<div style="color: #b94a48; border: 1px solid #eed3d7; background: #f2dede; margin: 5px; padding: 5px;">');
@@ -315,6 +356,31 @@
 				<div style="clear: both;"></div>
 				<?php
 			}	
+		}
+
+		private function printProducts($products) {
+			if(!is_null($products)) {
+				foreach($products as $product) {
+					?>
+						<div style="margin: 5px; padding: 10px; width: 500px; float: left; background: #eee;">
+							<strong>Product</strong>
+							<p>Name: <?=$product->getName();?></p>
+							<div style="background: #fff; padding: 10px;">
+								<?php
+									foreach($product->getExtraData() as $ped)
+									{
+								?>
+									<p><?=$ped->getKey();?>: <?=$ped->getValue();?></p>
+								<?php
+									}
+								?>
+							</div>
+						</div>
+					<?php
+				}
+				?><div style="clear: both;"></div><?php
+				
+			}
 		}
 		
 		private function printOrders($orders) {

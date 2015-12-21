@@ -60,6 +60,7 @@ namespace ChannelEngineApiClient\Client {
         const ORDERS_PATH 				= 'orders/';
         const SHIPMENTS_PATH 			= 'shipments/';
         const RETURNS_PATH 				= 'returns/';
+        const PRODUCTS_PATH 			= 'products/';
         
         const STATISTICS_PATH 			= 'statistics/';
         const REVENUE_ACTION			= 'revenue/';
@@ -164,6 +165,60 @@ namespace ChannelEngineApiClient\Client {
 			$url = self::BASE_PATH . self::RETURNS_PATH;
 			$result = $this->makeRequest(HttpMethod::PUT, $url, '', JsonMapper::toJson($return));	
 			return JsonMapper::fromJson($result, 'ChannelEngineApiClient\Models\ReturnObject');
+		}
+
+		/**
+		 * Search for products in ChannelEngine. This call will return 100 results per page
+		 * @param string $search Search products by GTIN, Name, MarchantProductNo or Brand
+		 * @param int $page Cycle trough the pages by providing a page number
+		 */
+		public function getProducts($search = null, $page = null)
+		{
+			$args = array();
+			if($search !== null) $args['search'] = $search;
+			if($page !== null) $args['page'] = intval($page);
+
+			$url = self::BASE_PATH . self::PRODUCTS_PATH;
+			$result = $this->makeRequest(HttpMethod::GET, $url, $this->createQueryString($args));
+			return JsonMapper::fromJson($result, 'ChannelEngineApiClient\Helpers\Collection(ChannelEngineApiClient\Models\Product)');
+		}
+
+		/**
+		 * Get a product by ID
+		 * @param int $id The ChannelEngine product ID
+		 */
+		public function getProduct($id)
+		{
+			$url = self::BASE_PATH . self::PRODUCTS_PATH . '/' . $id;
+			$result = $this->makeRequest(HttpMethod::GET, $url);
+			return JsonMapper::fromJson($result, 'ChannelEngineApiClient\Models\Product');
+		}
+
+		/**
+		 * Update a single product
+		 * @param Product $product The ChannelEngine Product instance
+		 */
+		public function putProduct(\ChannelEngineApiClient\Models\Product $product)
+		{
+			$url = self::BASE_PATH . self::PRODUCTS_PATH . '/' . $product->getId();
+			$result = $this->makeRequest(HttpMethod::PUT, $url, '', JsonMapper::toJson($product));	
+			return JsonMapper::fromJson($result, 'ChannelEngineApiClient\Models\Product');
+		}
+
+		/**
+		 * Sync product data in batches of 100.
+		 */
+		public function postProducts($products)
+		{
+			$url = self::BASE_PATH . self::PRODUCTS_PATH;
+			$results = array();
+
+			foreach(array_chunk($products, 100) as $batch) {
+				$result = $this->makeRequest(HttpMethod::POST, $url, '', JsonMapper::toJson($batch));	
+				$results[] = JsonMapper::fromJson($result, 'ChannelEngineApiClient\Models\ImportResult');
+			}
+
+			return $results;
 		}
 
 		/**
@@ -307,7 +362,9 @@ namespace ChannelEngineApiClient\Client {
 					
 				throw new Exception('Output headers: '. "\n" . $headers ."\n\n".
 									'Content: ' . $content ."\n\n".
-									'Unexpected status code [' . $status . ']. The server returned the following message: "' . $message->getMessage() . '"');
+									'Unexpected status code [' . $status . '].' ."\n\n".
+									'The server returned the following message: "' . $message->getMessage() . '"' . "\n".
+									print_r($message->getModelState(), true));
 			}
 			else
 			{
