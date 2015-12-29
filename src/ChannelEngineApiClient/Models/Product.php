@@ -25,7 +25,7 @@ namespace ChannelEngineApiClient\Models {
 		protected $vatRate;
 		protected $margin;
 		protected $stock;
-		protected $shippinhCost;
+		protected $shippingCost;
 		protected $shippingTime;
 		protected $url;
 		protected $imageUrl;
@@ -82,8 +82,8 @@ namespace ChannelEngineApiClient\Models {
 		function setStock($stock) { $this->stock = $stock; }
 		function getStock() { return $this->stock; }
 
-		function setShippinhCost($shippinhCost) { $this->shippinhCost = $shippinhCost; }
-		function getShippinhCost() { return $this->shippinhCost; }
+		function setShippingCost($shippingCost) { $this->shippingCost = $shippingCost; }
+		function getShippingCost() { return $this->shippingCost; }
 
 		function setShippingTime($shippingTime) { $this->shippingTime = $shippingTime; }
 		function getShippingTime() { return $this->shippingTime; }
