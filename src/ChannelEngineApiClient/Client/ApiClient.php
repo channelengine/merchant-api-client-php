@@ -121,7 +121,7 @@ namespace ChannelEngineApiClient\Client {
 		public function postShipment(\ChannelEngineApiClient\Models\Shipment $shipment)
 		{
 			$url = self::BASE_PATH . self::SHIPMENTS_PATH;
-			$this->makeRequest(HttpMethod::POST, $url, '', JsonMapper::toJson($shipment));
+			$result = $this->makeRequest(HttpMethod::POST, $url, '', JsonMapper::toJson($shipment));
 			return JsonMapper::fromJson($result, 'ChannelEngineApiClient\Models\Shipment');
 		}
 		
