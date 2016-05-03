@@ -1,5 +1,5 @@
 <?php
-	
+
 	// When not using other frameworks, use this loader to autoload the namepaces.
 	//require_once __DIR__ . '/../loader.php';
 
@@ -20,6 +20,7 @@
 	use ChannelEngineApiClient\Models\OrderLine;
 	use ChannelEngineApiClient\Models\OrderExtraDataItem;
 	use ChannelEngineApiClient\Models\Product;
+	use ChannelEngineApiClient\Models\ProductExtraDataItem;
 	use ChannelEngineApiClient\Models\ReturnObject;
 	use ChannelEngineApiClient\Models\ReturnLine;
 	use ChannelEngineApiClient\Models\Shipment;
@@ -42,12 +43,13 @@
 
 		public function __construct() {
 			// Instantiate the client with your personal api key and api secret.
-			$this->client = new ApiClient('64c99c1c512a68be177f173371c2243356431e42', 'e6c2cf76bc681a61e53682fc2d01640731dc7843', 'yourstore');
+			$this->client = new ApiClient('c9d413625045bffb3db64d891d9955916233dd67', 'ab421e589bf79a5fd2c7693caa447e35715ec70f', 'prestashop-com', ApiClient::ENV_ACCEPTATION);
+			//$this->client = new ApiClient('23459f89acff0e40d273aa1de0e902f8c3153161', '3cce33c0a510994b04d82a943ed8cb472d0f5b51', 'dev', ApiClient::ENV_DEVELOPMENT);
 		}
 
 		public function handleRequest() {
 			// Run the examples
-			$this->getOrdersExample();
+			//$this->getOrdersExample();
 			//$this->getReturnsExample();
 
 			//$this->getStatisticsExample();
@@ -55,7 +57,7 @@
 			// The following examples require real data to work.
 			// More information has been specified within the functions.
 			//$this->updateReturnExample();
-			//$this->postShipmentExample();
+			$this->postShipmentExample();
 			//$this->postReturnExample();
 			//$this->getProductsExample();
 		}
@@ -176,37 +178,37 @@
 				$orderLinesToShip = $orderToShip->getLines();
 				
 				// Note: Act as if we have a real order with 1 line
-				$orderLineToShip = isset($orderLinesToShip[0]) ? $orderLinesToShip[0] : null;
-				if($orderLineToShip != null) {
+				//$orderLineToShip = isset($orderLinesToShip[0]) ? $orderLinesToShip[0] : null;
+				//if($orderLineToShip != null) {
 
 					// Create the shipment
 					$shipment = new Shipment();
-					$shipment->setOrderId( $orderToShip->getId() );
+					$shipment->setOrderId( 142 ); //$orderToShip->getId()
 					$shipment->setMerchantShipmentNo('your-shipment-number');
 					$shipment->setTrackTraceNo('3SABC123456789');
 					$shipment->setMethod('postNL');
 					
 					$shipmentLine = new ShipmentLine();
-					$shipmentLine->setOrderLineId( $orderLineToShip->getId() );
+					$shipmentLine->setOrderLineId( 284 ); //$orderLineToShip->getId()
 
 					// We will subtract the cancelled quantity because the customer may have
 					// cancelled part of the orderline before we fetched the order.
 					// If we are only able to ship part of the orderline,
 					// we will specify the shipmentlines for both the shipped and unshipped products (see example 2 & 3)
-					$shipmentLine->setQuantity( $orderLineToShip->getQuantity() - $orderLineToShip->getCancelledQuantity() ); 	
+					$shipmentLine->setQuantity(1); 	//$orderLineToShip->getQuantity() - $orderLineToShip->getCancelledQuantity()
 					
 					// Example 1: Mark the given quantity of products as shipped. 		
 					$shipmentLine->setStatus( ShipmentLineStatus::SHIPPED );
 
 					// Example 2: Mark the given quantity of products as manco.			
-					$shipmentLine->setStatus( ShipmentLineStatus::MANCO );
-					$shipment->setMancoReason( MancoReason::DAMAGED );
-					$shipment->setMancoComment( 'Product damaged during order picking.' );
+					//$shipmentLine->setStatus( ShipmentLineStatus::MANCO );
+					//$shipment->setMancoReason( MancoReason::DAMAGED );
+					//$shipment->setMancoComment( 'Product damaged during order picking.' );
 
 					// Example 3: Mark the given quantity of products as being in backorder.
 					// Set the date on which we expect the customer to receive the product.			
-					$shipmentLine->setStatus( ShipmentLineStatus::IN_BACKORDER );
-					$shipmentLine->setExpectedDate(new DateTime('+2 weeks'));
+					//$shipmentLine->setStatus( ShipmentLineStatus::IN_BACKORDER );
+					//$shipmentLine->setExpectedDate(new DateTime('+2 weeks'));
 
 					// Add the shipment line and send it to ChannelEngine
 					$shipmentLines = $shipment->getLines();
@@ -214,7 +216,8 @@
 					$shipment->setLines($shipmentLines);
 
 					$shipment = $this->client->postShipment($shipment);
-				}
+					$this->printDebug($shipment);
+				//}
 			} catch(Exception $e) {
 				// Print the exception
 				$this->printError($e->getMessage());	
@@ -268,28 +271,52 @@
 			try {
 
 				// Example 1: Search products by GTIN (EAN)
-				$products = $this->client->getProducts('8714302109119');
-				$products($this->printProducts($products));
+				//$products = $this->client->getProducts('8714302109119');
+				//$products($this->printProducts($products));
 
 				// Example 2: Get a product by ID
-				$product = $this->client->getProduct(1);
+				//$product = $this->client->getProduct(1);
 
 				// Example 3: Update a product
-				$product->setPrice(110.95);
-				$this->client->putProduct($product);
+				//$product->setPrice(110.95);
+				//$this->client->putProduct($product);
 
 				// Example 4: Sync product data
-				$product1 = new Product();
-				$product1->setEan('8714302109119');
-				$product1->setMerchantProductNo('10785');
-				$product1->setPrice(200);
+				$product = new Product();
+				$product->setName('Printed Summer Dress');
+				$product->setDescription('Printed Summer Dress');
+				$product->setBrand('Fashion Manufacturer');
+				$product->setSize(null);
+				$product->setColor(null);
+				$product->setEan('8710400311140');
+				$product->setMerchantProductNo('AAAAC');
+				$product->setVendorProductNo(null);
+				$product->setPrice('30.502569');
+				$product->setListPrice(null);
+				$product->setPurchasePrice(null);
+				$product->setVatRate(1);
+				$product->setStock(1000);
+				$product->setShippingCost('0.00');
+				$product->setShippingTime(2);
+				$product->setUrl('http://plugins.techmarbles.com/presta16/prestashop/blouses/2-blouse.html');
+				$product->setImageUrl('http://plugins.techmarbles.com/presta16/prestashop/8/large_default.jpg');
+				$product->setCategoryTrail(null);
+				
+				$extraData = $product->getExtraData();
 
-				$product2 = new Product();
-				$product2->setEan('086786257951');
-				$product2->setMerchantProductNo('10799');
-				$product2->setPrice(240);
+				$ped = new ProductExtraDataItem();
+				$ped->setKey("aaa");
+				$ped->setValue("123");
+				$ped->setIsPublic(true);
+				$extraData[] = $ped;
 
-				$products = array($product1, $product2);
+				$product->setExtraData($extraData);
+
+				$product->setId(null);
+
+				$products = array($product);
+
+				var_dump($this->client->postProducts($products));
 
 			} catch(Exception $e) {
 				// Print the exception

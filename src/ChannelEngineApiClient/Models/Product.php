@@ -26,7 +26,6 @@ namespace ChannelEngineApiClient\Models {
 		protected $vatRate;
 		protected $margin;
 		protected $stock;
-		protected $size;
 		protected $shippingCost;
 		protected $shippingTime;
 		protected $url;
