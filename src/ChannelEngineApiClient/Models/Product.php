@@ -3,6 +3,7 @@
 namespace ChannelEngineApiClient\Models {
 	
 	use ChannelEngineApiClient\Models\BaseModel;
+	use ChannelEngineApiClient\Helpers\Collection;
 
     class Product extends BaseModel {
 		
@@ -25,6 +26,7 @@ namespace ChannelEngineApiClient\Models {
 		protected $vatRate;
 		protected $margin;
 		protected $stock;
+		protected $size;
 		protected $shippingCost;
 		protected $shippingTime;
 		protected $url;
@@ -35,6 +37,8 @@ namespace ChannelEngineApiClient\Models {
 		public function __construct()
 		{
 			self::$typeMap = array_merge(parent::$typeMap, self::$typeMap);	
+
+			$this->extraData = new Collection('ChannelEngineApiClient\Models\ProductExtraDataItem');
 		}
 
 		function setName($name) { $this->name = $name; }
