@@ -212,10 +212,22 @@ namespace ChannelEngineApiClient\Client {
 		{
 			$url = self::BASE_PATH . self::PRODUCTS_PATH;
 			$results = array();
+			$errors = '';
+			$errorCount = 0;
+			$count = 0;
+			foreach(array_chunk($products, 1000) as $batch) {
+				$count++;
+				try{
+					$result = $this->makeRequest(HttpMethod::POST, $url, '', JsonMapper::toJson($batch));	
+					$results[] = JsonMapper::fromJson($result, 'ChannelEngineApiClient\Models\ImportResult');
+				} catch (Exception $e) {
+					$errorCount++;
+					$errors .= $e->getMessage() . "\n\n";
+				}
+			}
 
-			foreach(array_chunk($products, 100) as $batch) {
-				$result = $this->makeRequest(HttpMethod::POST, $url, '', JsonMapper::toJson($batch));	
-				$results[] = JsonMapper::fromJson($result, 'ChannelEngineApiClient\Models\ImportResult');
+			if($errorCount > 0) {
+				throw new Exception($errorCount . '/' . $count . ' product update calls produced errors:' . "\n\n" . $errors);
 			}
 
 			return $results;
