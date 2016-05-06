@@ -66,12 +66,12 @@ class AcknowledgementApiTest extends \PHPUnit_Framework_TestCase
 
     
     /**
-     * Test case for acknowledgementAcknowledgeOrder
+     * Test case for acknowledgementCreate
      *
      * Acknowledge an order. By acknowledging the order the merchant can confirm that\r\n            the order has been imported. When acknowledging an order the merchant has to supply\r\n            references that uniquely identify the order and the order lines. These references\r\n            will be used in the other API calls.
      *
      */
-    public function test_acknowledgementAcknowledgeOrder() {
+    public function test_acknowledgementCreate() {
 
     }
     

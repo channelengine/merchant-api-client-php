@@ -92,7 +92,7 @@ class AcknowledgementApi
   
     
     /**
-     * acknowledgementAcknowledgeOrder
+     * acknowledgementCreate
      *
      * Acknowledge an order. By acknowledging the order the merchant can confirm that\r\n            the order has been imported. When acknowledging an order the merchant has to supply\r\n            references that uniquely identify the order and the order lines. These references\r\n            will be used in the other API calls.
      *
@@ -100,15 +100,15 @@ class AcknowledgementApi
      * @return \Swagger\Client\Model\Object
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function acknowledgementAcknowledgeOrder($model)
+    public function acknowledgementCreate($model)
     {
-        list($response, $statusCode, $httpHeader) = $this->acknowledgementAcknowledgeOrderWithHttpInfo ($model);
+        list($response, $statusCode, $httpHeader) = $this->acknowledgementCreateWithHttpInfo ($model);
         return $response; 
     }
 
 
     /**
-     * acknowledgementAcknowledgeOrderWithHttpInfo
+     * acknowledgementCreateWithHttpInfo
      *
      * Acknowledge an order. By acknowledging the order the merchant can confirm that\r\n            the order has been imported. When acknowledging an order the merchant has to supply\r\n            references that uniquely identify the order and the order lines. These references\r\n            will be used in the other API calls.
      *
@@ -116,12 +116,12 @@ class AcknowledgementApi
      * @return Array of \Swagger\Client\Model\Object, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function acknowledgementAcknowledgeOrderWithHttpInfo($model)
+    public function acknowledgementCreateWithHttpInfo($model)
     {
         
         // verify the required parameter 'model' is set
         if ($model === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $model when calling acknowledgementAcknowledgeOrder');
+            throw new \InvalidArgumentException('Missing the required parameter $model when calling acknowledgementCreate');
         }
   
         // parse inputs

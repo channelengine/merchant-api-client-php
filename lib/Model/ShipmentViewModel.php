@@ -51,7 +51,7 @@ class ShipmentViewModel implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
-        'order_reference' => 'string',
+        'merchant_order_reference' => 'string',
         'merchant_reference' => 'string',
         'track_trace_no' => 'string',
         'track_trace_url' => 'string',
@@ -70,7 +70,7 @@ class ShipmentViewModel implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'order_reference' => 'OrderReference',
+        'merchant_order_reference' => 'MerchantOrderReference',
         'merchant_reference' => 'MerchantReference',
         'track_trace_no' => 'TrackTraceNo',
         'track_trace_url' => 'TrackTraceUrl',
@@ -89,7 +89,7 @@ class ShipmentViewModel implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'order_reference' => 'setOrderReference',
+        'merchant_order_reference' => 'setMerchantOrderReference',
         'merchant_reference' => 'setMerchantReference',
         'track_trace_no' => 'setTrackTraceNo',
         'track_trace_url' => 'setTrackTraceUrl',
@@ -108,7 +108,7 @@ class ShipmentViewModel implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'order_reference' => 'getOrderReference',
+        'merchant_order_reference' => 'getMerchantOrderReference',
         'merchant_reference' => 'getMerchantReference',
         'track_trace_no' => 'getTrackTraceNo',
         'track_trace_url' => 'getTrackTraceUrl',
@@ -124,10 +124,10 @@ class ShipmentViewModel implements ArrayAccess
 
     
     /**
-      * $order_reference 
+      * $merchant_order_reference 
       * @var string
       */
-    protected $order_reference;
+    protected $merchant_order_reference;
     
     /**
       * $merchant_reference 
@@ -180,7 +180,7 @@ class ShipmentViewModel implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->order_reference = $data["order_reference"];
+            $this->merchant_order_reference = $data["merchant_order_reference"];
             $this->merchant_reference = $data["merchant_reference"];
             $this->track_trace_no = $data["track_trace_no"];
             $this->track_trace_url = $data["track_trace_url"];
@@ -192,23 +192,23 @@ class ShipmentViewModel implements ArrayAccess
     }
     
     /**
-     * Gets order_reference
+     * Gets merchant_order_reference
      * @return string
      */
-    public function getOrderReference()
+    public function getMerchantOrderReference()
     {
-        return $this->order_reference;
+        return $this->merchant_order_reference;
     }
   
     /**
-     * Sets order_reference
-     * @param string $order_reference 
+     * Sets merchant_order_reference
+     * @param string $merchant_order_reference 
      * @return $this
      */
-    public function setOrderReference($order_reference)
+    public function setMerchantOrderReference($merchant_order_reference)
     {
         
-        $this->order_reference = $order_reference;
+        $this->merchant_order_reference = $merchant_order_reference;
         return $this;
     }
     

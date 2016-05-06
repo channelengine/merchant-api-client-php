@@ -188,13 +188,12 @@ class ShipmentApi
      * Get a shipment by its merchant reference.
      *
      * @param string $merchant_reference The unique shipment reference supplied by the merchant (required)
-     * @param string $merchant_identifier  (required)
      * @return \Swagger\Client\Model\Object
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function shipmentGet($merchant_reference, $merchant_identifier)
+    public function shipmentGet($merchant_reference)
     {
-        list($response, $statusCode, $httpHeader) = $this->shipmentGetWithHttpInfo ($merchant_reference, $merchant_identifier);
+        list($response, $statusCode, $httpHeader) = $this->shipmentGetWithHttpInfo ($merchant_reference);
         return $response; 
     }
 
@@ -205,24 +204,19 @@ class ShipmentApi
      * Get a shipment by its merchant reference.
      *
      * @param string $merchant_reference The unique shipment reference supplied by the merchant (required)
-     * @param string $merchant_identifier  (required)
      * @return Array of \Swagger\Client\Model\Object, HTTP status code, HTTP response headers (array of strings)
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function shipmentGetWithHttpInfo($merchant_reference, $merchant_identifier)
+    public function shipmentGetWithHttpInfo($merchant_reference)
     {
         
         // verify the required parameter 'merchant_reference' is set
         if ($merchant_reference === null) {
             throw new \InvalidArgumentException('Missing the required parameter $merchant_reference when calling shipmentGet');
         }
-        // verify the required parameter 'merchant_identifier' is set
-        if ($merchant_identifier === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $merchant_identifier when calling shipmentGet');
-        }
   
         // parse inputs
-        $resourcePath = "/v2/shipments/{merchantIdentifier}";
+        $resourcePath = "/v2/shipments/{merchantReference}";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -233,18 +227,14 @@ class ShipmentApi
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array());
   
-        // query params
         
-        if ($merchant_reference !== null) {
-            $queryParams['merchantReference'] = $this->apiClient->getSerializer()->toQueryValue($merchant_reference);
-        }
         
         // path params
         
-        if ($merchant_identifier !== null) {
+        if ($merchant_reference !== null) {
             $resourcePath = str_replace(
-                "{" . "merchantIdentifier" . "}",
-                $this->apiClient->getSerializer()->toPathValue($merchant_identifier),
+                "{" . "merchantReference" . "}",
+                $this->apiClient->getSerializer()->toPathValue($merchant_reference),
                 $resourcePath
             );
         }

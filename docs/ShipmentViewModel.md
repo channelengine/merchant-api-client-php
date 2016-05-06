@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**order_reference** | **string** |  | 
+**merchant_order_reference** | **string** |  | 
 **merchant_reference** | **string** |  | 
 **track_trace_no** | **string** |  | [optional] 
 **track_trace_url** | **string** |  | [optional] 
