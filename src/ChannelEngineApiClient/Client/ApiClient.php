@@ -101,10 +101,11 @@ namespace ChannelEngineApiClient\Client {
 		 * @param DateTime $dateTo Filter orders until the given date
 		 * @return ChannelEngineApiClient\Helpers\MerchantOrderCollection The retrieved orders
 		 */
-		public function getOrders(array $statuses = array(OrderStatus::NEW_ORDER), \DateTime $dateFrom = null, \DateTime $dateTo = null)
+		public function getOrders(array $statuses = array(OrderStatus::NEW_ORDER), \DateTime $dateFrom = null, \DateTime $dateTo = null, $acknowlegde = true)
 		{
 			$args = array();
 			$args['OrderStatus'] = $statuses;
+			$args['Acknowledge'] = $acknowlegde ? 'true' : 'false';
 			$args = $this->addDateArgs($dateFrom, $dateTo, $args);
 
 			$url = self::BASE_PATH . self::ORDERS_PATH;
