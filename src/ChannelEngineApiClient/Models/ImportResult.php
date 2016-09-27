@@ -14,6 +14,7 @@ namespace ChannelEngineApiClient\Models {
 		protected $updated;
 		protected $new;
 		protected $unchanged;
+		protected $deactivated;
 
 		function setSubmitted($submitted) { $this->submitted = $submitted; }
 		function getSubmitted() { return $this->submitted; }
@@ -26,5 +27,8 @@ namespace ChannelEngineApiClient\Models {
 
 		function setUnchanged($unchanged) { $this->unchanged = $unchanged; }
 		function getUnchanged() { return $this->unchanged; }
+
+		function setDeactivated($deactivated) { $this->deactivated = $deactivated; }
+		function getDeactivated() { return $this->deactivated; }
     }
 }

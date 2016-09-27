@@ -219,7 +219,8 @@ namespace ChannelEngineApiClient\Client {
 			foreach(array_chunk($products, 1000) as $batch) {
 				$count++;
 				try{
-					$result = $this->makeRequest(HttpMethod::POST, $url, '', JsonMapper::toJson($batch));	
+					$json = JsonMapper::toJson($batch);
+					$result = $this->makeRequest(HttpMethod::POST, $url, '', $json);
 					$results[] = JsonMapper::fromJson($result, 'ChannelEngineApiClient\Models\ImportResult');
 				} catch (Exception $e) {
 					$errorCount++;

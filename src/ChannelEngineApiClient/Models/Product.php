@@ -32,6 +32,7 @@ namespace ChannelEngineApiClient\Models {
 		protected $imageUrl;
 		protected $categoryTrail;
 		protected $extraData; 
+		protected $deactivate;
 		
 		public function __construct()
 		{
@@ -102,6 +103,8 @@ namespace ChannelEngineApiClient\Models {
 
 		function setExtraData($extraData) { $this->extraData = $extraData; }
 		function getExtraData() { return $this->extraData; }
+		function setDeactivate($deactivate) { $this->deactivate = $deactivate; }
+		function getDeactivate() { return $this->deactivate; }
 
     }
 }
