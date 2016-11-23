@@ -346,7 +346,7 @@ namespace ChannelEngineApiClient\Client {
 
 			// Point curl to the correct certificate.
 			// See: http://stackoverflow.com/questions/6400300/php-curl-https-causing-exception-ssl-certificate-problem-verify-that-the-ca-cer
-			curl_setopt($request, CURLOPT_SSL_VERIFYPEER, true); 
+			curl_setopt($request, CURLOPT_SSL_VERIFYPEER, false); 
 			curl_setopt($request, CURLOPT_CAINFO, $this->certificate);				
 			
 			// If we have a request body send it too
