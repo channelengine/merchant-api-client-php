@@ -7,6 +7,8 @@ Method | HTTP request | Description
 [**orderAcknowledge**](OrderApi.md#orderAcknowledge) | **POST** /v2/orders/acknowledge | Marchant: Acknowledge Order
 [**orderCreate**](OrderApi.md#orderCreate) | **POST** /v2/orders | Channel: Create Order
 [**orderGetNew**](OrderApi.md#orderGetNew) | **GET** /v2/orders/new | Merchant: Get New Orders
+[**orderInvoice**](OrderApi.md#orderInvoice) | **GET** /v2/orders/{merchantReference}/invoice | 
+[**orderPackingSlip**](OrderApi.md#orderPackingSlip) | **GET** /v2/orders/{merchantReference}/packingslip | 
 
 
 # **orderAcknowledge**
@@ -49,7 +51,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, text/xml, application/x-www-form-urlencoded
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -94,7 +96,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, text/xml, application/x-www-form-urlencoded
+ - **Content-Type**: application/json, text/json, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -137,6 +139,96 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderInvoice**
+> \SplFileObject orderInvoice($merchant_reference, $use_customer_culture)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\OrderApi();
+$merchant_reference = "merchant_reference_example"; // string | 
+$use_customer_culture = true; // bool | 
+
+try {
+    $result = $api_instance->orderInvoice($merchant_reference, $use_customer_culture);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderInvoice: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchant_reference** | **string**|  |
+ **use_customer_culture** | **bool**|  | [optional]
+
+### Return type
+
+[**\SplFileObject**](../Model/\SplFileObject.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/pdf
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPackingSlip**
+> \SplFileObject orderPackingSlip($merchant_reference, $use_customer_culture)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\OrderApi();
+$merchant_reference = "merchant_reference_example"; // string | 
+$use_customer_culture = true; // bool | 
+
+try {
+    $result = $api_instance->orderPackingSlip($merchant_reference, $use_customer_culture);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPackingSlip: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchant_reference** | **string**|  |
+ **use_customer_culture** | **bool**|  | [optional]
+
+### Return type
+
+[**\SplFileObject**](../Model/\SplFileObject.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/pdf
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
