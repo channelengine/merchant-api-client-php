@@ -1,4 +1,4 @@
-# Swagger\Client\ProductApi
+# ChannelEngine\ApiClient\ProductApi
 
 All URIs are relative to *https://demo.channelengine.net/api*
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **productAcknowledgeDataChanges**
-> \Swagger\Client\Model\ApiResponse productAcknowledgeDataChanges($changes)
+> \ChannelEngine\ApiClient\Model\ApiResponse productAcknowledgeDataChanges($changes)
 
 Channel: Acknowledge Product Data Changes
 
@@ -25,8 +25,8 @@ For channels.                This endpoint should be called after a call to GET 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ProductApi();
-$changes = new \Swagger\Client\Model\ChannelProcessedChangesRequest(); // \Swagger\Client\Model\ChannelProcessedChangesRequest | The merchant references of the products which have been                successfully created, updated or deleted (after a call to 'GetDataChanges')
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
+$changes = new \ChannelEngine\ApiClient\Model\ChannelProcessedChangesRequest(); // \ChannelEngine\ApiClient\Model\ChannelProcessedChangesRequest | The merchant references of the products which have been                successfully created, updated or deleted (after a call to 'GetDataChanges')
 
 try {
     $result = $api_instance->productAcknowledgeDataChanges($changes);
@@ -41,11 +41,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **changes** | [**\Swagger\Client\Model\ChannelProcessedChangesRequest**](../Model/\Swagger\Client\Model\ChannelProcessedChangesRequest.md)| The merchant references of the products which have been                successfully created, updated or deleted (after a call to &#39;GetDataChanges&#39;) |
+ **changes** | [**\ChannelEngine\ApiClient\Model\ChannelProcessedChangesRequest**](../Model/\ChannelEngine\ApiClient\Model\ChannelProcessedChangesRequest.md)| The merchant references of the products which have been                successfully created, updated or deleted (after a call to &#39;GetDataChanges&#39;) |
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\ChannelEngine\ApiClient\Model\ApiResponse**](../Model/ApiResponse.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productAcknowledgeOfferChanges**
-> \Swagger\Client\Model\ApiResponse productAcknowledgeOfferChanges($changes)
+> \ChannelEngine\ApiClient\Model\ApiResponse productAcknowledgeOfferChanges($changes)
 
 Channel: Acknowledge Product Offer Changes
 
@@ -70,7 +70,7 @@ For channels.                After a call to GET 'v2/products/offers' this endpo
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ProductApi();
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
 $changes = array(new string[]()); // string[] | The channel references of the updated products
 
 try {
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\ChannelEngine\ApiClient\Model\ApiResponse**](../Model/ApiResponse.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productCreate**
-> \Swagger\Client\Model\SingleOfProductCreationResult productCreate($products)
+> \ChannelEngine\ApiClient\Model\SingleOfProductCreationResult productCreate($products)
 
 Merchant: Create Product
 
@@ -115,8 +115,8 @@ For merchants.    Create a product. The parent serves as the 'base' product of t
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ProductApi();
-$products = array(new MerchantProductRequest()); // \Swagger\Client\Model\MerchantProductRequest[] | 
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
+$products = array(new MerchantProductRequest()); // \ChannelEngine\ApiClient\Model\MerchantProductRequest[] | 
 
 try {
     $result = $api_instance->productCreate($products);
@@ -131,11 +131,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **products** | [**\Swagger\Client\Model\MerchantProductRequest[]**](../Model/MerchantProductRequest.md)|  |
+ **products** | [**\ChannelEngine\ApiClient\Model\MerchantProductRequest[]**](../Model/MerchantProductRequest.md)|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\SingleOfProductCreationResult**](../Model/SingleOfProductCreationResult.md)
+[**\ChannelEngine\ApiClient\Model\SingleOfProductCreationResult**](../Model/SingleOfProductCreationResult.md)
 
 ### Authorization
 
@@ -149,7 +149,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productDelete**
-> \Swagger\Client\Model\ApiResponse productDelete($merchant_reference)
+> \ChannelEngine\ApiClient\Model\ApiResponse productDelete($merchantReference)
 
 Merchant: Delete Product
 
@@ -160,11 +160,11 @@ For merchants.    Deactivate a product based on the merchant reference.  Note th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ProductApi();
-$merchant_reference = "merchant_reference_example"; // string | 
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
+$merchantReference = "merchantReference_example"; // string | 
 
 try {
-    $result = $api_instance->productDelete($merchant_reference);
+    $result = $api_instance->productDelete($merchantReference);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productDelete: ', $e->getMessage(), PHP_EOL;
@@ -176,11 +176,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_reference** | **string**|  |
+ **merchantReference** | **string**|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\ChannelEngine\ApiClient\Model\ApiResponse**](../Model/ApiResponse.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productGetByMerchantReference**
-> \Swagger\Client\Model\SingleOfMerchantProductResponse productGetByMerchantReference($merchant_reference)
+> \ChannelEngine\ApiClient\Model\SingleOfMerchantProductResponse productGetByMerchantReference($merchantReference)
 
 Merchant: Get Product
 
@@ -205,11 +205,11 @@ For merchants.    Retrieve a product based on the merchant reference.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ProductApi();
-$merchant_reference = "merchant_reference_example"; // string | 
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
+$merchantReference = "merchantReference_example"; // string | 
 
 try {
-    $result = $api_instance->productGetByMerchantReference($merchant_reference);
+    $result = $api_instance->productGetByMerchantReference($merchantReference);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productGetByMerchantReference: ', $e->getMessage(), PHP_EOL;
@@ -221,11 +221,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_reference** | **string**|  |
+ **merchantReference** | **string**|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\SingleOfMerchantProductResponse**](../Model/SingleOfMerchantProductResponse.md)
+[**\ChannelEngine\ApiClient\Model\SingleOfMerchantProductResponse**](../Model/SingleOfMerchantProductResponse.md)
 
 ### Authorization
 
@@ -239,7 +239,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productGetDataChanges**
-> \Swagger\Client\Model\SingleOfChannelProductChangesResponse productGetDataChanges($max_count)
+> \ChannelEngine\ApiClient\Model\SingleOfChannelProductChangesResponse productGetDataChanges($maxCount)
 
 Channel: Get Product Data Changes
 
@@ -250,11 +250,11 @@ For channels.    Get all products which have changes since the post http call to
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ProductApi();
-$max_count = 56; // int | Optional - limit the amount of products returned for each field              (ToBeCreated, ToBeUpdated, ToBeRemoved) to this number.
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
+$maxCount = 56; // int | Optional - limit the amount of products returned for each field              (ToBeCreated, ToBeUpdated, ToBeRemoved) to this number.
 
 try {
-    $result = $api_instance->productGetDataChanges($max_count);
+    $result = $api_instance->productGetDataChanges($maxCount);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productGetDataChanges: ', $e->getMessage(), PHP_EOL;
@@ -266,11 +266,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **max_count** | **int**| Optional - limit the amount of products returned for each field              (ToBeCreated, ToBeUpdated, ToBeRemoved) to this number. | [optional]
+ **maxCount** | **int**| Optional - limit the amount of products returned for each field              (ToBeCreated, ToBeUpdated, ToBeRemoved) to this number. | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\SingleOfChannelProductChangesResponse**](../Model/SingleOfChannelProductChangesResponse.md)
+[**\ChannelEngine\ApiClient\Model\SingleOfChannelProductChangesResponse**](../Model/SingleOfChannelProductChangesResponse.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productGetOfferChanges**
-> \Swagger\Client\Model\CollectionOfChannelOfferResponse productGetOfferChanges()
+> \ChannelEngine\ApiClient\Model\CollectionOfChannelOfferResponse productGetOfferChanges()
 
 Channel: Get Product Offer Changes
 
@@ -295,7 +295,7 @@ For channels.                GET 'v2/products/offers' and POST 'v2/products/offe
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ProductApi();
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
 
 try {
     $result = $api_instance->productGetOfferChanges();
@@ -311,7 +311,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\CollectionOfChannelOfferResponse**](../Model/CollectionOfChannelOfferResponse.md)
+[**\ChannelEngine\ApiClient\Model\CollectionOfChannelOfferResponse**](../Model/CollectionOfChannelOfferResponse.md)
 
 ### Authorization
 

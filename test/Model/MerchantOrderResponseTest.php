@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace ChannelEngine\ApiClient;
 
 /**
  * MerchantOrderResponseTest Class Doc Comment
@@ -35,7 +35,7 @@ namespace Swagger\Client;
  * @category    Class */
 // * @description MerchantOrderResponse
 /**
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -91,7 +91,7 @@ class MerchantOrderResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "channel_name"
+     * Test attribute "channelName"
      */
     public function testPropertyChannelName()
     {
@@ -99,7 +99,7 @@ class MerchantOrderResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "can_ship_partial_order_lines"
+     * Test attribute "canShipPartialOrderLines"
      */
     public function testPropertyCanShipPartialOrderLines()
     {
@@ -131,7 +131,7 @@ class MerchantOrderResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "company_registration_no"
+     * Test attribute "companyRegistrationNo"
      */
     public function testPropertyCompanyRegistrationNo()
     {
@@ -139,7 +139,7 @@ class MerchantOrderResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "vat_no"
+     * Test attribute "vatNo"
      */
     public function testPropertyVatNo()
     {
@@ -147,7 +147,7 @@ class MerchantOrderResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "payment_method"
+     * Test attribute "paymentMethod"
      */
     public function testPropertyPaymentMethod()
     {
@@ -155,7 +155,7 @@ class MerchantOrderResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "shipping_costs_incl_vat"
+     * Test attribute "shippingCostsInclVat"
      */
     public function testPropertyShippingCostsInclVat()
     {
@@ -163,7 +163,7 @@ class MerchantOrderResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "currency_code"
+     * Test attribute "currencyCode"
      */
     public function testPropertyCurrencyCode()
     {
@@ -171,7 +171,7 @@ class MerchantOrderResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "order_date"
+     * Test attribute "orderDate"
      */
     public function testPropertyOrderDate()
     {
@@ -179,7 +179,7 @@ class MerchantOrderResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "channel_customer_reference"
+     * Test attribute "channelCustomerReference"
      */
     public function testPropertyChannelCustomerReference()
     {
@@ -187,7 +187,7 @@ class MerchantOrderResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "billing_address"
+     * Test attribute "billingAddress"
      */
     public function testPropertyBillingAddress()
     {
@@ -195,7 +195,7 @@ class MerchantOrderResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "shipping_address"
+     * Test attribute "shippingAddress"
      */
     public function testPropertyShippingAddress()
     {
@@ -203,7 +203,7 @@ class MerchantOrderResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "extra_data"
+     * Test attribute "extraData"
      */
     public function testPropertyExtraData()
     {

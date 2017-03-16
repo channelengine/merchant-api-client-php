@@ -15,10 +15,10 @@
  * An example of a project-specific implementation.
  *
  * After registering this autoload function with SPL, the following line
- * would cause the function to attempt to load the \Swagger\Client\Baz\Qux class
+ * would cause the function to attempt to load the \ChannelEngine\ApiClient\Baz\Qux class
  * from /path/to/project/lib/Baz/Qux.php:
  *
- *      new \Swagger\Client\Baz\Qux;
+ *      new \ChannelEngine\ApiClient\Baz\Qux;
  *
  * @param string $class The fully-qualified class name.
  *
@@ -27,7 +27,7 @@
 spl_autoload_register(function ($class) {
 
     // project-specific namespace prefix
-    $prefix = 'Swagger\\Client\\';
+    $prefix = 'ChannelEngine\\ApiClient\\';
 
     // base directory for the namespace prefix
     $base_dir = __DIR__ . '/lib/';

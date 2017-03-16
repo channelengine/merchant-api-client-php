@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * MerchantCancellationRequest Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,9 +54,9 @@ class MerchantCancellationRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchant_reference' => 'string',
-        'merchant_order_reference' => 'string',
-        'lines' => '\Swagger\Client\Model\MerchantCancellationLineRequest[]',
+        'merchantReference' => 'string',
+        'merchantOrderReference' => 'string',
+        'lines' => '\ChannelEngine\ApiClient\Model\MerchantCancellationLineRequest[]',
         'reason' => 'string'
     ];
 
@@ -70,8 +70,8 @@ class MerchantCancellationRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchant_reference' => 'MerchantReference',
-        'merchant_order_reference' => 'MerchantOrderReference',
+        'merchantReference' => 'MerchantReference',
+        'merchantOrderReference' => 'MerchantOrderReference',
         'lines' => 'Lines',
         'reason' => 'Reason'
     ];
@@ -82,8 +82,8 @@ class MerchantCancellationRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchant_reference' => 'setMerchantReference',
-        'merchant_order_reference' => 'setMerchantOrderReference',
+        'merchantReference' => 'setMerchantReference',
+        'merchantOrderReference' => 'setMerchantOrderReference',
         'lines' => 'setLines',
         'reason' => 'setReason'
     ];
@@ -94,8 +94,8 @@ class MerchantCancellationRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchant_reference' => 'getMerchantReference',
-        'merchant_order_reference' => 'getMerchantOrderReference',
+        'merchantReference' => 'getMerchantReference',
+        'merchantOrderReference' => 'getMerchantOrderReference',
         'lines' => 'getLines',
         'reason' => 'getReason'
     ];
@@ -131,8 +131,8 @@ class MerchantCancellationRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchant_reference'] = isset($data['merchant_reference']) ? $data['merchant_reference'] : null;
-        $this->container['merchant_order_reference'] = isset($data['merchant_order_reference']) ? $data['merchant_order_reference'] : null;
+        $this->container['merchantReference'] = isset($data['merchantReference']) ? $data['merchantReference'] : null;
+        $this->container['merchantOrderReference'] = isset($data['merchantOrderReference']) ? $data['merchantOrderReference'] : null;
         $this->container['lines'] = isset($data['lines']) ? $data['lines'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
     }
@@ -146,11 +146,11 @@ class MerchantCancellationRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['merchant_reference'] === null) {
-            $invalid_properties[] = "'merchant_reference' can't be null";
+        if ($this->container['merchantReference'] === null) {
+            $invalid_properties[] = "'merchantReference' can't be null";
         }
-        if ($this->container['merchant_order_reference'] === null) {
-            $invalid_properties[] = "'merchant_order_reference' can't be null";
+        if ($this->container['merchantOrderReference'] === null) {
+            $invalid_properties[] = "'merchantOrderReference' can't be null";
         }
         if ($this->container['lines'] === null) {
             $invalid_properties[] = "'lines' can't be null";
@@ -167,10 +167,10 @@ class MerchantCancellationRequest implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['merchant_reference'] === null) {
+        if ($this->container['merchantReference'] === null) {
             return false;
         }
-        if ($this->container['merchant_order_reference'] === null) {
+        if ($this->container['merchantOrderReference'] === null) {
             return false;
         }
         if ($this->container['lines'] === null) {
@@ -181,50 +181,50 @@ class MerchantCancellationRequest implements ArrayAccess
 
 
     /**
-     * Gets merchant_reference
+     * Gets merchantReference
      * @return string
      */
     public function getMerchantReference()
     {
-        return $this->container['merchant_reference'];
+        return $this->container['merchantReference'];
     }
 
     /**
-     * Sets merchant_reference
-     * @param string $merchant_reference
+     * Sets merchantReference
+     * @param string $merchantReference
      * @return $this
      */
-    public function setMerchantReference($merchant_reference)
+    public function setMerchantReference($merchantReference)
     {
-        $this->container['merchant_reference'] = $merchant_reference;
+        $this->container['merchantReference'] = $merchantReference;
 
         return $this;
     }
 
     /**
-     * Gets merchant_order_reference
+     * Gets merchantOrderReference
      * @return string
      */
     public function getMerchantOrderReference()
     {
-        return $this->container['merchant_order_reference'];
+        return $this->container['merchantOrderReference'];
     }
 
     /**
-     * Sets merchant_order_reference
-     * @param string $merchant_order_reference
+     * Sets merchantOrderReference
+     * @param string $merchantOrderReference
      * @return $this
      */
-    public function setMerchantOrderReference($merchant_order_reference)
+    public function setMerchantOrderReference($merchantOrderReference)
     {
-        $this->container['merchant_order_reference'] = $merchant_order_reference;
+        $this->container['merchantOrderReference'] = $merchantOrderReference;
 
         return $this;
     }
 
     /**
      * Gets lines
-     * @return \Swagger\Client\Model\MerchantCancellationLineRequest[]
+     * @return \ChannelEngine\ApiClient\Model\MerchantCancellationLineRequest[]
      */
     public function getLines()
     {
@@ -233,7 +233,7 @@ class MerchantCancellationRequest implements ArrayAccess
 
     /**
      * Sets lines
-     * @param \Swagger\Client\Model\MerchantCancellationLineRequest[] $lines
+     * @param \ChannelEngine\ApiClient\Model\MerchantCancellationLineRequest[] $lines
      * @return $this
      */
     public function setLines($lines)
@@ -315,10 +315,10 @@ class MerchantCancellationRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

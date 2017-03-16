@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ChannelOrderRequest Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,20 +54,20 @@ class ChannelOrderRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'channel_reference' => 'string',
-        'lines' => '\Swagger\Client\Model\ChannelOrderLineRequest[]',
+        'channelReference' => 'string',
+        'lines' => '\ChannelEngine\ApiClient\Model\ChannelOrderLineRequest[]',
         'phone' => 'string',
         'email' => 'string',
-        'company_registration_no' => 'string',
-        'vat_no' => 'string',
-        'payment_method' => 'string',
-        'shipping_costs_incl_vat' => 'double',
-        'currency_code' => 'string',
-        'order_date' => '\DateTime',
-        'channel_customer_reference' => 'string',
-        'billing_address' => '\Swagger\Client\Model\EntitiesAddressModels',
-        'shipping_address' => '\Swagger\Client\Model\EntitiesAddressModels',
-        'extra_data' => 'map[string,string]'
+        'companyRegistrationNo' => 'string',
+        'vatNo' => 'string',
+        'paymentMethod' => 'string',
+        'shippingCostsInclVat' => 'double',
+        'currencyCode' => 'string',
+        'orderDate' => '\DateTime',
+        'channelCustomerReference' => 'string',
+        'billingAddress' => '\ChannelEngine\ApiClient\Model\EntitiesAddressModels',
+        'shippingAddress' => '\ChannelEngine\ApiClient\Model\EntitiesAddressModels',
+        'extraData' => 'map[string,string]'
     ];
 
     public static function swaggerTypes()
@@ -80,20 +80,20 @@ class ChannelOrderRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'channel_reference' => 'ChannelReference',
+        'channelReference' => 'ChannelReference',
         'lines' => 'Lines',
         'phone' => 'Phone',
         'email' => 'Email',
-        'company_registration_no' => 'CompanyRegistrationNo',
-        'vat_no' => 'VatNo',
-        'payment_method' => 'PaymentMethod',
-        'shipping_costs_incl_vat' => 'ShippingCostsInclVat',
-        'currency_code' => 'CurrencyCode',
-        'order_date' => 'OrderDate',
-        'channel_customer_reference' => 'ChannelCustomerReference',
-        'billing_address' => 'BillingAddress',
-        'shipping_address' => 'ShippingAddress',
-        'extra_data' => 'ExtraData'
+        'companyRegistrationNo' => 'CompanyRegistrationNo',
+        'vatNo' => 'VatNo',
+        'paymentMethod' => 'PaymentMethod',
+        'shippingCostsInclVat' => 'ShippingCostsInclVat',
+        'currencyCode' => 'CurrencyCode',
+        'orderDate' => 'OrderDate',
+        'channelCustomerReference' => 'ChannelCustomerReference',
+        'billingAddress' => 'BillingAddress',
+        'shippingAddress' => 'ShippingAddress',
+        'extraData' => 'ExtraData'
     ];
 
 
@@ -102,20 +102,20 @@ class ChannelOrderRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'channel_reference' => 'setChannelReference',
+        'channelReference' => 'setChannelReference',
         'lines' => 'setLines',
         'phone' => 'setPhone',
         'email' => 'setEmail',
-        'company_registration_no' => 'setCompanyRegistrationNo',
-        'vat_no' => 'setVatNo',
-        'payment_method' => 'setPaymentMethod',
-        'shipping_costs_incl_vat' => 'setShippingCostsInclVat',
-        'currency_code' => 'setCurrencyCode',
-        'order_date' => 'setOrderDate',
-        'channel_customer_reference' => 'setChannelCustomerReference',
-        'billing_address' => 'setBillingAddress',
-        'shipping_address' => 'setShippingAddress',
-        'extra_data' => 'setExtraData'
+        'companyRegistrationNo' => 'setCompanyRegistrationNo',
+        'vatNo' => 'setVatNo',
+        'paymentMethod' => 'setPaymentMethod',
+        'shippingCostsInclVat' => 'setShippingCostsInclVat',
+        'currencyCode' => 'setCurrencyCode',
+        'orderDate' => 'setOrderDate',
+        'channelCustomerReference' => 'setChannelCustomerReference',
+        'billingAddress' => 'setBillingAddress',
+        'shippingAddress' => 'setShippingAddress',
+        'extraData' => 'setExtraData'
     ];
 
 
@@ -124,20 +124,20 @@ class ChannelOrderRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'channel_reference' => 'getChannelReference',
+        'channelReference' => 'getChannelReference',
         'lines' => 'getLines',
         'phone' => 'getPhone',
         'email' => 'getEmail',
-        'company_registration_no' => 'getCompanyRegistrationNo',
-        'vat_no' => 'getVatNo',
-        'payment_method' => 'getPaymentMethod',
-        'shipping_costs_incl_vat' => 'getShippingCostsInclVat',
-        'currency_code' => 'getCurrencyCode',
-        'order_date' => 'getOrderDate',
-        'channel_customer_reference' => 'getChannelCustomerReference',
-        'billing_address' => 'getBillingAddress',
-        'shipping_address' => 'getShippingAddress',
-        'extra_data' => 'getExtraData'
+        'companyRegistrationNo' => 'getCompanyRegistrationNo',
+        'vatNo' => 'getVatNo',
+        'paymentMethod' => 'getPaymentMethod',
+        'shippingCostsInclVat' => 'getShippingCostsInclVat',
+        'currencyCode' => 'getCurrencyCode',
+        'orderDate' => 'getOrderDate',
+        'channelCustomerReference' => 'getChannelCustomerReference',
+        'billingAddress' => 'getBillingAddress',
+        'shippingAddress' => 'getShippingAddress',
+        'extraData' => 'getExtraData'
     ];
 
     public static function attributeMap()
@@ -171,20 +171,20 @@ class ChannelOrderRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['channel_reference'] = isset($data['channel_reference']) ? $data['channel_reference'] : null;
+        $this->container['channelReference'] = isset($data['channelReference']) ? $data['channelReference'] : null;
         $this->container['lines'] = isset($data['lines']) ? $data['lines'] : null;
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['company_registration_no'] = isset($data['company_registration_no']) ? $data['company_registration_no'] : null;
-        $this->container['vat_no'] = isset($data['vat_no']) ? $data['vat_no'] : null;
-        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
-        $this->container['shipping_costs_incl_vat'] = isset($data['shipping_costs_incl_vat']) ? $data['shipping_costs_incl_vat'] : null;
-        $this->container['currency_code'] = isset($data['currency_code']) ? $data['currency_code'] : null;
-        $this->container['order_date'] = isset($data['order_date']) ? $data['order_date'] : null;
-        $this->container['channel_customer_reference'] = isset($data['channel_customer_reference']) ? $data['channel_customer_reference'] : null;
-        $this->container['billing_address'] = isset($data['billing_address']) ? $data['billing_address'] : null;
-        $this->container['shipping_address'] = isset($data['shipping_address']) ? $data['shipping_address'] : null;
-        $this->container['extra_data'] = isset($data['extra_data']) ? $data['extra_data'] : null;
+        $this->container['companyRegistrationNo'] = isset($data['companyRegistrationNo']) ? $data['companyRegistrationNo'] : null;
+        $this->container['vatNo'] = isset($data['vatNo']) ? $data['vatNo'] : null;
+        $this->container['paymentMethod'] = isset($data['paymentMethod']) ? $data['paymentMethod'] : null;
+        $this->container['shippingCostsInclVat'] = isset($data['shippingCostsInclVat']) ? $data['shippingCostsInclVat'] : null;
+        $this->container['currencyCode'] = isset($data['currencyCode']) ? $data['currencyCode'] : null;
+        $this->container['orderDate'] = isset($data['orderDate']) ? $data['orderDate'] : null;
+        $this->container['channelCustomerReference'] = isset($data['channelCustomerReference']) ? $data['channelCustomerReference'] : null;
+        $this->container['billingAddress'] = isset($data['billingAddress']) ? $data['billingAddress'] : null;
+        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
+        $this->container['extraData'] = isset($data['extraData']) ? $data['extraData'] : null;
     }
 
     /**
@@ -196,15 +196,15 @@ class ChannelOrderRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['channel_reference'] === null) {
-            $invalid_properties[] = "'channel_reference' can't be null";
+        if ($this->container['channelReference'] === null) {
+            $invalid_properties[] = "'channelReference' can't be null";
         }
-        if ((strlen($this->container['channel_reference']) > 50)) {
-            $invalid_properties[] = "invalid value for 'channel_reference', the character length must be smaller than or equal to 50.";
+        if ((strlen($this->container['channelReference']) > 50)) {
+            $invalid_properties[] = "invalid value for 'channelReference', the character length must be smaller than or equal to 50.";
         }
 
-        if ((strlen($this->container['channel_reference']) < 0)) {
-            $invalid_properties[] = "invalid value for 'channel_reference', the character length must be bigger than or equal to 0.";
+        if ((strlen($this->container['channelReference']) < 0)) {
+            $invalid_properties[] = "invalid value for 'channelReference', the character length must be bigger than or equal to 0.";
         }
 
         if ($this->container['lines'] === null) {
@@ -229,55 +229,55 @@ class ChannelOrderRequest implements ArrayAccess
             $invalid_properties[] = "invalid value for 'email', the character length must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['company_registration_no']) && (strlen($this->container['company_registration_no']) > 50)) {
-            $invalid_properties[] = "invalid value for 'company_registration_no', the character length must be smaller than or equal to 50.";
+        if (!is_null($this->container['companyRegistrationNo']) && (strlen($this->container['companyRegistrationNo']) > 50)) {
+            $invalid_properties[] = "invalid value for 'companyRegistrationNo', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['company_registration_no']) && (strlen($this->container['company_registration_no']) < 0)) {
-            $invalid_properties[] = "invalid value for 'company_registration_no', the character length must be bigger than or equal to 0.";
+        if (!is_null($this->container['companyRegistrationNo']) && (strlen($this->container['companyRegistrationNo']) < 0)) {
+            $invalid_properties[] = "invalid value for 'companyRegistrationNo', the character length must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['vat_no']) && (strlen($this->container['vat_no']) > 50)) {
-            $invalid_properties[] = "invalid value for 'vat_no', the character length must be smaller than or equal to 50.";
+        if (!is_null($this->container['vatNo']) && (strlen($this->container['vatNo']) > 50)) {
+            $invalid_properties[] = "invalid value for 'vatNo', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['vat_no']) && (strlen($this->container['vat_no']) < 0)) {
-            $invalid_properties[] = "invalid value for 'vat_no', the character length must be bigger than or equal to 0.";
+        if (!is_null($this->container['vatNo']) && (strlen($this->container['vatNo']) < 0)) {
+            $invalid_properties[] = "invalid value for 'vatNo', the character length must be bigger than or equal to 0.";
         }
 
-        if ($this->container['payment_method'] === null) {
-            $invalid_properties[] = "'payment_method' can't be null";
+        if ($this->container['paymentMethod'] === null) {
+            $invalid_properties[] = "'paymentMethod' can't be null";
         }
-        if ((strlen($this->container['payment_method']) > 50)) {
-            $invalid_properties[] = "invalid value for 'payment_method', the character length must be smaller than or equal to 50.";
-        }
-
-        if ((strlen($this->container['payment_method']) < 0)) {
-            $invalid_properties[] = "invalid value for 'payment_method', the character length must be bigger than or equal to 0.";
+        if ((strlen($this->container['paymentMethod']) > 50)) {
+            $invalid_properties[] = "invalid value for 'paymentMethod', the character length must be smaller than or equal to 50.";
         }
 
-        if ($this->container['shipping_costs_incl_vat'] === null) {
-            $invalid_properties[] = "'shipping_costs_incl_vat' can't be null";
-        }
-        if ($this->container['currency_code'] === null) {
-            $invalid_properties[] = "'currency_code' can't be null";
-        }
-        if ($this->container['order_date'] === null) {
-            $invalid_properties[] = "'order_date' can't be null";
-        }
-        if (!is_null($this->container['channel_customer_reference']) && (strlen($this->container['channel_customer_reference']) > 50)) {
-            $invalid_properties[] = "invalid value for 'channel_customer_reference', the character length must be smaller than or equal to 50.";
+        if ((strlen($this->container['paymentMethod']) < 0)) {
+            $invalid_properties[] = "invalid value for 'paymentMethod', the character length must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['channel_customer_reference']) && (strlen($this->container['channel_customer_reference']) < 0)) {
-            $invalid_properties[] = "invalid value for 'channel_customer_reference', the character length must be bigger than or equal to 0.";
+        if ($this->container['shippingCostsInclVat'] === null) {
+            $invalid_properties[] = "'shippingCostsInclVat' can't be null";
+        }
+        if ($this->container['currencyCode'] === null) {
+            $invalid_properties[] = "'currencyCode' can't be null";
+        }
+        if ($this->container['orderDate'] === null) {
+            $invalid_properties[] = "'orderDate' can't be null";
+        }
+        if (!is_null($this->container['channelCustomerReference']) && (strlen($this->container['channelCustomerReference']) > 50)) {
+            $invalid_properties[] = "invalid value for 'channelCustomerReference', the character length must be smaller than or equal to 50.";
         }
 
-        if ($this->container['billing_address'] === null) {
-            $invalid_properties[] = "'billing_address' can't be null";
+        if (!is_null($this->container['channelCustomerReference']) && (strlen($this->container['channelCustomerReference']) < 0)) {
+            $invalid_properties[] = "invalid value for 'channelCustomerReference', the character length must be bigger than or equal to 0.";
         }
-        if ($this->container['shipping_address'] === null) {
-            $invalid_properties[] = "'shipping_address' can't be null";
+
+        if ($this->container['billingAddress'] === null) {
+            $invalid_properties[] = "'billingAddress' can't be null";
+        }
+        if ($this->container['shippingAddress'] === null) {
+            $invalid_properties[] = "'shippingAddress' can't be null";
         }
         return $invalid_properties;
     }
@@ -291,13 +291,13 @@ class ChannelOrderRequest implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['channel_reference'] === null) {
+        if ($this->container['channelReference'] === null) {
             return false;
         }
-        if (strlen($this->container['channel_reference']) > 50) {
+        if (strlen($this->container['channelReference']) > 50) {
             return false;
         }
-        if (strlen($this->container['channel_reference']) < 0) {
+        if (strlen($this->container['channelReference']) < 0) {
             return false;
         }
         if ($this->container['lines'] === null) {
@@ -318,46 +318,46 @@ class ChannelOrderRequest implements ArrayAccess
         if (strlen($this->container['email']) < 0) {
             return false;
         }
-        if (strlen($this->container['company_registration_no']) > 50) {
+        if (strlen($this->container['companyRegistrationNo']) > 50) {
             return false;
         }
-        if (strlen($this->container['company_registration_no']) < 0) {
+        if (strlen($this->container['companyRegistrationNo']) < 0) {
             return false;
         }
-        if (strlen($this->container['vat_no']) > 50) {
+        if (strlen($this->container['vatNo']) > 50) {
             return false;
         }
-        if (strlen($this->container['vat_no']) < 0) {
+        if (strlen($this->container['vatNo']) < 0) {
             return false;
         }
-        if ($this->container['payment_method'] === null) {
+        if ($this->container['paymentMethod'] === null) {
             return false;
         }
-        if (strlen($this->container['payment_method']) > 50) {
+        if (strlen($this->container['paymentMethod']) > 50) {
             return false;
         }
-        if (strlen($this->container['payment_method']) < 0) {
+        if (strlen($this->container['paymentMethod']) < 0) {
             return false;
         }
-        if ($this->container['shipping_costs_incl_vat'] === null) {
+        if ($this->container['shippingCostsInclVat'] === null) {
             return false;
         }
-        if ($this->container['currency_code'] === null) {
+        if ($this->container['currencyCode'] === null) {
             return false;
         }
-        if ($this->container['order_date'] === null) {
+        if ($this->container['orderDate'] === null) {
             return false;
         }
-        if (strlen($this->container['channel_customer_reference']) > 50) {
+        if (strlen($this->container['channelCustomerReference']) > 50) {
             return false;
         }
-        if (strlen($this->container['channel_customer_reference']) < 0) {
+        if (strlen($this->container['channelCustomerReference']) < 0) {
             return false;
         }
-        if ($this->container['billing_address'] === null) {
+        if ($this->container['billingAddress'] === null) {
             return false;
         }
-        if ($this->container['shipping_address'] === null) {
+        if ($this->container['shippingAddress'] === null) {
             return false;
         }
         return true;
@@ -365,36 +365,36 @@ class ChannelOrderRequest implements ArrayAccess
 
 
     /**
-     * Gets channel_reference
+     * Gets channelReference
      * @return string
      */
     public function getChannelReference()
     {
-        return $this->container['channel_reference'];
+        return $this->container['channelReference'];
     }
 
     /**
-     * Sets channel_reference
-     * @param string $channel_reference The unique order reference used by the Channel
+     * Sets channelReference
+     * @param string $channelReference The unique order reference used by the Channel
      * @return $this
      */
-    public function setChannelReference($channel_reference)
+    public function setChannelReference($channelReference)
     {
-        if ((strlen($channel_reference) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $channel_reference when calling ChannelOrderRequest., must be smaller than or equal to 50.');
+        if ((strlen($channelReference) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $channelReference when calling ChannelOrderRequest., must be smaller than or equal to 50.');
         }
-        if ((strlen($channel_reference) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $channel_reference when calling ChannelOrderRequest., must be bigger than or equal to 0.');
+        if ((strlen($channelReference) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $channelReference when calling ChannelOrderRequest., must be bigger than or equal to 0.');
         }
 
-        $this->container['channel_reference'] = $channel_reference;
+        $this->container['channelReference'] = $channelReference;
 
         return $this;
     }
 
     /**
      * Gets lines
-     * @return \Swagger\Client\Model\ChannelOrderLineRequest[]
+     * @return \ChannelEngine\ApiClient\Model\ChannelOrderLineRequest[]
      */
     public function getLines()
     {
@@ -403,7 +403,7 @@ class ChannelOrderRequest implements ArrayAccess
 
     /**
      * Sets lines
-     * @param \Swagger\Client\Model\ChannelOrderLineRequest[] $lines The order lines
+     * @param \ChannelEngine\ApiClient\Model\ChannelOrderLineRequest[] $lines The order lines
      * @return $this
      */
     public function setLines($lines)
@@ -470,239 +470,239 @@ class ChannelOrderRequest implements ArrayAccess
     }
 
     /**
-     * Gets company_registration_no
+     * Gets companyRegistrationNo
      * @return string
      */
     public function getCompanyRegistrationNo()
     {
-        return $this->container['company_registration_no'];
+        return $this->container['companyRegistrationNo'];
     }
 
     /**
-     * Sets company_registration_no
-     * @param string $company_registration_no
+     * Sets companyRegistrationNo
+     * @param string $companyRegistrationNo
      * @return $this
      */
-    public function setCompanyRegistrationNo($company_registration_no)
+    public function setCompanyRegistrationNo($companyRegistrationNo)
     {
-        if (!is_null($company_registration_no) && (strlen($company_registration_no) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $company_registration_no when calling ChannelOrderRequest., must be smaller than or equal to 50.');
+        if (!is_null($companyRegistrationNo) && (strlen($companyRegistrationNo) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $companyRegistrationNo when calling ChannelOrderRequest., must be smaller than or equal to 50.');
         }
-        if (!is_null($company_registration_no) && (strlen($company_registration_no) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $company_registration_no when calling ChannelOrderRequest., must be bigger than or equal to 0.');
+        if (!is_null($companyRegistrationNo) && (strlen($companyRegistrationNo) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $companyRegistrationNo when calling ChannelOrderRequest., must be bigger than or equal to 0.');
         }
 
-        $this->container['company_registration_no'] = $company_registration_no;
+        $this->container['companyRegistrationNo'] = $companyRegistrationNo;
 
         return $this;
     }
 
     /**
-     * Gets vat_no
+     * Gets vatNo
      * @return string
      */
     public function getVatNo()
     {
-        return $this->container['vat_no'];
+        return $this->container['vatNo'];
     }
 
     /**
-     * Sets vat_no
-     * @param string $vat_no
+     * Sets vatNo
+     * @param string $vatNo
      * @return $this
      */
-    public function setVatNo($vat_no)
+    public function setVatNo($vatNo)
     {
-        if (!is_null($vat_no) && (strlen($vat_no) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $vat_no when calling ChannelOrderRequest., must be smaller than or equal to 50.');
+        if (!is_null($vatNo) && (strlen($vatNo) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $vatNo when calling ChannelOrderRequest., must be smaller than or equal to 50.');
         }
-        if (!is_null($vat_no) && (strlen($vat_no) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $vat_no when calling ChannelOrderRequest., must be bigger than or equal to 0.');
+        if (!is_null($vatNo) && (strlen($vatNo) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $vatNo when calling ChannelOrderRequest., must be bigger than or equal to 0.');
         }
 
-        $this->container['vat_no'] = $vat_no;
+        $this->container['vatNo'] = $vatNo;
 
         return $this;
     }
 
     /**
-     * Gets payment_method
+     * Gets paymentMethod
      * @return string
      */
     public function getPaymentMethod()
     {
-        return $this->container['payment_method'];
+        return $this->container['paymentMethod'];
     }
 
     /**
-     * Sets payment_method
-     * @param string $payment_method
+     * Sets paymentMethod
+     * @param string $paymentMethod
      * @return $this
      */
-    public function setPaymentMethod($payment_method)
+    public function setPaymentMethod($paymentMethod)
     {
-        if ((strlen($payment_method) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $payment_method when calling ChannelOrderRequest., must be smaller than or equal to 50.');
+        if ((strlen($paymentMethod) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $paymentMethod when calling ChannelOrderRequest., must be smaller than or equal to 50.');
         }
-        if ((strlen($payment_method) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $payment_method when calling ChannelOrderRequest., must be bigger than or equal to 0.');
+        if ((strlen($paymentMethod) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $paymentMethod when calling ChannelOrderRequest., must be bigger than or equal to 0.');
         }
 
-        $this->container['payment_method'] = $payment_method;
+        $this->container['paymentMethod'] = $paymentMethod;
 
         return $this;
     }
 
     /**
-     * Gets shipping_costs_incl_vat
+     * Gets shippingCostsInclVat
      * @return double
      */
     public function getShippingCostsInclVat()
     {
-        return $this->container['shipping_costs_incl_vat'];
+        return $this->container['shippingCostsInclVat'];
     }
 
     /**
-     * Sets shipping_costs_incl_vat
-     * @param double $shipping_costs_incl_vat The shipping fee including VAT  (in the tenant's base currency calculated using the exchange rate at the time of ordering).
+     * Sets shippingCostsInclVat
+     * @param double $shippingCostsInclVat The shipping fee including VAT  (in the tenant's base currency calculated using the exchange rate at the time of ordering).
      * @return $this
      */
-    public function setShippingCostsInclVat($shipping_costs_incl_vat)
+    public function setShippingCostsInclVat($shippingCostsInclVat)
     {
-        $this->container['shipping_costs_incl_vat'] = $shipping_costs_incl_vat;
+        $this->container['shippingCostsInclVat'] = $shippingCostsInclVat;
 
         return $this;
     }
 
     /**
-     * Gets currency_code
+     * Gets currencyCode
      * @return string
      */
     public function getCurrencyCode()
     {
-        return $this->container['currency_code'];
+        return $this->container['currencyCode'];
     }
 
     /**
-     * Sets currency_code
-     * @param string $currency_code
+     * Sets currencyCode
+     * @param string $currencyCode
      * @return $this
      */
-    public function setCurrencyCode($currency_code)
+    public function setCurrencyCode($currencyCode)
     {
-        $this->container['currency_code'] = $currency_code;
+        $this->container['currencyCode'] = $currencyCode;
 
         return $this;
     }
 
     /**
-     * Gets order_date
+     * Gets orderDate
      * @return \DateTime
      */
     public function getOrderDate()
     {
-        return $this->container['order_date'];
+        return $this->container['orderDate'];
     }
 
     /**
-     * Sets order_date
-     * @param \DateTime $order_date
+     * Sets orderDate
+     * @param \DateTime $orderDate
      * @return $this
      */
-    public function setOrderDate($order_date)
+    public function setOrderDate($orderDate)
     {
-        $this->container['order_date'] = $order_date;
+        $this->container['orderDate'] = $orderDate;
 
         return $this;
     }
 
     /**
-     * Gets channel_customer_reference
+     * Gets channelCustomerReference
      * @return string
      */
     public function getChannelCustomerReference()
     {
-        return $this->container['channel_customer_reference'];
+        return $this->container['channelCustomerReference'];
     }
 
     /**
-     * Sets channel_customer_reference
-     * @param string $channel_customer_reference
+     * Sets channelCustomerReference
+     * @param string $channelCustomerReference
      * @return $this
      */
-    public function setChannelCustomerReference($channel_customer_reference)
+    public function setChannelCustomerReference($channelCustomerReference)
     {
-        if (!is_null($channel_customer_reference) && (strlen($channel_customer_reference) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $channel_customer_reference when calling ChannelOrderRequest., must be smaller than or equal to 50.');
+        if (!is_null($channelCustomerReference) && (strlen($channelCustomerReference) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $channelCustomerReference when calling ChannelOrderRequest., must be smaller than or equal to 50.');
         }
-        if (!is_null($channel_customer_reference) && (strlen($channel_customer_reference) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $channel_customer_reference when calling ChannelOrderRequest., must be bigger than or equal to 0.');
+        if (!is_null($channelCustomerReference) && (strlen($channelCustomerReference) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $channelCustomerReference when calling ChannelOrderRequest., must be bigger than or equal to 0.');
         }
 
-        $this->container['channel_customer_reference'] = $channel_customer_reference;
+        $this->container['channelCustomerReference'] = $channelCustomerReference;
 
         return $this;
     }
 
     /**
-     * Gets billing_address
-     * @return \Swagger\Client\Model\EntitiesAddressModels
+     * Gets billingAddress
+     * @return \ChannelEngine\ApiClient\Model\EntitiesAddressModels
      */
     public function getBillingAddress()
     {
-        return $this->container['billing_address'];
+        return $this->container['billingAddress'];
     }
 
     /**
-     * Sets billing_address
-     * @param \Swagger\Client\Model\EntitiesAddressModels $billing_address
+     * Sets billingAddress
+     * @param \ChannelEngine\ApiClient\Model\EntitiesAddressModels $billingAddress
      * @return $this
      */
-    public function setBillingAddress($billing_address)
+    public function setBillingAddress($billingAddress)
     {
-        $this->container['billing_address'] = $billing_address;
+        $this->container['billingAddress'] = $billingAddress;
 
         return $this;
     }
 
     /**
-     * Gets shipping_address
-     * @return \Swagger\Client\Model\EntitiesAddressModels
+     * Gets shippingAddress
+     * @return \ChannelEngine\ApiClient\Model\EntitiesAddressModels
      */
     public function getShippingAddress()
     {
-        return $this->container['shipping_address'];
+        return $this->container['shippingAddress'];
     }
 
     /**
-     * Sets shipping_address
-     * @param \Swagger\Client\Model\EntitiesAddressModels $shipping_address
+     * Sets shippingAddress
+     * @param \ChannelEngine\ApiClient\Model\EntitiesAddressModels $shippingAddress
      * @return $this
      */
-    public function setShippingAddress($shipping_address)
+    public function setShippingAddress($shippingAddress)
     {
-        $this->container['shipping_address'] = $shipping_address;
+        $this->container['shippingAddress'] = $shippingAddress;
 
         return $this;
     }
 
     /**
-     * Gets extra_data
+     * Gets extraData
      * @return map[string,string]
      */
     public function getExtraData()
     {
-        return $this->container['extra_data'];
+        return $this->container['extraData'];
     }
 
     /**
-     * Sets extra_data
-     * @param map[string,string] $extra_data
+     * Sets extraData
+     * @param map[string,string] $extraData
      * @return $this
      */
-    public function setExtraData($extra_data)
+    public function setExtraData($extraData)
     {
-        $this->container['extra_data'] = $extra_data;
+        $this->container['extraData'] = $extraData;
 
         return $this;
     }
@@ -758,10 +758,10 @@ class ChannelOrderRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

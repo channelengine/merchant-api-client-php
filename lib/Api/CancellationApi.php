@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace ChannelEngine\ApiClient\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ChannelEngine\ApiClient\ApiClient;
+use \ChannelEngine\ApiClient\ApiException;
+use \ChannelEngine\ApiClient\Configuration;
+use \ChannelEngine\ApiClient\ObjectSerializer;
 
 /**
  * CancellationApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class CancellationApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ChannelEngine\ApiClient\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ChannelEngine\ApiClient\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ChannelEngine\ApiClient\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class CancellationApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ChannelEngine\ApiClient\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class CancellationApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ChannelEngine\ApiClient\ApiClient $apiClient set the API client
      *
      * @return CancellationApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ChannelEngine\ApiClient\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,9 +92,9 @@ class CancellationApi
      *
      * Merchant: Create Cancellation
      *
-     * @param \Swagger\Client\Model\MerchantCancellationRequest $cancellation  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ApiResponse
+     * @param \ChannelEngine\ApiClient\Model\MerchantCancellationRequest $cancellation  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\ApiResponse
      */
     public function cancellationCreate($cancellation)
     {
@@ -107,9 +107,9 @@ class CancellationApi
      *
      * Merchant: Create Cancellation
      *
-     * @param \Swagger\Client\Model\MerchantCancellationRequest $cancellation  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param \ChannelEngine\ApiClient\Model\MerchantCancellationRequest $cancellation  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancellationCreateWithHttpInfo($cancellation)
     {
@@ -152,15 +152,15 @@ class CancellationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ApiResponse',
+                '\ChannelEngine\ApiClient\Model\ApiResponse',
                 '/v2/cancellations'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\ApiResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -174,13 +174,13 @@ class CancellationApi
      *
      * Channel: Get Cancellations
      *
-     * @param \DateTime $created_since  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CollectionOfChannelCancellationResponse
+     * @param \DateTime $createdSince  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\CollectionOfChannelCancellationResponse
      */
-    public function cancellationIndex($created_since)
+    public function cancellationIndex($createdSince)
     {
-        list($response) = $this->cancellationIndexWithHttpInfo($created_since);
+        list($response) = $this->cancellationIndexWithHttpInfo($createdSince);
         return $response;
     }
 
@@ -189,15 +189,15 @@ class CancellationApi
      *
      * Channel: Get Cancellations
      *
-     * @param \DateTime $created_since  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CollectionOfChannelCancellationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param \DateTime $createdSince  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\CollectionOfChannelCancellationResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cancellationIndexWithHttpInfo($created_since)
+    public function cancellationIndexWithHttpInfo($createdSince)
     {
-        // verify the required parameter 'created_since' is set
-        if ($created_since === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $created_since when calling cancellationIndex');
+        // verify the required parameter 'createdSince' is set
+        if ($createdSince === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createdSince when calling cancellationIndex');
         }
         // parse inputs
         $resourcePath = "/v2/cancellations";
@@ -212,8 +212,8 @@ class CancellationApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if ($created_since !== null) {
-            $queryParams['createdSince'] = $this->apiClient->getSerializer()->toQueryValue($created_since);
+        if ($createdSince !== null) {
+            $queryParams['createdSince'] = $this->apiClient->getSerializer()->toQueryValue($createdSince);
         }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -233,15 +233,15 @@ class CancellationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CollectionOfChannelCancellationResponse',
+                '\ChannelEngine\ApiClient\Model\CollectionOfChannelCancellationResponse',
                 '/v2/cancellations'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CollectionOfChannelCancellationResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\CollectionOfChannelCancellationResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CollectionOfChannelCancellationResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\CollectionOfChannelCancellationResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

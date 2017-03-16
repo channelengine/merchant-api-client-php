@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ChannelReturnLineResponse Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class ChannelReturnLineResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'channel_product_reference' => 'string',
+        'channelProductReference' => 'string',
         'quantity' => 'int'
     ];
 
@@ -68,7 +68,7 @@ class ChannelReturnLineResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'channel_product_reference' => 'ChannelProductReference',
+        'channelProductReference' => 'ChannelProductReference',
         'quantity' => 'Quantity'
     ];
 
@@ -78,7 +78,7 @@ class ChannelReturnLineResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'channel_product_reference' => 'setChannelProductReference',
+        'channelProductReference' => 'setChannelProductReference',
         'quantity' => 'setQuantity'
     ];
 
@@ -88,7 +88,7 @@ class ChannelReturnLineResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'channel_product_reference' => 'getChannelProductReference',
+        'channelProductReference' => 'getChannelProductReference',
         'quantity' => 'getQuantity'
     ];
 
@@ -123,7 +123,7 @@ class ChannelReturnLineResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['channel_product_reference'] = isset($data['channel_product_reference']) ? $data['channel_product_reference'] : null;
+        $this->container['channelProductReference'] = isset($data['channelProductReference']) ? $data['channelProductReference'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
     }
 
@@ -136,8 +136,8 @@ class ChannelReturnLineResponse implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['channel_product_reference'] === null) {
-            $invalid_properties[] = "'channel_product_reference' can't be null";
+        if ($this->container['channelProductReference'] === null) {
+            $invalid_properties[] = "'channelProductReference' can't be null";
         }
         if ($this->container['quantity'] === null) {
             $invalid_properties[] = "'quantity' can't be null";
@@ -154,7 +154,7 @@ class ChannelReturnLineResponse implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['channel_product_reference'] === null) {
+        if ($this->container['channelProductReference'] === null) {
             return false;
         }
         if ($this->container['quantity'] === null) {
@@ -165,22 +165,22 @@ class ChannelReturnLineResponse implements ArrayAccess
 
 
     /**
-     * Gets channel_product_reference
+     * Gets channelProductReference
      * @return string
      */
     public function getChannelProductReference()
     {
-        return $this->container['channel_product_reference'];
+        return $this->container['channelProductReference'];
     }
 
     /**
-     * Sets channel_product_reference
-     * @param string $channel_product_reference
+     * Sets channelProductReference
+     * @param string $channelProductReference
      * @return $this
      */
-    public function setChannelProductReference($channel_product_reference)
+    public function setChannelProductReference($channelProductReference)
     {
-        $this->container['channel_product_reference'] = $channel_product_reference;
+        $this->container['channelProductReference'] = $channelProductReference;
 
         return $this;
     }
@@ -257,10 +257,10 @@ class ChannelReturnLineResponse implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

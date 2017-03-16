@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace ChannelEngine\ApiClient;
 
 /**
  * MerchantCancellationRequestTest Class Doc Comment
@@ -35,7 +35,7 @@ namespace Swagger\Client;
  * @category    Class */
 // * @description MerchantCancellationRequest
 /**
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -83,7 +83,7 @@ class MerchantCancellationRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "merchant_reference"
+     * Test attribute "merchantReference"
      */
     public function testPropertyMerchantReference()
     {
@@ -91,7 +91,7 @@ class MerchantCancellationRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "merchant_order_reference"
+     * Test attribute "merchantOrderReference"
      */
     public function testPropertyMerchantOrderReference()
     {

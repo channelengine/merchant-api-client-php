@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * EntitiesAddressModels Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -55,16 +55,16 @@ class EntitiesAddressModels implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'gender' => 'string',
-        'company_name' => 'string',
-        'first_name' => 'string',
-        'last_name' => 'string',
-        'street_name' => 'string',
-        'house_nr' => 'string',
-        'house_nr_addition' => 'string',
-        'zip_code' => 'string',
+        'companyName' => 'string',
+        'firstName' => 'string',
+        'lastName' => 'string',
+        'streetName' => 'string',
+        'houseNr' => 'string',
+        'houseNrAddition' => 'string',
+        'zipCode' => 'string',
         'city' => 'string',
         'region' => 'string',
-        'country_iso' => 'string',
+        'countryIso' => 'string',
         'original' => 'string'
     ];
 
@@ -79,16 +79,16 @@ class EntitiesAddressModels implements ArrayAccess
      */
     protected static $attributeMap = [
         'gender' => 'Gender',
-        'company_name' => 'CompanyName',
-        'first_name' => 'FirstName',
-        'last_name' => 'LastName',
-        'street_name' => 'StreetName',
-        'house_nr' => 'HouseNr',
-        'house_nr_addition' => 'HouseNrAddition',
-        'zip_code' => 'ZipCode',
+        'companyName' => 'CompanyName',
+        'firstName' => 'FirstName',
+        'lastName' => 'LastName',
+        'streetName' => 'StreetName',
+        'houseNr' => 'HouseNr',
+        'houseNrAddition' => 'HouseNrAddition',
+        'zipCode' => 'ZipCode',
         'city' => 'City',
         'region' => 'Region',
-        'country_iso' => 'CountryIso',
+        'countryIso' => 'CountryIso',
         'original' => 'Original'
     ];
 
@@ -99,16 +99,16 @@ class EntitiesAddressModels implements ArrayAccess
      */
     protected static $setters = [
         'gender' => 'setGender',
-        'company_name' => 'setCompanyName',
-        'first_name' => 'setFirstName',
-        'last_name' => 'setLastName',
-        'street_name' => 'setStreetName',
-        'house_nr' => 'setHouseNr',
-        'house_nr_addition' => 'setHouseNrAddition',
-        'zip_code' => 'setZipCode',
+        'companyName' => 'setCompanyName',
+        'firstName' => 'setFirstName',
+        'lastName' => 'setLastName',
+        'streetName' => 'setStreetName',
+        'houseNr' => 'setHouseNr',
+        'houseNrAddition' => 'setHouseNrAddition',
+        'zipCode' => 'setZipCode',
         'city' => 'setCity',
         'region' => 'setRegion',
-        'country_iso' => 'setCountryIso',
+        'countryIso' => 'setCountryIso',
         'original' => 'setOriginal'
     ];
 
@@ -119,16 +119,16 @@ class EntitiesAddressModels implements ArrayAccess
      */
     protected static $getters = [
         'gender' => 'getGender',
-        'company_name' => 'getCompanyName',
-        'first_name' => 'getFirstName',
-        'last_name' => 'getLastName',
-        'street_name' => 'getStreetName',
-        'house_nr' => 'getHouseNr',
-        'house_nr_addition' => 'getHouseNrAddition',
-        'zip_code' => 'getZipCode',
+        'companyName' => 'getCompanyName',
+        'firstName' => 'getFirstName',
+        'lastName' => 'getLastName',
+        'streetName' => 'getStreetName',
+        'houseNr' => 'getHouseNr',
+        'houseNrAddition' => 'getHouseNrAddition',
+        'zipCode' => 'getZipCode',
         'city' => 'getCity',
         'region' => 'getRegion',
-        'country_iso' => 'getCountryIso',
+        'countryIso' => 'getCountryIso',
         'original' => 'getOriginal'
     ];
 
@@ -180,16 +180,16 @@ class EntitiesAddressModels implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
-        $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['street_name'] = isset($data['street_name']) ? $data['street_name'] : null;
-        $this->container['house_nr'] = isset($data['house_nr']) ? $data['house_nr'] : null;
-        $this->container['house_nr_addition'] = isset($data['house_nr_addition']) ? $data['house_nr_addition'] : null;
-        $this->container['zip_code'] = isset($data['zip_code']) ? $data['zip_code'] : null;
+        $this->container['companyName'] = isset($data['companyName']) ? $data['companyName'] : null;
+        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['streetName'] = isset($data['streetName']) ? $data['streetName'] : null;
+        $this->container['houseNr'] = isset($data['houseNr']) ? $data['houseNr'] : null;
+        $this->container['houseNrAddition'] = isset($data['houseNrAddition']) ? $data['houseNrAddition'] : null;
+        $this->container['zipCode'] = isset($data['zipCode']) ? $data['zipCode'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['country_iso'] = isset($data['country_iso']) ? $data['country_iso'] : null;
+        $this->container['countryIso'] = isset($data['countryIso']) ? $data['countryIso'] : null;
         $this->container['original'] = isset($data['original']) ? $data['original'] : null;
     }
 
@@ -207,20 +207,20 @@ class EntitiesAddressModels implements ArrayAccess
             $invalid_properties[] = "invalid value for 'gender', must be one of 'MALE', 'FEMALE', 'NOT_APPLICABLE'.";
         }
 
-        if (!is_null($this->container['house_nr']) && (strlen($this->container['house_nr']) > 50)) {
-            $invalid_properties[] = "invalid value for 'house_nr', the character length must be smaller than or equal to 50.";
+        if (!is_null($this->container['houseNr']) && (strlen($this->container['houseNr']) > 50)) {
+            $invalid_properties[] = "invalid value for 'houseNr', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['house_nr']) && (strlen($this->container['house_nr']) < 0)) {
-            $invalid_properties[] = "invalid value for 'house_nr', the character length must be bigger than or equal to 0.";
+        if (!is_null($this->container['houseNr']) && (strlen($this->container['houseNr']) < 0)) {
+            $invalid_properties[] = "invalid value for 'houseNr', the character length must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['house_nr_addition']) && (strlen($this->container['house_nr_addition']) > 50)) {
-            $invalid_properties[] = "invalid value for 'house_nr_addition', the character length must be smaller than or equal to 50.";
+        if (!is_null($this->container['houseNrAddition']) && (strlen($this->container['houseNrAddition']) > 50)) {
+            $invalid_properties[] = "invalid value for 'houseNrAddition', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['house_nr_addition']) && (strlen($this->container['house_nr_addition']) < 0)) {
-            $invalid_properties[] = "invalid value for 'house_nr_addition', the character length must be bigger than or equal to 0.";
+        if (!is_null($this->container['houseNrAddition']) && (strlen($this->container['houseNrAddition']) < 0)) {
+            $invalid_properties[] = "invalid value for 'houseNrAddition', the character length must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['region']) && (strlen($this->container['region']) > 50)) {
@@ -231,12 +231,12 @@ class EntitiesAddressModels implements ArrayAccess
             $invalid_properties[] = "invalid value for 'region', the character length must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['country_iso']) && (strlen($this->container['country_iso']) > 2)) {
-            $invalid_properties[] = "invalid value for 'country_iso', the character length must be smaller than or equal to 2.";
+        if (!is_null($this->container['countryIso']) && (strlen($this->container['countryIso']) > 2)) {
+            $invalid_properties[] = "invalid value for 'countryIso', the character length must be smaller than or equal to 2.";
         }
 
-        if (!is_null($this->container['country_iso']) && (strlen($this->container['country_iso']) < 0)) {
-            $invalid_properties[] = "invalid value for 'country_iso', the character length must be bigger than or equal to 0.";
+        if (!is_null($this->container['countryIso']) && (strlen($this->container['countryIso']) < 0)) {
+            $invalid_properties[] = "invalid value for 'countryIso', the character length must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['original']) && (strlen($this->container['original']) > 256)) {
@@ -263,16 +263,16 @@ class EntitiesAddressModels implements ArrayAccess
         if (!in_array($this->container['gender'], $allowed_values)) {
             return false;
         }
-        if (strlen($this->container['house_nr']) > 50) {
+        if (strlen($this->container['houseNr']) > 50) {
             return false;
         }
-        if (strlen($this->container['house_nr']) < 0) {
+        if (strlen($this->container['houseNr']) < 0) {
             return false;
         }
-        if (strlen($this->container['house_nr_addition']) > 50) {
+        if (strlen($this->container['houseNrAddition']) > 50) {
             return false;
         }
-        if (strlen($this->container['house_nr_addition']) < 0) {
+        if (strlen($this->container['houseNrAddition']) < 0) {
             return false;
         }
         if (strlen($this->container['region']) > 50) {
@@ -281,10 +281,10 @@ class EntitiesAddressModels implements ArrayAccess
         if (strlen($this->container['region']) < 0) {
             return false;
         }
-        if (strlen($this->container['country_iso']) > 2) {
+        if (strlen($this->container['countryIso']) > 2) {
             return false;
         }
-        if (strlen($this->container['country_iso']) < 0) {
+        if (strlen($this->container['countryIso']) < 0) {
             return false;
         }
         if (strlen($this->container['original']) > 256) {
@@ -323,162 +323,162 @@ class EntitiesAddressModels implements ArrayAccess
     }
 
     /**
-     * Gets company_name
+     * Gets companyName
      * @return string
      */
     public function getCompanyName()
     {
-        return $this->container['company_name'];
+        return $this->container['companyName'];
     }
 
     /**
-     * Sets company_name
-     * @param string $company_name
+     * Sets companyName
+     * @param string $companyName
      * @return $this
      */
-    public function setCompanyName($company_name)
+    public function setCompanyName($companyName)
     {
-        $this->container['company_name'] = $company_name;
+        $this->container['companyName'] = $companyName;
 
         return $this;
     }
 
     /**
-     * Gets first_name
+     * Gets firstName
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['first_name'];
+        return $this->container['firstName'];
     }
 
     /**
-     * Sets first_name
-     * @param string $first_name
+     * Sets firstName
+     * @param string $firstName
      * @return $this
      */
-    public function setFirstName($first_name)
+    public function setFirstName($firstName)
     {
-        $this->container['first_name'] = $first_name;
+        $this->container['firstName'] = $firstName;
 
         return $this;
     }
 
     /**
-     * Gets last_name
+     * Gets lastName
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['last_name'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets last_name
-     * @param string $last_name
+     * Sets lastName
+     * @param string $lastName
      * @return $this
      */
-    public function setLastName($last_name)
+    public function setLastName($lastName)
     {
-        $this->container['last_name'] = $last_name;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
 
     /**
-     * Gets street_name
+     * Gets streetName
      * @return string
      */
     public function getStreetName()
     {
-        return $this->container['street_name'];
+        return $this->container['streetName'];
     }
 
     /**
-     * Sets street_name
-     * @param string $street_name
+     * Sets streetName
+     * @param string $streetName
      * @return $this
      */
-    public function setStreetName($street_name)
+    public function setStreetName($streetName)
     {
-        $this->container['street_name'] = $street_name;
+        $this->container['streetName'] = $streetName;
 
         return $this;
     }
 
     /**
-     * Gets house_nr
+     * Gets houseNr
      * @return string
      */
     public function getHouseNr()
     {
-        return $this->container['house_nr'];
+        return $this->container['houseNr'];
     }
 
     /**
-     * Sets house_nr
-     * @param string $house_nr
+     * Sets houseNr
+     * @param string $houseNr
      * @return $this
      */
-    public function setHouseNr($house_nr)
+    public function setHouseNr($houseNr)
     {
-        if (!is_null($house_nr) && (strlen($house_nr) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $house_nr when calling EntitiesAddressModels., must be smaller than or equal to 50.');
+        if (!is_null($houseNr) && (strlen($houseNr) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $houseNr when calling EntitiesAddressModels., must be smaller than or equal to 50.');
         }
-        if (!is_null($house_nr) && (strlen($house_nr) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $house_nr when calling EntitiesAddressModels., must be bigger than or equal to 0.');
+        if (!is_null($houseNr) && (strlen($houseNr) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $houseNr when calling EntitiesAddressModels., must be bigger than or equal to 0.');
         }
 
-        $this->container['house_nr'] = $house_nr;
+        $this->container['houseNr'] = $houseNr;
 
         return $this;
     }
 
     /**
-     * Gets house_nr_addition
+     * Gets houseNrAddition
      * @return string
      */
     public function getHouseNrAddition()
     {
-        return $this->container['house_nr_addition'];
+        return $this->container['houseNrAddition'];
     }
 
     /**
-     * Sets house_nr_addition
-     * @param string $house_nr_addition
+     * Sets houseNrAddition
+     * @param string $houseNrAddition
      * @return $this
      */
-    public function setHouseNrAddition($house_nr_addition)
+    public function setHouseNrAddition($houseNrAddition)
     {
-        if (!is_null($house_nr_addition) && (strlen($house_nr_addition) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $house_nr_addition when calling EntitiesAddressModels., must be smaller than or equal to 50.');
+        if (!is_null($houseNrAddition) && (strlen($houseNrAddition) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $houseNrAddition when calling EntitiesAddressModels., must be smaller than or equal to 50.');
         }
-        if (!is_null($house_nr_addition) && (strlen($house_nr_addition) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $house_nr_addition when calling EntitiesAddressModels., must be bigger than or equal to 0.');
+        if (!is_null($houseNrAddition) && (strlen($houseNrAddition) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $houseNrAddition when calling EntitiesAddressModels., must be bigger than or equal to 0.');
         }
 
-        $this->container['house_nr_addition'] = $house_nr_addition;
+        $this->container['houseNrAddition'] = $houseNrAddition;
 
         return $this;
     }
 
     /**
-     * Gets zip_code
+     * Gets zipCode
      * @return string
      */
     public function getZipCode()
     {
-        return $this->container['zip_code'];
+        return $this->container['zipCode'];
     }
 
     /**
-     * Sets zip_code
-     * @param string $zip_code
+     * Sets zipCode
+     * @param string $zipCode
      * @return $this
      */
-    public function setZipCode($zip_code)
+    public function setZipCode($zipCode)
     {
-        $this->container['zip_code'] = $zip_code;
+        $this->container['zipCode'] = $zipCode;
 
         return $this;
     }
@@ -533,29 +533,29 @@ class EntitiesAddressModels implements ArrayAccess
     }
 
     /**
-     * Gets country_iso
+     * Gets countryIso
      * @return string
      */
     public function getCountryIso()
     {
-        return $this->container['country_iso'];
+        return $this->container['countryIso'];
     }
 
     /**
-     * Sets country_iso
-     * @param string $country_iso
+     * Sets countryIso
+     * @param string $countryIso
      * @return $this
      */
-    public function setCountryIso($country_iso)
+    public function setCountryIso($countryIso)
     {
-        if (!is_null($country_iso) && (strlen($country_iso) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country_iso when calling EntitiesAddressModels., must be smaller than or equal to 2.');
+        if (!is_null($countryIso) && (strlen($countryIso) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $countryIso when calling EntitiesAddressModels., must be smaller than or equal to 2.');
         }
-        if (!is_null($country_iso) && (strlen($country_iso) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $country_iso when calling EntitiesAddressModels., must be bigger than or equal to 0.');
+        if (!is_null($countryIso) && (strlen($countryIso) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $countryIso when calling EntitiesAddressModels., must be bigger than or equal to 0.');
         }
 
-        $this->container['country_iso'] = $country_iso;
+        $this->container['countryIso'] = $countryIso;
 
         return $this;
     }
@@ -639,10 +639,10 @@ class EntitiesAddressModels implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

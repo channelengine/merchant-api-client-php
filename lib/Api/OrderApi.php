@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace ChannelEngine\ApiClient\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ChannelEngine\ApiClient\ApiClient;
+use \ChannelEngine\ApiClient\ApiException;
+use \ChannelEngine\ApiClient\Configuration;
+use \ChannelEngine\ApiClient\ObjectSerializer;
 
 /**
  * OrderApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class OrderApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ChannelEngine\ApiClient\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ChannelEngine\ApiClient\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ChannelEngine\ApiClient\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class OrderApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ChannelEngine\ApiClient\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class OrderApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ChannelEngine\ApiClient\ApiClient $apiClient set the API client
      *
      * @return OrderApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ChannelEngine\ApiClient\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,9 +92,9 @@ class OrderApi
      *
      * Marchant: Acknowledge Order
      *
-     * @param \Swagger\Client\Model\OrderAcknowledgement $model Relations between the id&#39;s returned by ChannelEngine and the references              which the merchant uses (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ApiResponse
+     * @param \ChannelEngine\ApiClient\Model\OrderAcknowledgement $model Relations between the id&#39;s returned by ChannelEngine and the references              which the merchant uses (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\ApiResponse
      */
     public function orderAcknowledge($model)
     {
@@ -107,9 +107,9 @@ class OrderApi
      *
      * Marchant: Acknowledge Order
      *
-     * @param \Swagger\Client\Model\OrderAcknowledgement $model Relations between the id&#39;s returned by ChannelEngine and the references              which the merchant uses (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param \ChannelEngine\ApiClient\Model\OrderAcknowledgement $model Relations between the id&#39;s returned by ChannelEngine and the references              which the merchant uses (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function orderAcknowledgeWithHttpInfo($model)
     {
@@ -152,15 +152,15 @@ class OrderApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ApiResponse',
+                '\ChannelEngine\ApiClient\Model\ApiResponse',
                 '/v2/orders/acknowledge'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\ApiResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -174,9 +174,9 @@ class OrderApi
      *
      * Channel: Create Order
      *
-     * @param \Swagger\Client\Model\ChannelOrderRequest $model  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ApiResponse
+     * @param \ChannelEngine\ApiClient\Model\ChannelOrderRequest $model  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\ApiResponse
      */
     public function orderCreate($model)
     {
@@ -189,9 +189,9 @@ class OrderApi
      *
      * Channel: Create Order
      *
-     * @param \Swagger\Client\Model\ChannelOrderRequest $model  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param \ChannelEngine\ApiClient\Model\ChannelOrderRequest $model  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function orderCreateWithHttpInfo($model)
     {
@@ -234,15 +234,15 @@ class OrderApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ApiResponse',
+                '\ChannelEngine\ApiClient\Model\ApiResponse',
                 '/v2/orders'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\ApiResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -256,8 +256,8 @@ class OrderApi
      *
      * Merchant: Get New Orders
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CollectionOfMerchantOrderResponse
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\CollectionOfMerchantOrderResponse
      */
     public function orderGetNew()
     {
@@ -270,8 +270,8 @@ class OrderApi
      *
      * Merchant: Get New Orders
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CollectionOfMerchantOrderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\CollectionOfMerchantOrderResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function orderGetNewWithHttpInfo()
     {
@@ -305,15 +305,15 @@ class OrderApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CollectionOfMerchantOrderResponse',
+                '\ChannelEngine\ApiClient\Model\CollectionOfMerchantOrderResponse',
                 '/v2/orders/new'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CollectionOfMerchantOrderResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\CollectionOfMerchantOrderResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CollectionOfMerchantOrderResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\CollectionOfMerchantOrderResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -327,14 +327,14 @@ class OrderApi
      *
      * 
      *
-     * @param string $merchant_reference  (required)
-     * @param bool $use_customer_culture  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $merchantReference  (required)
+     * @param bool $useCustomerCulture  (optional)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function orderInvoice($merchant_reference, $use_customer_culture = null)
+    public function orderInvoice($merchantReference, $useCustomerCulture = null)
     {
-        list($response) = $this->orderInvoiceWithHttpInfo($merchant_reference, $use_customer_culture);
+        list($response) = $this->orderInvoiceWithHttpInfo($merchantReference, $useCustomerCulture);
         return $response;
     }
 
@@ -343,16 +343,16 @@ class OrderApi
      *
      * 
      *
-     * @param string $merchant_reference  (required)
-     * @param bool $use_customer_culture  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $merchantReference  (required)
+     * @param bool $useCustomerCulture  (optional)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderInvoiceWithHttpInfo($merchant_reference, $use_customer_culture = null)
+    public function orderInvoiceWithHttpInfo($merchantReference, $useCustomerCulture = null)
     {
-        // verify the required parameter 'merchant_reference' is set
-        if ($merchant_reference === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $merchant_reference when calling orderInvoice');
+        // verify the required parameter 'merchantReference' is set
+        if ($merchantReference === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $merchantReference when calling orderInvoice');
         }
         // parse inputs
         $resourcePath = "/v2/orders/{merchantReference}/invoice";
@@ -367,14 +367,14 @@ class OrderApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if ($use_customer_culture !== null) {
-            $queryParams['useCustomerCulture'] = $this->apiClient->getSerializer()->toQueryValue($use_customer_culture);
+        if ($useCustomerCulture !== null) {
+            $queryParams['useCustomerCulture'] = $this->apiClient->getSerializer()->toQueryValue($useCustomerCulture);
         }
         // path params
-        if ($merchant_reference !== null) {
+        if ($merchantReference !== null) {
             $resourcePath = str_replace(
                 "{" . "merchantReference" . "}",
-                $this->apiClient->getSerializer()->toPathValue($merchant_reference),
+                $this->apiClient->getSerializer()->toPathValue($merchantReference),
                 $resourcePath
             );
         }
@@ -418,14 +418,14 @@ class OrderApi
      *
      * 
      *
-     * @param string $merchant_reference  (required)
-     * @param bool $use_customer_culture  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $merchantReference  (required)
+     * @param bool $useCustomerCulture  (optional)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function orderPackingSlip($merchant_reference, $use_customer_culture = null)
+    public function orderPackingSlip($merchantReference, $useCustomerCulture = null)
     {
-        list($response) = $this->orderPackingSlipWithHttpInfo($merchant_reference, $use_customer_culture);
+        list($response) = $this->orderPackingSlipWithHttpInfo($merchantReference, $useCustomerCulture);
         return $response;
     }
 
@@ -434,16 +434,16 @@ class OrderApi
      *
      * 
      *
-     * @param string $merchant_reference  (required)
-     * @param bool $use_customer_culture  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param string $merchantReference  (required)
+     * @param bool $useCustomerCulture  (optional)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderPackingSlipWithHttpInfo($merchant_reference, $use_customer_culture = null)
+    public function orderPackingSlipWithHttpInfo($merchantReference, $useCustomerCulture = null)
     {
-        // verify the required parameter 'merchant_reference' is set
-        if ($merchant_reference === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $merchant_reference when calling orderPackingSlip');
+        // verify the required parameter 'merchantReference' is set
+        if ($merchantReference === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $merchantReference when calling orderPackingSlip');
         }
         // parse inputs
         $resourcePath = "/v2/orders/{merchantReference}/packingslip";
@@ -458,14 +458,14 @@ class OrderApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if ($use_customer_culture !== null) {
-            $queryParams['useCustomerCulture'] = $this->apiClient->getSerializer()->toQueryValue($use_customer_culture);
+        if ($useCustomerCulture !== null) {
+            $queryParams['useCustomerCulture'] = $this->apiClient->getSerializer()->toQueryValue($useCustomerCulture);
         }
         // path params
-        if ($merchant_reference !== null) {
+        if ($merchantReference !== null) {
             $resourcePath = str_replace(
                 "{" . "merchantReference" . "}",
-                $this->apiClient->getSerializer()->toPathValue($merchant_reference),
+                $this->apiClient->getSerializer()->toPathValue($merchantReference),
                 $resourcePath
             );
         }

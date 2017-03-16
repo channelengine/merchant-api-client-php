@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * MerchantReturnLineResponse Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class MerchantReturnLineResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchant_product_reference' => 'string',
+        'merchantProductReference' => 'string',
         'quantity' => 'int'
     ];
 
@@ -68,7 +68,7 @@ class MerchantReturnLineResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchant_product_reference' => 'MerchantProductReference',
+        'merchantProductReference' => 'MerchantProductReference',
         'quantity' => 'Quantity'
     ];
 
@@ -78,7 +78,7 @@ class MerchantReturnLineResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchant_product_reference' => 'setMerchantProductReference',
+        'merchantProductReference' => 'setMerchantProductReference',
         'quantity' => 'setQuantity'
     ];
 
@@ -88,7 +88,7 @@ class MerchantReturnLineResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchant_product_reference' => 'getMerchantProductReference',
+        'merchantProductReference' => 'getMerchantProductReference',
         'quantity' => 'getQuantity'
     ];
 
@@ -123,7 +123,7 @@ class MerchantReturnLineResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchant_product_reference'] = isset($data['merchant_product_reference']) ? $data['merchant_product_reference'] : null;
+        $this->container['merchantProductReference'] = isset($data['merchantProductReference']) ? $data['merchantProductReference'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
     }
 
@@ -159,22 +159,22 @@ class MerchantReturnLineResponse implements ArrayAccess
 
 
     /**
-     * Gets merchant_product_reference
+     * Gets merchantProductReference
      * @return string
      */
     public function getMerchantProductReference()
     {
-        return $this->container['merchant_product_reference'];
+        return $this->container['merchantProductReference'];
     }
 
     /**
-     * Sets merchant_product_reference
-     * @param string $merchant_product_reference
+     * Sets merchantProductReference
+     * @param string $merchantProductReference
      * @return $this
      */
-    public function setMerchantProductReference($merchant_product_reference)
+    public function setMerchantProductReference($merchantProductReference)
     {
-        $this->container['merchant_product_reference'] = $merchant_product_reference;
+        $this->container['merchantProductReference'] = $merchantProductReference;
 
         return $this;
     }
@@ -251,10 +251,10 @@ class MerchantReturnLineResponse implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

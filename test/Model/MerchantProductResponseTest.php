@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace ChannelEngine\ApiClient;
 
 /**
  * MerchantProductResponseTest Class Doc Comment
@@ -35,7 +35,7 @@ namespace Swagger\Client;
  * @category    Class */
 // * @description MerchantProductResponse
 /**
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -83,7 +83,7 @@ class MerchantProductResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "is_active"
+     * Test attribute "isActive"
      */
     public function testPropertyIsActive()
     {
@@ -91,7 +91,7 @@ class MerchantProductResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "mapped_fields"
+     * Test attribute "mappedFields"
      */
     public function testPropertyMappedFields()
     {
@@ -147,7 +147,7 @@ class MerchantProductResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "manufacturer_product_number"
+     * Test attribute "manufacturerProductNumber"
      */
     public function testPropertyManufacturerProductNumber()
     {
@@ -171,15 +171,15 @@ class MerchantProductResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "msrp"
+     * Test attribute "mSRP"
      */
-    public function testPropertyMsrp()
+    public function testPropertyMSRP()
     {
 
     }
 
     /**
-     * Test attribute "purchase_price"
+     * Test attribute "purchasePrice"
      */
     public function testPropertyPurchasePrice()
     {
@@ -187,7 +187,7 @@ class MerchantProductResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "vat_rate_type"
+     * Test attribute "vatRateType"
      */
     public function testPropertyVatRateType()
     {
@@ -195,7 +195,7 @@ class MerchantProductResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "shipping_cost"
+     * Test attribute "shippingCost"
      */
     public function testPropertyShippingCost()
     {
@@ -203,7 +203,7 @@ class MerchantProductResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "shipping_time"
+     * Test attribute "shippingTime"
      */
     public function testPropertyShippingTime()
     {
@@ -219,7 +219,7 @@ class MerchantProductResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "image_url"
+     * Test attribute "imageUrl"
      */
     public function testPropertyImageUrl()
     {
@@ -227,7 +227,7 @@ class MerchantProductResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "category_trail"
+     * Test attribute "categoryTrail"
      */
     public function testPropertyCategoryTrail()
     {
@@ -235,7 +235,7 @@ class MerchantProductResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "extra_data"
+     * Test attribute "extraData"
      */
     public function testPropertyExtraData()
     {

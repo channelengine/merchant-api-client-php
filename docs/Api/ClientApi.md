@@ -1,4 +1,4 @@
-# Swagger\Client\ClientApi
+# ChannelEngine\ApiClient\ClientApi
 
 All URIs are relative to *https://demo.channelengine.net/api*
 
@@ -19,7 +19,7 @@ This call generates a Swagger API client and returns it as a ZIP
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ClientApi();
+$api_instance = new ChannelEngine\ApiClient\Api\ClientApi();
 $language = "language_example"; // string | The programming language
 
 try {

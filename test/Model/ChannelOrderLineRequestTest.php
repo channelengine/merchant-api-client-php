@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace ChannelEngine\ApiClient;
 
 /**
  * ChannelOrderLineRequestTest Class Doc Comment
@@ -35,7 +35,7 @@ namespace Swagger\Client;
  * @category    Class */
 // * @description ChannelOrderLineRequest
 /**
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -83,7 +83,7 @@ class ChannelOrderLineRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "channel_product_reference"
+     * Test attribute "channelProductReference"
      */
     public function testPropertyChannelProductReference()
     {
@@ -99,7 +99,7 @@ class ChannelOrderLineRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "unit_price_incl_vat"
+     * Test attribute "unitPriceInclVat"
      */
     public function testPropertyUnitPriceInclVat()
     {
@@ -107,7 +107,7 @@ class ChannelOrderLineRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "fee_fixed"
+     * Test attribute "feeFixed"
      */
     public function testPropertyFeeFixed()
     {
@@ -115,7 +115,7 @@ class ChannelOrderLineRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "fee_rate"
+     * Test attribute "feeRate"
      */
     public function testPropertyFeeRate()
     {

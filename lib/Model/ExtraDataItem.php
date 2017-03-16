@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ExtraDataItem Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class ExtraDataItem implements ArrayAccess
         'key' => 'string',
         'value' => 'string',
         'type' => 'string',
-        'is_public' => 'bool'
+        'isPublic' => 'bool'
     ];
 
     public static function swaggerTypes()
@@ -73,7 +73,7 @@ class ExtraDataItem implements ArrayAccess
         'key' => 'Key',
         'value' => 'Value',
         'type' => 'Type',
-        'is_public' => 'IsPublic'
+        'isPublic' => 'IsPublic'
     ];
 
 
@@ -85,7 +85,7 @@ class ExtraDataItem implements ArrayAccess
         'key' => 'setKey',
         'value' => 'setValue',
         'type' => 'setType',
-        'is_public' => 'setIsPublic'
+        'isPublic' => 'setIsPublic'
     ];
 
 
@@ -97,7 +97,7 @@ class ExtraDataItem implements ArrayAccess
         'key' => 'getKey',
         'value' => 'getValue',
         'type' => 'getType',
-        'is_public' => 'getIsPublic'
+        'isPublic' => 'getIsPublic'
     ];
 
     public static function attributeMap()
@@ -152,7 +152,7 @@ class ExtraDataItem implements ArrayAccess
         $this->container['key'] = isset($data['key']) ? $data['key'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['is_public'] = isset($data['is_public']) ? $data['is_public'] : null;
+        $this->container['isPublic'] = isset($data['isPublic']) ? $data['isPublic'] : null;
     }
 
     /**
@@ -257,22 +257,22 @@ class ExtraDataItem implements ArrayAccess
     }
 
     /**
-     * Gets is_public
+     * Gets isPublic
      * @return bool
      */
     public function getIsPublic()
     {
-        return $this->container['is_public'];
+        return $this->container['isPublic'];
     }
 
     /**
-     * Sets is_public
-     * @param bool $is_public
+     * Sets isPublic
+     * @param bool $isPublic
      * @return $this
      */
-    public function setIsPublic($is_public)
+    public function setIsPublic($isPublic)
     {
-        $this->container['is_public'] = $is_public;
+        $this->container['isPublic'] = $isPublic;
 
         return $this;
     }
@@ -328,10 +328,10 @@ class ExtraDataItem implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

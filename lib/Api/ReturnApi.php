@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace ChannelEngine\ApiClient\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ChannelEngine\ApiClient\ApiClient;
+use \ChannelEngine\ApiClient\ApiException;
+use \ChannelEngine\ApiClient\Configuration;
+use \ChannelEngine\ApiClient\ObjectSerializer;
 
 /**
  * ReturnApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class ReturnApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ChannelEngine\ApiClient\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ChannelEngine\ApiClient\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ChannelEngine\ApiClient\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class ReturnApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ChannelEngine\ApiClient\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class ReturnApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ChannelEngine\ApiClient\ApiClient $apiClient set the API client
      *
      * @return ReturnApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ChannelEngine\ApiClient\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,9 +92,9 @@ class ReturnApi
      *
      * Channel: Create Return
      *
-     * @param \Swagger\Client\Model\ChannelReturnRequest $model  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ApiResponse
+     * @param \ChannelEngine\ApiClient\Model\ChannelReturnRequest $model  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\ApiResponse
      */
     public function returnCreate($model)
     {
@@ -107,9 +107,9 @@ class ReturnApi
      *
      * Channel: Create Return
      *
-     * @param \Swagger\Client\Model\ChannelReturnRequest $model  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param \ChannelEngine\ApiClient\Model\ChannelReturnRequest $model  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function returnCreateWithHttpInfo($model)
     {
@@ -152,15 +152,15 @@ class ReturnApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ApiResponse',
+                '\ChannelEngine\ApiClient\Model\ApiResponse',
                 '/v2/returns/channel'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\ApiResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -174,9 +174,9 @@ class ReturnApi
      *
      * Merchant: Create Return
      *
-     * @param \Swagger\Client\Model\MerchantReturnRequest $model  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ApiResponse
+     * @param \ChannelEngine\ApiClient\Model\MerchantReturnRequest $model  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\ApiResponse
      */
     public function returnCreate_0($model)
     {
@@ -189,9 +189,9 @@ class ReturnApi
      *
      * Merchant: Create Return
      *
-     * @param \Swagger\Client\Model\MerchantReturnRequest $model  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param \ChannelEngine\ApiClient\Model\MerchantReturnRequest $model  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function returnCreate_0WithHttpInfo($model)
     {
@@ -234,15 +234,15 @@ class ReturnApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ApiResponse',
+                '\ChannelEngine\ApiClient\Model\ApiResponse',
                 '/v2/returns/merchant'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\ApiResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -256,13 +256,13 @@ class ReturnApi
      *
      * Merchant: Get Returns
      *
-     * @param \DateTime $created_since  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CollectionOfMerchantReturnResponse
+     * @param \DateTime $createdSince  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\CollectionOfMerchantReturnResponse
      */
-    public function returnGetChannelReturns($created_since)
+    public function returnGetChannelReturns($createdSince)
     {
-        list($response) = $this->returnGetChannelReturnsWithHttpInfo($created_since);
+        list($response) = $this->returnGetChannelReturnsWithHttpInfo($createdSince);
         return $response;
     }
 
@@ -271,15 +271,15 @@ class ReturnApi
      *
      * Merchant: Get Returns
      *
-     * @param \DateTime $created_since  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CollectionOfMerchantReturnResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param \DateTime $createdSince  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\CollectionOfMerchantReturnResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function returnGetChannelReturnsWithHttpInfo($created_since)
+    public function returnGetChannelReturnsWithHttpInfo($createdSince)
     {
-        // verify the required parameter 'created_since' is set
-        if ($created_since === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $created_since when calling returnGetChannelReturns');
+        // verify the required parameter 'createdSince' is set
+        if ($createdSince === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createdSince when calling returnGetChannelReturns');
         }
         // parse inputs
         $resourcePath = "/v2/returns/merchant";
@@ -294,8 +294,8 @@ class ReturnApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if ($created_since !== null) {
-            $queryParams['createdSince'] = $this->apiClient->getSerializer()->toQueryValue($created_since);
+        if ($createdSince !== null) {
+            $queryParams['createdSince'] = $this->apiClient->getSerializer()->toQueryValue($createdSince);
         }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -315,15 +315,15 @@ class ReturnApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CollectionOfMerchantReturnResponse',
+                '\ChannelEngine\ApiClient\Model\CollectionOfMerchantReturnResponse',
                 '/v2/returns/merchant'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CollectionOfMerchantReturnResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\CollectionOfMerchantReturnResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CollectionOfMerchantReturnResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\CollectionOfMerchantReturnResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -337,13 +337,13 @@ class ReturnApi
      *
      * Channel: Get Returns
      *
-     * @param \DateTime $created_since  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CollectionOfChannelReturnResponse
+     * @param \DateTime $createdSince  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\CollectionOfChannelReturnResponse
      */
-    public function returnGetMerchantReturns($created_since)
+    public function returnGetMerchantReturns($createdSince)
     {
-        list($response) = $this->returnGetMerchantReturnsWithHttpInfo($created_since);
+        list($response) = $this->returnGetMerchantReturnsWithHttpInfo($createdSince);
         return $response;
     }
 
@@ -352,15 +352,15 @@ class ReturnApi
      *
      * Channel: Get Returns
      *
-     * @param \DateTime $created_since  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CollectionOfChannelReturnResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param \DateTime $createdSince  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\CollectionOfChannelReturnResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function returnGetMerchantReturnsWithHttpInfo($created_since)
+    public function returnGetMerchantReturnsWithHttpInfo($createdSince)
     {
-        // verify the required parameter 'created_since' is set
-        if ($created_since === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $created_since when calling returnGetMerchantReturns');
+        // verify the required parameter 'createdSince' is set
+        if ($createdSince === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createdSince when calling returnGetMerchantReturns');
         }
         // parse inputs
         $resourcePath = "/v2/returns/channel";
@@ -375,8 +375,8 @@ class ReturnApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if ($created_since !== null) {
-            $queryParams['createdSince'] = $this->apiClient->getSerializer()->toQueryValue($created_since);
+        if ($createdSince !== null) {
+            $queryParams['createdSince'] = $this->apiClient->getSerializer()->toQueryValue($createdSince);
         }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -396,15 +396,15 @@ class ReturnApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CollectionOfChannelReturnResponse',
+                '\ChannelEngine\ApiClient\Model\CollectionOfChannelReturnResponse',
                 '/v2/returns/channel'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CollectionOfChannelReturnResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\CollectionOfChannelReturnResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CollectionOfChannelReturnResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\CollectionOfChannelReturnResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ChannelShipmentResponse Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,10 +54,10 @@ class ChannelShipmentResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'channel_order_reference' => 'string',
-        'lines' => '\Swagger\Client\Model\ChannelShipmentLineResponse[]',
-        'track_trace_no' => 'string',
-        'track_trace_url' => 'string',
+        'channelOrderReference' => 'string',
+        'lines' => '\ChannelEngine\ApiClient\Model\ChannelShipmentLineResponse[]',
+        'trackTraceNo' => 'string',
+        'trackTraceUrl' => 'string',
         'method' => 'string'
     ];
 
@@ -71,10 +71,10 @@ class ChannelShipmentResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'channel_order_reference' => 'ChannelOrderReference',
+        'channelOrderReference' => 'ChannelOrderReference',
         'lines' => 'Lines',
-        'track_trace_no' => 'TrackTraceNo',
-        'track_trace_url' => 'TrackTraceUrl',
+        'trackTraceNo' => 'TrackTraceNo',
+        'trackTraceUrl' => 'TrackTraceUrl',
         'method' => 'Method'
     ];
 
@@ -84,10 +84,10 @@ class ChannelShipmentResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'channel_order_reference' => 'setChannelOrderReference',
+        'channelOrderReference' => 'setChannelOrderReference',
         'lines' => 'setLines',
-        'track_trace_no' => 'setTrackTraceNo',
-        'track_trace_url' => 'setTrackTraceUrl',
+        'trackTraceNo' => 'setTrackTraceNo',
+        'trackTraceUrl' => 'setTrackTraceUrl',
         'method' => 'setMethod'
     ];
 
@@ -97,10 +97,10 @@ class ChannelShipmentResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'channel_order_reference' => 'getChannelOrderReference',
+        'channelOrderReference' => 'getChannelOrderReference',
         'lines' => 'getLines',
-        'track_trace_no' => 'getTrackTraceNo',
-        'track_trace_url' => 'getTrackTraceUrl',
+        'trackTraceNo' => 'getTrackTraceNo',
+        'trackTraceUrl' => 'getTrackTraceUrl',
         'method' => 'getMethod'
     ];
 
@@ -135,10 +135,10 @@ class ChannelShipmentResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['channel_order_reference'] = isset($data['channel_order_reference']) ? $data['channel_order_reference'] : null;
+        $this->container['channelOrderReference'] = isset($data['channelOrderReference']) ? $data['channelOrderReference'] : null;
         $this->container['lines'] = isset($data['lines']) ? $data['lines'] : null;
-        $this->container['track_trace_no'] = isset($data['track_trace_no']) ? $data['track_trace_no'] : null;
-        $this->container['track_trace_url'] = isset($data['track_trace_url']) ? $data['track_trace_url'] : null;
+        $this->container['trackTraceNo'] = isset($data['trackTraceNo']) ? $data['trackTraceNo'] : null;
+        $this->container['trackTraceUrl'] = isset($data['trackTraceUrl']) ? $data['trackTraceUrl'] : null;
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;
     }
 
@@ -151,26 +151,26 @@ class ChannelShipmentResponse implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['channel_order_reference'] === null) {
-            $invalid_properties[] = "'channel_order_reference' can't be null";
+        if ($this->container['channelOrderReference'] === null) {
+            $invalid_properties[] = "'channelOrderReference' can't be null";
         }
         if ($this->container['lines'] === null) {
             $invalid_properties[] = "'lines' can't be null";
         }
-        if (!is_null($this->container['track_trace_no']) && (strlen($this->container['track_trace_no']) > 50)) {
-            $invalid_properties[] = "invalid value for 'track_trace_no', the character length must be smaller than or equal to 50.";
+        if (!is_null($this->container['trackTraceNo']) && (strlen($this->container['trackTraceNo']) > 50)) {
+            $invalid_properties[] = "invalid value for 'trackTraceNo', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['track_trace_no']) && (strlen($this->container['track_trace_no']) < 0)) {
-            $invalid_properties[] = "invalid value for 'track_trace_no', the character length must be bigger than or equal to 0.";
+        if (!is_null($this->container['trackTraceNo']) && (strlen($this->container['trackTraceNo']) < 0)) {
+            $invalid_properties[] = "invalid value for 'trackTraceNo', the character length must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['track_trace_url']) && (strlen($this->container['track_trace_url']) > 250)) {
-            $invalid_properties[] = "invalid value for 'track_trace_url', the character length must be smaller than or equal to 250.";
+        if (!is_null($this->container['trackTraceUrl']) && (strlen($this->container['trackTraceUrl']) > 250)) {
+            $invalid_properties[] = "invalid value for 'trackTraceUrl', the character length must be smaller than or equal to 250.";
         }
 
-        if (!is_null($this->container['track_trace_url']) && (strlen($this->container['track_trace_url']) < 0)) {
-            $invalid_properties[] = "invalid value for 'track_trace_url', the character length must be bigger than or equal to 0.";
+        if (!is_null($this->container['trackTraceUrl']) && (strlen($this->container['trackTraceUrl']) < 0)) {
+            $invalid_properties[] = "invalid value for 'trackTraceUrl', the character length must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['method']) && (strlen($this->container['method']) > 50)) {
@@ -193,22 +193,22 @@ class ChannelShipmentResponse implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['channel_order_reference'] === null) {
+        if ($this->container['channelOrderReference'] === null) {
             return false;
         }
         if ($this->container['lines'] === null) {
             return false;
         }
-        if (strlen($this->container['track_trace_no']) > 50) {
+        if (strlen($this->container['trackTraceNo']) > 50) {
             return false;
         }
-        if (strlen($this->container['track_trace_no']) < 0) {
+        if (strlen($this->container['trackTraceNo']) < 0) {
             return false;
         }
-        if (strlen($this->container['track_trace_url']) > 250) {
+        if (strlen($this->container['trackTraceUrl']) > 250) {
             return false;
         }
-        if (strlen($this->container['track_trace_url']) < 0) {
+        if (strlen($this->container['trackTraceUrl']) < 0) {
             return false;
         }
         if (strlen($this->container['method']) > 50) {
@@ -222,29 +222,29 @@ class ChannelShipmentResponse implements ArrayAccess
 
 
     /**
-     * Gets channel_order_reference
+     * Gets channelOrderReference
      * @return string
      */
     public function getChannelOrderReference()
     {
-        return $this->container['channel_order_reference'];
+        return $this->container['channelOrderReference'];
     }
 
     /**
-     * Sets channel_order_reference
-     * @param string $channel_order_reference
+     * Sets channelOrderReference
+     * @param string $channelOrderReference
      * @return $this
      */
-    public function setChannelOrderReference($channel_order_reference)
+    public function setChannelOrderReference($channelOrderReference)
     {
-        $this->container['channel_order_reference'] = $channel_order_reference;
+        $this->container['channelOrderReference'] = $channelOrderReference;
 
         return $this;
     }
 
     /**
      * Gets lines
-     * @return \Swagger\Client\Model\ChannelShipmentLineResponse[]
+     * @return \ChannelEngine\ApiClient\Model\ChannelShipmentLineResponse[]
      */
     public function getLines()
     {
@@ -253,7 +253,7 @@ class ChannelShipmentResponse implements ArrayAccess
 
     /**
      * Sets lines
-     * @param \Swagger\Client\Model\ChannelShipmentLineResponse[] $lines
+     * @param \ChannelEngine\ApiClient\Model\ChannelShipmentLineResponse[] $lines
      * @return $this
      */
     public function setLines($lines)
@@ -264,57 +264,57 @@ class ChannelShipmentResponse implements ArrayAccess
     }
 
     /**
-     * Gets track_trace_no
+     * Gets trackTraceNo
      * @return string
      */
     public function getTrackTraceNo()
     {
-        return $this->container['track_trace_no'];
+        return $this->container['trackTraceNo'];
     }
 
     /**
-     * Sets track_trace_no
-     * @param string $track_trace_no
+     * Sets trackTraceNo
+     * @param string $trackTraceNo
      * @return $this
      */
-    public function setTrackTraceNo($track_trace_no)
+    public function setTrackTraceNo($trackTraceNo)
     {
-        if (!is_null($track_trace_no) && (strlen($track_trace_no) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $track_trace_no when calling ChannelShipmentResponse., must be smaller than or equal to 50.');
+        if (!is_null($trackTraceNo) && (strlen($trackTraceNo) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $trackTraceNo when calling ChannelShipmentResponse., must be smaller than or equal to 50.');
         }
-        if (!is_null($track_trace_no) && (strlen($track_trace_no) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $track_trace_no when calling ChannelShipmentResponse., must be bigger than or equal to 0.');
+        if (!is_null($trackTraceNo) && (strlen($trackTraceNo) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $trackTraceNo when calling ChannelShipmentResponse., must be bigger than or equal to 0.');
         }
 
-        $this->container['track_trace_no'] = $track_trace_no;
+        $this->container['trackTraceNo'] = $trackTraceNo;
 
         return $this;
     }
 
     /**
-     * Gets track_trace_url
+     * Gets trackTraceUrl
      * @return string
      */
     public function getTrackTraceUrl()
     {
-        return $this->container['track_trace_url'];
+        return $this->container['trackTraceUrl'];
     }
 
     /**
-     * Sets track_trace_url
-     * @param string $track_trace_url
+     * Sets trackTraceUrl
+     * @param string $trackTraceUrl
      * @return $this
      */
-    public function setTrackTraceUrl($track_trace_url)
+    public function setTrackTraceUrl($trackTraceUrl)
     {
-        if (!is_null($track_trace_url) && (strlen($track_trace_url) > 250)) {
-            throw new \InvalidArgumentException('invalid length for $track_trace_url when calling ChannelShipmentResponse., must be smaller than or equal to 250.');
+        if (!is_null($trackTraceUrl) && (strlen($trackTraceUrl) > 250)) {
+            throw new \InvalidArgumentException('invalid length for $trackTraceUrl when calling ChannelShipmentResponse., must be smaller than or equal to 250.');
         }
-        if (!is_null($track_trace_url) && (strlen($track_trace_url) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $track_trace_url when calling ChannelShipmentResponse., must be bigger than or equal to 0.');
+        if (!is_null($trackTraceUrl) && (strlen($trackTraceUrl) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $trackTraceUrl when calling ChannelShipmentResponse., must be bigger than or equal to 0.');
         }
 
-        $this->container['track_trace_url'] = $track_trace_url;
+        $this->container['trackTraceUrl'] = $trackTraceUrl;
 
         return $this;
     }
@@ -398,10 +398,10 @@ class ChannelShipmentResponse implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

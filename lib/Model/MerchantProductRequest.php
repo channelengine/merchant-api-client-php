@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * MerchantProductRequest Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,26 +54,26 @@ class MerchantProductRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchant_reference' => 'string',
-        'parent_merchant_reference' => 'string',
+        'merchantReference' => 'string',
+        'parentMerchantReference' => 'string',
         'name' => 'string',
         'description' => 'string',
         'brand' => 'string',
         'size' => 'string',
         'color' => 'string',
         'ean' => 'string',
-        'manufacturer_product_number' => 'string',
+        'manufacturerProductNumber' => 'string',
         'stock' => 'int',
         'price' => 'double',
-        'msrp' => 'double',
-        'purchase_price' => 'double',
-        'vat_rate_type' => 'string',
-        'shipping_cost' => 'double',
-        'shipping_time' => 'string',
+        'mSRP' => 'double',
+        'purchasePrice' => 'double',
+        'vatRateType' => 'string',
+        'shippingCost' => 'double',
+        'shippingTime' => 'string',
         'url' => 'string',
-        'image_url' => 'string',
-        'category_trail' => 'string',
-        'extra_data' => '\Swagger\Client\Model\ExtraDataItem[]'
+        'imageUrl' => 'string',
+        'categoryTrail' => 'string',
+        'extraData' => '\ChannelEngine\ApiClient\Model\ExtraDataItem[]'
     ];
 
     public static function swaggerTypes()
@@ -86,26 +86,26 @@ class MerchantProductRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchant_reference' => 'MerchantReference',
-        'parent_merchant_reference' => 'ParentMerchantReference',
+        'merchantReference' => 'MerchantReference',
+        'parentMerchantReference' => 'ParentMerchantReference',
         'name' => 'Name',
         'description' => 'Description',
         'brand' => 'Brand',
         'size' => 'Size',
         'color' => 'Color',
         'ean' => 'Ean',
-        'manufacturer_product_number' => 'ManufacturerProductNumber',
+        'manufacturerProductNumber' => 'ManufacturerProductNumber',
         'stock' => 'Stock',
         'price' => 'Price',
-        'msrp' => 'MSRP',
-        'purchase_price' => 'PurchasePrice',
-        'vat_rate_type' => 'VatRateType',
-        'shipping_cost' => 'ShippingCost',
-        'shipping_time' => 'ShippingTime',
+        'mSRP' => 'MSRP',
+        'purchasePrice' => 'PurchasePrice',
+        'vatRateType' => 'VatRateType',
+        'shippingCost' => 'ShippingCost',
+        'shippingTime' => 'ShippingTime',
         'url' => 'Url',
-        'image_url' => 'ImageUrl',
-        'category_trail' => 'CategoryTrail',
-        'extra_data' => 'ExtraData'
+        'imageUrl' => 'ImageUrl',
+        'categoryTrail' => 'CategoryTrail',
+        'extraData' => 'ExtraData'
     ];
 
 
@@ -114,26 +114,26 @@ class MerchantProductRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchant_reference' => 'setMerchantReference',
-        'parent_merchant_reference' => 'setParentMerchantReference',
+        'merchantReference' => 'setMerchantReference',
+        'parentMerchantReference' => 'setParentMerchantReference',
         'name' => 'setName',
         'description' => 'setDescription',
         'brand' => 'setBrand',
         'size' => 'setSize',
         'color' => 'setColor',
         'ean' => 'setEan',
-        'manufacturer_product_number' => 'setManufacturerProductNumber',
+        'manufacturerProductNumber' => 'setManufacturerProductNumber',
         'stock' => 'setStock',
         'price' => 'setPrice',
-        'msrp' => 'setMsrp',
-        'purchase_price' => 'setPurchasePrice',
-        'vat_rate_type' => 'setVatRateType',
-        'shipping_cost' => 'setShippingCost',
-        'shipping_time' => 'setShippingTime',
+        'mSRP' => 'setMSRP',
+        'purchasePrice' => 'setPurchasePrice',
+        'vatRateType' => 'setVatRateType',
+        'shippingCost' => 'setShippingCost',
+        'shippingTime' => 'setShippingTime',
         'url' => 'setUrl',
-        'image_url' => 'setImageUrl',
-        'category_trail' => 'setCategoryTrail',
-        'extra_data' => 'setExtraData'
+        'imageUrl' => 'setImageUrl',
+        'categoryTrail' => 'setCategoryTrail',
+        'extraData' => 'setExtraData'
     ];
 
 
@@ -142,26 +142,26 @@ class MerchantProductRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchant_reference' => 'getMerchantReference',
-        'parent_merchant_reference' => 'getParentMerchantReference',
+        'merchantReference' => 'getMerchantReference',
+        'parentMerchantReference' => 'getParentMerchantReference',
         'name' => 'getName',
         'description' => 'getDescription',
         'brand' => 'getBrand',
         'size' => 'getSize',
         'color' => 'getColor',
         'ean' => 'getEan',
-        'manufacturer_product_number' => 'getManufacturerProductNumber',
+        'manufacturerProductNumber' => 'getManufacturerProductNumber',
         'stock' => 'getStock',
         'price' => 'getPrice',
-        'msrp' => 'getMsrp',
-        'purchase_price' => 'getPurchasePrice',
-        'vat_rate_type' => 'getVatRateType',
-        'shipping_cost' => 'getShippingCost',
-        'shipping_time' => 'getShippingTime',
+        'mSRP' => 'getMSRP',
+        'purchasePrice' => 'getPurchasePrice',
+        'vatRateType' => 'getVatRateType',
+        'shippingCost' => 'getShippingCost',
+        'shippingTime' => 'getShippingTime',
         'url' => 'getUrl',
-        'image_url' => 'getImageUrl',
-        'category_trail' => 'getCategoryTrail',
-        'extra_data' => 'getExtraData'
+        'imageUrl' => 'getImageUrl',
+        'categoryTrail' => 'getCategoryTrail',
+        'extraData' => 'getExtraData'
     ];
 
     public static function attributeMap()
@@ -211,26 +211,26 @@ class MerchantProductRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchant_reference'] = isset($data['merchant_reference']) ? $data['merchant_reference'] : null;
-        $this->container['parent_merchant_reference'] = isset($data['parent_merchant_reference']) ? $data['parent_merchant_reference'] : null;
+        $this->container['merchantReference'] = isset($data['merchantReference']) ? $data['merchantReference'] : null;
+        $this->container['parentMerchantReference'] = isset($data['parentMerchantReference']) ? $data['parentMerchantReference'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['brand'] = isset($data['brand']) ? $data['brand'] : null;
         $this->container['size'] = isset($data['size']) ? $data['size'] : null;
         $this->container['color'] = isset($data['color']) ? $data['color'] : null;
         $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
-        $this->container['manufacturer_product_number'] = isset($data['manufacturer_product_number']) ? $data['manufacturer_product_number'] : null;
+        $this->container['manufacturerProductNumber'] = isset($data['manufacturerProductNumber']) ? $data['manufacturerProductNumber'] : null;
         $this->container['stock'] = isset($data['stock']) ? $data['stock'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['msrp'] = isset($data['msrp']) ? $data['msrp'] : null;
-        $this->container['purchase_price'] = isset($data['purchase_price']) ? $data['purchase_price'] : null;
-        $this->container['vat_rate_type'] = isset($data['vat_rate_type']) ? $data['vat_rate_type'] : null;
-        $this->container['shipping_cost'] = isset($data['shipping_cost']) ? $data['shipping_cost'] : null;
-        $this->container['shipping_time'] = isset($data['shipping_time']) ? $data['shipping_time'] : null;
+        $this->container['mSRP'] = isset($data['mSRP']) ? $data['mSRP'] : null;
+        $this->container['purchasePrice'] = isset($data['purchasePrice']) ? $data['purchasePrice'] : null;
+        $this->container['vatRateType'] = isset($data['vatRateType']) ? $data['vatRateType'] : null;
+        $this->container['shippingCost'] = isset($data['shippingCost']) ? $data['shippingCost'] : null;
+        $this->container['shippingTime'] = isset($data['shippingTime']) ? $data['shippingTime'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['image_url'] = isset($data['image_url']) ? $data['image_url'] : null;
-        $this->container['category_trail'] = isset($data['category_trail']) ? $data['category_trail'] : null;
-        $this->container['extra_data'] = isset($data['extra_data']) ? $data['extra_data'] : null;
+        $this->container['imageUrl'] = isset($data['imageUrl']) ? $data['imageUrl'] : null;
+        $this->container['categoryTrail'] = isset($data['categoryTrail']) ? $data['categoryTrail'] : null;
+        $this->container['extraData'] = isset($data['extraData']) ? $data['extraData'] : null;
     }
 
     /**
@@ -243,8 +243,8 @@ class MerchantProductRequest implements ArrayAccess
         $invalid_properties = [];
 
         $allowed_values = ["STANDARD", "REDUCED", "SUPER_REDUCED"];
-        if (!in_array($this->container['vat_rate_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'vat_rate_type', must be one of 'STANDARD', 'REDUCED', 'SUPER_REDUCED'.";
+        if (!in_array($this->container['vatRateType'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'vatRateType', must be one of 'STANDARD', 'REDUCED', 'SUPER_REDUCED'.";
         }
 
         return $invalid_properties;
@@ -260,7 +260,7 @@ class MerchantProductRequest implements ArrayAccess
     {
 
         $allowed_values = ["STANDARD", "REDUCED", "SUPER_REDUCED"];
-        if (!in_array($this->container['vat_rate_type'], $allowed_values)) {
+        if (!in_array($this->container['vatRateType'], $allowed_values)) {
             return false;
         }
         return true;
@@ -268,43 +268,43 @@ class MerchantProductRequest implements ArrayAccess
 
 
     /**
-     * Gets merchant_reference
+     * Gets merchantReference
      * @return string
      */
     public function getMerchantReference()
     {
-        return $this->container['merchant_reference'];
+        return $this->container['merchantReference'];
     }
 
     /**
-     * Sets merchant_reference
-     * @param string $merchant_reference A unique identifier of the product.
+     * Sets merchantReference
+     * @param string $merchantReference A unique identifier of the product.
      * @return $this
      */
-    public function setMerchantReference($merchant_reference)
+    public function setMerchantReference($merchantReference)
     {
-        $this->container['merchant_reference'] = $merchant_reference;
+        $this->container['merchantReference'] = $merchantReference;
 
         return $this;
     }
 
     /**
-     * Gets parent_merchant_reference
+     * Gets parentMerchantReference
      * @return string
      */
     public function getParentMerchantReference()
     {
-        return $this->container['parent_merchant_reference'];
+        return $this->container['parentMerchantReference'];
     }
 
     /**
-     * Sets parent_merchant_reference
-     * @param string $parent_merchant_reference If this product is a different version of another  product (for example, all fields are the same except  size and/or color), then this field should contain  the 'MerchantProductReference' of the parent. The parent  should already exist (or be present between the products  in the content of the API call, it does not matter whether   the parent is behind the child in the list).
+     * Sets parentMerchantReference
+     * @param string $parentMerchantReference If this product is a different version of another  product (for example, all fields are the same except  size and/or color), then this field should contain  the 'MerchantProductReference' of the parent. The parent  should already exist (or be present between the products  in the content of the API call, it does not matter whether   the parent is behind the child in the list).
      * @return $this
      */
-    public function setParentMerchantReference($parent_merchant_reference)
+    public function setParentMerchantReference($parentMerchantReference)
     {
-        $this->container['parent_merchant_reference'] = $parent_merchant_reference;
+        $this->container['parentMerchantReference'] = $parentMerchantReference;
 
         return $this;
     }
@@ -436,22 +436,22 @@ class MerchantProductRequest implements ArrayAccess
     }
 
     /**
-     * Gets manufacturer_product_number
+     * Gets manufacturerProductNumber
      * @return string
      */
     public function getManufacturerProductNumber()
     {
-        return $this->container['manufacturer_product_number'];
+        return $this->container['manufacturerProductNumber'];
     }
 
     /**
-     * Sets manufacturer_product_number
-     * @param string $manufacturer_product_number
+     * Sets manufacturerProductNumber
+     * @param string $manufacturerProductNumber
      * @return $this
      */
-    public function setManufacturerProductNumber($manufacturer_product_number)
+    public function setManufacturerProductNumber($manufacturerProductNumber)
     {
-        $this->container['manufacturer_product_number'] = $manufacturer_product_number;
+        $this->container['manufacturerProductNumber'] = $manufacturerProductNumber;
 
         return $this;
     }
@@ -499,110 +499,110 @@ class MerchantProductRequest implements ArrayAccess
     }
 
     /**
-     * Gets msrp
+     * Gets mSRP
      * @return double
      */
-    public function getMsrp()
+    public function getMSRP()
     {
-        return $this->container['msrp'];
+        return $this->container['mSRP'];
     }
 
     /**
-     * Sets msrp
-     * @param double $msrp Manufacturer's suggested retail price
+     * Sets mSRP
+     * @param double $mSRP Manufacturer's suggested retail price
      * @return $this
      */
-    public function setMsrp($msrp)
+    public function setMSRP($mSRP)
     {
-        $this->container['msrp'] = $msrp;
+        $this->container['mSRP'] = $mSRP;
 
         return $this;
     }
 
     /**
-     * Gets purchase_price
+     * Gets purchasePrice
      * @return double
      */
     public function getPurchasePrice()
     {
-        return $this->container['purchase_price'];
+        return $this->container['purchasePrice'];
     }
 
     /**
-     * Sets purchase_price
-     * @param double $purchase_price
+     * Sets purchasePrice
+     * @param double $purchasePrice
      * @return $this
      */
-    public function setPurchasePrice($purchase_price)
+    public function setPurchasePrice($purchasePrice)
     {
-        $this->container['purchase_price'] = $purchase_price;
+        $this->container['purchasePrice'] = $purchasePrice;
 
         return $this;
     }
 
     /**
-     * Gets vat_rate_type
+     * Gets vatRateType
      * @return string
      */
     public function getVatRateType()
     {
-        return $this->container['vat_rate_type'];
+        return $this->container['vatRateType'];
     }
 
     /**
-     * Sets vat_rate_type
-     * @param string $vat_rate_type The type of VAT which applies to this product.  See: http://ec.europa.eu/taxation_customs/taxation/vat/topics/rates_en.htm
+     * Sets vatRateType
+     * @param string $vatRateType The type of VAT which applies to this product.  See: http://ec.europa.eu/taxation_customs/taxation/vat/topics/rates_en.htm
      * @return $this
      */
-    public function setVatRateType($vat_rate_type)
+    public function setVatRateType($vatRateType)
     {
         $allowed_values = array('STANDARD', 'REDUCED', 'SUPER_REDUCED');
-        if (!is_null($vat_rate_type) && (!in_array($vat_rate_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'vat_rate_type', must be one of 'STANDARD', 'REDUCED', 'SUPER_REDUCED'");
+        if (!is_null($vatRateType) && (!in_array($vatRateType, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'vatRateType', must be one of 'STANDARD', 'REDUCED', 'SUPER_REDUCED'");
         }
-        $this->container['vat_rate_type'] = $vat_rate_type;
+        $this->container['vatRateType'] = $vatRateType;
 
         return $this;
     }
 
     /**
-     * Gets shipping_cost
+     * Gets shippingCost
      * @return double
      */
     public function getShippingCost()
     {
-        return $this->container['shipping_cost'];
+        return $this->container['shippingCost'];
     }
 
     /**
-     * Sets shipping_cost
-     * @param double $shipping_cost
+     * Sets shippingCost
+     * @param double $shippingCost
      * @return $this
      */
-    public function setShippingCost($shipping_cost)
+    public function setShippingCost($shippingCost)
     {
-        $this->container['shipping_cost'] = $shipping_cost;
+        $this->container['shippingCost'] = $shippingCost;
 
         return $this;
     }
 
     /**
-     * Gets shipping_time
+     * Gets shippingTime
      * @return string
      */
     public function getShippingTime()
     {
-        return $this->container['shipping_time'];
+        return $this->container['shippingTime'];
     }
 
     /**
-     * Sets shipping_time
-     * @param string $shipping_time A textual representation of the shippingtime.  For example, in Dutch: 'Op werkdagen voor 22:00 uur besteld, morgen in huis'
+     * Sets shippingTime
+     * @param string $shippingTime A textual representation of the shippingtime.  For example, in Dutch: 'Op werkdagen voor 22:00 uur besteld, morgen in huis'
      * @return $this
      */
-    public function setShippingTime($shipping_time)
+    public function setShippingTime($shippingTime)
     {
-        $this->container['shipping_time'] = $shipping_time;
+        $this->container['shippingTime'] = $shippingTime;
 
         return $this;
     }
@@ -629,64 +629,64 @@ class MerchantProductRequest implements ArrayAccess
     }
 
     /**
-     * Gets image_url
+     * Gets imageUrl
      * @return string
      */
     public function getImageUrl()
     {
-        return $this->container['image_url'];
+        return $this->container['imageUrl'];
     }
 
     /**
-     * Sets image_url
-     * @param string $image_url A URL at which an image of this product  can be found.
+     * Sets imageUrl
+     * @param string $imageUrl A URL at which an image of this product  can be found.
      * @return $this
      */
-    public function setImageUrl($image_url)
+    public function setImageUrl($imageUrl)
     {
-        $this->container['image_url'] = $image_url;
+        $this->container['imageUrl'] = $imageUrl;
 
         return $this;
     }
 
     /**
-     * Gets category_trail
+     * Gets categoryTrail
      * @return string
      */
     public function getCategoryTrail()
     {
-        return $this->container['category_trail'];
+        return $this->container['categoryTrail'];
     }
 
     /**
-     * Sets category_trail
-     * @param string $category_trail The category to which this product belongs.  Please supply this field in the following format:  'maincategory &gt; category &gt; subcategory'  For example:  'vehicles &gt; bikes &gt; mountainbike'
+     * Sets categoryTrail
+     * @param string $categoryTrail The category to which this product belongs.  Please supply this field in the following format:  'maincategory &gt; category &gt; subcategory'  For example:  'vehicles &gt; bikes &gt; mountainbike'
      * @return $this
      */
-    public function setCategoryTrail($category_trail)
+    public function setCategoryTrail($categoryTrail)
     {
-        $this->container['category_trail'] = $category_trail;
+        $this->container['categoryTrail'] = $categoryTrail;
 
         return $this;
     }
 
     /**
-     * Gets extra_data
-     * @return \Swagger\Client\Model\ExtraDataItem[]
+     * Gets extraData
+     * @return \ChannelEngine\ApiClient\Model\ExtraDataItem[]
      */
     public function getExtraData()
     {
-        return $this->container['extra_data'];
+        return $this->container['extraData'];
     }
 
     /**
-     * Sets extra_data
-     * @param \Swagger\Client\Model\ExtraDataItem[] $extra_data An optional list of key-value pairs containing  extra data about this product. This data can be  sent to channels or used for filtering products.
+     * Sets extraData
+     * @param \ChannelEngine\ApiClient\Model\ExtraDataItem[] $extraData An optional list of key-value pairs containing  extra data about this product. This data can be  sent to channels or used for filtering products.
      * @return $this
      */
-    public function setExtraData($extra_data)
+    public function setExtraData($extraData)
     {
-        $this->container['extra_data'] = $extra_data;
+        $this->container['extraData'] = $extraData;
 
         return $this;
     }
@@ -742,10 +742,10 @@ class MerchantProductRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

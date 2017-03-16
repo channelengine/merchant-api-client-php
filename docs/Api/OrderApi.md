@@ -1,4 +1,4 @@
-# Swagger\Client\OrderApi
+# ChannelEngine\ApiClient\OrderApi
 
 All URIs are relative to *https://demo.channelengine.net/api*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **orderAcknowledge**
-> \Swagger\Client\Model\ApiResponse orderAcknowledge($model)
+> \ChannelEngine\ApiClient\Model\ApiResponse orderAcknowledge($model)
 
 Marchant: Acknowledge Order
 
@@ -23,8 +23,8 @@ For merchants.    Acknowledge an order. By acknowledging the order the merchant 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrderApi();
-$model = new \Swagger\Client\Model\OrderAcknowledgement(); // \Swagger\Client\Model\OrderAcknowledgement | Relations between the id's returned by ChannelEngine and the references              which the merchant uses
+$api_instance = new ChannelEngine\ApiClient\Api\OrderApi();
+$model = new \ChannelEngine\ApiClient\Model\OrderAcknowledgement(); // \ChannelEngine\ApiClient\Model\OrderAcknowledgement | Relations between the id's returned by ChannelEngine and the references              which the merchant uses
 
 try {
     $result = $api_instance->orderAcknowledge($model);
@@ -39,11 +39,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**\Swagger\Client\Model\OrderAcknowledgement**](../Model/\Swagger\Client\Model\OrderAcknowledgement.md)| Relations between the id&#39;s returned by ChannelEngine and the references              which the merchant uses |
+ **model** | [**\ChannelEngine\ApiClient\Model\OrderAcknowledgement**](../Model/\ChannelEngine\ApiClient\Model\OrderAcknowledgement.md)| Relations between the id&#39;s returned by ChannelEngine and the references              which the merchant uses |
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\ChannelEngine\ApiClient\Model\ApiResponse**](../Model/ApiResponse.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **orderCreate**
-> \Swagger\Client\Model\ApiResponse orderCreate($model)
+> \ChannelEngine\ApiClient\Model\ApiResponse orderCreate($model)
 
 Channel: Create Order
 
@@ -68,8 +68,8 @@ For channels.    Create a new order in ChannelEngine.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrderApi();
-$model = new \Swagger\Client\Model\ChannelOrderRequest(); // \Swagger\Client\Model\ChannelOrderRequest | 
+$api_instance = new ChannelEngine\ApiClient\Api\OrderApi();
+$model = new \ChannelEngine\ApiClient\Model\ChannelOrderRequest(); // \ChannelEngine\ApiClient\Model\ChannelOrderRequest | 
 
 try {
     $result = $api_instance->orderCreate($model);
@@ -84,11 +84,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**\Swagger\Client\Model\ChannelOrderRequest**](../Model/\Swagger\Client\Model\ChannelOrderRequest.md)|  |
+ **model** | [**\ChannelEngine\ApiClient\Model\ChannelOrderRequest**](../Model/\ChannelEngine\ApiClient\Model\ChannelOrderRequest.md)|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\ChannelEngine\ApiClient\Model\ApiResponse**](../Model/ApiResponse.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **orderGetNew**
-> \Swagger\Client\Model\CollectionOfMerchantOrderResponse orderGetNew()
+> \ChannelEngine\ApiClient\Model\CollectionOfMerchantOrderResponse orderGetNew()
 
 Merchant: Get New Orders
 
@@ -113,7 +113,7 @@ For merchants.                Fetch newly placed orders (order with status NEW).
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrderApi();
+$api_instance = new ChannelEngine\ApiClient\Api\OrderApi();
 
 try {
     $result = $api_instance->orderGetNew();
@@ -129,7 +129,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\CollectionOfMerchantOrderResponse**](../Model/CollectionOfMerchantOrderResponse.md)
+[**\ChannelEngine\ApiClient\Model\CollectionOfMerchantOrderResponse**](../Model/CollectionOfMerchantOrderResponse.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **orderInvoice**
-> \SplFileObject orderInvoice($merchant_reference, $use_customer_culture)
+> \SplFileObject orderInvoice($merchantReference, $useCustomerCulture)
 
 
 
@@ -152,12 +152,12 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrderApi();
-$merchant_reference = "merchant_reference_example"; // string | 
-$use_customer_culture = true; // bool | 
+$api_instance = new ChannelEngine\ApiClient\Api\OrderApi();
+$merchantReference = "merchantReference_example"; // string | 
+$useCustomerCulture = true; // bool | 
 
 try {
-    $result = $api_instance->orderInvoice($merchant_reference, $use_customer_culture);
+    $result = $api_instance->orderInvoice($merchantReference, $useCustomerCulture);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderInvoice: ', $e->getMessage(), PHP_EOL;
@@ -169,8 +169,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_reference** | **string**|  |
- **use_customer_culture** | **bool**|  | [optional]
+ **merchantReference** | **string**|  |
+ **useCustomerCulture** | **bool**|  | [optional]
 
 ### Return type
 
@@ -188,7 +188,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **orderPackingSlip**
-> \SplFileObject orderPackingSlip($merchant_reference, $use_customer_culture)
+> \SplFileObject orderPackingSlip($merchantReference, $useCustomerCulture)
 
 
 
@@ -197,12 +197,12 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\OrderApi();
-$merchant_reference = "merchant_reference_example"; // string | 
-$use_customer_culture = true; // bool | 
+$api_instance = new ChannelEngine\ApiClient\Api\OrderApi();
+$merchantReference = "merchantReference_example"; // string | 
+$useCustomerCulture = true; // bool | 
 
 try {
-    $result = $api_instance->orderPackingSlip($merchant_reference, $use_customer_culture);
+    $result = $api_instance->orderPackingSlip($merchantReference, $useCustomerCulture);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPackingSlip: ', $e->getMessage(), PHP_EOL;
@@ -214,8 +214,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_reference** | **string**|  |
- **use_customer_culture** | **bool**|  | [optional]
+ **merchantReference** | **string**|  |
+ **useCustomerCulture** | **bool**|  | [optional]
 
 ### Return type
 

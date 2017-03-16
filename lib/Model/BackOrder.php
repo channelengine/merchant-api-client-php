@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * BackOrder Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,10 +54,10 @@ class BackOrder implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchant_backorder_reference' => 'string',
-        'merchant_order_reference' => 'string',
-        'channel_order_reference' => 'string',
-        'lines' => '\Swagger\Client\Model\BackOrderLine[]'
+        'merchantBackorderReference' => 'string',
+        'merchantOrderReference' => 'string',
+        'channelOrderReference' => 'string',
+        'lines' => '\ChannelEngine\ApiClient\Model\BackOrderLine[]'
     ];
 
     public static function swaggerTypes()
@@ -70,9 +70,9 @@ class BackOrder implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchant_backorder_reference' => 'MerchantBackorderReference',
-        'merchant_order_reference' => 'MerchantOrderReference',
-        'channel_order_reference' => 'ChannelOrderReference',
+        'merchantBackorderReference' => 'MerchantBackorderReference',
+        'merchantOrderReference' => 'MerchantOrderReference',
+        'channelOrderReference' => 'ChannelOrderReference',
         'lines' => 'Lines'
     ];
 
@@ -82,9 +82,9 @@ class BackOrder implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchant_backorder_reference' => 'setMerchantBackorderReference',
-        'merchant_order_reference' => 'setMerchantOrderReference',
-        'channel_order_reference' => 'setChannelOrderReference',
+        'merchantBackorderReference' => 'setMerchantBackorderReference',
+        'merchantOrderReference' => 'setMerchantOrderReference',
+        'channelOrderReference' => 'setChannelOrderReference',
         'lines' => 'setLines'
     ];
 
@@ -94,9 +94,9 @@ class BackOrder implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchant_backorder_reference' => 'getMerchantBackorderReference',
-        'merchant_order_reference' => 'getMerchantOrderReference',
-        'channel_order_reference' => 'getChannelOrderReference',
+        'merchantBackorderReference' => 'getMerchantBackorderReference',
+        'merchantOrderReference' => 'getMerchantOrderReference',
+        'channelOrderReference' => 'getChannelOrderReference',
         'lines' => 'getLines'
     ];
 
@@ -131,9 +131,9 @@ class BackOrder implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchant_backorder_reference'] = isset($data['merchant_backorder_reference']) ? $data['merchant_backorder_reference'] : null;
-        $this->container['merchant_order_reference'] = isset($data['merchant_order_reference']) ? $data['merchant_order_reference'] : null;
-        $this->container['channel_order_reference'] = isset($data['channel_order_reference']) ? $data['channel_order_reference'] : null;
+        $this->container['merchantBackorderReference'] = isset($data['merchantBackorderReference']) ? $data['merchantBackorderReference'] : null;
+        $this->container['merchantOrderReference'] = isset($data['merchantOrderReference']) ? $data['merchantOrderReference'] : null;
+        $this->container['channelOrderReference'] = isset($data['channelOrderReference']) ? $data['channelOrderReference'] : null;
         $this->container['lines'] = isset($data['lines']) ? $data['lines'] : null;
     }
 
@@ -146,34 +146,34 @@ class BackOrder implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['merchant_backorder_reference'] === null) {
-            $invalid_properties[] = "'merchant_backorder_reference' can't be null";
+        if ($this->container['merchantBackorderReference'] === null) {
+            $invalid_properties[] = "'merchantBackorderReference' can't be null";
         }
-        if ((strlen($this->container['merchant_backorder_reference']) > 50)) {
-            $invalid_properties[] = "invalid value for 'merchant_backorder_reference', the character length must be smaller than or equal to 50.";
-        }
-
-        if ((strlen($this->container['merchant_backorder_reference']) < 0)) {
-            $invalid_properties[] = "invalid value for 'merchant_backorder_reference', the character length must be bigger than or equal to 0.";
+        if ((strlen($this->container['merchantBackorderReference']) > 50)) {
+            $invalid_properties[] = "invalid value for 'merchantBackorderReference', the character length must be smaller than or equal to 50.";
         }
 
-        if ($this->container['merchant_order_reference'] === null) {
-            $invalid_properties[] = "'merchant_order_reference' can't be null";
-        }
-        if ((strlen($this->container['merchant_order_reference']) > 50)) {
-            $invalid_properties[] = "invalid value for 'merchant_order_reference', the character length must be smaller than or equal to 50.";
+        if ((strlen($this->container['merchantBackorderReference']) < 0)) {
+            $invalid_properties[] = "invalid value for 'merchantBackorderReference', the character length must be bigger than or equal to 0.";
         }
 
-        if ((strlen($this->container['merchant_order_reference']) < 0)) {
-            $invalid_properties[] = "invalid value for 'merchant_order_reference', the character length must be bigger than or equal to 0.";
+        if ($this->container['merchantOrderReference'] === null) {
+            $invalid_properties[] = "'merchantOrderReference' can't be null";
+        }
+        if ((strlen($this->container['merchantOrderReference']) > 50)) {
+            $invalid_properties[] = "invalid value for 'merchantOrderReference', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['channel_order_reference']) && (strlen($this->container['channel_order_reference']) > 50)) {
-            $invalid_properties[] = "invalid value for 'channel_order_reference', the character length must be smaller than or equal to 50.";
+        if ((strlen($this->container['merchantOrderReference']) < 0)) {
+            $invalid_properties[] = "invalid value for 'merchantOrderReference', the character length must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['channel_order_reference']) && (strlen($this->container['channel_order_reference']) < 0)) {
-            $invalid_properties[] = "invalid value for 'channel_order_reference', the character length must be bigger than or equal to 0.";
+        if (!is_null($this->container['channelOrderReference']) && (strlen($this->container['channelOrderReference']) > 50)) {
+            $invalid_properties[] = "invalid value for 'channelOrderReference', the character length must be smaller than or equal to 50.";
+        }
+
+        if (!is_null($this->container['channelOrderReference']) && (strlen($this->container['channelOrderReference']) < 0)) {
+            $invalid_properties[] = "invalid value for 'channelOrderReference', the character length must be bigger than or equal to 0.";
         }
 
         if ($this->container['lines'] === null) {
@@ -191,28 +191,28 @@ class BackOrder implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['merchant_backorder_reference'] === null) {
+        if ($this->container['merchantBackorderReference'] === null) {
             return false;
         }
-        if (strlen($this->container['merchant_backorder_reference']) > 50) {
+        if (strlen($this->container['merchantBackorderReference']) > 50) {
             return false;
         }
-        if (strlen($this->container['merchant_backorder_reference']) < 0) {
+        if (strlen($this->container['merchantBackorderReference']) < 0) {
             return false;
         }
-        if ($this->container['merchant_order_reference'] === null) {
+        if ($this->container['merchantOrderReference'] === null) {
             return false;
         }
-        if (strlen($this->container['merchant_order_reference']) > 50) {
+        if (strlen($this->container['merchantOrderReference']) > 50) {
             return false;
         }
-        if (strlen($this->container['merchant_order_reference']) < 0) {
+        if (strlen($this->container['merchantOrderReference']) < 0) {
             return false;
         }
-        if (strlen($this->container['channel_order_reference']) > 50) {
+        if (strlen($this->container['channelOrderReference']) > 50) {
             return false;
         }
-        if (strlen($this->container['channel_order_reference']) < 0) {
+        if (strlen($this->container['channelOrderReference']) < 0) {
             return false;
         }
         if ($this->container['lines'] === null) {
@@ -223,92 +223,92 @@ class BackOrder implements ArrayAccess
 
 
     /**
-     * Gets merchant_backorder_reference
+     * Gets merchantBackorderReference
      * @return string
      */
     public function getMerchantBackorderReference()
     {
-        return $this->container['merchant_backorder_reference'];
+        return $this->container['merchantBackorderReference'];
     }
 
     /**
-     * Sets merchant_backorder_reference
-     * @param string $merchant_backorder_reference
+     * Sets merchantBackorderReference
+     * @param string $merchantBackorderReference
      * @return $this
      */
-    public function setMerchantBackorderReference($merchant_backorder_reference)
+    public function setMerchantBackorderReference($merchantBackorderReference)
     {
-        if ((strlen($merchant_backorder_reference) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $merchant_backorder_reference when calling BackOrder., must be smaller than or equal to 50.');
+        if ((strlen($merchantBackorderReference) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $merchantBackorderReference when calling BackOrder., must be smaller than or equal to 50.');
         }
-        if ((strlen($merchant_backorder_reference) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $merchant_backorder_reference when calling BackOrder., must be bigger than or equal to 0.');
+        if ((strlen($merchantBackorderReference) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $merchantBackorderReference when calling BackOrder., must be bigger than or equal to 0.');
         }
 
-        $this->container['merchant_backorder_reference'] = $merchant_backorder_reference;
+        $this->container['merchantBackorderReference'] = $merchantBackorderReference;
 
         return $this;
     }
 
     /**
-     * Gets merchant_order_reference
+     * Gets merchantOrderReference
      * @return string
      */
     public function getMerchantOrderReference()
     {
-        return $this->container['merchant_order_reference'];
+        return $this->container['merchantOrderReference'];
     }
 
     /**
-     * Sets merchant_order_reference
-     * @param string $merchant_order_reference
+     * Sets merchantOrderReference
+     * @param string $merchantOrderReference
      * @return $this
      */
-    public function setMerchantOrderReference($merchant_order_reference)
+    public function setMerchantOrderReference($merchantOrderReference)
     {
-        if ((strlen($merchant_order_reference) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $merchant_order_reference when calling BackOrder., must be smaller than or equal to 50.');
+        if ((strlen($merchantOrderReference) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $merchantOrderReference when calling BackOrder., must be smaller than or equal to 50.');
         }
-        if ((strlen($merchant_order_reference) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $merchant_order_reference when calling BackOrder., must be bigger than or equal to 0.');
+        if ((strlen($merchantOrderReference) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $merchantOrderReference when calling BackOrder., must be bigger than or equal to 0.');
         }
 
-        $this->container['merchant_order_reference'] = $merchant_order_reference;
+        $this->container['merchantOrderReference'] = $merchantOrderReference;
 
         return $this;
     }
 
     /**
-     * Gets channel_order_reference
+     * Gets channelOrderReference
      * @return string
      */
     public function getChannelOrderReference()
     {
-        return $this->container['channel_order_reference'];
+        return $this->container['channelOrderReference'];
     }
 
     /**
-     * Sets channel_order_reference
-     * @param string $channel_order_reference
+     * Sets channelOrderReference
+     * @param string $channelOrderReference
      * @return $this
      */
-    public function setChannelOrderReference($channel_order_reference)
+    public function setChannelOrderReference($channelOrderReference)
     {
-        if (!is_null($channel_order_reference) && (strlen($channel_order_reference) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $channel_order_reference when calling BackOrder., must be smaller than or equal to 50.');
+        if (!is_null($channelOrderReference) && (strlen($channelOrderReference) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $channelOrderReference when calling BackOrder., must be smaller than or equal to 50.');
         }
-        if (!is_null($channel_order_reference) && (strlen($channel_order_reference) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $channel_order_reference when calling BackOrder., must be bigger than or equal to 0.');
+        if (!is_null($channelOrderReference) && (strlen($channelOrderReference) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $channelOrderReference when calling BackOrder., must be bigger than or equal to 0.');
         }
 
-        $this->container['channel_order_reference'] = $channel_order_reference;
+        $this->container['channelOrderReference'] = $channelOrderReference;
 
         return $this;
     }
 
     /**
      * Gets lines
-     * @return \Swagger\Client\Model\BackOrderLine[]
+     * @return \ChannelEngine\ApiClient\Model\BackOrderLine[]
      */
     public function getLines()
     {
@@ -317,7 +317,7 @@ class BackOrder implements ArrayAccess
 
     /**
      * Sets lines
-     * @param \Swagger\Client\Model\BackOrderLine[] $lines
+     * @param \ChannelEngine\ApiClient\Model\BackOrderLine[] $lines
      * @return $this
      */
     public function setLines($lines)
@@ -378,10 +378,10 @@ class BackOrder implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

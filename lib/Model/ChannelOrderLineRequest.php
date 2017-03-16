@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ChannelOrderLineRequest Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,11 +54,11 @@ class ChannelOrderLineRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'channel_product_reference' => 'string',
+        'channelProductReference' => 'string',
         'quantity' => 'int',
-        'unit_price_incl_vat' => 'double',
-        'fee_fixed' => 'double',
-        'fee_rate' => 'double',
+        'unitPriceInclVat' => 'double',
+        'feeFixed' => 'double',
+        'feeRate' => 'double',
         'condition' => 'string'
     ];
 
@@ -72,11 +72,11 @@ class ChannelOrderLineRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'channel_product_reference' => 'ChannelProductReference',
+        'channelProductReference' => 'ChannelProductReference',
         'quantity' => 'Quantity',
-        'unit_price_incl_vat' => 'UnitPriceInclVat',
-        'fee_fixed' => 'FeeFixed',
-        'fee_rate' => 'FeeRate',
+        'unitPriceInclVat' => 'UnitPriceInclVat',
+        'feeFixed' => 'FeeFixed',
+        'feeRate' => 'FeeRate',
         'condition' => 'Condition'
     ];
 
@@ -86,11 +86,11 @@ class ChannelOrderLineRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'channel_product_reference' => 'setChannelProductReference',
+        'channelProductReference' => 'setChannelProductReference',
         'quantity' => 'setQuantity',
-        'unit_price_incl_vat' => 'setUnitPriceInclVat',
-        'fee_fixed' => 'setFeeFixed',
-        'fee_rate' => 'setFeeRate',
+        'unitPriceInclVat' => 'setUnitPriceInclVat',
+        'feeFixed' => 'setFeeFixed',
+        'feeRate' => 'setFeeRate',
         'condition' => 'setCondition'
     ];
 
@@ -100,11 +100,11 @@ class ChannelOrderLineRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'channel_product_reference' => 'getChannelProductReference',
+        'channelProductReference' => 'getChannelProductReference',
         'quantity' => 'getQuantity',
-        'unit_price_incl_vat' => 'getUnitPriceInclVat',
-        'fee_fixed' => 'getFeeFixed',
-        'fee_rate' => 'getFeeRate',
+        'unitPriceInclVat' => 'getUnitPriceInclVat',
+        'feeFixed' => 'getFeeFixed',
+        'feeRate' => 'getFeeRate',
         'condition' => 'getCondition'
     ];
 
@@ -163,11 +163,11 @@ class ChannelOrderLineRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['channel_product_reference'] = isset($data['channel_product_reference']) ? $data['channel_product_reference'] : null;
+        $this->container['channelProductReference'] = isset($data['channelProductReference']) ? $data['channelProductReference'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['unit_price_incl_vat'] = isset($data['unit_price_incl_vat']) ? $data['unit_price_incl_vat'] : null;
-        $this->container['fee_fixed'] = isset($data['fee_fixed']) ? $data['fee_fixed'] : null;
-        $this->container['fee_rate'] = isset($data['fee_rate']) ? $data['fee_rate'] : null;
+        $this->container['unitPriceInclVat'] = isset($data['unitPriceInclVat']) ? $data['unitPriceInclVat'] : null;
+        $this->container['feeFixed'] = isset($data['feeFixed']) ? $data['feeFixed'] : null;
+        $this->container['feeRate'] = isset($data['feeRate']) ? $data['feeRate'] : null;
         $this->container['condition'] = isset($data['condition']) ? $data['condition'] : null;
     }
 
@@ -180,22 +180,22 @@ class ChannelOrderLineRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['channel_product_reference'] === null) {
-            $invalid_properties[] = "'channel_product_reference' can't be null";
+        if ($this->container['channelProductReference'] === null) {
+            $invalid_properties[] = "'channelProductReference' can't be null";
         }
-        if ((strlen($this->container['channel_product_reference']) > 50)) {
-            $invalid_properties[] = "invalid value for 'channel_product_reference', the character length must be smaller than or equal to 50.";
+        if ((strlen($this->container['channelProductReference']) > 50)) {
+            $invalid_properties[] = "invalid value for 'channelProductReference', the character length must be smaller than or equal to 50.";
         }
 
-        if ((strlen($this->container['channel_product_reference']) < 0)) {
-            $invalid_properties[] = "invalid value for 'channel_product_reference', the character length must be bigger than or equal to 0.";
+        if ((strlen($this->container['channelProductReference']) < 0)) {
+            $invalid_properties[] = "invalid value for 'channelProductReference', the character length must be bigger than or equal to 0.";
         }
 
         if ($this->container['quantity'] === null) {
             $invalid_properties[] = "'quantity' can't be null";
         }
-        if ($this->container['unit_price_incl_vat'] === null) {
-            $invalid_properties[] = "'unit_price_incl_vat' can't be null";
+        if ($this->container['unitPriceInclVat'] === null) {
+            $invalid_properties[] = "'unitPriceInclVat' can't be null";
         }
         $allowed_values = ["NEW", "NEW_REFURBISHED", "USED_AS_NEW", "USED_GOOD", "USED_REASONABLE", "USED_MEDIOCRE", "UNKNOWN"];
         if (!in_array($this->container['condition'], $allowed_values)) {
@@ -214,19 +214,19 @@ class ChannelOrderLineRequest implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['channel_product_reference'] === null) {
+        if ($this->container['channelProductReference'] === null) {
             return false;
         }
-        if (strlen($this->container['channel_product_reference']) > 50) {
+        if (strlen($this->container['channelProductReference']) > 50) {
             return false;
         }
-        if (strlen($this->container['channel_product_reference']) < 0) {
+        if (strlen($this->container['channelProductReference']) < 0) {
             return false;
         }
         if ($this->container['quantity'] === null) {
             return false;
         }
-        if ($this->container['unit_price_incl_vat'] === null) {
+        if ($this->container['unitPriceInclVat'] === null) {
             return false;
         }
         $allowed_values = ["NEW", "NEW_REFURBISHED", "USED_AS_NEW", "USED_GOOD", "USED_REASONABLE", "USED_MEDIOCRE", "UNKNOWN"];
@@ -238,29 +238,29 @@ class ChannelOrderLineRequest implements ArrayAccess
 
 
     /**
-     * Gets channel_product_reference
+     * Gets channelProductReference
      * @return string
      */
     public function getChannelProductReference()
     {
-        return $this->container['channel_product_reference'];
+        return $this->container['channelProductReference'];
     }
 
     /**
-     * Sets channel_product_reference
-     * @param string $channel_product_reference An orderline is supposed to only reference one product. Furthermore,  multiple orderlines cannot reference the same product. Therefore we can  use the product reference as a reference for the orderline. The reference of  the order and the product reference uniquely identify an orderline.
+     * Sets channelProductReference
+     * @param string $channelProductReference An orderline is supposed to only reference one product. Furthermore,  multiple orderlines cannot reference the same product. Therefore we can  use the product reference as a reference for the orderline. The reference of  the order and the product reference uniquely identify an orderline.
      * @return $this
      */
-    public function setChannelProductReference($channel_product_reference)
+    public function setChannelProductReference($channelProductReference)
     {
-        if ((strlen($channel_product_reference) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $channel_product_reference when calling ChannelOrderLineRequest., must be smaller than or equal to 50.');
+        if ((strlen($channelProductReference) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $channelProductReference when calling ChannelOrderLineRequest., must be smaller than or equal to 50.');
         }
-        if ((strlen($channel_product_reference) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $channel_product_reference when calling ChannelOrderLineRequest., must be bigger than or equal to 0.');
+        if ((strlen($channelProductReference) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $channelProductReference when calling ChannelOrderLineRequest., must be bigger than or equal to 0.');
         }
 
-        $this->container['channel_product_reference'] = $channel_product_reference;
+        $this->container['channelProductReference'] = $channelProductReference;
 
         return $this;
     }
@@ -287,64 +287,64 @@ class ChannelOrderLineRequest implements ArrayAccess
     }
 
     /**
-     * Gets unit_price_incl_vat
+     * Gets unitPriceInclVat
      * @return double
      */
     public function getUnitPriceInclVat()
     {
-        return $this->container['unit_price_incl_vat'];
+        return $this->container['unitPriceInclVat'];
     }
 
     /**
-     * Sets unit_price_incl_vat
-     * @param double $unit_price_incl_vat The value of a single unit of the ordered product including VAT  (in the tenant's base currency calculated using the exchange rate at the time of ordering).
+     * Sets unitPriceInclVat
+     * @param double $unitPriceInclVat The value of a single unit of the ordered product including VAT  (in the tenant's base currency calculated using the exchange rate at the time of ordering).
      * @return $this
      */
-    public function setUnitPriceInclVat($unit_price_incl_vat)
+    public function setUnitPriceInclVat($unitPriceInclVat)
     {
-        $this->container['unit_price_incl_vat'] = $unit_price_incl_vat;
+        $this->container['unitPriceInclVat'] = $unitPriceInclVat;
 
         return $this;
     }
 
     /**
-     * Gets fee_fixed
+     * Gets feeFixed
      * @return double
      */
     public function getFeeFixed()
     {
-        return $this->container['fee_fixed'];
+        return $this->container['feeFixed'];
     }
 
     /**
-     * Sets fee_fixed
-     * @param double $fee_fixed A fixed fee that is charged by the Channel for this orderline.  This field is optional, send 0 if not applicable.
+     * Sets feeFixed
+     * @param double $feeFixed A fixed fee that is charged by the Channel for this orderline.  This field is optional, send 0 if not applicable.
      * @return $this
      */
-    public function setFeeFixed($fee_fixed)
+    public function setFeeFixed($feeFixed)
     {
-        $this->container['fee_fixed'] = $fee_fixed;
+        $this->container['feeFixed'] = $feeFixed;
 
         return $this;
     }
 
     /**
-     * Gets fee_rate
+     * Gets feeRate
      * @return double
      */
     public function getFeeRate()
     {
-        return $this->container['fee_rate'];
+        return $this->container['feeRate'];
     }
 
     /**
-     * Sets fee_rate
-     * @param double $fee_rate A percentage fee that is charged by the Channel for this orderline.  This field is optional, send 0 if not applicable.
+     * Sets feeRate
+     * @param double $feeRate A percentage fee that is charged by the Channel for this orderline.  This field is optional, send 0 if not applicable.
      * @return $this
      */
-    public function setFeeRate($fee_rate)
+    public function setFeeRate($feeRate)
     {
-        $this->container['fee_rate'] = $fee_rate;
+        $this->container['feeRate'] = $feeRate;
 
         return $this;
     }
@@ -425,10 +425,10 @@ class ChannelOrderLineRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace ChannelEngine\ApiClient;
 
 /**
  * BackOrderTest Class Doc Comment
@@ -35,7 +35,7 @@ namespace Swagger\Client;
  * @category    Class */
 // * @description BackOrder
 /**
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -83,7 +83,7 @@ class BackOrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "merchant_backorder_reference"
+     * Test attribute "merchantBackorderReference"
      */
     public function testPropertyMerchantBackorderReference()
     {
@@ -91,7 +91,7 @@ class BackOrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "merchant_order_reference"
+     * Test attribute "merchantOrderReference"
      */
     public function testPropertyMerchantOrderReference()
     {
@@ -99,7 +99,7 @@ class BackOrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "channel_order_reference"
+     * Test attribute "channelOrderReference"
      */
     public function testPropertyChannelOrderReference()
     {

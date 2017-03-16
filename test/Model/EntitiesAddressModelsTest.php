@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace ChannelEngine\ApiClient;
 
 /**
  * EntitiesAddressModelsTest Class Doc Comment
@@ -35,7 +35,7 @@ namespace Swagger\Client;
  * @category    Class */
 // * @description EntitiesAddressModels
 /**
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -91,7 +91,7 @@ class EntitiesAddressModelsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "company_name"
+     * Test attribute "companyName"
      */
     public function testPropertyCompanyName()
     {
@@ -99,7 +99,7 @@ class EntitiesAddressModelsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "first_name"
+     * Test attribute "firstName"
      */
     public function testPropertyFirstName()
     {
@@ -107,7 +107,7 @@ class EntitiesAddressModelsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "last_name"
+     * Test attribute "lastName"
      */
     public function testPropertyLastName()
     {
@@ -115,7 +115,7 @@ class EntitiesAddressModelsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "street_name"
+     * Test attribute "streetName"
      */
     public function testPropertyStreetName()
     {
@@ -123,7 +123,7 @@ class EntitiesAddressModelsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "house_nr"
+     * Test attribute "houseNr"
      */
     public function testPropertyHouseNr()
     {
@@ -131,7 +131,7 @@ class EntitiesAddressModelsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "house_nr_addition"
+     * Test attribute "houseNrAddition"
      */
     public function testPropertyHouseNrAddition()
     {
@@ -139,7 +139,7 @@ class EntitiesAddressModelsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "zip_code"
+     * Test attribute "zipCode"
      */
     public function testPropertyZipCode()
     {
@@ -163,7 +163,7 @@ class EntitiesAddressModelsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "country_iso"
+     * Test attribute "countryIso"
      */
     public function testPropertyCountryIso()
     {

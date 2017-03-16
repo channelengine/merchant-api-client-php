@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * OrderAcknowledgement Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class OrderAcknowledgement implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchant_order_reference' => 'string',
-        'order_id' => 'int'
+        'merchantOrderReference' => 'string',
+        'orderId' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class OrderAcknowledgement implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchant_order_reference' => 'MerchantOrderReference',
-        'order_id' => 'OrderId'
+        'merchantOrderReference' => 'MerchantOrderReference',
+        'orderId' => 'OrderId'
     ];
 
 
@@ -78,8 +78,8 @@ class OrderAcknowledgement implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchant_order_reference' => 'setMerchantOrderReference',
-        'order_id' => 'setOrderId'
+        'merchantOrderReference' => 'setMerchantOrderReference',
+        'orderId' => 'setOrderId'
     ];
 
 
@@ -88,8 +88,8 @@ class OrderAcknowledgement implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchant_order_reference' => 'getMerchantOrderReference',
-        'order_id' => 'getOrderId'
+        'merchantOrderReference' => 'getMerchantOrderReference',
+        'orderId' => 'getOrderId'
     ];
 
     public static function attributeMap()
@@ -123,8 +123,8 @@ class OrderAcknowledgement implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchant_order_reference'] = isset($data['merchant_order_reference']) ? $data['merchant_order_reference'] : null;
-        $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
+        $this->container['merchantOrderReference'] = isset($data['merchantOrderReference']) ? $data['merchantOrderReference'] : null;
+        $this->container['orderId'] = isset($data['orderId']) ? $data['orderId'] : null;
     }
 
     /**
@@ -136,19 +136,19 @@ class OrderAcknowledgement implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['merchant_order_reference'] === null) {
-            $invalid_properties[] = "'merchant_order_reference' can't be null";
+        if ($this->container['merchantOrderReference'] === null) {
+            $invalid_properties[] = "'merchantOrderReference' can't be null";
         }
-        if ((strlen($this->container['merchant_order_reference']) > 50)) {
-            $invalid_properties[] = "invalid value for 'merchant_order_reference', the character length must be smaller than or equal to 50.";
-        }
-
-        if ((strlen($this->container['merchant_order_reference']) < 0)) {
-            $invalid_properties[] = "invalid value for 'merchant_order_reference', the character length must be bigger than or equal to 0.";
+        if ((strlen($this->container['merchantOrderReference']) > 50)) {
+            $invalid_properties[] = "invalid value for 'merchantOrderReference', the character length must be smaller than or equal to 50.";
         }
 
-        if ($this->container['order_id'] === null) {
-            $invalid_properties[] = "'order_id' can't be null";
+        if ((strlen($this->container['merchantOrderReference']) < 0)) {
+            $invalid_properties[] = "invalid value for 'merchantOrderReference', the character length must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['orderId'] === null) {
+            $invalid_properties[] = "'orderId' can't be null";
         }
         return $invalid_properties;
     }
@@ -162,16 +162,16 @@ class OrderAcknowledgement implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['merchant_order_reference'] === null) {
+        if ($this->container['merchantOrderReference'] === null) {
             return false;
         }
-        if (strlen($this->container['merchant_order_reference']) > 50) {
+        if (strlen($this->container['merchantOrderReference']) > 50) {
             return false;
         }
-        if (strlen($this->container['merchant_order_reference']) < 0) {
+        if (strlen($this->container['merchantOrderReference']) < 0) {
             return false;
         }
-        if ($this->container['order_id'] === null) {
+        if ($this->container['orderId'] === null) {
             return false;
         }
         return true;
@@ -179,50 +179,50 @@ class OrderAcknowledgement implements ArrayAccess
 
 
     /**
-     * Gets merchant_order_reference
+     * Gets merchantOrderReference
      * @return string
      */
     public function getMerchantOrderReference()
     {
-        return $this->container['merchant_order_reference'];
+        return $this->container['merchantOrderReference'];
     }
 
     /**
-     * Sets merchant_order_reference
-     * @param string $merchant_order_reference
+     * Sets merchantOrderReference
+     * @param string $merchantOrderReference
      * @return $this
      */
-    public function setMerchantOrderReference($merchant_order_reference)
+    public function setMerchantOrderReference($merchantOrderReference)
     {
-        if ((strlen($merchant_order_reference) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $merchant_order_reference when calling OrderAcknowledgement., must be smaller than or equal to 50.');
+        if ((strlen($merchantOrderReference) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $merchantOrderReference when calling OrderAcknowledgement., must be smaller than or equal to 50.');
         }
-        if ((strlen($merchant_order_reference) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $merchant_order_reference when calling OrderAcknowledgement., must be bigger than or equal to 0.');
+        if ((strlen($merchantOrderReference) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $merchantOrderReference when calling OrderAcknowledgement., must be bigger than or equal to 0.');
         }
 
-        $this->container['merchant_order_reference'] = $merchant_order_reference;
+        $this->container['merchantOrderReference'] = $merchantOrderReference;
 
         return $this;
     }
 
     /**
-     * Gets order_id
+     * Gets orderId
      * @return int
      */
     public function getOrderId()
     {
-        return $this->container['order_id'];
+        return $this->container['orderId'];
     }
 
     /**
-     * Sets order_id
-     * @param int $order_id
+     * Sets orderId
+     * @param int $orderId
      * @return $this
      */
-    public function setOrderId($order_id)
+    public function setOrderId($orderId)
     {
-        $this->container['order_id'] = $order_id;
+        $this->container['orderId'] = $orderId;
 
         return $this;
     }
@@ -278,10 +278,10 @@ class OrderAcknowledgement implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

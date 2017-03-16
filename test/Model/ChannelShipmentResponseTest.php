@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace ChannelEngine\ApiClient;
 
 /**
  * ChannelShipmentResponseTest Class Doc Comment
@@ -35,7 +35,7 @@ namespace Swagger\Client;
  * @category    Class */
 // * @description ChannelShipmentResponse
 /**
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -83,7 +83,7 @@ class ChannelShipmentResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "channel_order_reference"
+     * Test attribute "channelOrderReference"
      */
     public function testPropertyChannelOrderReference()
     {
@@ -99,7 +99,7 @@ class ChannelShipmentResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "track_trace_no"
+     * Test attribute "trackTraceNo"
      */
     public function testPropertyTrackTraceNo()
     {
@@ -107,7 +107,7 @@ class ChannelShipmentResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "track_trace_url"
+     * Test attribute "trackTraceUrl"
      */
     public function testPropertyTrackTraceUrl()
     {

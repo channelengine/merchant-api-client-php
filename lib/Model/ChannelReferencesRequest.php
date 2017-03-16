@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ChannelReferencesRequest Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -55,7 +55,7 @@ class ChannelReferencesRequest implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'int',
-        'channel_reference' => 'string'
+        'channelReference' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -69,7 +69,7 @@ class ChannelReferencesRequest implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'Id',
-        'channel_reference' => 'ChannelReference'
+        'channelReference' => 'ChannelReference'
     ];
 
 
@@ -79,7 +79,7 @@ class ChannelReferencesRequest implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'channel_reference' => 'setChannelReference'
+        'channelReference' => 'setChannelReference'
     ];
 
 
@@ -89,7 +89,7 @@ class ChannelReferencesRequest implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'channel_reference' => 'getChannelReference'
+        'channelReference' => 'getChannelReference'
     ];
 
     public static function attributeMap()
@@ -124,7 +124,7 @@ class ChannelReferencesRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['channel_reference'] = isset($data['channel_reference']) ? $data['channel_reference'] : null;
+        $this->container['channelReference'] = isset($data['channelReference']) ? $data['channelReference'] : null;
     }
 
     /**
@@ -174,22 +174,22 @@ class ChannelReferencesRequest implements ArrayAccess
     }
 
     /**
-     * Gets channel_reference
+     * Gets channelReference
      * @return string
      */
     public function getChannelReference()
     {
-        return $this->container['channel_reference'];
+        return $this->container['channelReference'];
     }
 
     /**
-     * Sets channel_reference
-     * @param string $channel_reference
+     * Sets channelReference
+     * @param string $channelReference
      * @return $this
      */
-    public function setChannelReference($channel_reference)
+    public function setChannelReference($channelReference)
     {
-        $this->container['channel_reference'] = $channel_reference;
+        $this->container['channelReference'] = $channelReference;
 
         return $this;
     }
@@ -245,10 +245,10 @@ class ChannelReferencesRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

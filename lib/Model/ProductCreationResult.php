@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ProductCreationResult Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,9 +54,9 @@ class ProductCreationResult implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'rejected_count' => 'int',
-        'accepted_count' => 'int',
-        'product_messages' => '\Swagger\Client\Model\ProductMessage[]'
+        'rejectedCount' => 'int',
+        'acceptedCount' => 'int',
+        'productMessages' => '\ChannelEngine\ApiClient\Model\ProductMessage[]'
     ];
 
     public static function swaggerTypes()
@@ -69,9 +69,9 @@ class ProductCreationResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'rejected_count' => 'RejectedCount',
-        'accepted_count' => 'AcceptedCount',
-        'product_messages' => 'ProductMessages'
+        'rejectedCount' => 'RejectedCount',
+        'acceptedCount' => 'AcceptedCount',
+        'productMessages' => 'ProductMessages'
     ];
 
 
@@ -80,9 +80,9 @@ class ProductCreationResult implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'rejected_count' => 'setRejectedCount',
-        'accepted_count' => 'setAcceptedCount',
-        'product_messages' => 'setProductMessages'
+        'rejectedCount' => 'setRejectedCount',
+        'acceptedCount' => 'setAcceptedCount',
+        'productMessages' => 'setProductMessages'
     ];
 
 
@@ -91,9 +91,9 @@ class ProductCreationResult implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'rejected_count' => 'getRejectedCount',
-        'accepted_count' => 'getAcceptedCount',
-        'product_messages' => 'getProductMessages'
+        'rejectedCount' => 'getRejectedCount',
+        'acceptedCount' => 'getAcceptedCount',
+        'productMessages' => 'getProductMessages'
     ];
 
     public static function attributeMap()
@@ -127,9 +127,9 @@ class ProductCreationResult implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['rejected_count'] = isset($data['rejected_count']) ? $data['rejected_count'] : null;
-        $this->container['accepted_count'] = isset($data['accepted_count']) ? $data['accepted_count'] : null;
-        $this->container['product_messages'] = isset($data['product_messages']) ? $data['product_messages'] : null;
+        $this->container['rejectedCount'] = isset($data['rejectedCount']) ? $data['rejectedCount'] : null;
+        $this->container['acceptedCount'] = isset($data['acceptedCount']) ? $data['acceptedCount'] : null;
+        $this->container['productMessages'] = isset($data['productMessages']) ? $data['productMessages'] : null;
     }
 
     /**
@@ -158,64 +158,64 @@ class ProductCreationResult implements ArrayAccess
 
 
     /**
-     * Gets rejected_count
+     * Gets rejectedCount
      * @return int
      */
     public function getRejectedCount()
     {
-        return $this->container['rejected_count'];
+        return $this->container['rejectedCount'];
     }
 
     /**
-     * Sets rejected_count
-     * @param int $rejected_count
+     * Sets rejectedCount
+     * @param int $rejectedCount
      * @return $this
      */
-    public function setRejectedCount($rejected_count)
+    public function setRejectedCount($rejectedCount)
     {
-        $this->container['rejected_count'] = $rejected_count;
+        $this->container['rejectedCount'] = $rejectedCount;
 
         return $this;
     }
 
     /**
-     * Gets accepted_count
+     * Gets acceptedCount
      * @return int
      */
     public function getAcceptedCount()
     {
-        return $this->container['accepted_count'];
+        return $this->container['acceptedCount'];
     }
 
     /**
-     * Sets accepted_count
-     * @param int $accepted_count
+     * Sets acceptedCount
+     * @param int $acceptedCount
      * @return $this
      */
-    public function setAcceptedCount($accepted_count)
+    public function setAcceptedCount($acceptedCount)
     {
-        $this->container['accepted_count'] = $accepted_count;
+        $this->container['acceptedCount'] = $acceptedCount;
 
         return $this;
     }
 
     /**
-     * Gets product_messages
-     * @return \Swagger\Client\Model\ProductMessage[]
+     * Gets productMessages
+     * @return \ChannelEngine\ApiClient\Model\ProductMessage[]
      */
     public function getProductMessages()
     {
-        return $this->container['product_messages'];
+        return $this->container['productMessages'];
     }
 
     /**
-     * Sets product_messages
-     * @param \Swagger\Client\Model\ProductMessage[] $product_messages Messages about the rejected products.
+     * Sets productMessages
+     * @param \ChannelEngine\ApiClient\Model\ProductMessage[] $productMessages Messages about the rejected products.
      * @return $this
      */
-    public function setProductMessages($product_messages)
+    public function setProductMessages($productMessages)
     {
-        $this->container['product_messages'] = $product_messages;
+        $this->container['productMessages'] = $productMessages;
 
         return $this;
     }
@@ -271,10 +271,10 @@ class ProductCreationResult implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

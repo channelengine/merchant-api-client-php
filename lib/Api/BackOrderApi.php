@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace ChannelEngine\ApiClient\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ChannelEngine\ApiClient\ApiClient;
+use \ChannelEngine\ApiClient\ApiException;
+use \ChannelEngine\ApiClient\Configuration;
+use \ChannelEngine\ApiClient\ObjectSerializer;
 
 /**
  * BackOrderApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class BackOrderApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ChannelEngine\ApiClient\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ChannelEngine\ApiClient\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ChannelEngine\ApiClient\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class BackOrderApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ChannelEngine\ApiClient\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class BackOrderApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ChannelEngine\ApiClient\ApiClient $apiClient set the API client
      *
      * @return BackOrderApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ChannelEngine\ApiClient\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,13 +92,13 @@ class BackOrderApi
      *
      * Merchant: Create Backorder
      *
-     * @param \Swagger\Client\Model\BackOrder $back_order The Backorder to create (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ApiResponse
+     * @param \ChannelEngine\ApiClient\Model\BackOrder $backOrder The Backorder to create (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\ApiResponse
      */
-    public function backOrderCreate($back_order)
+    public function backOrderCreate($backOrder)
     {
-        list($response) = $this->backOrderCreateWithHttpInfo($back_order);
+        list($response) = $this->backOrderCreateWithHttpInfo($backOrder);
         return $response;
     }
 
@@ -107,15 +107,15 @@ class BackOrderApi
      *
      * Merchant: Create Backorder
      *
-     * @param \Swagger\Client\Model\BackOrder $back_order The Backorder to create (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param \ChannelEngine\ApiClient\Model\BackOrder $backOrder The Backorder to create (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function backOrderCreateWithHttpInfo($back_order)
+    public function backOrderCreateWithHttpInfo($backOrder)
     {
-        // verify the required parameter 'back_order' is set
-        if ($back_order === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $back_order when calling backOrderCreate');
+        // verify the required parameter 'backOrder' is set
+        if ($backOrder === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $backOrder when calling backOrderCreate');
         }
         // parse inputs
         $resourcePath = "/v2/backorders";
@@ -134,8 +134,8 @@ class BackOrderApi
 
         // body params
         $_tempBody = null;
-        if (isset($back_order)) {
-            $_tempBody = $back_order;
+        if (isset($backOrder)) {
+            $_tempBody = $backOrder;
         }
 
         // for model (json/xml)
@@ -152,15 +152,15 @@ class BackOrderApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ApiResponse',
+                '\ChannelEngine\ApiClient\Model\ApiResponse',
                 '/v2/backorders'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\ApiResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -174,13 +174,13 @@ class BackOrderApi
      *
      * Merchant: Get Backorder
      *
-     * @param string $merchant_reference The unique backorder reference supplied by the merchant (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\SingleOfBackOrder
+     * @param string $merchantReference The unique backorder reference supplied by the merchant (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\SingleOfBackOrder
      */
-    public function backOrderGet($merchant_reference)
+    public function backOrderGet($merchantReference)
     {
-        list($response) = $this->backOrderGetWithHttpInfo($merchant_reference);
+        list($response) = $this->backOrderGetWithHttpInfo($merchantReference);
         return $response;
     }
 
@@ -189,15 +189,15 @@ class BackOrderApi
      *
      * Merchant: Get Backorder
      *
-     * @param string $merchant_reference The unique backorder reference supplied by the merchant (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\SingleOfBackOrder, HTTP status code, HTTP response headers (array of strings)
+     * @param string $merchantReference The unique backorder reference supplied by the merchant (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\SingleOfBackOrder, HTTP status code, HTTP response headers (array of strings)
      */
-    public function backOrderGetWithHttpInfo($merchant_reference)
+    public function backOrderGetWithHttpInfo($merchantReference)
     {
-        // verify the required parameter 'merchant_reference' is set
-        if ($merchant_reference === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $merchant_reference when calling backOrderGet');
+        // verify the required parameter 'merchantReference' is set
+        if ($merchantReference === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $merchantReference when calling backOrderGet');
         }
         // parse inputs
         $resourcePath = "/v2/backorders/{merchantReference}";
@@ -212,10 +212,10 @@ class BackOrderApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // path params
-        if ($merchant_reference !== null) {
+        if ($merchantReference !== null) {
             $resourcePath = str_replace(
                 "{" . "merchantReference" . "}",
-                $this->apiClient->getSerializer()->toPathValue($merchant_reference),
+                $this->apiClient->getSerializer()->toPathValue($merchantReference),
                 $resourcePath
             );
         }
@@ -237,15 +237,15 @@ class BackOrderApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\SingleOfBackOrder',
+                '\ChannelEngine\ApiClient\Model\SingleOfBackOrder',
                 '/v2/backorders/{merchantReference}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SingleOfBackOrder', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\SingleOfBackOrder', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\SingleOfBackOrder', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\SingleOfBackOrder', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -259,13 +259,13 @@ class BackOrderApi
      *
      * Get Backorders
      *
-     * @param \DateTime $created_since  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CollectionOfBackOrder
+     * @param \DateTime $createdSince  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\CollectionOfBackOrder
      */
-    public function backOrderIndex($created_since)
+    public function backOrderIndex($createdSince)
     {
-        list($response) = $this->backOrderIndexWithHttpInfo($created_since);
+        list($response) = $this->backOrderIndexWithHttpInfo($createdSince);
         return $response;
     }
 
@@ -274,15 +274,15 @@ class BackOrderApi
      *
      * Get Backorders
      *
-     * @param \DateTime $created_since  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CollectionOfBackOrder, HTTP status code, HTTP response headers (array of strings)
+     * @param \DateTime $createdSince  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\CollectionOfBackOrder, HTTP status code, HTTP response headers (array of strings)
      */
-    public function backOrderIndexWithHttpInfo($created_since)
+    public function backOrderIndexWithHttpInfo($createdSince)
     {
-        // verify the required parameter 'created_since' is set
-        if ($created_since === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $created_since when calling backOrderIndex');
+        // verify the required parameter 'createdSince' is set
+        if ($createdSince === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createdSince when calling backOrderIndex');
         }
         // parse inputs
         $resourcePath = "/v2/backorders";
@@ -297,8 +297,8 @@ class BackOrderApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if ($created_since !== null) {
-            $queryParams['createdSince'] = $this->apiClient->getSerializer()->toQueryValue($created_since);
+        if ($createdSince !== null) {
+            $queryParams['createdSince'] = $this->apiClient->getSerializer()->toQueryValue($createdSince);
         }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -318,15 +318,15 @@ class BackOrderApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CollectionOfBackOrder',
+                '\ChannelEngine\ApiClient\Model\CollectionOfBackOrder',
                 '/v2/backorders'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CollectionOfBackOrder', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\CollectionOfBackOrder', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CollectionOfBackOrder', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\CollectionOfBackOrder', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

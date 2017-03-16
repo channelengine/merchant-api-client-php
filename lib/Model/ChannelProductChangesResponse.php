@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ChannelProductChangesResponse Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,9 +54,9 @@ class ChannelProductChangesResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'to_be_created' => '\Swagger\Client\Model\ChannelProductResponse[]',
-        'to_be_updated' => '\Swagger\Client\Model\ChannelProductResponse[]',
-        'to_be_removed' => 'string[]'
+        'toBeCreated' => '\ChannelEngine\ApiClient\Model\ChannelProductResponse[]',
+        'toBeUpdated' => '\ChannelEngine\ApiClient\Model\ChannelProductResponse[]',
+        'toBeRemoved' => 'string[]'
     ];
 
     public static function swaggerTypes()
@@ -69,9 +69,9 @@ class ChannelProductChangesResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'to_be_created' => 'ToBeCreated',
-        'to_be_updated' => 'ToBeUpdated',
-        'to_be_removed' => 'ToBeRemoved'
+        'toBeCreated' => 'ToBeCreated',
+        'toBeUpdated' => 'ToBeUpdated',
+        'toBeRemoved' => 'ToBeRemoved'
     ];
 
 
@@ -80,9 +80,9 @@ class ChannelProductChangesResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'to_be_created' => 'setToBeCreated',
-        'to_be_updated' => 'setToBeUpdated',
-        'to_be_removed' => 'setToBeRemoved'
+        'toBeCreated' => 'setToBeCreated',
+        'toBeUpdated' => 'setToBeUpdated',
+        'toBeRemoved' => 'setToBeRemoved'
     ];
 
 
@@ -91,9 +91,9 @@ class ChannelProductChangesResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'to_be_created' => 'getToBeCreated',
-        'to_be_updated' => 'getToBeUpdated',
-        'to_be_removed' => 'getToBeRemoved'
+        'toBeCreated' => 'getToBeCreated',
+        'toBeUpdated' => 'getToBeUpdated',
+        'toBeRemoved' => 'getToBeRemoved'
     ];
 
     public static function attributeMap()
@@ -127,9 +127,9 @@ class ChannelProductChangesResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['to_be_created'] = isset($data['to_be_created']) ? $data['to_be_created'] : null;
-        $this->container['to_be_updated'] = isset($data['to_be_updated']) ? $data['to_be_updated'] : null;
-        $this->container['to_be_removed'] = isset($data['to_be_removed']) ? $data['to_be_removed'] : null;
+        $this->container['toBeCreated'] = isset($data['toBeCreated']) ? $data['toBeCreated'] : null;
+        $this->container['toBeUpdated'] = isset($data['toBeUpdated']) ? $data['toBeUpdated'] : null;
+        $this->container['toBeRemoved'] = isset($data['toBeRemoved']) ? $data['toBeRemoved'] : null;
     }
 
     /**
@@ -158,64 +158,64 @@ class ChannelProductChangesResponse implements ArrayAccess
 
 
     /**
-     * Gets to_be_created
-     * @return \Swagger\Client\Model\ChannelProductResponse[]
+     * Gets toBeCreated
+     * @return \ChannelEngine\ApiClient\Model\ChannelProductResponse[]
      */
     public function getToBeCreated()
     {
-        return $this->container['to_be_created'];
+        return $this->container['toBeCreated'];
     }
 
     /**
-     * Sets to_be_created
-     * @param \Swagger\Client\Model\ChannelProductResponse[] $to_be_created
+     * Sets toBeCreated
+     * @param \ChannelEngine\ApiClient\Model\ChannelProductResponse[] $toBeCreated
      * @return $this
      */
-    public function setToBeCreated($to_be_created)
+    public function setToBeCreated($toBeCreated)
     {
-        $this->container['to_be_created'] = $to_be_created;
+        $this->container['toBeCreated'] = $toBeCreated;
 
         return $this;
     }
 
     /**
-     * Gets to_be_updated
-     * @return \Swagger\Client\Model\ChannelProductResponse[]
+     * Gets toBeUpdated
+     * @return \ChannelEngine\ApiClient\Model\ChannelProductResponse[]
      */
     public function getToBeUpdated()
     {
-        return $this->container['to_be_updated'];
+        return $this->container['toBeUpdated'];
     }
 
     /**
-     * Sets to_be_updated
-     * @param \Swagger\Client\Model\ChannelProductResponse[] $to_be_updated
+     * Sets toBeUpdated
+     * @param \ChannelEngine\ApiClient\Model\ChannelProductResponse[] $toBeUpdated
      * @return $this
      */
-    public function setToBeUpdated($to_be_updated)
+    public function setToBeUpdated($toBeUpdated)
     {
-        $this->container['to_be_updated'] = $to_be_updated;
+        $this->container['toBeUpdated'] = $toBeUpdated;
 
         return $this;
     }
 
     /**
-     * Gets to_be_removed
+     * Gets toBeRemoved
      * @return string[]
      */
     public function getToBeRemoved()
     {
-        return $this->container['to_be_removed'];
+        return $this->container['toBeRemoved'];
     }
 
     /**
-     * Sets to_be_removed
-     * @param string[] $to_be_removed
+     * Sets toBeRemoved
+     * @param string[] $toBeRemoved
      * @return $this
      */
-    public function setToBeRemoved($to_be_removed)
+    public function setToBeRemoved($toBeRemoved)
     {
-        $this->container['to_be_removed'] = $to_be_removed;
+        $this->container['toBeRemoved'] = $toBeRemoved;
 
         return $this;
     }
@@ -271,10 +271,10 @@ class ChannelProductChangesResponse implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

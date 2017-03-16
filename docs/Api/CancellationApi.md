@@ -1,4 +1,4 @@
-# Swagger\Client\CancellationApi
+# ChannelEngine\ApiClient\CancellationApi
 
 All URIs are relative to *https://demo.channelengine.net/api*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **cancellationCreate**
-> \Swagger\Client\Model\ApiResponse cancellationCreate($cancellation)
+> \ChannelEngine\ApiClient\Model\ApiResponse cancellationCreate($cancellation)
 
 Merchant: Create Cancellation
 
@@ -20,8 +20,8 @@ For merchants.    Mark (part of) an order as cancelled.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CancellationApi();
-$cancellation = new \Swagger\Client\Model\MerchantCancellationRequest(); // \Swagger\Client\Model\MerchantCancellationRequest | 
+$api_instance = new ChannelEngine\ApiClient\Api\CancellationApi();
+$cancellation = new \ChannelEngine\ApiClient\Model\MerchantCancellationRequest(); // \ChannelEngine\ApiClient\Model\MerchantCancellationRequest | 
 
 try {
     $result = $api_instance->cancellationCreate($cancellation);
@@ -36,11 +36,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cancellation** | [**\Swagger\Client\Model\MerchantCancellationRequest**](../Model/\Swagger\Client\Model\MerchantCancellationRequest.md)|  |
+ **cancellation** | [**\ChannelEngine\ApiClient\Model\MerchantCancellationRequest**](../Model/\ChannelEngine\ApiClient\Model\MerchantCancellationRequest.md)|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\ChannelEngine\ApiClient\Model\ApiResponse**](../Model/ApiResponse.md)
 
 ### Authorization
 
@@ -54,7 +54,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cancellationIndex**
-> \Swagger\Client\Model\CollectionOfChannelCancellationResponse cancellationIndex($created_since)
+> \ChannelEngine\ApiClient\Model\CollectionOfChannelCancellationResponse cancellationIndex($createdSince)
 
 Channel: Get Cancellations
 
@@ -65,11 +65,11 @@ For channels.    Gets all cancellations created since the supplied date.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\CancellationApi();
-$created_since = new \DateTime(); // \DateTime | 
+$api_instance = new ChannelEngine\ApiClient\Api\CancellationApi();
+$createdSince = new \DateTime(); // \DateTime | 
 
 try {
-    $result = $api_instance->cancellationIndex($created_since);
+    $result = $api_instance->cancellationIndex($createdSince);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CancellationApi->cancellationIndex: ', $e->getMessage(), PHP_EOL;
@@ -81,11 +81,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **created_since** | **\DateTime**|  |
+ **createdSince** | **\DateTime**|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\CollectionOfChannelCancellationResponse**](../Model/CollectionOfChannelCancellationResponse.md)
+[**\ChannelEngine\ApiClient\Model\CollectionOfChannelCancellationResponse**](../Model/CollectionOfChannelCancellationResponse.md)
 
 ### Authorization
 

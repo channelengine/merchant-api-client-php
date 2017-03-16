@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ChannelCancellationResponse Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,8 +54,8 @@ class ChannelCancellationResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'channel_order_reference' => 'string',
-        'lines' => '\Swagger\Client\Model\ChannelCancellationLineResponse[]',
+        'channelOrderReference' => 'string',
+        'lines' => '\ChannelEngine\ApiClient\Model\ChannelCancellationLineResponse[]',
         'reason' => 'string'
     ];
 
@@ -69,7 +69,7 @@ class ChannelCancellationResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'channel_order_reference' => 'ChannelOrderReference',
+        'channelOrderReference' => 'ChannelOrderReference',
         'lines' => 'Lines',
         'reason' => 'Reason'
     ];
@@ -80,7 +80,7 @@ class ChannelCancellationResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'channel_order_reference' => 'setChannelOrderReference',
+        'channelOrderReference' => 'setChannelOrderReference',
         'lines' => 'setLines',
         'reason' => 'setReason'
     ];
@@ -91,7 +91,7 @@ class ChannelCancellationResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'channel_order_reference' => 'getChannelOrderReference',
+        'channelOrderReference' => 'getChannelOrderReference',
         'lines' => 'getLines',
         'reason' => 'getReason'
     ];
@@ -127,7 +127,7 @@ class ChannelCancellationResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['channel_order_reference'] = isset($data['channel_order_reference']) ? $data['channel_order_reference'] : null;
+        $this->container['channelOrderReference'] = isset($data['channelOrderReference']) ? $data['channelOrderReference'] : null;
         $this->container['lines'] = isset($data['lines']) ? $data['lines'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
     }
@@ -141,8 +141,8 @@ class ChannelCancellationResponse implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['channel_order_reference'] === null) {
-            $invalid_properties[] = "'channel_order_reference' can't be null";
+        if ($this->container['channelOrderReference'] === null) {
+            $invalid_properties[] = "'channelOrderReference' can't be null";
         }
         if ($this->container['lines'] === null) {
             $invalid_properties[] = "'lines' can't be null";
@@ -159,7 +159,7 @@ class ChannelCancellationResponse implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['channel_order_reference'] === null) {
+        if ($this->container['channelOrderReference'] === null) {
             return false;
         }
         if ($this->container['lines'] === null) {
@@ -170,29 +170,29 @@ class ChannelCancellationResponse implements ArrayAccess
 
 
     /**
-     * Gets channel_order_reference
+     * Gets channelOrderReference
      * @return string
      */
     public function getChannelOrderReference()
     {
-        return $this->container['channel_order_reference'];
+        return $this->container['channelOrderReference'];
     }
 
     /**
-     * Sets channel_order_reference
-     * @param string $channel_order_reference
+     * Sets channelOrderReference
+     * @param string $channelOrderReference
      * @return $this
      */
-    public function setChannelOrderReference($channel_order_reference)
+    public function setChannelOrderReference($channelOrderReference)
     {
-        $this->container['channel_order_reference'] = $channel_order_reference;
+        $this->container['channelOrderReference'] = $channelOrderReference;
 
         return $this;
     }
 
     /**
      * Gets lines
-     * @return \Swagger\Client\Model\ChannelCancellationLineResponse[]
+     * @return \ChannelEngine\ApiClient\Model\ChannelCancellationLineResponse[]
      */
     public function getLines()
     {
@@ -201,7 +201,7 @@ class ChannelCancellationResponse implements ArrayAccess
 
     /**
      * Sets lines
-     * @param \Swagger\Client\Model\ChannelCancellationLineResponse[] $lines
+     * @param \ChannelEngine\ApiClient\Model\ChannelCancellationLineResponse[] $lines
      * @return $this
      */
     public function setLines($lines)
@@ -283,10 +283,10 @@ class ChannelCancellationResponse implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

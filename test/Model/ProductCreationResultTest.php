@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace ChannelEngine\ApiClient;
 
 /**
  * ProductCreationResultTest Class Doc Comment
@@ -35,7 +35,7 @@ namespace Swagger\Client;
  * @category    Class */
 // * @description ProductCreationResult
 /**
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -83,7 +83,7 @@ class ProductCreationResultTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "rejected_count"
+     * Test attribute "rejectedCount"
      */
     public function testPropertyRejectedCount()
     {
@@ -91,7 +91,7 @@ class ProductCreationResultTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "accepted_count"
+     * Test attribute "acceptedCount"
      */
     public function testPropertyAcceptedCount()
     {
@@ -99,7 +99,7 @@ class ProductCreationResultTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "product_messages"
+     * Test attribute "productMessages"
      */
     public function testPropertyProductMessages()
     {

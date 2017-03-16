@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**to_be_created** | [**\Swagger\Client\Model\ChannelProductResponse[]**](ChannelProductResponse.md) |  | [optional] 
-**to_be_updated** | [**\Swagger\Client\Model\ChannelProductResponse[]**](ChannelProductResponse.md) |  | [optional] 
-**to_be_removed** | **string[]** |  | [optional] 
+**toBeCreated** | [**\ChannelEngine\ApiClient\Model\ChannelProductResponse[]**](ChannelProductResponse.md) |  | [optional] 
+**toBeUpdated** | [**\ChannelEngine\ApiClient\Model\ChannelProductResponse[]**](ChannelProductResponse.md) |  | [optional] 
+**toBeRemoved** | **string[]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

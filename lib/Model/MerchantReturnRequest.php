@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * MerchantReturnRequest Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,14 +54,14 @@ class MerchantReturnRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchant_order_reference' => 'string',
-        'merchant_reference' => 'string',
-        'lines' => '\Swagger\Client\Model\MerchantReturnLineRequest[]',
+        'merchantOrderReference' => 'string',
+        'merchantReference' => 'string',
+        'lines' => '\ChannelEngine\ApiClient\Model\MerchantReturnLineRequest[]',
         'reason' => 'string',
-        'customer_comment' => 'string',
-        'merchant_comment' => 'string',
-        'refund_incl_vat' => 'double',
-        'refund_excl_vat' => 'double'
+        'customerComment' => 'string',
+        'merchantComment' => 'string',
+        'refundInclVat' => 'double',
+        'refundExclVat' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -74,14 +74,14 @@ class MerchantReturnRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchant_order_reference' => 'MerchantOrderReference',
-        'merchant_reference' => 'MerchantReference',
+        'merchantOrderReference' => 'MerchantOrderReference',
+        'merchantReference' => 'MerchantReference',
         'lines' => 'Lines',
         'reason' => 'Reason',
-        'customer_comment' => 'CustomerComment',
-        'merchant_comment' => 'MerchantComment',
-        'refund_incl_vat' => 'RefundInclVat',
-        'refund_excl_vat' => 'RefundExclVat'
+        'customerComment' => 'CustomerComment',
+        'merchantComment' => 'MerchantComment',
+        'refundInclVat' => 'RefundInclVat',
+        'refundExclVat' => 'RefundExclVat'
     ];
 
 
@@ -90,14 +90,14 @@ class MerchantReturnRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchant_order_reference' => 'setMerchantOrderReference',
-        'merchant_reference' => 'setMerchantReference',
+        'merchantOrderReference' => 'setMerchantOrderReference',
+        'merchantReference' => 'setMerchantReference',
         'lines' => 'setLines',
         'reason' => 'setReason',
-        'customer_comment' => 'setCustomerComment',
-        'merchant_comment' => 'setMerchantComment',
-        'refund_incl_vat' => 'setRefundInclVat',
-        'refund_excl_vat' => 'setRefundExclVat'
+        'customerComment' => 'setCustomerComment',
+        'merchantComment' => 'setMerchantComment',
+        'refundInclVat' => 'setRefundInclVat',
+        'refundExclVat' => 'setRefundExclVat'
     ];
 
 
@@ -106,14 +106,14 @@ class MerchantReturnRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchant_order_reference' => 'getMerchantOrderReference',
-        'merchant_reference' => 'getMerchantReference',
+        'merchantOrderReference' => 'getMerchantOrderReference',
+        'merchantReference' => 'getMerchantReference',
         'lines' => 'getLines',
         'reason' => 'getReason',
-        'customer_comment' => 'getCustomerComment',
-        'merchant_comment' => 'getMerchantComment',
-        'refund_incl_vat' => 'getRefundInclVat',
-        'refund_excl_vat' => 'getRefundExclVat'
+        'customerComment' => 'getCustomerComment',
+        'merchantComment' => 'getMerchantComment',
+        'refundInclVat' => 'getRefundInclVat',
+        'refundExclVat' => 'getRefundExclVat'
     ];
 
     public static function attributeMap()
@@ -171,14 +171,14 @@ class MerchantReturnRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchant_order_reference'] = isset($data['merchant_order_reference']) ? $data['merchant_order_reference'] : null;
-        $this->container['merchant_reference'] = isset($data['merchant_reference']) ? $data['merchant_reference'] : null;
+        $this->container['merchantOrderReference'] = isset($data['merchantOrderReference']) ? $data['merchantOrderReference'] : null;
+        $this->container['merchantReference'] = isset($data['merchantReference']) ? $data['merchantReference'] : null;
         $this->container['lines'] = isset($data['lines']) ? $data['lines'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
-        $this->container['customer_comment'] = isset($data['customer_comment']) ? $data['customer_comment'] : null;
-        $this->container['merchant_comment'] = isset($data['merchant_comment']) ? $data['merchant_comment'] : null;
-        $this->container['refund_incl_vat'] = isset($data['refund_incl_vat']) ? $data['refund_incl_vat'] : null;
-        $this->container['refund_excl_vat'] = isset($data['refund_excl_vat']) ? $data['refund_excl_vat'] : null;
+        $this->container['customerComment'] = isset($data['customerComment']) ? $data['customerComment'] : null;
+        $this->container['merchantComment'] = isset($data['merchantComment']) ? $data['merchantComment'] : null;
+        $this->container['refundInclVat'] = isset($data['refundInclVat']) ? $data['refundInclVat'] : null;
+        $this->container['refundExclVat'] = isset($data['refundExclVat']) ? $data['refundExclVat'] : null;
     }
 
     /**
@@ -190,11 +190,11 @@ class MerchantReturnRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['merchant_order_reference'] === null) {
-            $invalid_properties[] = "'merchant_order_reference' can't be null";
+        if ($this->container['merchantOrderReference'] === null) {
+            $invalid_properties[] = "'merchantOrderReference' can't be null";
         }
-        if ($this->container['merchant_reference'] === null) {
-            $invalid_properties[] = "'merchant_reference' can't be null";
+        if ($this->container['merchantReference'] === null) {
+            $invalid_properties[] = "'merchantReference' can't be null";
         }
         if ($this->container['lines'] === null) {
             $invalid_properties[] = "'lines' can't be null";
@@ -204,20 +204,20 @@ class MerchantReturnRequest implements ArrayAccess
             $invalid_properties[] = "invalid value for 'reason', must be one of 'PRODUCT_DEFECT', 'PRODUCT_UNSATISFACTORY', 'REFUSED', 'REFUSED_DAMAGED', 'WRONG_ADDRESS', 'NOT_COLLECTED', 'OTHER'.";
         }
 
-        if (!is_null($this->container['customer_comment']) && (strlen($this->container['customer_comment']) > 4001)) {
-            $invalid_properties[] = "invalid value for 'customer_comment', the character length must be smaller than or equal to 4001.";
+        if (!is_null($this->container['customerComment']) && (strlen($this->container['customerComment']) > 4001)) {
+            $invalid_properties[] = "invalid value for 'customerComment', the character length must be smaller than or equal to 4001.";
         }
 
-        if (!is_null($this->container['customer_comment']) && (strlen($this->container['customer_comment']) < 0)) {
-            $invalid_properties[] = "invalid value for 'customer_comment', the character length must be bigger than or equal to 0.";
+        if (!is_null($this->container['customerComment']) && (strlen($this->container['customerComment']) < 0)) {
+            $invalid_properties[] = "invalid value for 'customerComment', the character length must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['merchant_comment']) && (strlen($this->container['merchant_comment']) > 4001)) {
-            $invalid_properties[] = "invalid value for 'merchant_comment', the character length must be smaller than or equal to 4001.";
+        if (!is_null($this->container['merchantComment']) && (strlen($this->container['merchantComment']) > 4001)) {
+            $invalid_properties[] = "invalid value for 'merchantComment', the character length must be smaller than or equal to 4001.";
         }
 
-        if (!is_null($this->container['merchant_comment']) && (strlen($this->container['merchant_comment']) < 0)) {
-            $invalid_properties[] = "invalid value for 'merchant_comment', the character length must be bigger than or equal to 0.";
+        if (!is_null($this->container['merchantComment']) && (strlen($this->container['merchantComment']) < 0)) {
+            $invalid_properties[] = "invalid value for 'merchantComment', the character length must be bigger than or equal to 0.";
         }
 
         return $invalid_properties;
@@ -232,10 +232,10 @@ class MerchantReturnRequest implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['merchant_order_reference'] === null) {
+        if ($this->container['merchantOrderReference'] === null) {
             return false;
         }
-        if ($this->container['merchant_reference'] === null) {
+        if ($this->container['merchantReference'] === null) {
             return false;
         }
         if ($this->container['lines'] === null) {
@@ -245,16 +245,16 @@ class MerchantReturnRequest implements ArrayAccess
         if (!in_array($this->container['reason'], $allowed_values)) {
             return false;
         }
-        if (strlen($this->container['customer_comment']) > 4001) {
+        if (strlen($this->container['customerComment']) > 4001) {
             return false;
         }
-        if (strlen($this->container['customer_comment']) < 0) {
+        if (strlen($this->container['customerComment']) < 0) {
             return false;
         }
-        if (strlen($this->container['merchant_comment']) > 4001) {
+        if (strlen($this->container['merchantComment']) > 4001) {
             return false;
         }
-        if (strlen($this->container['merchant_comment']) < 0) {
+        if (strlen($this->container['merchantComment']) < 0) {
             return false;
         }
         return true;
@@ -262,50 +262,50 @@ class MerchantReturnRequest implements ArrayAccess
 
 
     /**
-     * Gets merchant_order_reference
+     * Gets merchantOrderReference
      * @return string
      */
     public function getMerchantOrderReference()
     {
-        return $this->container['merchant_order_reference'];
+        return $this->container['merchantOrderReference'];
     }
 
     /**
-     * Sets merchant_order_reference
-     * @param string $merchant_order_reference
+     * Sets merchantOrderReference
+     * @param string $merchantOrderReference
      * @return $this
      */
-    public function setMerchantOrderReference($merchant_order_reference)
+    public function setMerchantOrderReference($merchantOrderReference)
     {
-        $this->container['merchant_order_reference'] = $merchant_order_reference;
+        $this->container['merchantOrderReference'] = $merchantOrderReference;
 
         return $this;
     }
 
     /**
-     * Gets merchant_reference
+     * Gets merchantReference
      * @return string
      */
     public function getMerchantReference()
     {
-        return $this->container['merchant_reference'];
+        return $this->container['merchantReference'];
     }
 
     /**
-     * Sets merchant_reference
-     * @param string $merchant_reference
+     * Sets merchantReference
+     * @param string $merchantReference
      * @return $this
      */
-    public function setMerchantReference($merchant_reference)
+    public function setMerchantReference($merchantReference)
     {
-        $this->container['merchant_reference'] = $merchant_reference;
+        $this->container['merchantReference'] = $merchantReference;
 
         return $this;
     }
 
     /**
      * Gets lines
-     * @return \Swagger\Client\Model\MerchantReturnLineRequest[]
+     * @return \ChannelEngine\ApiClient\Model\MerchantReturnLineRequest[]
      */
     public function getLines()
     {
@@ -314,7 +314,7 @@ class MerchantReturnRequest implements ArrayAccess
 
     /**
      * Sets lines
-     * @param \Swagger\Client\Model\MerchantReturnLineRequest[] $lines
+     * @param \ChannelEngine\ApiClient\Model\MerchantReturnLineRequest[] $lines
      * @return $this
      */
     public function setLines($lines)
@@ -350,99 +350,99 @@ class MerchantReturnRequest implements ArrayAccess
     }
 
     /**
-     * Gets customer_comment
+     * Gets customerComment
      * @return string
      */
     public function getCustomerComment()
     {
-        return $this->container['customer_comment'];
+        return $this->container['customerComment'];
     }
 
     /**
-     * Sets customer_comment
-     * @param string $customer_comment
+     * Sets customerComment
+     * @param string $customerComment
      * @return $this
      */
-    public function setCustomerComment($customer_comment)
+    public function setCustomerComment($customerComment)
     {
-        if (!is_null($customer_comment) && (strlen($customer_comment) > 4001)) {
-            throw new \InvalidArgumentException('invalid length for $customer_comment when calling MerchantReturnRequest., must be smaller than or equal to 4001.');
+        if (!is_null($customerComment) && (strlen($customerComment) > 4001)) {
+            throw new \InvalidArgumentException('invalid length for $customerComment when calling MerchantReturnRequest., must be smaller than or equal to 4001.');
         }
-        if (!is_null($customer_comment) && (strlen($customer_comment) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $customer_comment when calling MerchantReturnRequest., must be bigger than or equal to 0.');
+        if (!is_null($customerComment) && (strlen($customerComment) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $customerComment when calling MerchantReturnRequest., must be bigger than or equal to 0.');
         }
 
-        $this->container['customer_comment'] = $customer_comment;
+        $this->container['customerComment'] = $customerComment;
 
         return $this;
     }
 
     /**
-     * Gets merchant_comment
+     * Gets merchantComment
      * @return string
      */
     public function getMerchantComment()
     {
-        return $this->container['merchant_comment'];
+        return $this->container['merchantComment'];
     }
 
     /**
-     * Sets merchant_comment
-     * @param string $merchant_comment
+     * Sets merchantComment
+     * @param string $merchantComment
      * @return $this
      */
-    public function setMerchantComment($merchant_comment)
+    public function setMerchantComment($merchantComment)
     {
-        if (!is_null($merchant_comment) && (strlen($merchant_comment) > 4001)) {
-            throw new \InvalidArgumentException('invalid length for $merchant_comment when calling MerchantReturnRequest., must be smaller than or equal to 4001.');
+        if (!is_null($merchantComment) && (strlen($merchantComment) > 4001)) {
+            throw new \InvalidArgumentException('invalid length for $merchantComment when calling MerchantReturnRequest., must be smaller than or equal to 4001.');
         }
-        if (!is_null($merchant_comment) && (strlen($merchant_comment) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $merchant_comment when calling MerchantReturnRequest., must be bigger than or equal to 0.');
+        if (!is_null($merchantComment) && (strlen($merchantComment) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $merchantComment when calling MerchantReturnRequest., must be bigger than or equal to 0.');
         }
 
-        $this->container['merchant_comment'] = $merchant_comment;
+        $this->container['merchantComment'] = $merchantComment;
 
         return $this;
     }
 
     /**
-     * Gets refund_incl_vat
+     * Gets refundInclVat
      * @return double
      */
     public function getRefundInclVat()
     {
-        return $this->container['refund_incl_vat'];
+        return $this->container['refundInclVat'];
     }
 
     /**
-     * Sets refund_incl_vat
-     * @param double $refund_incl_vat
+     * Sets refundInclVat
+     * @param double $refundInclVat
      * @return $this
      */
-    public function setRefundInclVat($refund_incl_vat)
+    public function setRefundInclVat($refundInclVat)
     {
-        $this->container['refund_incl_vat'] = $refund_incl_vat;
+        $this->container['refundInclVat'] = $refundInclVat;
 
         return $this;
     }
 
     /**
-     * Gets refund_excl_vat
+     * Gets refundExclVat
      * @return double
      */
     public function getRefundExclVat()
     {
-        return $this->container['refund_excl_vat'];
+        return $this->container['refundExclVat'];
     }
 
     /**
-     * Sets refund_excl_vat
-     * @param double $refund_excl_vat
+     * Sets refundExclVat
+     * @param double $refundExclVat
      * @return $this
      */
-    public function setRefundExclVat($refund_excl_vat)
+    public function setRefundExclVat($refundExclVat)
     {
-        $this->container['refund_excl_vat'] = $refund_excl_vat;
+        $this->container['refundExclVat'] = $refundExclVat;
 
         return $this;
     }
@@ -498,10 +498,10 @@ class MerchantReturnRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

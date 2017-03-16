@@ -20,11 +20,11 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com//.git"
+      "url": "https://github.com/channelengine/api-client.git"
     }
   ],
   "require": {
-    "/": "*@dev"
+    "channelengine/api-client": "*@dev"
   }
 }
 ```
@@ -56,11 +56,11 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\BackOrderApi();
-$back_order = new \Swagger\Client\Model\BackOrder(); // \Swagger\Client\Model\BackOrder | The Backorder to create
+$api_instance = new ChannelEngine\ApiClient\Api\BackOrderApi();
+$backOrder = new \ChannelEngine\ApiClient\Model\BackOrder(); // \ChannelEngine\ApiClient\Model\BackOrder | The Backorder to create
 
 try {
-    $result = $api_instance->backOrderCreate($back_order);
+    $result = $api_instance->backOrderCreate($backOrder);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BackOrderApi->backOrderCreate: ', $e->getMessage(), PHP_EOL;

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace ChannelEngine\ApiClient\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ChannelEngine\ApiClient\ApiClient;
+use \ChannelEngine\ApiClient\ApiException;
+use \ChannelEngine\ApiClient\Configuration;
+use \ChannelEngine\ApiClient\ObjectSerializer;
 
 /**
  * ProductApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class ProductApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ChannelEngine\ApiClient\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ChannelEngine\ApiClient\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ChannelEngine\ApiClient\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class ProductApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ChannelEngine\ApiClient\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class ProductApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ChannelEngine\ApiClient\ApiClient $apiClient set the API client
      *
      * @return ProductApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ChannelEngine\ApiClient\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,9 +92,9 @@ class ProductApi
      *
      * Channel: Acknowledge Product Data Changes
      *
-     * @param \Swagger\Client\Model\ChannelProcessedChangesRequest $changes The merchant references of the products which have been                successfully created, updated or deleted (after a call to &#39;GetDataChanges&#39;) (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ApiResponse
+     * @param \ChannelEngine\ApiClient\Model\ChannelProcessedChangesRequest $changes The merchant references of the products which have been                successfully created, updated or deleted (after a call to &#39;GetDataChanges&#39;) (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\ApiResponse
      */
     public function productAcknowledgeDataChanges($changes)
     {
@@ -107,9 +107,9 @@ class ProductApi
      *
      * Channel: Acknowledge Product Data Changes
      *
-     * @param \Swagger\Client\Model\ChannelProcessedChangesRequest $changes The merchant references of the products which have been                successfully created, updated or deleted (after a call to &#39;GetDataChanges&#39;) (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param \ChannelEngine\ApiClient\Model\ChannelProcessedChangesRequest $changes The merchant references of the products which have been                successfully created, updated or deleted (after a call to &#39;GetDataChanges&#39;) (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function productAcknowledgeDataChangesWithHttpInfo($changes)
     {
@@ -152,15 +152,15 @@ class ProductApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ApiResponse',
+                '\ChannelEngine\ApiClient\Model\ApiResponse',
                 '/v2/products/data'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\ApiResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -175,8 +175,8 @@ class ProductApi
      * Channel: Acknowledge Product Offer Changes
      *
      * @param string[] $changes The channel references of the updated products (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ApiResponse
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\ApiResponse
      */
     public function productAcknowledgeOfferChanges($changes)
     {
@@ -190,8 +190,8 @@ class ProductApi
      * Channel: Acknowledge Product Offer Changes
      *
      * @param string[] $changes The channel references of the updated products (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function productAcknowledgeOfferChangesWithHttpInfo($changes)
     {
@@ -234,15 +234,15 @@ class ProductApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ApiResponse',
+                '\ChannelEngine\ApiClient\Model\ApiResponse',
                 '/v2/products/offers'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\ApiResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -256,9 +256,9 @@ class ProductApi
      *
      * Merchant: Create Product
      *
-     * @param \Swagger\Client\Model\MerchantProductRequest[] $products  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\SingleOfProductCreationResult
+     * @param \ChannelEngine\ApiClient\Model\MerchantProductRequest[] $products  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\SingleOfProductCreationResult
      */
     public function productCreate($products)
     {
@@ -271,9 +271,9 @@ class ProductApi
      *
      * Merchant: Create Product
      *
-     * @param \Swagger\Client\Model\MerchantProductRequest[] $products  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\SingleOfProductCreationResult, HTTP status code, HTTP response headers (array of strings)
+     * @param \ChannelEngine\ApiClient\Model\MerchantProductRequest[] $products  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\SingleOfProductCreationResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function productCreateWithHttpInfo($products)
     {
@@ -316,15 +316,15 @@ class ProductApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\SingleOfProductCreationResult',
+                '\ChannelEngine\ApiClient\Model\SingleOfProductCreationResult',
                 '/v2/products'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SingleOfProductCreationResult', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\SingleOfProductCreationResult', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\SingleOfProductCreationResult', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\SingleOfProductCreationResult', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -338,13 +338,13 @@ class ProductApi
      *
      * Merchant: Delete Product
      *
-     * @param string $merchant_reference  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ApiResponse
+     * @param string $merchantReference  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\ApiResponse
      */
-    public function productDelete($merchant_reference)
+    public function productDelete($merchantReference)
     {
-        list($response) = $this->productDeleteWithHttpInfo($merchant_reference);
+        list($response) = $this->productDeleteWithHttpInfo($merchantReference);
         return $response;
     }
 
@@ -353,15 +353,15 @@ class ProductApi
      *
      * Merchant: Delete Product
      *
-     * @param string $merchant_reference  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param string $merchantReference  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productDeleteWithHttpInfo($merchant_reference)
+    public function productDeleteWithHttpInfo($merchantReference)
     {
-        // verify the required parameter 'merchant_reference' is set
-        if ($merchant_reference === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $merchant_reference when calling productDelete');
+        // verify the required parameter 'merchantReference' is set
+        if ($merchantReference === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $merchantReference when calling productDelete');
         }
         // parse inputs
         $resourcePath = "/v2/products/{merchantReference}";
@@ -376,10 +376,10 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // path params
-        if ($merchant_reference !== null) {
+        if ($merchantReference !== null) {
             $resourcePath = str_replace(
                 "{" . "merchantReference" . "}",
-                $this->apiClient->getSerializer()->toPathValue($merchant_reference),
+                $this->apiClient->getSerializer()->toPathValue($merchantReference),
                 $resourcePath
             );
         }
@@ -401,15 +401,15 @@ class ProductApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ApiResponse',
+                '\ChannelEngine\ApiClient\Model\ApiResponse',
                 '/v2/products/{merchantReference}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\ApiResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ApiResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\ApiResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -423,13 +423,13 @@ class ProductApi
      *
      * Merchant: Get Product
      *
-     * @param string $merchant_reference  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\SingleOfMerchantProductResponse
+     * @param string $merchantReference  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\SingleOfMerchantProductResponse
      */
-    public function productGetByMerchantReference($merchant_reference)
+    public function productGetByMerchantReference($merchantReference)
     {
-        list($response) = $this->productGetByMerchantReferenceWithHttpInfo($merchant_reference);
+        list($response) = $this->productGetByMerchantReferenceWithHttpInfo($merchantReference);
         return $response;
     }
 
@@ -438,15 +438,15 @@ class ProductApi
      *
      * Merchant: Get Product
      *
-     * @param string $merchant_reference  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\SingleOfMerchantProductResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param string $merchantReference  (required)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\SingleOfMerchantProductResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productGetByMerchantReferenceWithHttpInfo($merchant_reference)
+    public function productGetByMerchantReferenceWithHttpInfo($merchantReference)
     {
-        // verify the required parameter 'merchant_reference' is set
-        if ($merchant_reference === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $merchant_reference when calling productGetByMerchantReference');
+        // verify the required parameter 'merchantReference' is set
+        if ($merchantReference === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $merchantReference when calling productGetByMerchantReference');
         }
         // parse inputs
         $resourcePath = "/v2/products/merchant/{merchantReference}";
@@ -461,10 +461,10 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // path params
-        if ($merchant_reference !== null) {
+        if ($merchantReference !== null) {
             $resourcePath = str_replace(
                 "{" . "merchantReference" . "}",
-                $this->apiClient->getSerializer()->toPathValue($merchant_reference),
+                $this->apiClient->getSerializer()->toPathValue($merchantReference),
                 $resourcePath
             );
         }
@@ -486,15 +486,15 @@ class ProductApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\SingleOfMerchantProductResponse',
+                '\ChannelEngine\ApiClient\Model\SingleOfMerchantProductResponse',
                 '/v2/products/merchant/{merchantReference}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SingleOfMerchantProductResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\SingleOfMerchantProductResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\SingleOfMerchantProductResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\SingleOfMerchantProductResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -508,13 +508,13 @@ class ProductApi
      *
      * Channel: Get Product Data Changes
      *
-     * @param int $max_count Optional - limit the amount of products returned for each field              (ToBeCreated, ToBeUpdated, ToBeRemoved) to this number. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\SingleOfChannelProductChangesResponse
+     * @param int $maxCount Optional - limit the amount of products returned for each field              (ToBeCreated, ToBeUpdated, ToBeRemoved) to this number. (optional)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\SingleOfChannelProductChangesResponse
      */
-    public function productGetDataChanges($max_count = null)
+    public function productGetDataChanges($maxCount = null)
     {
-        list($response) = $this->productGetDataChangesWithHttpInfo($max_count);
+        list($response) = $this->productGetDataChangesWithHttpInfo($maxCount);
         return $response;
     }
 
@@ -523,11 +523,11 @@ class ProductApi
      *
      * Channel: Get Product Data Changes
      *
-     * @param int $max_count Optional - limit the amount of products returned for each field              (ToBeCreated, ToBeUpdated, ToBeRemoved) to this number. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\SingleOfChannelProductChangesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param int $maxCount Optional - limit the amount of products returned for each field              (ToBeCreated, ToBeUpdated, ToBeRemoved) to this number. (optional)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\SingleOfChannelProductChangesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productGetDataChangesWithHttpInfo($max_count = null)
+    public function productGetDataChangesWithHttpInfo($maxCount = null)
     {
         // parse inputs
         $resourcePath = "/v2/products/data";
@@ -542,8 +542,8 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if ($max_count !== null) {
-            $queryParams['maxCount'] = $this->apiClient->getSerializer()->toQueryValue($max_count);
+        if ($maxCount !== null) {
+            $queryParams['maxCount'] = $this->apiClient->getSerializer()->toQueryValue($maxCount);
         }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -563,15 +563,15 @@ class ProductApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\SingleOfChannelProductChangesResponse',
+                '\ChannelEngine\ApiClient\Model\SingleOfChannelProductChangesResponse',
                 '/v2/products/data'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SingleOfChannelProductChangesResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\SingleOfChannelProductChangesResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\SingleOfChannelProductChangesResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\SingleOfChannelProductChangesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -585,8 +585,8 @@ class ProductApi
      *
      * Channel: Get Product Offer Changes
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CollectionOfChannelOfferResponse
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return \ChannelEngine\ApiClient\Model\CollectionOfChannelOfferResponse
      */
     public function productGetOfferChanges()
     {
@@ -599,8 +599,8 @@ class ProductApi
      *
      * Channel: Get Product Offer Changes
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CollectionOfChannelOfferResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
+     * @return array of \ChannelEngine\ApiClient\Model\CollectionOfChannelOfferResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function productGetOfferChangesWithHttpInfo()
     {
@@ -634,15 +634,15 @@ class ProductApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CollectionOfChannelOfferResponse',
+                '\ChannelEngine\ApiClient\Model\CollectionOfChannelOfferResponse',
                 '/v2/products/offers'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CollectionOfChannelOfferResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\CollectionOfChannelOfferResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CollectionOfChannelOfferResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\CollectionOfChannelOfferResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

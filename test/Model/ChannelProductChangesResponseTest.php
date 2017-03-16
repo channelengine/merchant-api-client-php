@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace ChannelEngine\ApiClient;
 
 /**
  * ChannelProductChangesResponseTest Class Doc Comment
@@ -35,7 +35,7 @@ namespace Swagger\Client;
  * @category    Class */
 // * @description ChannelProductChangesResponse
 /**
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -83,7 +83,7 @@ class ChannelProductChangesResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "to_be_created"
+     * Test attribute "toBeCreated"
      */
     public function testPropertyToBeCreated()
     {
@@ -91,7 +91,7 @@ class ChannelProductChangesResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "to_be_updated"
+     * Test attribute "toBeUpdated"
      */
     public function testPropertyToBeUpdated()
     {
@@ -99,7 +99,7 @@ class ChannelProductChangesResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "to_be_removed"
+     * Test attribute "toBeRemoved"
      */
     public function testPropertyToBeRemoved()
     {

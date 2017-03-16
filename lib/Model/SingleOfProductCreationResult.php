@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * SingleOfProductCreationResult Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,11 +54,11 @@ class SingleOfProductCreationResult implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content' => '\Swagger\Client\Model\ProductCreationResult',
-        'status_code' => 'int',
+        'content' => '\ChannelEngine\ApiClient\Model\ProductCreationResult',
+        'statusCode' => 'int',
         'success' => 'bool',
         'message' => 'string',
-        'validation_errors' => 'map[string,string[]]'
+        'validationErrors' => 'map[string,string[]]'
     ];
 
     public static function swaggerTypes()
@@ -72,10 +72,10 @@ class SingleOfProductCreationResult implements ArrayAccess
      */
     protected static $attributeMap = [
         'content' => 'Content',
-        'status_code' => 'StatusCode',
+        'statusCode' => 'StatusCode',
         'success' => 'Success',
         'message' => 'Message',
-        'validation_errors' => 'ValidationErrors'
+        'validationErrors' => 'ValidationErrors'
     ];
 
 
@@ -85,10 +85,10 @@ class SingleOfProductCreationResult implements ArrayAccess
      */
     protected static $setters = [
         'content' => 'setContent',
-        'status_code' => 'setStatusCode',
+        'statusCode' => 'setStatusCode',
         'success' => 'setSuccess',
         'message' => 'setMessage',
-        'validation_errors' => 'setValidationErrors'
+        'validationErrors' => 'setValidationErrors'
     ];
 
 
@@ -98,10 +98,10 @@ class SingleOfProductCreationResult implements ArrayAccess
      */
     protected static $getters = [
         'content' => 'getContent',
-        'status_code' => 'getStatusCode',
+        'statusCode' => 'getStatusCode',
         'success' => 'getSuccess',
         'message' => 'getMessage',
-        'validation_errors' => 'getValidationErrors'
+        'validationErrors' => 'getValidationErrors'
     ];
 
     public static function attributeMap()
@@ -136,10 +136,10 @@ class SingleOfProductCreationResult implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['status_code'] = isset($data['status_code']) ? $data['status_code'] : null;
+        $this->container['statusCode'] = isset($data['statusCode']) ? $data['statusCode'] : null;
         $this->container['success'] = isset($data['success']) ? $data['success'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['validation_errors'] = isset($data['validation_errors']) ? $data['validation_errors'] : null;
+        $this->container['validationErrors'] = isset($data['validationErrors']) ? $data['validationErrors'] : null;
     }
 
     /**
@@ -169,7 +169,7 @@ class SingleOfProductCreationResult implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Swagger\Client\Model\ProductCreationResult
+     * @return \ChannelEngine\ApiClient\Model\ProductCreationResult
      */
     public function getContent()
     {
@@ -178,7 +178,7 @@ class SingleOfProductCreationResult implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\ProductCreationResult $content
+     * @param \ChannelEngine\ApiClient\Model\ProductCreationResult $content
      * @return $this
      */
     public function setContent($content)
@@ -189,22 +189,22 @@ class SingleOfProductCreationResult implements ArrayAccess
     }
 
     /**
-     * Gets status_code
+     * Gets statusCode
      * @return int
      */
     public function getStatusCode()
     {
-        return $this->container['status_code'];
+        return $this->container['statusCode'];
     }
 
     /**
-     * Sets status_code
-     * @param int $status_code
+     * Sets statusCode
+     * @param int $statusCode
      * @return $this
      */
-    public function setStatusCode($status_code)
+    public function setStatusCode($statusCode)
     {
-        $this->container['status_code'] = $status_code;
+        $this->container['statusCode'] = $statusCode;
 
         return $this;
     }
@@ -252,22 +252,22 @@ class SingleOfProductCreationResult implements ArrayAccess
     }
 
     /**
-     * Gets validation_errors
+     * Gets validationErrors
      * @return map[string,string[]]
      */
     public function getValidationErrors()
     {
-        return $this->container['validation_errors'];
+        return $this->container['validationErrors'];
     }
 
     /**
-     * Sets validation_errors
-     * @param map[string,string[]] $validation_errors
+     * Sets validationErrors
+     * @param map[string,string[]] $validationErrors
      * @return $this
      */
-    public function setValidationErrors($validation_errors)
+    public function setValidationErrors($validationErrors)
     {
-        $this->container['validation_errors'] = $validation_errors;
+        $this->container['validationErrors'] = $validationErrors;
 
         return $this;
     }
@@ -323,10 +323,10 @@ class SingleOfProductCreationResult implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace ChannelEngine\ApiClient;
 
 /**
  * ChannelReturnResponseTest Class Doc Comment
@@ -35,7 +35,7 @@ namespace Swagger\Client;
  * @category    Class */
 // * @description ChannelReturnResponse
 /**
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -83,7 +83,7 @@ class ChannelReturnResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "channel_reference"
+     * Test attribute "channelReference"
      */
     public function testPropertyChannelReference()
     {
@@ -91,7 +91,7 @@ class ChannelReturnResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "channel_order_reference"
+     * Test attribute "channelOrderReference"
      */
     public function testPropertyChannelOrderReference()
     {
@@ -115,7 +115,7 @@ class ChannelReturnResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "customer_comment"
+     * Test attribute "customerComment"
      */
     public function testPropertyCustomerComment()
     {
@@ -123,7 +123,7 @@ class ChannelReturnResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "merchant_comment"
+     * Test attribute "merchantComment"
      */
     public function testPropertyMerchantComment()
     {
@@ -131,7 +131,7 @@ class ChannelReturnResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "refund_incl_vat"
+     * Test attribute "refundInclVat"
      */
     public function testPropertyRefundInclVat()
     {
@@ -139,7 +139,7 @@ class ChannelReturnResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "refund_excl_vat"
+     * Test attribute "refundExclVat"
      */
     public function testPropertyRefundExclVat()
     {

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ChannelOfferResponse Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class ChannelOfferResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'channel_product_reference' => 'string',
+        'channelProductReference' => 'string',
         'price' => 'double',
         'stock' => 'int'
     ];
@@ -69,7 +69,7 @@ class ChannelOfferResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'channel_product_reference' => 'ChannelProductReference',
+        'channelProductReference' => 'ChannelProductReference',
         'price' => 'Price',
         'stock' => 'Stock'
     ];
@@ -80,7 +80,7 @@ class ChannelOfferResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'channel_product_reference' => 'setChannelProductReference',
+        'channelProductReference' => 'setChannelProductReference',
         'price' => 'setPrice',
         'stock' => 'setStock'
     ];
@@ -91,7 +91,7 @@ class ChannelOfferResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'channel_product_reference' => 'getChannelProductReference',
+        'channelProductReference' => 'getChannelProductReference',
         'price' => 'getPrice',
         'stock' => 'getStock'
     ];
@@ -127,7 +127,7 @@ class ChannelOfferResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['channel_product_reference'] = isset($data['channel_product_reference']) ? $data['channel_product_reference'] : null;
+        $this->container['channelProductReference'] = isset($data['channelProductReference']) ? $data['channelProductReference'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['stock'] = isset($data['stock']) ? $data['stock'] : null;
     }
@@ -158,22 +158,22 @@ class ChannelOfferResponse implements ArrayAccess
 
 
     /**
-     * Gets channel_product_reference
+     * Gets channelProductReference
      * @return string
      */
     public function getChannelProductReference()
     {
-        return $this->container['channel_product_reference'];
+        return $this->container['channelProductReference'];
     }
 
     /**
-     * Sets channel_product_reference
-     * @param string $channel_product_reference
+     * Sets channelProductReference
+     * @param string $channelProductReference
      * @return $this
      */
-    public function setChannelProductReference($channel_product_reference)
+    public function setChannelProductReference($channelProductReference)
     {
-        $this->container['channel_product_reference'] = $channel_product_reference;
+        $this->container['channelProductReference'] = $channelProductReference;
 
         return $this;
     }
@@ -271,10 +271,10 @@ class ChannelOfferResponse implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

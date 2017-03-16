@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * MerchantOrderLineResponse Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,11 +54,11 @@ class MerchantOrderLineResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchant_product_reference' => 'string',
+        'merchantProductReference' => 'string',
         'quantity' => 'int',
-        'unit_price_incl_vat' => 'double',
-        'fee_fixed' => 'double',
-        'fee_rate' => 'double',
+        'unitPriceInclVat' => 'double',
+        'feeFixed' => 'double',
+        'feeRate' => 'double',
         'condition' => 'string'
     ];
 
@@ -72,11 +72,11 @@ class MerchantOrderLineResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchant_product_reference' => 'MerchantProductReference',
+        'merchantProductReference' => 'MerchantProductReference',
         'quantity' => 'Quantity',
-        'unit_price_incl_vat' => 'UnitPriceInclVat',
-        'fee_fixed' => 'FeeFixed',
-        'fee_rate' => 'FeeRate',
+        'unitPriceInclVat' => 'UnitPriceInclVat',
+        'feeFixed' => 'FeeFixed',
+        'feeRate' => 'FeeRate',
         'condition' => 'Condition'
     ];
 
@@ -86,11 +86,11 @@ class MerchantOrderLineResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchant_product_reference' => 'setMerchantProductReference',
+        'merchantProductReference' => 'setMerchantProductReference',
         'quantity' => 'setQuantity',
-        'unit_price_incl_vat' => 'setUnitPriceInclVat',
-        'fee_fixed' => 'setFeeFixed',
-        'fee_rate' => 'setFeeRate',
+        'unitPriceInclVat' => 'setUnitPriceInclVat',
+        'feeFixed' => 'setFeeFixed',
+        'feeRate' => 'setFeeRate',
         'condition' => 'setCondition'
     ];
 
@@ -100,11 +100,11 @@ class MerchantOrderLineResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchant_product_reference' => 'getMerchantProductReference',
+        'merchantProductReference' => 'getMerchantProductReference',
         'quantity' => 'getQuantity',
-        'unit_price_incl_vat' => 'getUnitPriceInclVat',
-        'fee_fixed' => 'getFeeFixed',
-        'fee_rate' => 'getFeeRate',
+        'unitPriceInclVat' => 'getUnitPriceInclVat',
+        'feeFixed' => 'getFeeFixed',
+        'feeRate' => 'getFeeRate',
         'condition' => 'getCondition'
     ];
 
@@ -163,11 +163,11 @@ class MerchantOrderLineResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchant_product_reference'] = isset($data['merchant_product_reference']) ? $data['merchant_product_reference'] : null;
+        $this->container['merchantProductReference'] = isset($data['merchantProductReference']) ? $data['merchantProductReference'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['unit_price_incl_vat'] = isset($data['unit_price_incl_vat']) ? $data['unit_price_incl_vat'] : null;
-        $this->container['fee_fixed'] = isset($data['fee_fixed']) ? $data['fee_fixed'] : null;
-        $this->container['fee_rate'] = isset($data['fee_rate']) ? $data['fee_rate'] : null;
+        $this->container['unitPriceInclVat'] = isset($data['unitPriceInclVat']) ? $data['unitPriceInclVat'] : null;
+        $this->container['feeFixed'] = isset($data['feeFixed']) ? $data['feeFixed'] : null;
+        $this->container['feeRate'] = isset($data['feeRate']) ? $data['feeRate'] : null;
         $this->container['condition'] = isset($data['condition']) ? $data['condition'] : null;
     }
 
@@ -180,14 +180,14 @@ class MerchantOrderLineResponse implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['merchant_product_reference'] === null) {
-            $invalid_properties[] = "'merchant_product_reference' can't be null";
+        if ($this->container['merchantProductReference'] === null) {
+            $invalid_properties[] = "'merchantProductReference' can't be null";
         }
         if ($this->container['quantity'] === null) {
             $invalid_properties[] = "'quantity' can't be null";
         }
-        if ($this->container['unit_price_incl_vat'] === null) {
-            $invalid_properties[] = "'unit_price_incl_vat' can't be null";
+        if ($this->container['unitPriceInclVat'] === null) {
+            $invalid_properties[] = "'unitPriceInclVat' can't be null";
         }
         $allowed_values = ["NEW", "NEW_REFURBISHED", "USED_AS_NEW", "USED_GOOD", "USED_REASONABLE", "USED_MEDIOCRE", "UNKNOWN"];
         if (!in_array($this->container['condition'], $allowed_values)) {
@@ -206,13 +206,13 @@ class MerchantOrderLineResponse implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['merchant_product_reference'] === null) {
+        if ($this->container['merchantProductReference'] === null) {
             return false;
         }
         if ($this->container['quantity'] === null) {
             return false;
         }
-        if ($this->container['unit_price_incl_vat'] === null) {
+        if ($this->container['unitPriceInclVat'] === null) {
             return false;
         }
         $allowed_values = ["NEW", "NEW_REFURBISHED", "USED_AS_NEW", "USED_GOOD", "USED_REASONABLE", "USED_MEDIOCRE", "UNKNOWN"];
@@ -224,22 +224,22 @@ class MerchantOrderLineResponse implements ArrayAccess
 
 
     /**
-     * Gets merchant_product_reference
+     * Gets merchantProductReference
      * @return string
      */
     public function getMerchantProductReference()
     {
-        return $this->container['merchant_product_reference'];
+        return $this->container['merchantProductReference'];
     }
 
     /**
-     * Sets merchant_product_reference
-     * @param string $merchant_product_reference
+     * Sets merchantProductReference
+     * @param string $merchantProductReference
      * @return $this
      */
-    public function setMerchantProductReference($merchant_product_reference)
+    public function setMerchantProductReference($merchantProductReference)
     {
-        $this->container['merchant_product_reference'] = $merchant_product_reference;
+        $this->container['merchantProductReference'] = $merchantProductReference;
 
         return $this;
     }
@@ -266,64 +266,64 @@ class MerchantOrderLineResponse implements ArrayAccess
     }
 
     /**
-     * Gets unit_price_incl_vat
+     * Gets unitPriceInclVat
      * @return double
      */
     public function getUnitPriceInclVat()
     {
-        return $this->container['unit_price_incl_vat'];
+        return $this->container['unitPriceInclVat'];
     }
 
     /**
-     * Sets unit_price_incl_vat
-     * @param double $unit_price_incl_vat The value of a single unit of the ordered product including VAT  (in the tenant's base currency calculated using the exchange rate at the time of ordering).
+     * Sets unitPriceInclVat
+     * @param double $unitPriceInclVat The value of a single unit of the ordered product including VAT  (in the tenant's base currency calculated using the exchange rate at the time of ordering).
      * @return $this
      */
-    public function setUnitPriceInclVat($unit_price_incl_vat)
+    public function setUnitPriceInclVat($unitPriceInclVat)
     {
-        $this->container['unit_price_incl_vat'] = $unit_price_incl_vat;
+        $this->container['unitPriceInclVat'] = $unitPriceInclVat;
 
         return $this;
     }
 
     /**
-     * Gets fee_fixed
+     * Gets feeFixed
      * @return double
      */
     public function getFeeFixed()
     {
-        return $this->container['fee_fixed'];
+        return $this->container['feeFixed'];
     }
 
     /**
-     * Sets fee_fixed
-     * @param double $fee_fixed A fixed fee that is charged by the Channel for this orderline.  This field is optional, send 0 if not applicable.
+     * Sets feeFixed
+     * @param double $feeFixed A fixed fee that is charged by the Channel for this orderline.  This field is optional, send 0 if not applicable.
      * @return $this
      */
-    public function setFeeFixed($fee_fixed)
+    public function setFeeFixed($feeFixed)
     {
-        $this->container['fee_fixed'] = $fee_fixed;
+        $this->container['feeFixed'] = $feeFixed;
 
         return $this;
     }
 
     /**
-     * Gets fee_rate
+     * Gets feeRate
      * @return double
      */
     public function getFeeRate()
     {
-        return $this->container['fee_rate'];
+        return $this->container['feeRate'];
     }
 
     /**
-     * Sets fee_rate
-     * @param double $fee_rate A percentage fee that is charged by the Channel for this orderline.  This field is optional, send 0 if not applicable.
+     * Sets feeRate
+     * @param double $feeRate A percentage fee that is charged by the Channel for this orderline.  This field is optional, send 0 if not applicable.
      * @return $this
      */
-    public function setFeeRate($fee_rate)
+    public function setFeeRate($feeRate)
     {
-        $this->container['fee_rate'] = $fee_rate;
+        $this->container['feeRate'] = $feeRate;
 
         return $this;
     }
@@ -404,10 +404,10 @@ class MerchantOrderLineResponse implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

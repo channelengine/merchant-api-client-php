@@ -1,4 +1,4 @@
-# Swagger\Client\ReturnApi
+# ChannelEngine\ApiClient\ReturnApi
 
 All URIs are relative to *https://demo.channelengine.net/api*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **returnCreate**
-> \Swagger\Client\Model\ApiResponse returnCreate($model)
+> \ChannelEngine\ApiClient\Model\ApiResponse returnCreate($model)
 
 Channel: Create Return
 
@@ -22,8 +22,8 @@ For channels.                Mark (part of) an order as returned by the customer
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ReturnApi();
-$model = new \Swagger\Client\Model\ChannelReturnRequest(); // \Swagger\Client\Model\ChannelReturnRequest | 
+$api_instance = new ChannelEngine\ApiClient\Api\ReturnApi();
+$model = new \ChannelEngine\ApiClient\Model\ChannelReturnRequest(); // \ChannelEngine\ApiClient\Model\ChannelReturnRequest | 
 
 try {
     $result = $api_instance->returnCreate($model);
@@ -38,11 +38,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**\Swagger\Client\Model\ChannelReturnRequest**](../Model/\Swagger\Client\Model\ChannelReturnRequest.md)|  |
+ **model** | [**\ChannelEngine\ApiClient\Model\ChannelReturnRequest**](../Model/\ChannelEngine\ApiClient\Model\ChannelReturnRequest.md)|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\ChannelEngine\ApiClient\Model\ApiResponse**](../Model/ApiResponse.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **returnCreate_0**
-> \Swagger\Client\Model\ApiResponse returnCreate_0($model)
+> \ChannelEngine\ApiClient\Model\ApiResponse returnCreate_0($model)
 
 Merchant: Create Return
 
@@ -67,8 +67,8 @@ For merchants.    Mark (part of) an order as returned by the customer.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ReturnApi();
-$model = new \Swagger\Client\Model\MerchantReturnRequest(); // \Swagger\Client\Model\MerchantReturnRequest | 
+$api_instance = new ChannelEngine\ApiClient\Api\ReturnApi();
+$model = new \ChannelEngine\ApiClient\Model\MerchantReturnRequest(); // \ChannelEngine\ApiClient\Model\MerchantReturnRequest | 
 
 try {
     $result = $api_instance->returnCreate_0($model);
@@ -83,11 +83,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**\Swagger\Client\Model\MerchantReturnRequest**](../Model/\Swagger\Client\Model\MerchantReturnRequest.md)|  |
+ **model** | [**\ChannelEngine\ApiClient\Model\MerchantReturnRequest**](../Model/\ChannelEngine\ApiClient\Model\MerchantReturnRequest.md)|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\ChannelEngine\ApiClient\Model\ApiResponse**](../Model/ApiResponse.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **returnGetChannelReturns**
-> \Swagger\Client\Model\CollectionOfMerchantReturnResponse returnGetChannelReturns($created_since)
+> \ChannelEngine\ApiClient\Model\CollectionOfMerchantReturnResponse returnGetChannelReturns($createdSince)
 
 Merchant: Get Returns
 
@@ -112,11 +112,11 @@ For merchants.    Get all returns created by the channel. This call is supposed 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ReturnApi();
-$created_since = new \DateTime(); // \DateTime | 
+$api_instance = new ChannelEngine\ApiClient\Api\ReturnApi();
+$createdSince = new \DateTime(); // \DateTime | 
 
 try {
-    $result = $api_instance->returnGetChannelReturns($created_since);
+    $result = $api_instance->returnGetChannelReturns($createdSince);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReturnApi->returnGetChannelReturns: ', $e->getMessage(), PHP_EOL;
@@ -128,11 +128,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **created_since** | **\DateTime**|  |
+ **createdSince** | **\DateTime**|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\CollectionOfMerchantReturnResponse**](../Model/CollectionOfMerchantReturnResponse.md)
+[**\ChannelEngine\ApiClient\Model\CollectionOfMerchantReturnResponse**](../Model/CollectionOfMerchantReturnResponse.md)
 
 ### Authorization
 
@@ -146,7 +146,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **returnGetMerchantReturns**
-> \Swagger\Client\Model\CollectionOfChannelReturnResponse returnGetMerchantReturns($created_since)
+> \ChannelEngine\ApiClient\Model\CollectionOfChannelReturnResponse returnGetMerchantReturns($createdSince)
 
 Channel: Get Returns
 
@@ -157,11 +157,11 @@ For channels.                Get all returns created by the merchant. This call 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ReturnApi();
-$created_since = new \DateTime(); // \DateTime | 
+$api_instance = new ChannelEngine\ApiClient\Api\ReturnApi();
+$createdSince = new \DateTime(); // \DateTime | 
 
 try {
-    $result = $api_instance->returnGetMerchantReturns($created_since);
+    $result = $api_instance->returnGetMerchantReturns($createdSince);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReturnApi->returnGetMerchantReturns: ', $e->getMessage(), PHP_EOL;
@@ -173,11 +173,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **created_since** | **\DateTime**|  |
+ **createdSince** | **\DateTime**|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\CollectionOfChannelReturnResponse**](../Model/CollectionOfChannelReturnResponse.md)
+[**\ChannelEngine\ApiClient\Model\CollectionOfChannelReturnResponse**](../Model/CollectionOfChannelReturnResponse.md)
 
 ### Authorization
 

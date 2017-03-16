@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**channel_product_reference** | **string** |  | [optional] 
+**channelProductReference** | **string** |  | [optional] 
 **price** | **double** |  | [optional] 
 **stock** | **int** |  | [optional] 
 

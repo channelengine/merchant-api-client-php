@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ChannelEngine\ApiClient
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ChannelEngine\ApiClient\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ChannelProcessedChangesRequest Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ChannelEngine\ApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -54,7 +54,7 @@ class ChannelProcessedChangesRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'created' => '\Swagger\Client\Model\ChannelReferencesRequest[]',
+        'created' => '\ChannelEngine\ApiClient\Model\ChannelReferencesRequest[]',
         'updated' => 'string[]',
         'removed' => 'string[]'
     ];
@@ -159,7 +159,7 @@ class ChannelProcessedChangesRequest implements ArrayAccess
 
     /**
      * Gets created
-     * @return \Swagger\Client\Model\ChannelReferencesRequest[]
+     * @return \ChannelEngine\ApiClient\Model\ChannelReferencesRequest[]
      */
     public function getCreated()
     {
@@ -168,7 +168,7 @@ class ChannelProcessedChangesRequest implements ArrayAccess
 
     /**
      * Sets created
-     * @param \Swagger\Client\Model\ChannelReferencesRequest[] $created A collection of pairs of merchant and channel references  of the products which are successfully created. The channel references  are saved such that in subsequent calls these can be used instead of the   merchant references.
+     * @param \ChannelEngine\ApiClient\Model\ChannelReferencesRequest[] $created A collection of pairs of merchant and channel references  of the products which are successfully created. The channel references  are saved such that in subsequent calls these can be used instead of the   merchant references.
      * @return $this
      */
     public function setCreated($created)
@@ -271,10 +271,10 @@ class ChannelProcessedChangesRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ChannelEngine\ApiClient\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 
