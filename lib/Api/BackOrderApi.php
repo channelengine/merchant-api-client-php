@@ -92,7 +92,7 @@ class BackOrderApi
      *
      * Merchant: Create Backorder
      *
-     * @param \ChannelEngine\ApiClient\Model\BackOrder $backOrder The Backorder to create (required)
+     * @param \ChannelEngine\ApiClient\Model\MerchantBackOrderRequest $backOrder The Backorder to create (required)
      * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
      * @return \ChannelEngine\ApiClient\Model\ApiResponse
      */
@@ -107,7 +107,7 @@ class BackOrderApi
      *
      * Merchant: Create Backorder
      *
-     * @param \ChannelEngine\ApiClient\Model\BackOrder $backOrder The Backorder to create (required)
+     * @param \ChannelEngine\ApiClient\Model\MerchantBackOrderRequest $backOrder The Backorder to create (required)
      * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
      * @return array of \ChannelEngine\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -127,7 +127,7 @@ class BackOrderApi
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'text/json', 'application/x-www-form-urlencoded']);
 
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -175,103 +175,13 @@ class BackOrderApi
     }
 
     /**
-     * Operation backOrderGet
-     *
-     * Merchant: Get Backorder
-     *
-     * @param string $merchantBackorderNo The unique backorder reference supplied by the merchant (required)
-     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
-     * @return \ChannelEngine\ApiClient\Model\SingleOfBackOrder
-     */
-    public function backOrderGet($merchantBackorderNo)
-    {
-        list($response) = $this->backOrderGetWithHttpInfo($merchantBackorderNo);
-        return $response;
-    }
-
-    /**
-     * Operation backOrderGetWithHttpInfo
-     *
-     * Merchant: Get Backorder
-     *
-     * @param string $merchantBackorderNo The unique backorder reference supplied by the merchant (required)
-     * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
-     * @return array of \ChannelEngine\ApiClient\Model\SingleOfBackOrder, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function backOrderGetWithHttpInfo($merchantBackorderNo)
-    {
-        // verify the required parameter 'merchantBackorderNo' is set
-        if ($merchantBackorderNo === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $merchantBackorderNo when calling backOrderGet');
-        }
-        // parse inputs
-        $resourcePath = "/v2/backorders/{merchantBackorderNo}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'text/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
-
-        // path params
-        if ($merchantBackorderNo !== null) {
-            $resourcePath = str_replace(
-                "{" . "merchantBackorderNo" . "}",
-                $this->apiClient->getSerializer()->toPathValue($merchantBackorderNo),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->apiClient->getApiKeyWithPrefix('apikey');
-        if (strlen($apiKey) !== 0) {
-            $queryParams['apikey'] = $apiKey;
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\ChannelEngine\ApiClient\Model\SingleOfBackOrder',
-                '/v2/backorders/{merchantBackorderNo}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\SingleOfBackOrder', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\SingleOfBackOrder', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
      * Operation backOrderIndex
      *
-     * Get Backorders
+     * Channel: Get Backorders
      *
      * @param \DateTime $createdSince  (required)
      * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
-     * @return \ChannelEngine\ApiClient\Model\CollectionOfBackOrder
+     * @return \ChannelEngine\ApiClient\Model\CollectionOfChannelBackOrderResponse
      */
     public function backOrderIndex($createdSince)
     {
@@ -282,11 +192,11 @@ class BackOrderApi
     /**
      * Operation backOrderIndexWithHttpInfo
      *
-     * Get Backorders
+     * Channel: Get Backorders
      *
      * @param \DateTime $createdSince  (required)
      * @throws \ChannelEngine\ApiClient\ApiException on non-2xx response
-     * @return array of \ChannelEngine\ApiClient\Model\CollectionOfBackOrder, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ChannelEngine\ApiClient\Model\CollectionOfChannelBackOrderResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function backOrderIndexWithHttpInfo($createdSince)
     {
@@ -333,15 +243,15 @@ class BackOrderApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\ChannelEngine\ApiClient\Model\CollectionOfBackOrder',
+                '\ChannelEngine\ApiClient\Model\CollectionOfChannelBackOrderResponse',
                 '/v2/backorders'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\CollectionOfBackOrder', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ChannelEngine\ApiClient\Model\CollectionOfChannelBackOrderResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\CollectionOfBackOrder', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ChannelEngine\ApiClient\Model\CollectionOfChannelBackOrderResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

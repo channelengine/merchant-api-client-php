@@ -55,7 +55,6 @@ class MerchantProductResponse implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'isActive' => 'bool',
-        'mappedFields' => 'map[string,string]',
         'name' => 'string',
         'description' => 'string',
         'brand' => 'string',
@@ -87,7 +86,6 @@ class MerchantProductResponse implements ArrayAccess
      */
     protected static $attributeMap = [
         'isActive' => 'IsActive',
-        'mappedFields' => 'MappedFields',
         'name' => 'Name',
         'description' => 'Description',
         'brand' => 'Brand',
@@ -115,7 +113,6 @@ class MerchantProductResponse implements ArrayAccess
      */
     protected static $setters = [
         'isActive' => 'setIsActive',
-        'mappedFields' => 'setMappedFields',
         'name' => 'setName',
         'description' => 'setDescription',
         'brand' => 'setBrand',
@@ -143,7 +140,6 @@ class MerchantProductResponse implements ArrayAccess
      */
     protected static $getters = [
         'isActive' => 'getIsActive',
-        'mappedFields' => 'getMappedFields',
         'name' => 'getName',
         'description' => 'getDescription',
         'brand' => 'getBrand',
@@ -212,7 +208,6 @@ class MerchantProductResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['isActive'] = isset($data['isActive']) ? $data['isActive'] : null;
-        $this->container['mappedFields'] = isset($data['mappedFields']) ? $data['mappedFields'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['brand'] = isset($data['brand']) ? $data['brand'] : null;
@@ -284,27 +279,6 @@ class MerchantProductResponse implements ArrayAccess
     public function setIsActive($isActive)
     {
         $this->container['isActive'] = $isActive;
-
-        return $this;
-    }
-
-    /**
-     * Gets mappedFields
-     * @return map[string,string]
-     */
-    public function getMappedFields()
-    {
-        return $this->container['mappedFields'];
-    }
-
-    /**
-     * Sets mappedFields
-     * @param map[string,string] $mappedFields A channel can require certain fields to be available. The channel  can provide ChannelEngine with this fields after which the merchants  will be able to fill in this field using custom conditions in ChannelEngine.    There are five different
-     * @return $this
-     */
-    public function setMappedFields($mappedFields)
-    {
-        $this->container['mappedFields'] = $mappedFields;
 
         return $this;
     }

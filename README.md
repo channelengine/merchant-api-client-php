@@ -63,7 +63,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
 $api_instance = new ChannelEngine\ApiClient\Api\BackOrderApi();
-$backOrder = new \ChannelEngine\ApiClient\Model\BackOrder(); // \ChannelEngine\ApiClient\Model\BackOrder | The Backorder to create
+$backOrder = new \ChannelEngine\ApiClient\Model\MerchantBackOrderRequest(); // \ChannelEngine\ApiClient\Model\MerchantBackOrderRequest | The Backorder to create
 
 try {
     $result = $api_instance->backOrderCreate($backOrder);
@@ -82,11 +82,11 @@ All URIs are relative to *http://dev.channelengine.local/api*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BackOrderApi* | [**backOrderCreate**](docs/Api/BackOrderApi.md#backordercreate) | **POST** /v2/backorders | Merchant: Create Backorder
-*BackOrderApi* | [**backOrderGet**](docs/Api/BackOrderApi.md#backorderget) | **GET** /v2/backorders/{merchantBackorderNo} | Merchant: Get Backorder
-*BackOrderApi* | [**backOrderIndex**](docs/Api/BackOrderApi.md#backorderindex) | **GET** /v2/backorders | Get Backorders
+*BackOrderApi* | [**backOrderIndex**](docs/Api/BackOrderApi.md#backorderindex) | **GET** /v2/backorders | Channel: Get Backorders
 *CancellationApi* | [**cancellationCreate**](docs/Api/CancellationApi.md#cancellationcreate) | **POST** /v2/cancellations | Merchant: Create Cancellation
 *CancellationApi* | [**cancellationIndex**](docs/Api/CancellationApi.md#cancellationindex) | **GET** /v2/cancellations | Channel: Get Cancellations
 *ClientApi* | [**clientGet**](docs/Api/ClientApi.md#clientget) | **GET** /v2/clients/{language} | Get API Client
+*OfferApi* | [**offerStockPriceUpdate**](docs/Api/OfferApi.md#offerstockpriceupdate) | **PUT** /v2/offer | Update stock or price.
 *OrderApi* | [**orderAcknowledge**](docs/Api/OrderApi.md#orderacknowledge) | **POST** /v2/orders/acknowledge | Merchant: Acknowledge Order
 *OrderApi* | [**orderCreate**](docs/Api/OrderApi.md#ordercreate) | **POST** /v2/orders | Channel: Create Order
 *OrderApi* | [**orderGetNew**](docs/Api/OrderApi.md#ordergetnew) | **GET** /v2/orders/new | Merchant: Get New Orders
@@ -111,8 +111,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [ApiResponse](docs/Model/ApiResponse.md)
- - [BackOrder](docs/Model/BackOrder.md)
- - [BackOrderLine](docs/Model/BackOrderLine.md)
+ - [ChannelBackOrderLineResponse](docs/Model/ChannelBackOrderLineResponse.md)
+ - [ChannelBackOrderResponse](docs/Model/ChannelBackOrderResponse.md)
  - [ChannelCancellationLineResponse](docs/Model/ChannelCancellationLineResponse.md)
  - [ChannelCancellationResponse](docs/Model/ChannelCancellationResponse.md)
  - [ChannelOfferResponse](docs/Model/ChannelOfferResponse.md)
@@ -128,7 +128,7 @@ Class | Method | HTTP request | Description
  - [ChannelReturnResponse](docs/Model/ChannelReturnResponse.md)
  - [ChannelShipmentLineResponse](docs/Model/ChannelShipmentLineResponse.md)
  - [ChannelShipmentResponse](docs/Model/ChannelShipmentResponse.md)
- - [CollectionOfBackOrder](docs/Model/CollectionOfBackOrder.md)
+ - [CollectionOfChannelBackOrderResponse](docs/Model/CollectionOfChannelBackOrderResponse.md)
  - [CollectionOfChannelCancellationResponse](docs/Model/CollectionOfChannelCancellationResponse.md)
  - [CollectionOfChannelOfferResponse](docs/Model/CollectionOfChannelOfferResponse.md)
  - [CollectionOfChannelReturnResponse](docs/Model/CollectionOfChannelReturnResponse.md)
@@ -137,6 +137,8 @@ Class | Method | HTTP request | Description
  - [CollectionOfMerchantReturnResponse](docs/Model/CollectionOfMerchantReturnResponse.md)
  - [EntitiesAddressModels](docs/Model/EntitiesAddressModels.md)
  - [ExtraDataItem](docs/Model/ExtraDataItem.md)
+ - [MerchantBackOrderLineRequest](docs/Model/MerchantBackOrderLineRequest.md)
+ - [MerchantBackOrderRequest](docs/Model/MerchantBackOrderRequest.md)
  - [MerchantCancellationLineRequest](docs/Model/MerchantCancellationLineRequest.md)
  - [MerchantCancellationRequest](docs/Model/MerchantCancellationRequest.md)
  - [MerchantOrderLineResponse](docs/Model/MerchantOrderLineResponse.md)
@@ -150,11 +152,12 @@ Class | Method | HTTP request | Description
  - [MerchantShipmentLineRequest](docs/Model/MerchantShipmentLineRequest.md)
  - [MerchantShipmentRequest](docs/Model/MerchantShipmentRequest.md)
  - [MerchantShipmentTrackingRequest](docs/Model/MerchantShipmentTrackingRequest.md)
+ - [MerchantStockPriceUpdateRequest](docs/Model/MerchantStockPriceUpdateRequest.md)
  - [OrderAcknowledgement](docs/Model/OrderAcknowledgement.md)
  - [ProductCreationResult](docs/Model/ProductCreationResult.md)
  - [ProductMessage](docs/Model/ProductMessage.md)
- - [SingleOfBackOrder](docs/Model/SingleOfBackOrder.md)
  - [SingleOfChannelProductChangesResponse](docs/Model/SingleOfChannelProductChangesResponse.md)
+ - [SingleOfCollectionsDictionary2Generic](docs/Model/SingleOfCollectionsDictionary2Generic.md)
  - [SingleOfMerchantProductResponse](docs/Model/SingleOfMerchantProductResponse.md)
  - [SingleOfProductCreationResult](docs/Model/SingleOfProductCreationResult.md)
 

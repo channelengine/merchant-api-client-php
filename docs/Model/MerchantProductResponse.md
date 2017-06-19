@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **isActive** | **bool** |  | [optional] 
-**mappedFields** | **map[string,string]** | A channel can require certain fields to be available. The channel  can provide ChannelEngine with this fields after which the merchants  will be able to fill in this field using custom conditions in ChannelEngine.    There are five different | [optional] 
 **name** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **brand** | **string** |  | [optional] 
