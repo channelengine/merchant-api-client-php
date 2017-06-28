@@ -1,6 +1,6 @@
 {
-    "name": "channelengine/api-client",
-    "version": "2.1.1",
+    "name": "channelengine/api-client-php",
+    "version": "2.1.2",
     "description": "",
     "keywords": [
         "swagger",
