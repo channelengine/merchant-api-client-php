@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **channelName** | **string** |  | [optional] 
 **channelOrderSupport** | **string** |  | [optional] 
 **channelOrderNo** | **string** |  | [optional] 
+**status** | **string** |  | [optional] 
 **lines** | [**\ChannelEngine\ApiClient\Model\MerchantOrderLineResponse[]**](MerchantOrderLineResponse.md) |  | [optional] 
 **phone** | **string** |  | [optional] 
 **email** | **string** |  | 

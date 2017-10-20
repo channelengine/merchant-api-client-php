@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**status** | **string** |  | [optional] 
+**isFulfillmentByMarketplace** | **bool** |  | [optional] 
 **merchantProductNo** | **string** |  | [optional] 
 **channelProductNo** | **string** |  | 
 **quantity** | **int** |  | 

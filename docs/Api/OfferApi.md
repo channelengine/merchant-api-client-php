@@ -23,7 +23,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
 $api_instance = new ChannelEngine\ApiClient\Api\OfferApi();
-$updates = array(new MerchantStockPriceUpdateRequest()); // \ChannelEngine\ApiClient\Model\MerchantStockPriceUpdateRequest[] | References to the products that should be updated, and the new values  for the stock or price fields. It is possible to supply only one of the two fields  or both.
+$updates = array(new \ChannelEngine\ApiClient\Model\MerchantStockPriceUpdateRequest()); // \ChannelEngine\ApiClient\Model\MerchantStockPriceUpdateRequest[] | References to the products that should be updated, and the new values  for the stock or price fields. It is possible to supply only one of the two fields  or both.
 
 try {
     $result = $api_instance->offerStockPriceUpdate($updates);

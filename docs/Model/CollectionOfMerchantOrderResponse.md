@@ -4,7 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | [**\ChannelEngine\ApiClient\Model\MerchantOrderResponse[]**](MerchantOrderResponse.md) |  | [optional] 
-**count** | **int** |  | [optional] 
+**count** | **int** | The number of items in the current response | [optional] 
+**totalCount** | **int** | The total number of items | [optional] 
+**itemsPerPage** | **int** | The number of items per page | [optional] 
 **statusCode** | **int** |  | [optional] 
 **success** | **bool** |  | [optional] 
 **message** | **string** |  | [optional] 

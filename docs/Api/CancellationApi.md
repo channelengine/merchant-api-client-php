@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cancellation** | [**\ChannelEngine\ApiClient\Model\MerchantCancellationRequest**](../Model/\ChannelEngine\ApiClient\Model\MerchantCancellationRequest.md)|  |
+ **cancellation** | [**\ChannelEngine\ApiClient\Model\MerchantCancellationRequest**](../Model/MerchantCancellationRequest.md)|  |
 
 ### Return type
 
@@ -76,7 +76,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
 $api_instance = new ChannelEngine\ApiClient\Api\CancellationApi();
-$createdSince = new \DateTime(); // \DateTime | 
+$createdSince = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 
 try {
     $result = $api_instance->cancellationIndex($createdSince);

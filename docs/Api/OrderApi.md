@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**orderAcknowledge**](OrderApi.md#orderAcknowledge) | **POST** /v2/orders/acknowledge | Merchant: Acknowledge Order
 [**orderCreate**](OrderApi.md#orderCreate) | **POST** /v2/orders | Channel: Create Order
+[**orderGetByFilter**](OrderApi.md#orderGetByFilter) | **GET** /v2/orders | Merchant: Get Orders By Filter
 [**orderGetNew**](OrderApi.md#orderGetNew) | **GET** /v2/orders/new | Merchant: Get New Orders
 [**orderInvoice**](OrderApi.md#orderInvoice) | **GET** /v2/orders/{merchantOrderNo}/invoice | Merchant: Download Invoice
 [**orderPackingSlip**](OrderApi.md#orderPackingSlip) | **GET** /v2/orders/{merchantOrderNo}/packingslip | Merchant: Download Packing Slip
@@ -44,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**\ChannelEngine\ApiClient\Model\OrderAcknowledgement**](../Model/\ChannelEngine\ApiClient\Model\OrderAcknowledgement.md)| Relations between the id&#39;s returned by ChannelEngine and the references which the merchant uses |
+ **model** | [**\ChannelEngine\ApiClient\Model\OrderAcknowledgement**](../Model/OrderAcknowledgement.md)| Relations between the id&#39;s returned by ChannelEngine and the references which the merchant uses |
 
 ### Return type
 
@@ -94,7 +95,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**\ChannelEngine\ApiClient\Model\ChannelOrderRequest**](../Model/\ChannelEngine\ApiClient\Model\ChannelOrderRequest.md)|  |
+ **model** | [**\ChannelEngine\ApiClient\Model\ChannelOrderRequest**](../Model/ChannelOrderRequest.md)|  |
 
 ### Return type
 
@@ -107,6 +108,64 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderGetByFilter**
+> \ChannelEngine\ApiClient\Model\CollectionOfMerchantOrderResponse orderGetByFilter($filterStatuses, $filterMerchantOrderNos, $filterExcludeMarketplaceFulfilledOrdersAndLines, $filterFulfillmentType, $filterPage)
+
+Merchant: Get Orders By Filter
+
+For merchants.                Fetch orders based on the provided OrderFilter
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: apikey
+ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('apikey', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
+
+$api_instance = new ChannelEngine\ApiClient\Api\OrderApi();
+$filterStatuses = array("filterStatuses_example"); // string[] | 
+$filterMerchantOrderNos = array("filterMerchantOrderNos_example"); // string[] | 
+$filterExcludeMarketplaceFulfilledOrdersAndLines = true; // bool | 
+$filterFulfillmentType = "filterFulfillmentType_example"; // string | Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true.
+$filterPage = 56; // int | 
+
+try {
+    $result = $api_instance->orderGetByFilter($filterStatuses, $filterMerchantOrderNos, $filterExcludeMarketplaceFulfilledOrdersAndLines, $filterFulfillmentType, $filterPage);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderGetByFilter: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filterStatuses** | [**string[]**](../Model/string.md)|  | [optional]
+ **filterMerchantOrderNos** | [**string[]**](../Model/string.md)|  | [optional]
+ **filterExcludeMarketplaceFulfilledOrdersAndLines** | **bool**|  | [optional]
+ **filterFulfillmentType** | **string**| Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. | [optional]
+ **filterPage** | **int**|  | [optional]
+
+### Return type
+
+[**\ChannelEngine\ApiClient\Model\CollectionOfMerchantOrderResponse**](../Model/CollectionOfMerchantOrderResponse.md)
+
+### Authorization
+
+[apikey](../../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
