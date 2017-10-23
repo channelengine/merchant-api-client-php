@@ -26,7 +26,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ShipmentApi();
+$api_instance = new ChannelEngine\ApiClient\Api\ShipmentApi(new \Http\Adapter\Guzzle6\Client());
 $model = new \ChannelEngine\ApiClient\Model\MerchantShipmentRequest(); // \ChannelEngine\ApiClient\Model\MerchantShipmentRequest | 
 
 try {
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**\ChannelEngine\ApiClient\Model\MerchantShipmentRequest**](../Model/\ChannelEngine\ApiClient\Model\MerchantShipmentRequest.md)|  |
+ **model** | [**\ChannelEngine\ApiClient\Model\MerchantShipmentRequest**](../Model/MerchantShipmentRequest.md)|  |
 
 ### Return type
 
@@ -76,8 +76,8 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ShipmentApi();
-$createdSince = new \DateTime(); // \DateTime | 
+$api_instance = new ChannelEngine\ApiClient\Api\ShipmentApi(new \Http\Adapter\Guzzle6\Client());
+$createdSince = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 
 try {
     $result = $api_instance->shipmentIndex($createdSince);
@@ -126,7 +126,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ShipmentApi();
+$api_instance = new ChannelEngine\ApiClient\Api\ShipmentApi(new \Http\Adapter\Guzzle6\Client());
 $merchantShipmentNo = "merchantShipmentNo_example"; // string | The merchant's shipment reference
 $model = new \ChannelEngine\ApiClient\Model\MerchantShipmentTrackingRequest(); // \ChannelEngine\ApiClient\Model\MerchantShipmentTrackingRequest | The updated tracking information
 
@@ -144,7 +144,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **merchantShipmentNo** | **string**| The merchant&#39;s shipment reference |
- **model** | [**\ChannelEngine\ApiClient\Model\MerchantShipmentTrackingRequest**](../Model/\ChannelEngine\ApiClient\Model\MerchantShipmentTrackingRequest.md)| The updated tracking information |
+ **model** | [**\ChannelEngine\ApiClient\Model\MerchantShipmentTrackingRequest**](../Model/MerchantShipmentTrackingRequest.md)| The updated tracking information |
 
 ### Return type
 

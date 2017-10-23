@@ -27,7 +27,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ReturnApi();
+$api_instance = new ChannelEngine\ApiClient\Api\ReturnApi(new \Http\Adapter\Guzzle6\Client());
 $model = new \ChannelEngine\ApiClient\Model\ChannelReturnRequest(); // \ChannelEngine\ApiClient\Model\ChannelReturnRequest | 
 
 try {
@@ -43,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**\ChannelEngine\ApiClient\Model\ChannelReturnRequest**](../Model/\ChannelEngine\ApiClient\Model\ChannelReturnRequest.md)|  |
+ **model** | [**\ChannelEngine\ApiClient\Model\ChannelReturnRequest**](../Model/ChannelReturnRequest.md)|  |
 
 ### Return type
 
@@ -77,7 +77,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ReturnApi();
+$api_instance = new ChannelEngine\ApiClient\Api\ReturnApi(new \Http\Adapter\Guzzle6\Client());
 $model = new \ChannelEngine\ApiClient\Model\MerchantReturnRequest(); // \ChannelEngine\ApiClient\Model\MerchantReturnRequest | 
 
 try {
@@ -93,7 +93,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**\ChannelEngine\ApiClient\Model\MerchantReturnRequest**](../Model/\ChannelEngine\ApiClient\Model\MerchantReturnRequest.md)|  |
+ **model** | [**\ChannelEngine\ApiClient\Model\MerchantReturnRequest**](../Model/MerchantReturnRequest.md)|  |
 
 ### Return type
 
@@ -127,8 +127,8 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ReturnApi();
-$createdSince = new \DateTime(); // \DateTime | 
+$api_instance = new ChannelEngine\ApiClient\Api\ReturnApi(new \Http\Adapter\Guzzle6\Client());
+$createdSince = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 
 try {
     $result = $api_instance->returnGetDeclaredByChannel($createdSince);
@@ -177,8 +177,8 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ReturnApi();
-$createdSince = new \DateTime(); // \DateTime | 
+$api_instance = new ChannelEngine\ApiClient\Api\ReturnApi(new \Http\Adapter\Guzzle6\Client());
+$createdSince = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 
 try {
     $result = $api_instance->returnGetDeclaredByMerchant($createdSince);

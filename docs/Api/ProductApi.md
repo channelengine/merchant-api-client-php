@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**productAcknowledgeDataChanges**](ProductApi.md#productAcknowledgeDataChanges) | **POST** /v2/products/data | Channel: Acknowledge Product Data Changes
 [**productAcknowledgeOfferChanges**](ProductApi.md#productAcknowledgeOfferChanges) | **POST** /v2/products/offers | Channel: Acknowledge Product Offer Changes
-[**productCreate**](ProductApi.md#productCreate) | **POST** /v2/products | Merchant: Create Product
+[**productCreate**](ProductApi.md#productCreate) | **POST** /v2/products | Merchant: Upsert Products
 [**productDelete**](ProductApi.md#productDelete) | **DELETE** /v2/products/{merchantProductNo} | Merchant: Delete Product
 [**productGetByMerchantProductNo**](ProductApi.md#productGetByMerchantProductNo) | **GET** /v2/products/merchant/{merchantProductNo} | Merchant: Get Product
 [**productGetDataChanges**](ProductApi.md#productGetDataChanges) | **GET** /v2/products/data | Channel: Get Product Data Changes
@@ -30,7 +30,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi(new \Http\Adapter\Guzzle6\Client());
 $changes = new \ChannelEngine\ApiClient\Model\ChannelProcessedChangesRequest(); // \ChannelEngine\ApiClient\Model\ChannelProcessedChangesRequest | The merchant references of the products which have been                successfully created, updated or deleted (after a call to 'GetDataChanges')
 
 try {
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **changes** | [**\ChannelEngine\ApiClient\Model\ChannelProcessedChangesRequest**](../Model/\ChannelEngine\ApiClient\Model\ChannelProcessedChangesRequest.md)| The merchant references of the products which have been                successfully created, updated or deleted (after a call to &#39;GetDataChanges&#39;) |
+ **changes** | [**\ChannelEngine\ApiClient\Model\ChannelProcessedChangesRequest**](../Model/ChannelProcessedChangesRequest.md)| The merchant references of the products which have been                successfully created, updated or deleted (after a call to &#39;GetDataChanges&#39;) |
 
 ### Return type
 
@@ -80,8 +80,8 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
-$changes = array(new string[]()); // string[] | The channel references of the updated products
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi(new \Http\Adapter\Guzzle6\Client());
+$changes = array(new \ChannelEngine\ApiClient\Model\string[]()); // string[] | The channel references of the updated products
 
 try {
     $result = $api_instance->productAcknowledgeOfferChanges($changes);
@@ -116,9 +116,9 @@ Name | Type | Description  | Notes
 # **productCreate**
 > \ChannelEngine\ApiClient\Model\SingleOfProductCreationResult productCreate($products)
 
-Merchant: Create Product
+Merchant: Upsert Products
 
-For merchants.    Create a product. The parent serves as the 'base' product of the children.  For example, the children could be different sizes or colors of the parent product.  For channels where every size and color are different products this does not make any difference  (the children will just be sent separately, while ignoring the parent).  But there are channels where the parent and the children need to be sent together, for example  when there is one product with a list of sizes. In this case all the product information is retrieved  from the parent product while the size list is generated from the children.    Note that the parent itself is a 'blueprint' of the child products and we do our best to make sure it  does not end up on the marketplaces itself. Only the children can be purchased.    It's not possible to nest parent and children more than one level (A parent can have many children,  but any child cannot itself also have children).    The supplied MerchantProductNo needs to be unique.
+For merchants.    Upsert (update or create) products. The parent serves as the 'base' product of the children.  For example, the children could be different sizes or colors of the parent product.  For channels where every size and color are different products this does not make any difference  (the children will just be sent separately, while ignoring the parent).  But there are channels where the parent and the children need to be sent together, for example  when there is one product with a list of sizes. In this case all the product information is retrieved  from the parent product while the size list is generated from the children.    Note that the parent itself is a 'blueprint' of the child products and we do our best to make sure it  does not end up on the marketplaces itself. Only the children can be purchased.    It's not possible to nest parent and children more than one level (A parent can have many children,  but any child cannot itself also have children).    The supplied MerchantProductNo needs to be unique.
 
 ### Example
 ```php
@@ -130,8 +130,8 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
-$products = array(new MerchantProductRequest()); // \ChannelEngine\ApiClient\Model\MerchantProductRequest[] | 
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi(new \Http\Adapter\Guzzle6\Client());
+$products = array(new \ChannelEngine\ApiClient\Model\MerchantProductRequest()); // \ChannelEngine\ApiClient\Model\MerchantProductRequest[] | 
 
 try {
     $result = $api_instance->productCreate($products);
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 Merchant: Delete Product
 
-For merchants.    Deactivate a product based on the merchant reference.  Note that we do not really delete a product, as the product  might still be referenced by orders etc. Therefore, the references  used for this product cannot be reused. We do however deactivate the product  which means that it will not be sent to channels.
+For merchants.    Delete a product based on the merchant reference.  Note that we do not really delete a product, as the product  might still be referenced by orders etc. Therefore, the references  used for this product cannot be reused. We do however deactivate the product  which means that it will not be sent to channels.
 
 ### Example
 ```php
@@ -180,7 +180,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi(new \Http\Adapter\Guzzle6\Client());
 $merchantProductNo = "merchantProductNo_example"; // string | 
 
 try {
@@ -230,7 +230,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi(new \Http\Adapter\Guzzle6\Client());
 $merchantProductNo = "merchantProductNo_example"; // string | 
 
 try {
@@ -280,7 +280,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi(new \Http\Adapter\Guzzle6\Client());
 $maxCount = 56; // int | Optional - limit the amount of products returned for each field              (ToBeCreated, ToBeUpdated, ToBeRemoved) to this number.
 
 try {
@@ -330,7 +330,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ProductApi();
+$api_instance = new ChannelEngine\ApiClient\Api\ProductApi(new \Http\Adapter\Guzzle6\Client());
 
 try {
     $result = $api_instance->productGetOfferChanges();

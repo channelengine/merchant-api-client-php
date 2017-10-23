@@ -24,7 +24,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\ClientApi();
+$api_instance = new ChannelEngine\ApiClient\Api\ClientApi(new \Http\Adapter\Guzzle6\Client());
 $language = "language_example"; // string | The programming language
 
 try {

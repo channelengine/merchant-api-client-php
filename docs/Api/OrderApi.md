@@ -29,7 +29,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\OrderApi();
+$api_instance = new ChannelEngine\ApiClient\Api\OrderApi(new \Http\Adapter\Guzzle6\Client());
 $model = new \ChannelEngine\ApiClient\Model\OrderAcknowledgement(); // \ChannelEngine\ApiClient\Model\OrderAcknowledgement | Relations between the id's returned by ChannelEngine and the references which the merchant uses
 
 try {
@@ -79,7 +79,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\OrderApi();
+$api_instance = new ChannelEngine\ApiClient\Api\OrderApi(new \Http\Adapter\Guzzle6\Client());
 $model = new \ChannelEngine\ApiClient\Model\ChannelOrderRequest(); // \ChannelEngine\ApiClient\Model\ChannelOrderRequest | 
 
 try {
@@ -129,7 +129,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\OrderApi();
+$api_instance = new ChannelEngine\ApiClient\Api\OrderApi(new \Http\Adapter\Guzzle6\Client());
 $filterStatuses = array("filterStatuses_example"); // string[] | 
 $filterMerchantOrderNos = array("filterMerchantOrderNos_example"); // string[] | 
 $filterExcludeMarketplaceFulfilledOrdersAndLines = true; // bool | 
@@ -187,7 +187,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\OrderApi();
+$api_instance = new ChannelEngine\ApiClient\Api\OrderApi(new \Http\Adapter\Guzzle6\Client());
 
 try {
     $result = $api_instance->orderGetNew();
@@ -233,7 +233,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\OrderApi();
+$api_instance = new ChannelEngine\ApiClient\Api\OrderApi(new \Http\Adapter\Guzzle6\Client());
 $merchantOrderNo = "merchantOrderNo_example"; // string | The unique order reference as used by the merchant
 $useCustomerCulture = true; // bool | Generate the invoice in the billing address' country's language
 
@@ -285,7 +285,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\OrderApi();
+$api_instance = new ChannelEngine\ApiClient\Api\OrderApi(new \Http\Adapter\Guzzle6\Client());
 $merchantOrderNo = "merchantOrderNo_example"; // string | The unique order reference as used by the merchant
 $useCustomerCulture = true; // bool | Generate the invoice in the billing address' country's language
 

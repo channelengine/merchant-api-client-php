@@ -22,7 +22,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\OfferApi();
+$api_instance = new ChannelEngine\ApiClient\Api\OfferApi(new \Http\Adapter\Guzzle6\Client());
 $updates = array(new \ChannelEngine\ApiClient\Model\MerchantStockPriceUpdateRequest()); // \ChannelEngine\ApiClient\Model\MerchantStockPriceUpdateRequest[] | References to the products that should be updated, and the new values  for the stock or price fields. It is possible to supply only one of the two fields  or both.
 
 try {

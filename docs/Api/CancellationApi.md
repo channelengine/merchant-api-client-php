@@ -25,7 +25,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\CancellationApi();
+$api_instance = new ChannelEngine\ApiClient\Api\CancellationApi(new \Http\Adapter\Guzzle6\Client());
 $cancellation = new \ChannelEngine\ApiClient\Model\MerchantCancellationRequest(); // \ChannelEngine\ApiClient\Model\MerchantCancellationRequest | 
 
 try {
@@ -75,7 +75,7 @@ ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKey('api
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // ChannelEngine\ApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('apikey', 'Bearer');
 
-$api_instance = new ChannelEngine\ApiClient\Api\CancellationApi();
+$api_instance = new ChannelEngine\ApiClient\Api\CancellationApi(new \Http\Adapter\Guzzle6\Client());
 $createdSince = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 
 try {
