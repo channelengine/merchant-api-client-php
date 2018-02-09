@@ -40,9 +40,8 @@ try {
 	dd($response);
 } catch (ApiException $e) {
 	// In case of a non-2xx status an exception will be trown.
-	// However, we can check getResponseObject() to get the deserialized response.
+	// However, we can check getResponseBody() to get the deserialized response.
 	echo($e->getMessage());
-
 	dd($e->getResponseBody());
 }
 
