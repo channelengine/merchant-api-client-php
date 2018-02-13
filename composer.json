@@ -1,6 +1,6 @@
 {
     "name": "channelengine/api-client-php",
-    "version": "2.4.2",
+    "version": "2.5.0",
     "description": "",
     "keywords": [
         "swagger",
@@ -29,9 +29,9 @@
         "friendsofphp/php-cs-fixer": "~1.12"
     },
     "autoload": {
-        "psr-4": { "ChannelEngine\\ApiClient\\" : "lib/" }
+        "psr-4": { "ChannelEngine\\Merchant\\ApiClient\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "ChannelEngine\\ApiClient\\" : "test/" }
+        "psr-4": { "ChannelEngine\\Merchant\\ApiClient\\" : "test/" }
     }
 }
