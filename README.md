@@ -25,9 +25,9 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-use ChannelEngine\ApiClient\Configuration;
-use ChannelEngine\ApiClient\ApiException;
-use ChannelEngine\ApiClient\Api\OrderApi;
+use ChannelEngine\Merchant\ApiClient\Configuration;
+use ChannelEngine\Merchant\ApiClient\ApiException;
+use ChannelEngine\Merchant\ApiClient\Api\OrderApi;
 
 $apiConfig = Configuration::getDefaultConfiguration();
 $apiConfig->setHost('https://demo.channelengine.net/api');
