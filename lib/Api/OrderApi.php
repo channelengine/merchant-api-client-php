@@ -314,9 +314,16 @@ class OrderApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -569,15 +576,15 @@ class OrderApi
 
         // query params
         if (is_array($filterStatuses)) {
-            $filterStatuses = ObjectSerializer::serializeCollection($filterStatuses, 'multi', true);
-        }
+            $queryParams['filter.statuses'] = $filterStatuses;
+        } else
         if ($filterStatuses !== null) {
             $queryParams['filter.statuses'] = ObjectSerializer::toQueryValue($filterStatuses);
         }
         // query params
         if (is_array($filterMerchantOrderNos)) {
-            $filterMerchantOrderNos = ObjectSerializer::serializeCollection($filterMerchantOrderNos, 'multi', true);
-        }
+            $queryParams['filter.merchantOrderNos'] = $filterMerchantOrderNos;
+        } else
         if ($filterMerchantOrderNos !== null) {
             $queryParams['filter.merchantOrderNos'] = ObjectSerializer::toQueryValue($filterMerchantOrderNos);
         }
@@ -613,9 +620,16 @@ class OrderApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -861,9 +875,16 @@ class OrderApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1145,9 +1166,16 @@ class OrderApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1429,9 +1457,16 @@ class OrderApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

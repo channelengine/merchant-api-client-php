@@ -59,6 +59,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'merchantProductNo' => 'string',
         'parentMerchantProductNo' => 'string',
+        'parentMerchantProductNo2' => 'string',
         'name' => 'string',
         'description' => 'string',
         'brand' => 'string',
@@ -96,6 +97,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'merchantProductNo' => null,
         'parentMerchantProductNo' => null,
+        'parentMerchantProductNo2' => null,
         'name' => null,
         'description' => null,
         'brand' => null,
@@ -154,6 +156,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'merchantProductNo' => 'MerchantProductNo',
         'parentMerchantProductNo' => 'ParentMerchantProductNo',
+        'parentMerchantProductNo2' => 'ParentMerchantProductNo2',
         'name' => 'Name',
         'description' => 'Description',
         'brand' => 'Brand',
@@ -191,6 +194,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     protected static $setters = [
         'merchantProductNo' => 'setMerchantProductNo',
         'parentMerchantProductNo' => 'setParentMerchantProductNo',
+        'parentMerchantProductNo2' => 'setParentMerchantProductNo2',
         'name' => 'setName',
         'description' => 'setDescription',
         'brand' => 'setBrand',
@@ -228,6 +232,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     protected static $getters = [
         'merchantProductNo' => 'getMerchantProductNo',
         'parentMerchantProductNo' => 'getParentMerchantProductNo',
+        'parentMerchantProductNo2' => 'getParentMerchantProductNo2',
         'name' => 'getName',
         'description' => 'getDescription',
         'brand' => 'getBrand',
@@ -336,6 +341,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     {
         $this->container['merchantProductNo'] = isset($data['merchantProductNo']) ? $data['merchantProductNo'] : null;
         $this->container['parentMerchantProductNo'] = isset($data['parentMerchantProductNo']) ? $data['parentMerchantProductNo'] : null;
+        $this->container['parentMerchantProductNo2'] = isset($data['parentMerchantProductNo2']) ? $data['parentMerchantProductNo2'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['brand'] = isset($data['brand']) ? $data['brand'] : null;
@@ -439,13 +445,37 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     /**
      * Sets parentMerchantProductNo
      *
-     * @param string $parentMerchantProductNo If this product is a different version of another  product (for example, all fields are the same except  size and/or color), then this field should contain  the 'MerchantProductNo' of the parent. The parent  should already exist (or be present between the products  in the content of the API call, it does not matter whether   the parent is behind the child in the list).
+     * @param string $parentMerchantProductNo If this product is a different version of another  product (for example, all fields are the same except  size), then this field should contain  the 'MerchantProductNo' of the parent. The parent  should already exist (or be present between the products  in the content of the API call, it does not matter whether   the parent is behind the child in the list).
      *
      * @return $this
      */
     public function setParentMerchantProductNo($parentMerchantProductNo)
     {
         $this->container['parentMerchantProductNo'] = $parentMerchantProductNo;
+
+        return $this;
+    }
+
+    /**
+     * Gets parentMerchantProductNo2
+     *
+     * @return string
+     */
+    public function getParentMerchantProductNo2()
+    {
+        return $this->container['parentMerchantProductNo2'];
+    }
+
+    /**
+     * Sets parentMerchantProductNo2
+     *
+     * @param string $parentMerchantProductNo2 If this product is a different version of another  product (for example, all fields are the same except  color) and itself is a parent with child products (e.g. of sizes),   then this field should contain the 'MerchantProductNo' of the grandparent. The grandparent  should already exist (or be present between the products  in the content of the API call, it does not matter whether   the grandparent is behind the child in the list).    Use this field in case of three level product hierarchy,   e.g. model - color - size.   This is required for channels like Otto.
+     *
+     * @return $this
+     */
+    public function setParentMerchantProductNo2($parentMerchantProductNo2)
+    {
+        $this->container['parentMerchantProductNo2'] = $parentMerchantProductNo2;
 
         return $this;
     }
