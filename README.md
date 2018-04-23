@@ -10,7 +10,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "channelengine/api-client-php": "*"
+    "channelengine/merchant-api-client-php": "*"
   }
 }
 ```
