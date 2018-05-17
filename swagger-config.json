@@ -1,17 +1,15 @@
 {
-	"sortParamsByRequiredFlag": true, //Sort method arguments to place required parameters before optional parameters. (Default: true)
-	"ensureUniqueParams": true, //Whether to ensure parameter names are unique in an operation (rename parameters that are not). (Default: true)
-	"allowUnicodeIdentifiers": false, //boolean, toggles whether unicode identifiers are allowed in names or not, default is false (Default: false)
-	"modelPackage": "Model", //package for generated models
-	"apiPackage": "Api", //package for generated api classes
-	"variableNamingConvention": "camelCase", //naming convention of variable name, e.g. camelCase. (Default: snake_case)
-	"invokerPackage": "ChannelEngineMerchantApiClient", //The main namespace to use for all classes. e.g. Yay\Pets
-	"packagePath": "", //The main package name for classes. e.g. GeneratedPetstore
-	"srcBasePath": "", //The directory under packagePath to serve as source root.
-	"composerVendorName": "channelengine", //The vendor name used in the composer package name. The template uses {{composerVendorName}}/{{composerProjectName}} for the composer package name. e.g. yaypets. IMPORTANT NOTE (2016/03): composerVendorName will be deprecated and replaced by gitUserId in the next swagger-codegen release
-	"gitUserId": "channelengine", //Git user ID, e.g. swagger-api.
-	"composerProjectName": "merchant-api-client-php", //The project name used in the composer package name. The template uses {{composerVendorName}}/{{composerProjectName}} for the composer package name. e.g. petstore-client. IMPORTANT NOTE (2016/03): composerProjectName will be deprecated and replaced by gitRepoId in the next swagger-codegen release
-	"gitRepoId": "merchant-api-client-php", //Git repo ID, e.g. swagger-codegen.
-	"artifactVersion": "", //The version to use in the composer package version field. e.g. 1.2.3
-	"hideGenerationTimestamp": true, //hides the timestamp when files were generated (Default: true)
+	"sortParamsByRequiredFlag": true,
+	"ensureUniqueParams": true,
+	"allowUnicodeIdentifiers": false,
+	"modelPackage": "Model",
+	"apiPackage": "Api",
+	"variableNamingConvention": "camelCase",
+	"invokerPackage": "ChannelEngine\\Merchant\\ApiClient",
+	"packagePath": "",
+	"composerVendorName": "channelengine",
+	"gitUserId": "channelengine",
+	"composerProjectName": "merchant-api-client-php",
+	"gitRepoId": "merchant-api-client-php",
+	"hideGenerationTimestamp": true
 }
