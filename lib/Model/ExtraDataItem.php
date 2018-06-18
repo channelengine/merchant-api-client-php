@@ -267,7 +267,7 @@ class ExtraDataItem implements ModelInterface, ArrayAccess
     /**
      * Sets key
      *
-     * @param string $key key
+     * @param string $key Name of the extra data field
      *
      * @return $this
      */
@@ -291,7 +291,7 @@ class ExtraDataItem implements ModelInterface, ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value value
+     * @param string $value Value of the extra data field
      *
      * @return $this
      */
@@ -315,7 +315,7 @@ class ExtraDataItem implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type type
+     * @param string $type Type of the extra data field
      *
      * @return $this
      */
@@ -348,7 +348,7 @@ class ExtraDataItem implements ModelInterface, ArrayAccess
     /**
      * Sets isPublic
      *
-     * @param bool $isPublic isPublic
+     * @param bool $isPublic Add this field to the export of the product feed to the channel
      *
      * @return $this
      */

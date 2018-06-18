@@ -377,11 +377,11 @@ class OrderApi
      *
      * Get Orders By Filter
      *
-     * @param  string[] $filterStatuses filterStatuses (optional)
-     * @param  string[] $filterMerchantOrderNos filterMerchantOrderNos (optional)
-     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines filterExcludeMarketplaceFulfilledOrdersAndLines (optional)
+     * @param  string[] $filterStatuses Order status(es) to filter on (optional)
+     * @param  string[] $filterMerchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
      * @param  string $filterFulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
-     * @param  int $filterPage filterPage (optional)
+     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -398,11 +398,11 @@ class OrderApi
      *
      * Get Orders By Filter
      *
-     * @param  string[] $filterStatuses (optional)
-     * @param  string[] $filterMerchantOrderNos (optional)
-     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines (optional)
+     * @param  string[] $filterStatuses Order status(es) to filter on (optional)
+     * @param  string[] $filterMerchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
      * @param  string $filterFulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
-     * @param  int $filterPage (optional)
+     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -477,11 +477,11 @@ class OrderApi
      *
      * Get Orders By Filter
      *
-     * @param  string[] $filterStatuses (optional)
-     * @param  string[] $filterMerchantOrderNos (optional)
-     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines (optional)
+     * @param  string[] $filterStatuses Order status(es) to filter on (optional)
+     * @param  string[] $filterMerchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
      * @param  string $filterFulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
-     * @param  int $filterPage (optional)
+     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -501,11 +501,11 @@ class OrderApi
      *
      * Get Orders By Filter
      *
-     * @param  string[] $filterStatuses (optional)
-     * @param  string[] $filterMerchantOrderNos (optional)
-     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines (optional)
+     * @param  string[] $filterStatuses Order status(es) to filter on (optional)
+     * @param  string[] $filterMerchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
      * @param  string $filterFulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
-     * @param  int $filterPage (optional)
+     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -555,11 +555,11 @@ class OrderApi
     /**
      * Create request for operation 'orderGetByFilter'
      *
-     * @param  string[] $filterStatuses (optional)
-     * @param  string[] $filterMerchantOrderNos (optional)
-     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines (optional)
+     * @param  string[] $filterStatuses Order status(es) to filter on (optional)
+     * @param  string[] $filterMerchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
      * @param  string $filterFulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
-     * @param  int $filterPage (optional)
+     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

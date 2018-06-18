@@ -295,7 +295,7 @@ class MerchantCancellationRequest implements ModelInterface, ArrayAccess
     /**
      * Sets merchantCancellationNo
      *
-     * @param string $merchantCancellationNo merchantCancellationNo
+     * @param string $merchantCancellationNo The unique cancellation reference used by the Merchant (sku)
      *
      * @return $this
      */
@@ -319,7 +319,7 @@ class MerchantCancellationRequest implements ModelInterface, ArrayAccess
     /**
      * Sets merchantOrderNo
      *
-     * @param string $merchantOrderNo merchantOrderNo
+     * @param string $merchantOrderNo The unique order reference used by the Merchant (sku)
      *
      * @return $this
      */
@@ -367,7 +367,7 @@ class MerchantCancellationRequest implements ModelInterface, ArrayAccess
     /**
      * Sets reason
      *
-     * @param string $reason reason
+     * @param string $reason Reason for cancellation (text)
      *
      * @return $this
      */
@@ -391,7 +391,7 @@ class MerchantCancellationRequest implements ModelInterface, ArrayAccess
     /**
      * Sets reasonCode
      *
-     * @param string $reasonCode reasonCode
+     * @param string $reasonCode Reason code for cancellation
      *
      * @return $this
      */

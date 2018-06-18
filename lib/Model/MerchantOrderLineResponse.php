@@ -432,7 +432,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param string $status status
+     * @param string $status The status of the order
      *
      * @return $this
      */
@@ -465,7 +465,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets isFulfillmentByMarketplace
      *
-     * @param bool $isFulfillmentByMarketplace isFulfillmentByMarketplace
+     * @param bool $isFulfillmentByMarketplace Is the order fulfilled by the marketplace (amazon: FBA, bol: LVB, etc.)?
      *
      * @return $this
      */
@@ -489,7 +489,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets merchantProductNo
      *
-     * @param string $merchantProductNo merchantProductNo
+     * @param string $merchantProductNo The unique product reference used by the Merchant (sku)
      *
      * @return $this
      */
@@ -681,7 +681,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets channelProductNo
      *
-     * @param string $channelProductNo channelProductNo
+     * @param string $channelProductNo The unique order reference used by the channel
      *
      * @return $this
      */
@@ -712,7 +712,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets quantity
      *
-     * @param int $quantity quantity
+     * @param int $quantity The number of items of the product
      *
      * @return $this
      */

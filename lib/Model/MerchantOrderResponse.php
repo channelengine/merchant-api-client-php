@@ -610,7 +610,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets channelName
      *
-     * @param string $channelName channelName
+     * @param string $channelName The name of the channel
      *
      * @return $this
      */
@@ -634,7 +634,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets channelOrderSupport
      *
-     * @param string $channelOrderSupport channelOrderSupport
+     * @param string $channelOrderSupport The type of orders the channel support.
      *
      * @return $this
      */
@@ -667,7 +667,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets channelOrderNo
      *
-     * @param string $channelOrderNo channelOrderNo
+     * @param string $channelOrderNo The unique order reference used by the channel
      *
      * @return $this
      */
@@ -691,7 +691,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param string $status status
+     * @param string $status The status of the order
      *
      * @return $this
      */
@@ -1012,7 +1012,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets phone
      *
-     * @param string $phone phone
+     * @param string $phone The customer's telephone number
      *
      * @return $this
      */
@@ -1043,7 +1043,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets email
      *
-     * @param string $email email
+     * @param string $email The customer's email
      *
      * @return $this
      */
@@ -1136,7 +1136,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets paymentMethod
      *
-     * @param string $paymentMethod paymentMethod
+     * @param string $paymentMethod The payment method used on the order
      *
      * @return $this
      */
@@ -1191,7 +1191,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets currencyCode
      *
-     * @param string $currencyCode currencyCode
+     * @param string $currencyCode The currency code for the amounts of the order
      *
      * @return $this
      */
@@ -1215,7 +1215,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets orderDate
      *
-     * @param \DateTime $orderDate orderDate
+     * @param \DateTime $orderDate The date the order was done
      *
      * @return $this
      */
@@ -1239,7 +1239,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets channelCustomerNo
      *
-     * @param string $channelCustomerNo channelCustomerNo
+     * @param string $channelCustomerNo The unique customer reference used by the channel
      *
      * @return $this
      */
@@ -1270,7 +1270,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets billingAddress
      *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\Address $billingAddress billingAddress
+     * @param \ChannelEngine\Merchant\ApiClient\Model\Address $billingAddress The billing or invoice address
      *
      * @return $this
      */
@@ -1294,7 +1294,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets shippingAddress
      *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\Address $shippingAddress shippingAddress
+     * @param \ChannelEngine\Merchant\ApiClient\Model\Address $shippingAddress The shipping address
      *
      * @return $this
      */
@@ -1318,7 +1318,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets extraData
      *
-     * @param map[string,string] $extraData extraData
+     * @param map[string,string] $extraData Extra data on the order
      *
      * @return $this
      */

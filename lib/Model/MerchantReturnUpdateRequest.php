@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantCancellationLineRequest
+ * MerchantReturnUpdateRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * MerchantCancellationLineRequest Class Doc Comment
+ * MerchantReturnUpdateRequest Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
+class MerchantReturnUpdateRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MerchantCancellationLineRequest';
+    protected static $swaggerModelName = 'MerchantReturnUpdateRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchantProductNo' => 'string',
-        'quantity' => 'int'
+        'returnId' => 'int',
+        'lines' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantReturnLineUpdateRequest[]'
     ];
 
     /**
@@ -67,8 +67,8 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'merchantProductNo' => null,
-        'quantity' => 'int32'
+        'returnId' => 'int32',
+        'lines' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchantProductNo' => 'MerchantProductNo',
-        'quantity' => 'Quantity'
+        'returnId' => 'ReturnId',
+        'lines' => 'Lines'
     ];
 
     /**
@@ -108,8 +108,8 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchantProductNo' => 'setMerchantProductNo',
-        'quantity' => 'setQuantity'
+        'returnId' => 'setReturnId',
+        'lines' => 'setLines'
     ];
 
     /**
@@ -118,8 +118,8 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchantProductNo' => 'getMerchantProductNo',
-        'quantity' => 'getQuantity'
+        'returnId' => 'getReturnId',
+        'lines' => 'getLines'
     ];
 
     /**
@@ -182,8 +182,8 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchantProductNo'] = isset($data['merchantProductNo']) ? $data['merchantProductNo'] : null;
-        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['returnId'] = isset($data['returnId']) ? $data['returnId'] : null;
+        $this->container['lines'] = isset($data['lines']) ? $data['lines'] : null;
     }
 
     /**
@@ -195,11 +195,11 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['merchantProductNo'] === null) {
-            $invalidProperties[] = "'merchantProductNo' can't be null";
+        if ($this->container['returnId'] === null) {
+            $invalidProperties[] = "'returnId' can't be null";
         }
-        if ($this->container['quantity'] === null) {
-            $invalidProperties[] = "'quantity' can't be null";
+        if ($this->container['lines'] === null) {
+            $invalidProperties[] = "'lines' can't be null";
         }
         return $invalidProperties;
     }
@@ -213,10 +213,10 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if ($this->container['merchantProductNo'] === null) {
+        if ($this->container['returnId'] === null) {
             return false;
         }
-        if ($this->container['quantity'] === null) {
+        if ($this->container['lines'] === null) {
             return false;
         }
         return true;
@@ -224,49 +224,49 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets merchantProductNo
+     * Gets returnId
      *
-     * @return string
+     * @return int
      */
-    public function getMerchantProductNo()
+    public function getReturnId()
     {
-        return $this->container['merchantProductNo'];
+        return $this->container['returnId'];
     }
 
     /**
-     * Sets merchantProductNo
+     * Sets returnId
      *
-     * @param string $merchantProductNo The unique product reference used by the Merchant (sku)
+     * @param int $returnId The ChannelEngine return ID of the return you would like to update
      *
      * @return $this
      */
-    public function setMerchantProductNo($merchantProductNo)
+    public function setReturnId($returnId)
     {
-        $this->container['merchantProductNo'] = $merchantProductNo;
+        $this->container['returnId'] = $returnId;
 
         return $this;
     }
 
     /**
-     * Gets quantity
+     * Gets lines
      *
-     * @return int
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnLineUpdateRequest[]
      */
-    public function getQuantity()
+    public function getLines()
     {
-        return $this->container['quantity'];
+        return $this->container['lines'];
     }
 
     /**
-     * Sets quantity
+     * Sets lines
      *
-     * @param int $quantity Quantity of the product to cancel
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnLineUpdateRequest[] $lines lines
      *
      * @return $this
      */
-    public function setQuantity($quantity)
+    public function setLines($lines)
     {
-        $this->container['quantity'] = $quantity;
+        $this->container['lines'] = $lines;
 
         return $this;
     }

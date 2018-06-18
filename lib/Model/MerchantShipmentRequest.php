@@ -308,7 +308,7 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess
     /**
      * Sets merchantShipmentNo
      *
-     * @param string $merchantShipmentNo merchantShipmentNo
+     * @param string $merchantShipmentNo The unique shipment reference used by the Merchant
      *
      * @return $this
      */
@@ -332,7 +332,7 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess
     /**
      * Sets merchantOrderNo
      *
-     * @param string $merchantOrderNo merchantOrderNo
+     * @param string $merchantOrderNo The unique order reference used by the Merchant
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess
     /**
      * Sets trackTraceNo
      *
-     * @param string $trackTraceNo trackTraceNo
+     * @param string $trackTraceNo The unique shipping reference used by the Shipping carrier (track&amp;trace number)
      *
      * @return $this
      */
@@ -411,7 +411,7 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess
     /**
      * Sets trackTraceUrl
      *
-     * @param string $trackTraceUrl trackTraceUrl
+     * @param string $trackTraceUrl A link to a page of the carrier where the customer can track the shipping of her package.
      *
      * @return $this
      */
@@ -442,7 +442,7 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess
     /**
      * Sets method
      *
-     * @param string $method method
+     * @param string $method Shipment method (carrier)
      *
      * @return $this
      */

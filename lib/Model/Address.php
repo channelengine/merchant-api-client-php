@@ -453,7 +453,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets gender
      *
-     * @param string $gender gender
+     * @param string $gender Optional. The customer's gender
      *
      * @return $this
      */
@@ -486,7 +486,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets companyName
      *
-     * @param string $companyName companyName
+     * @param string $companyName Optional. Company addressed too.
      *
      * @return $this
      */
@@ -517,7 +517,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets firstName
      *
-     * @param string $firstName firstName
+     * @param string $firstName The first name of the customer
      *
      * @return $this
      */
@@ -548,7 +548,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets lastName
      *
-     * @param string $lastName lastName
+     * @param string $lastName The last name of the customer (includes the surname prefix [tussenvoegsel] like 'de', 'van', 'du')
      *
      * @return $this
      */
@@ -579,7 +579,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets streetName
      *
-     * @param string $streetName streetName
+     * @param string $streetName The name of the street (without house number information)
      *
      * @return $this
      */
@@ -610,7 +610,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets houseNr
      *
-     * @param string $houseNr houseNr
+     * @param string $houseNr The house number
      *
      * @return $this
      */
@@ -641,7 +641,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets houseNrAddition
      *
-     * @param string $houseNrAddition houseNrAddition
+     * @param string $houseNrAddition Optional. Addition to the house number  If the address is: Groenhazengracht 2c, the address will be:  StreetName: Groenhazengracht  HouseNo: 2  HouseNrAddition: c
      *
      * @return $this
      */
@@ -672,7 +672,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets zipCode
      *
-     * @param string $zipCode zipCode
+     * @param string $zipCode The zip or postal code
      *
      * @return $this
      */
@@ -696,7 +696,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets city
      *
-     * @param string $city city
+     * @param string $city The name of the city
      *
      * @return $this
      */

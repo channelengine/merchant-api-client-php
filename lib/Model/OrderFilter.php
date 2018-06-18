@@ -304,7 +304,7 @@ class OrderFilter implements ModelInterface, ArrayAccess
     /**
      * Sets statuses
      *
-     * @param string[] $statuses statuses
+     * @param string[] $statuses Order status(es) to filter on
      *
      * @return $this
      */
@@ -337,7 +337,7 @@ class OrderFilter implements ModelInterface, ArrayAccess
     /**
      * Sets merchantOrderNos
      *
-     * @param string[] $merchantOrderNos merchantOrderNos
+     * @param string[] $merchantOrderNos Filter on unique order reference used by the merchant
      *
      * @return $this
      */
@@ -361,7 +361,7 @@ class OrderFilter implements ModelInterface, ArrayAccess
     /**
      * Sets excludeMarketplaceFulfilledOrdersAndLines
      *
-     * @param bool $excludeMarketplaceFulfilledOrdersAndLines excludeMarketplaceFulfilledOrdersAndLines
+     * @param bool $excludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.)
      *
      * @return $this
      */
@@ -418,7 +418,7 @@ class OrderFilter implements ModelInterface, ArrayAccess
     /**
      * Sets page
      *
-     * @param int $page page
+     * @param int $page The page to filter on. Starts at 1.
      *
      * @return $this
      */

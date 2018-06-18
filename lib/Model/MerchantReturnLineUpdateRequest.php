@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantCancellationLineRequest
+ * MerchantReturnLineUpdateRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * MerchantCancellationLineRequest Class Doc Comment
+ * MerchantReturnLineUpdateRequest Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
+class MerchantReturnLineUpdateRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MerchantCancellationLineRequest';
+    protected static $swaggerModelName = 'MerchantReturnLineUpdateRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,8 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'merchantProductNo' => 'string',
-        'quantity' => 'int'
+        'acceptedQuantity' => 'int',
+        'rejectedQuantity' => 'int'
     ];
 
     /**
@@ -68,7 +69,8 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'merchantProductNo' => null,
-        'quantity' => 'int32'
+        'acceptedQuantity' => 'int32',
+        'rejectedQuantity' => 'int32'
     ];
 
     /**
@@ -99,7 +101,8 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'merchantProductNo' => 'MerchantProductNo',
-        'quantity' => 'Quantity'
+        'acceptedQuantity' => 'AcceptedQuantity',
+        'rejectedQuantity' => 'RejectedQuantity'
     ];
 
     /**
@@ -109,7 +112,8 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'merchantProductNo' => 'setMerchantProductNo',
-        'quantity' => 'setQuantity'
+        'acceptedQuantity' => 'setAcceptedQuantity',
+        'rejectedQuantity' => 'setRejectedQuantity'
     ];
 
     /**
@@ -119,7 +123,8 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'merchantProductNo' => 'getMerchantProductNo',
-        'quantity' => 'getQuantity'
+        'acceptedQuantity' => 'getAcceptedQuantity',
+        'rejectedQuantity' => 'getRejectedQuantity'
     ];
 
     /**
@@ -183,7 +188,8 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['merchantProductNo'] = isset($data['merchantProductNo']) ? $data['merchantProductNo'] : null;
-        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['acceptedQuantity'] = isset($data['acceptedQuantity']) ? $data['acceptedQuantity'] : null;
+        $this->container['rejectedQuantity'] = isset($data['rejectedQuantity']) ? $data['rejectedQuantity'] : null;
     }
 
     /**
@@ -198,8 +204,11 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
         if ($this->container['merchantProductNo'] === null) {
             $invalidProperties[] = "'merchantProductNo' can't be null";
         }
-        if ($this->container['quantity'] === null) {
-            $invalidProperties[] = "'quantity' can't be null";
+        if ($this->container['acceptedQuantity'] === null) {
+            $invalidProperties[] = "'acceptedQuantity' can't be null";
+        }
+        if ($this->container['rejectedQuantity'] === null) {
+            $invalidProperties[] = "'rejectedQuantity' can't be null";
         }
         return $invalidProperties;
     }
@@ -216,7 +225,10 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
         if ($this->container['merchantProductNo'] === null) {
             return false;
         }
-        if ($this->container['quantity'] === null) {
+        if ($this->container['acceptedQuantity'] === null) {
+            return false;
+        }
+        if ($this->container['rejectedQuantity'] === null) {
             return false;
         }
         return true;
@@ -248,25 +260,49 @@ class MerchantCancellationLineRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets quantity
+     * Gets acceptedQuantity
      *
      * @return int
      */
-    public function getQuantity()
+    public function getAcceptedQuantity()
     {
-        return $this->container['quantity'];
+        return $this->container['acceptedQuantity'];
     }
 
     /**
-     * Sets quantity
+     * Sets acceptedQuantity
      *
-     * @param int $quantity Quantity of the product to cancel
+     * @param int $acceptedQuantity The amount of items that have been accepted
      *
      * @return $this
      */
-    public function setQuantity($quantity)
+    public function setAcceptedQuantity($acceptedQuantity)
     {
-        $this->container['quantity'] = $quantity;
+        $this->container['acceptedQuantity'] = $acceptedQuantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets rejectedQuantity
+     *
+     * @return int
+     */
+    public function getRejectedQuantity()
+    {
+        return $this->container['rejectedQuantity'];
+    }
+
+    /**
+     * Sets rejectedQuantity
+     *
+     * @param int $rejectedQuantity The amount of items that have been rejected
+     *
+     * @return $this
+     */
+    public function setRejectedQuantity($rejectedQuantity)
+    {
+        $this->container['rejectedQuantity'] = $rejectedQuantity;
 
         return $this;
     }

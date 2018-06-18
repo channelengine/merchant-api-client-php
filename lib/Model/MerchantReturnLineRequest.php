@@ -236,7 +236,7 @@ class MerchantReturnLineRequest implements ModelInterface, ArrayAccess
     /**
      * Sets merchantProductNo
      *
-     * @param string $merchantProductNo merchantProductNo
+     * @param string $merchantProductNo The unique product reference used by the Merchant (sku)
      *
      * @return $this
      */
@@ -260,7 +260,7 @@ class MerchantReturnLineRequest implements ModelInterface, ArrayAccess
     /**
      * Sets quantity
      *
-     * @param int $quantity quantity
+     * @param int $quantity Number of items of the product in this return
      *
      * @return $this
      */

@@ -236,7 +236,7 @@ class MerchantStockPriceUpdateRequest implements ModelInterface, ArrayAccess
     /**
      * Sets merchantProductNo
      *
-     * @param string $merchantProductNo merchantProductNo
+     * @param string $merchantProductNo The unique product reference used by the Merchant (sku)
      *
      * @return $this
      */
@@ -260,7 +260,7 @@ class MerchantStockPriceUpdateRequest implements ModelInterface, ArrayAccess
     /**
      * Sets stock
      *
-     * @param int $stock stock
+     * @param int $stock The stock of the product. Should not be negative
      *
      * @return $this
      */
@@ -284,7 +284,7 @@ class MerchantStockPriceUpdateRequest implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param double $price price
+     * @param double $price The price of the product. Should not be negative
      *
      * @return $this
      */
