@@ -62,24 +62,24 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         'channelOrderSupport' => 'string',
         'channelOrderNo' => 'string',
         'status' => 'string',
-        'subTotalInclVat' => 'double',
-        'subTotalVat' => 'double',
-        'shippingCostsVat' => 'double',
-        'totalInclVat' => 'double',
-        'totalVat' => 'double',
-        'originalSubTotalInclVat' => 'double',
-        'originalSubTotalVat' => 'double',
-        'originalShippingCostsInclVat' => 'double',
-        'originalShippingCostsVat' => 'double',
-        'originalTotalInclVat' => 'double',
-        'originalTotalVat' => 'double',
+        'subTotalInclVat' => 'float',
+        'subTotalVat' => 'float',
+        'shippingCostsVat' => 'float',
+        'totalInclVat' => 'float',
+        'totalVat' => 'float',
+        'originalSubTotalInclVat' => 'float',
+        'originalSubTotalVat' => 'float',
+        'originalShippingCostsInclVat' => 'float',
+        'originalShippingCostsVat' => 'float',
+        'originalTotalInclVat' => 'float',
+        'originalTotalVat' => 'float',
         'lines' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantOrderLineResponse[]',
         'phone' => 'string',
         'email' => 'string',
         'companyRegistrationNo' => 'string',
         'vatNo' => 'string',
         'paymentMethod' => 'string',
-        'shippingCostsInclVat' => 'double',
+        'shippingCostsInclVat' => 'float',
         'currencyCode' => 'string',
         'orderDate' => '\DateTime',
         'channelCustomerNo' => 'string',
@@ -99,24 +99,24 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         'channelOrderSupport' => null,
         'channelOrderNo' => null,
         'status' => null,
-        'subTotalInclVat' => 'double',
-        'subTotalVat' => 'double',
-        'shippingCostsVat' => 'double',
-        'totalInclVat' => 'double',
-        'totalVat' => 'double',
-        'originalSubTotalInclVat' => 'double',
-        'originalSubTotalVat' => 'double',
-        'originalShippingCostsInclVat' => 'double',
-        'originalShippingCostsVat' => 'double',
-        'originalTotalInclVat' => 'double',
-        'originalTotalVat' => 'double',
+        'subTotalInclVat' => 'decimal',
+        'subTotalVat' => 'decimal',
+        'shippingCostsVat' => 'decimal',
+        'totalInclVat' => 'decimal',
+        'totalVat' => 'decimal',
+        'originalSubTotalInclVat' => 'decimal',
+        'originalSubTotalVat' => 'decimal',
+        'originalShippingCostsInclVat' => 'decimal',
+        'originalShippingCostsVat' => 'decimal',
+        'originalTotalInclVat' => 'decimal',
+        'originalTotalVat' => 'decimal',
         'lines' => null,
         'phone' => null,
         'email' => null,
         'companyRegistrationNo' => null,
         'vatNo' => null,
         'paymentMethod' => null,
-        'shippingCostsInclVat' => 'double',
+        'shippingCostsInclVat' => 'decimal',
         'currencyCode' => null,
         'orderDate' => 'date-time',
         'channelCustomerNo' => null,
@@ -714,7 +714,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets subTotalInclVat
      *
-     * @return double
+     * @return float
      */
     public function getSubTotalInclVat()
     {
@@ -724,7 +724,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets subTotalInclVat
      *
-     * @param double $subTotalInclVat The total value of the order lines including VAT  (in the shop's base currency calculated using the exchange rate at the time of ordering).
+     * @param float $subTotalInclVat The total value of the order lines including VAT  (in the shop's base currency calculated using the exchange rate at the time of ordering).
      *
      * @return $this
      */
@@ -738,7 +738,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets subTotalVat
      *
-     * @return double
+     * @return float
      */
     public function getSubTotalVat()
     {
@@ -748,7 +748,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets subTotalVat
      *
-     * @param double $subTotalVat The total amount of VAT charged over the order lines  (in the shop's base currency calculated using the exchange rate at the time of ordering).
+     * @param float $subTotalVat The total amount of VAT charged over the order lines  (in the shop's base currency calculated using the exchange rate at the time of ordering).
      *
      * @return $this
      */
@@ -762,7 +762,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets shippingCostsVat
      *
-     * @return double
+     * @return float
      */
     public function getShippingCostsVat()
     {
@@ -772,7 +772,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets shippingCostsVat
      *
-     * @param double $shippingCostsVat The total amount of VAT charged over the shipping fee  (in the shop's base currency calculated using the exchange rate at the time of ordering).
+     * @param float $shippingCostsVat The total amount of VAT charged over the shipping fee  (in the shop's base currency calculated using the exchange rate at the time of ordering).
      *
      * @return $this
      */
@@ -786,7 +786,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets totalInclVat
      *
-     * @return double
+     * @return float
      */
     public function getTotalInclVat()
     {
@@ -796,7 +796,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets totalInclVat
      *
-     * @param double $totalInclVat The total value of the order including VAT  (in the shop's base currency calculated using the exchange rate at the time of ordering).
+     * @param float $totalInclVat The total value of the order including VAT  (in the shop's base currency calculated using the exchange rate at the time of ordering).
      *
      * @return $this
      */
@@ -810,7 +810,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets totalVat
      *
-     * @return double
+     * @return float
      */
     public function getTotalVat()
     {
@@ -820,7 +820,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets totalVat
      *
-     * @param double $totalVat The total amount of VAT charged over the total value of te order  (in the shop's base currency calculated using the exchange rate at the time of ordering).
+     * @param float $totalVat The total amount of VAT charged over the total value of te order  (in the shop's base currency calculated using the exchange rate at the time of ordering).
      *
      * @return $this
      */
@@ -834,7 +834,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets originalSubTotalInclVat
      *
-     * @return double
+     * @return float
      */
     public function getOriginalSubTotalInclVat()
     {
@@ -844,7 +844,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets originalSubTotalInclVat
      *
-     * @param double $originalSubTotalInclVat The total value of the order lines including VAT  (in the currency in which the order was paid for, see CurrencyCode).
+     * @param float $originalSubTotalInclVat The total value of the order lines including VAT  (in the currency in which the order was paid for, see CurrencyCode).
      *
      * @return $this
      */
@@ -858,7 +858,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets originalSubTotalVat
      *
-     * @return double
+     * @return float
      */
     public function getOriginalSubTotalVat()
     {
@@ -868,7 +868,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets originalSubTotalVat
      *
-     * @param double $originalSubTotalVat The total amount of VAT charged over the order lines  (in the currency in which the order was paid for, see CurrencyCode).
+     * @param float $originalSubTotalVat The total amount of VAT charged over the order lines  (in the currency in which the order was paid for, see CurrencyCode).
      *
      * @return $this
      */
@@ -882,7 +882,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets originalShippingCostsInclVat
      *
-     * @return double
+     * @return float
      */
     public function getOriginalShippingCostsInclVat()
     {
@@ -892,7 +892,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets originalShippingCostsInclVat
      *
-     * @param double $originalShippingCostsInclVat The shipping fee including VAT  (in the currency in which the order was paid for, see CurrencyCode).
+     * @param float $originalShippingCostsInclVat The shipping fee including VAT  (in the currency in which the order was paid for, see CurrencyCode).
      *
      * @return $this
      */
@@ -906,7 +906,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets originalShippingCostsVat
      *
-     * @return double
+     * @return float
      */
     public function getOriginalShippingCostsVat()
     {
@@ -916,7 +916,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets originalShippingCostsVat
      *
-     * @param double $originalShippingCostsVat The total amount of VAT charged over the shipping fee  (in the currency in which the order was paid for, see CurrencyCode).
+     * @param float $originalShippingCostsVat The total amount of VAT charged over the shipping fee  (in the currency in which the order was paid for, see CurrencyCode).
      *
      * @return $this
      */
@@ -930,7 +930,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets originalTotalInclVat
      *
-     * @return double
+     * @return float
      */
     public function getOriginalTotalInclVat()
     {
@@ -940,7 +940,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets originalTotalInclVat
      *
-     * @param double $originalTotalInclVat The total value of the order including VAT  (in the currency in which the order was paid for, see CurrencyCode).
+     * @param float $originalTotalInclVat The total value of the order including VAT  (in the currency in which the order was paid for, see CurrencyCode).
      *
      * @return $this
      */
@@ -954,7 +954,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets originalTotalVat
      *
-     * @return double
+     * @return float
      */
     public function getOriginalTotalVat()
     {
@@ -964,7 +964,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets originalTotalVat
      *
-     * @param double $originalTotalVat The total amount of VAT charged over the total value of te order  (in the currency in which the order was paid for, see CurrencyCode).
+     * @param float $originalTotalVat The total amount of VAT charged over the total value of te order  (in the currency in which the order was paid for, see CurrencyCode).
      *
      * @return $this
      */
@@ -1157,7 +1157,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets shippingCostsInclVat
      *
-     * @return double
+     * @return float
      */
     public function getShippingCostsInclVat()
     {
@@ -1167,7 +1167,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets shippingCostsInclVat
      *
-     * @param double $shippingCostsInclVat The shipping fee including VAT  (in the shop's base currency calculated using the exchange rate at the time of ordering).
+     * @param float $shippingCostsInclVat The shipping fee including VAT  (in the shop's base currency calculated using the exchange rate at the time of ordering).
      *
      * @return $this
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantStockPriceUpdateRequest
+ * ProductFilter
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * MerchantStockPriceUpdateRequest Class Doc Comment
+ * ProductFilter Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MerchantStockPriceUpdateRequest implements ModelInterface, ArrayAccess
+class ProductFilter implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class MerchantStockPriceUpdateRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MerchantStockPriceUpdateRequest';
+    protected static $swaggerModelName = 'ProductFilter';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,8 @@ class MerchantStockPriceUpdateRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchantProductNo' => 'string',
-        'stock' => 'int',
-        'price' => 'float'
+        'search' => 'string',
+        'page' => 'int'
     ];
 
     /**
@@ -68,9 +67,8 @@ class MerchantStockPriceUpdateRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'merchantProductNo' => null,
-        'stock' => 'int32',
-        'price' => 'decimal'
+        'search' => null,
+        'page' => 'int32'
     ];
 
     /**
@@ -100,9 +98,8 @@ class MerchantStockPriceUpdateRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchantProductNo' => 'MerchantProductNo',
-        'stock' => 'Stock',
-        'price' => 'Price'
+        'search' => 'Search',
+        'page' => 'Page'
     ];
 
     /**
@@ -111,9 +108,8 @@ class MerchantStockPriceUpdateRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchantProductNo' => 'setMerchantProductNo',
-        'stock' => 'setStock',
-        'price' => 'setPrice'
+        'search' => 'setSearch',
+        'page' => 'setPage'
     ];
 
     /**
@@ -122,9 +118,8 @@ class MerchantStockPriceUpdateRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchantProductNo' => 'getMerchantProductNo',
-        'stock' => 'getStock',
-        'price' => 'getPrice'
+        'search' => 'getSearch',
+        'page' => 'getPage'
     ];
 
     /**
@@ -187,9 +182,8 @@ class MerchantStockPriceUpdateRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchantProductNo'] = isset($data['merchantProductNo']) ? $data['merchantProductNo'] : null;
-        $this->container['stock'] = isset($data['stock']) ? $data['stock'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['search'] = isset($data['search']) ? $data['search'] : null;
+        $this->container['page'] = isset($data['page']) ? $data['page'] : null;
     }
 
     /**
@@ -201,9 +195,6 @@ class MerchantStockPriceUpdateRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['merchantProductNo'] === null) {
-            $invalidProperties[] = "'merchantProductNo' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -216,81 +207,54 @@ class MerchantStockPriceUpdateRequest implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if ($this->container['merchantProductNo'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets merchantProductNo
+     * Gets search
      *
      * @return string
      */
-    public function getMerchantProductNo()
+    public function getSearch()
     {
-        return $this->container['merchantProductNo'];
+        return $this->container['search'];
     }
 
     /**
-     * Sets merchantProductNo
+     * Sets search
      *
-     * @param string $merchantProductNo The unique product reference used by the Merchant (sku)
+     * @param string $search Search products by Name, MerchantProductNo, Ean or Brand
      *
      * @return $this
      */
-    public function setMerchantProductNo($merchantProductNo)
+    public function setSearch($search)
     {
-        $this->container['merchantProductNo'] = $merchantProductNo;
+        $this->container['search'] = $search;
 
         return $this;
     }
 
     /**
-     * Gets stock
+     * Gets page
      *
      * @return int
      */
-    public function getStock()
+    public function getPage()
     {
-        return $this->container['stock'];
+        return $this->container['page'];
     }
 
     /**
-     * Sets stock
+     * Sets page
      *
-     * @param int $stock The stock of the product. Should not be negative
+     * @param int $page The page to filter on. Starts at 1.
      *
      * @return $this
      */
-    public function setStock($stock)
+    public function setPage($page)
     {
-        $this->container['stock'] = $stock;
-
-        return $this;
-    }
-
-    /**
-     * Gets price
-     *
-     * @return float
-     */
-    public function getPrice()
-    {
-        return $this->container['price'];
-    }
-
-    /**
-     * Sets price
-     *
-     * @param float $price The price of the product. Should not be negative
-     *
-     * @return $this
-     */
-    public function setPrice($price)
-    {
-        $this->container['price'] = $price;
+        $this->container['page'] = $page;
 
         return $this;
     }

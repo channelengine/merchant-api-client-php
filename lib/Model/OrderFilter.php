@@ -59,6 +59,8 @@ class OrderFilter implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'statuses' => 'string[]',
         'merchantOrderNos' => 'string[]',
+        'fromDate' => '\DateTime',
+        'toDate' => '\DateTime',
         'excludeMarketplaceFulfilledOrdersAndLines' => 'bool',
         'fulfillmentType' => 'string',
         'page' => 'int'
@@ -72,6 +74,8 @@ class OrderFilter implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'statuses' => null,
         'merchantOrderNos' => null,
+        'fromDate' => 'date-time',
+        'toDate' => 'date-time',
         'excludeMarketplaceFulfilledOrdersAndLines' => null,
         'fulfillmentType' => null,
         'page' => 'int32'
@@ -106,6 +110,8 @@ class OrderFilter implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'statuses' => 'Statuses',
         'merchantOrderNos' => 'MerchantOrderNos',
+        'fromDate' => 'FromDate',
+        'toDate' => 'ToDate',
         'excludeMarketplaceFulfilledOrdersAndLines' => 'ExcludeMarketplaceFulfilledOrdersAndLines',
         'fulfillmentType' => 'FulfillmentType',
         'page' => 'Page'
@@ -119,6 +125,8 @@ class OrderFilter implements ModelInterface, ArrayAccess
     protected static $setters = [
         'statuses' => 'setStatuses',
         'merchantOrderNos' => 'setMerchantOrderNos',
+        'fromDate' => 'setFromDate',
+        'toDate' => 'setToDate',
         'excludeMarketplaceFulfilledOrdersAndLines' => 'setExcludeMarketplaceFulfilledOrdersAndLines',
         'fulfillmentType' => 'setFulfillmentType',
         'page' => 'setPage'
@@ -132,6 +140,8 @@ class OrderFilter implements ModelInterface, ArrayAccess
     protected static $getters = [
         'statuses' => 'getStatuses',
         'merchantOrderNos' => 'getMerchantOrderNos',
+        'fromDate' => 'getFromDate',
+        'toDate' => 'getToDate',
         'excludeMarketplaceFulfilledOrdersAndLines' => 'getExcludeMarketplaceFulfilledOrdersAndLines',
         'fulfillmentType' => 'getFulfillmentType',
         'page' => 'getPage'
@@ -249,6 +259,8 @@ class OrderFilter implements ModelInterface, ArrayAccess
     {
         $this->container['statuses'] = isset($data['statuses']) ? $data['statuses'] : null;
         $this->container['merchantOrderNos'] = isset($data['merchantOrderNos']) ? $data['merchantOrderNos'] : null;
+        $this->container['fromDate'] = isset($data['fromDate']) ? $data['fromDate'] : null;
+        $this->container['toDate'] = isset($data['toDate']) ? $data['toDate'] : null;
         $this->container['excludeMarketplaceFulfilledOrdersAndLines'] = isset($data['excludeMarketplaceFulfilledOrdersAndLines']) ? $data['excludeMarketplaceFulfilledOrdersAndLines'] : null;
         $this->container['fulfillmentType'] = isset($data['fulfillmentType']) ? $data['fulfillmentType'] : null;
         $this->container['page'] = isset($data['page']) ? $data['page'] : null;
@@ -344,6 +356,54 @@ class OrderFilter implements ModelInterface, ArrayAccess
     public function setMerchantOrderNos($merchantOrderNos)
     {
         $this->container['merchantOrderNos'] = $merchantOrderNos;
+
+        return $this;
+    }
+
+    /**
+     * Gets fromDate
+     *
+     * @return \DateTime
+     */
+    public function getFromDate()
+    {
+        return $this->container['fromDate'];
+    }
+
+    /**
+     * Sets fromDate
+     *
+     * @param \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive.
+     *
+     * @return $this
+     */
+    public function setFromDate($fromDate)
+    {
+        $this->container['fromDate'] = $fromDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets toDate
+     *
+     * @return \DateTime
+     */
+    public function getToDate()
+    {
+        return $this->container['toDate'];
+    }
+
+    /**
+     * Sets toDate
+     *
+     * @param \DateTime $toDate Filter on the order date, until this date. This date is exclusive.
+     *
+     * @return $this
+     */
+    public function setToDate($toDate)
+    {
+        $this->container['toDate'] = $toDate;
 
         return $this;
     }

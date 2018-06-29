@@ -68,11 +68,11 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         'ean' => 'string',
         'manufacturerProductNumber' => 'string',
         'stock' => 'int',
-        'price' => 'double',
-        'mSRP' => 'double',
-        'purchasePrice' => 'double',
+        'price' => 'float',
+        'mSRP' => 'float',
+        'purchasePrice' => 'float',
         'vatRateType' => 'string',
-        'shippingCost' => 'double',
+        'shippingCost' => 'float',
         'shippingTime' => 'string',
         'url' => 'string',
         'imageUrl' => 'string',
@@ -106,11 +106,11 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         'ean' => null,
         'manufacturerProductNumber' => null,
         'stock' => 'int32',
-        'price' => 'double',
-        'mSRP' => 'double',
-        'purchasePrice' => 'double',
+        'price' => 'decimal',
+        'mSRP' => 'decimal',
+        'purchasePrice' => 'decimal',
         'vatRateType' => null,
-        'shippingCost' => 'double',
+        'shippingCost' => 'decimal',
         'shippingTime' => null,
         'url' => null,
         'imageUrl' => null,
@@ -675,7 +675,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     /**
      * Gets price
      *
-     * @return double
+     * @return float
      */
     public function getPrice()
     {
@@ -685,7 +685,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param double $price Price, including VAT.
+     * @param float $price Price, including VAT.
      *
      * @return $this
      */
@@ -699,7 +699,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     /**
      * Gets mSRP
      *
-     * @return double
+     * @return float
      */
     public function getMSRP()
     {
@@ -709,7 +709,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     /**
      * Sets mSRP
      *
-     * @param double $mSRP Manufacturer's suggested retail price
+     * @param float $mSRP Manufacturer's suggested retail price
      *
      * @return $this
      */
@@ -723,7 +723,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     /**
      * Gets purchasePrice
      *
-     * @return double
+     * @return float
      */
     public function getPurchasePrice()
     {
@@ -733,7 +733,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     /**
      * Sets purchasePrice
      *
-     * @param double $purchasePrice Optional. The purchase price of the product. Useful for repricing.
+     * @param float $purchasePrice Optional. The purchase price of the product. Useful for repricing.
      *
      * @return $this
      */
@@ -780,7 +780,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     /**
      * Gets shippingCost
      *
-     * @return double
+     * @return float
      */
     public function getShippingCost()
     {
@@ -790,7 +790,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     /**
      * Sets shippingCost
      *
-     * @param double $shippingCost Shipping cost of the product.
+     * @param float $shippingCost Shipping cost of the product.
      *
      * @return $this
      */

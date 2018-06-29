@@ -60,19 +60,19 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'status' => 'string',
         'isFulfillmentByMarketplace' => 'bool',
         'merchantProductNo' => 'string',
-        'unitVat' => 'double',
-        'lineTotalInclVat' => 'double',
-        'lineVat' => 'double',
-        'originalUnitPriceInclVat' => 'double',
-        'originalUnitVat' => 'double',
-        'originalLineTotalInclVat' => 'double',
-        'originalLineVat' => 'double',
+        'unitVat' => 'float',
+        'lineTotalInclVat' => 'float',
+        'lineVat' => 'float',
+        'originalUnitPriceInclVat' => 'float',
+        'originalUnitVat' => 'float',
+        'originalLineTotalInclVat' => 'float',
+        'originalLineVat' => 'float',
         'channelProductNo' => 'string',
         'quantity' => 'int',
         'cancellationRequestedQuantity' => 'int',
-        'unitPriceInclVat' => 'double',
-        'feeFixed' => 'double',
-        'feeRate' => 'double',
+        'unitPriceInclVat' => 'float',
+        'feeFixed' => 'float',
+        'feeRate' => 'float',
         'condition' => 'string'
     ];
 
@@ -85,19 +85,19 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'status' => null,
         'isFulfillmentByMarketplace' => null,
         'merchantProductNo' => null,
-        'unitVat' => 'double',
-        'lineTotalInclVat' => 'double',
-        'lineVat' => 'double',
-        'originalUnitPriceInclVat' => 'double',
-        'originalUnitVat' => 'double',
-        'originalLineTotalInclVat' => 'double',
-        'originalLineVat' => 'double',
+        'unitVat' => 'decimal',
+        'lineTotalInclVat' => 'decimal',
+        'lineVat' => 'decimal',
+        'originalUnitPriceInclVat' => 'decimal',
+        'originalUnitVat' => 'decimal',
+        'originalLineTotalInclVat' => 'decimal',
+        'originalLineVat' => 'decimal',
         'channelProductNo' => null,
         'quantity' => 'int32',
         'cancellationRequestedQuantity' => 'int32',
-        'unitPriceInclVat' => 'double',
-        'feeFixed' => 'double',
-        'feeRate' => 'double',
+        'unitPriceInclVat' => 'decimal',
+        'feeFixed' => 'decimal',
+        'feeRate' => 'decimal',
         'condition' => null
     ];
 
@@ -503,7 +503,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Gets unitVat
      *
-     * @return double
+     * @return float
      */
     public function getUnitVat()
     {
@@ -513,7 +513,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets unitVat
      *
-     * @param double $unitVat The total amount of VAT charged over the value of a single unit of the ordered product  (in the shop's base currency calculated using the exchange rate at the time of ordering).
+     * @param float $unitVat The total amount of VAT charged over the value of a single unit of the ordered product  (in the shop's base currency calculated using the exchange rate at the time of ordering).
      *
      * @return $this
      */
@@ -527,7 +527,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Gets lineTotalInclVat
      *
-     * @return double
+     * @return float
      */
     public function getLineTotalInclVat()
     {
@@ -537,7 +537,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets lineTotalInclVat
      *
-     * @param double $lineTotalInclVat The total value of the order line (quantity * unit price) including VAT  (in the shop's base currency calculated using the exchange rate at the time of ordering).
+     * @param float $lineTotalInclVat The total value of the order line (quantity * unit price) including VAT  (in the shop's base currency calculated using the exchange rate at the time of ordering).
      *
      * @return $this
      */
@@ -551,7 +551,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Gets lineVat
      *
-     * @return double
+     * @return float
      */
     public function getLineVat()
     {
@@ -561,7 +561,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets lineVat
      *
-     * @param double $lineVat The total amount of VAT charged over the total value of the order line (quantity * unit price)  (in the shop's base currency calculated using the exchange rate at the time of ordering).
+     * @param float $lineVat The total amount of VAT charged over the total value of the order line (quantity * unit price)  (in the shop's base currency calculated using the exchange rate at the time of ordering).
      *
      * @return $this
      */
@@ -575,7 +575,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Gets originalUnitPriceInclVat
      *
-     * @return double
+     * @return float
      */
     public function getOriginalUnitPriceInclVat()
     {
@@ -585,7 +585,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets originalUnitPriceInclVat
      *
-     * @param double $originalUnitPriceInclVat The value of a single unit of the ordered product including VAT  (in the currency in which the order was paid for, see CurrencyCode).
+     * @param float $originalUnitPriceInclVat The value of a single unit of the ordered product including VAT  (in the currency in which the order was paid for, see CurrencyCode).
      *
      * @return $this
      */
@@ -599,7 +599,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Gets originalUnitVat
      *
-     * @return double
+     * @return float
      */
     public function getOriginalUnitVat()
     {
@@ -609,7 +609,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets originalUnitVat
      *
-     * @param double $originalUnitVat The total amount of VAT charged over the value of a single unit of the ordered product  (in the currency in which the order was paid for, see CurrencyCode).
+     * @param float $originalUnitVat The total amount of VAT charged over the value of a single unit of the ordered product  (in the currency in which the order was paid for, see CurrencyCode).
      *
      * @return $this
      */
@@ -623,7 +623,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Gets originalLineTotalInclVat
      *
-     * @return double
+     * @return float
      */
     public function getOriginalLineTotalInclVat()
     {
@@ -633,7 +633,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets originalLineTotalInclVat
      *
-     * @param double $originalLineTotalInclVat The total value of the order line (quantity * unit price) including VAT  (in the currency in which the order was paid for, see CurrencyCode).
+     * @param float $originalLineTotalInclVat The total value of the order line (quantity * unit price) including VAT  (in the currency in which the order was paid for, see CurrencyCode).
      *
      * @return $this
      */
@@ -647,7 +647,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Gets originalLineVat
      *
-     * @return double
+     * @return float
      */
     public function getOriginalLineVat()
     {
@@ -657,7 +657,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets originalLineVat
      *
-     * @param double $originalLineVat The total amount of VAT charged over the total value of the order line (quantity * unit price)  (in the currency in which the order was paid for, see CurrencyCode).
+     * @param float $originalLineVat The total amount of VAT charged over the total value of the order line (quantity * unit price)  (in the currency in which the order was paid for, see CurrencyCode).
      *
      * @return $this
      */
@@ -750,7 +750,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Gets unitPriceInclVat
      *
-     * @return double
+     * @return float
      */
     public function getUnitPriceInclVat()
     {
@@ -760,7 +760,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets unitPriceInclVat
      *
-     * @param double $unitPriceInclVat The value of a single unit of the ordered product including VAT  (in the shop's base currency calculated using the exchange rate at the time of ordering).
+     * @param float $unitPriceInclVat The value of a single unit of the ordered product including VAT  (in the shop's base currency calculated using the exchange rate at the time of ordering).
      *
      * @return $this
      */
@@ -774,7 +774,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Gets feeFixed
      *
-     * @return double
+     * @return float
      */
     public function getFeeFixed()
     {
@@ -784,7 +784,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets feeFixed
      *
-     * @param double $feeFixed A fixed fee that is charged by the Channel for this orderline.  This field is optional, send 0 if not applicable.
+     * @param float $feeFixed A fixed fee that is charged by the Channel for this orderline.  This field is optional, send 0 if not applicable.
      *
      * @return $this
      */
@@ -798,7 +798,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Gets feeRate
      *
-     * @return double
+     * @return float
      */
     public function getFeeRate()
     {
@@ -808,7 +808,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets feeRate
      *
-     * @param double $feeRate A percentage fee that is charged by the Channel for this orderline.  This field is optional, send 0 if not applicable.
+     * @param float $feeRate A percentage fee that is charged by the Channel for this orderline.  This field is optional, send 0 if not applicable.
      *
      * @return $this
      */

@@ -58,6 +58,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'isActive' => 'bool',
+        'merchantProductNo' => 'string',
         'name' => 'string',
         'description' => 'string',
         'brand' => 'string',
@@ -66,11 +67,11 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
         'ean' => 'string',
         'manufacturerProductNumber' => 'string',
         'stock' => 'int',
-        'price' => 'double',
-        'mSRP' => 'double',
-        'purchasePrice' => 'double',
+        'price' => 'float',
+        'mSRP' => 'float',
+        'purchasePrice' => 'float',
         'vatRateType' => 'string',
-        'shippingCost' => 'double',
+        'shippingCost' => 'float',
         'shippingTime' => 'string',
         'url' => 'string',
         'imageUrl' => 'string',
@@ -94,6 +95,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'isActive' => null,
+        'merchantProductNo' => null,
         'name' => null,
         'description' => null,
         'brand' => null,
@@ -102,11 +104,11 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
         'ean' => null,
         'manufacturerProductNumber' => null,
         'stock' => 'int32',
-        'price' => 'double',
-        'mSRP' => 'double',
-        'purchasePrice' => 'double',
+        'price' => 'decimal',
+        'mSRP' => 'decimal',
+        'purchasePrice' => 'decimal',
         'vatRateType' => null,
-        'shippingCost' => 'double',
+        'shippingCost' => 'decimal',
         'shippingTime' => null,
         'url' => null,
         'imageUrl' => null,
@@ -151,6 +153,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'isActive' => 'IsActive',
+        'merchantProductNo' => 'MerchantProductNo',
         'name' => 'Name',
         'description' => 'Description',
         'brand' => 'Brand',
@@ -187,6 +190,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'isActive' => 'setIsActive',
+        'merchantProductNo' => 'setMerchantProductNo',
         'name' => 'setName',
         'description' => 'setDescription',
         'brand' => 'setBrand',
@@ -223,6 +227,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'isActive' => 'getIsActive',
+        'merchantProductNo' => 'getMerchantProductNo',
         'name' => 'getName',
         'description' => 'getDescription',
         'brand' => 'getBrand',
@@ -330,6 +335,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['isActive'] = isset($data['isActive']) ? $data['isActive'] : null;
+        $this->container['merchantProductNo'] = isset($data['merchantProductNo']) ? $data['merchantProductNo'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['brand'] = isset($data['brand']) ? $data['brand'] : null;
@@ -416,6 +422,30 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
     public function setIsActive($isActive)
     {
         $this->container['isActive'] = $isActive;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantProductNo
+     *
+     * @return string
+     */
+    public function getMerchantProductNo()
+    {
+        return $this->container['merchantProductNo'];
+    }
+
+    /**
+     * Sets merchantProductNo
+     *
+     * @param string $merchantProductNo A unique identifier of the product. (sku)
+     *
+     * @return $this
+     */
+    public function setMerchantProductNo($merchantProductNo)
+    {
+        $this->container['merchantProductNo'] = $merchantProductNo;
 
         return $this;
     }
@@ -615,7 +645,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
     /**
      * Gets price
      *
-     * @return double
+     * @return float
      */
     public function getPrice()
     {
@@ -625,7 +655,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param double $price Price, including VAT.
+     * @param float $price Price, including VAT.
      *
      * @return $this
      */
@@ -639,7 +669,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
     /**
      * Gets mSRP
      *
-     * @return double
+     * @return float
      */
     public function getMSRP()
     {
@@ -649,7 +679,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
     /**
      * Sets mSRP
      *
-     * @param double $mSRP Manufacturer's suggested retail price
+     * @param float $mSRP Manufacturer's suggested retail price
      *
      * @return $this
      */
@@ -663,7 +693,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
     /**
      * Gets purchasePrice
      *
-     * @return double
+     * @return float
      */
     public function getPurchasePrice()
     {
@@ -673,7 +703,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
     /**
      * Sets purchasePrice
      *
-     * @param double $purchasePrice Optional. The purchase price of the product. Useful for repricing.
+     * @param float $purchasePrice Optional. The purchase price of the product. Useful for repricing.
      *
      * @return $this
      */
@@ -720,7 +750,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
     /**
      * Gets shippingCost
      *
-     * @return double
+     * @return float
      */
     public function getShippingCost()
     {
@@ -730,7 +760,7 @@ class MerchantProductResponse implements ModelInterface, ArrayAccess
     /**
      * Sets shippingCost
      *
-     * @param double $shippingCost Shipping cost of the product.
+     * @param float $shippingCost Shipping cost of the product.
      *
      * @return $this
      */

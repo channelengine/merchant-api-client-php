@@ -63,8 +63,8 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess
         'reason' => 'string',
         'customerComment' => 'string',
         'merchantComment' => 'string',
-        'refundInclVat' => 'double',
-        'refundExclVat' => 'double'
+        'refundInclVat' => 'float',
+        'refundExclVat' => 'float'
     ];
 
     /**
@@ -79,8 +79,8 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess
         'reason' => null,
         'customerComment' => null,
         'merchantComment' => null,
-        'refundInclVat' => 'double',
-        'refundExclVat' => 'double'
+        'refundInclVat' => 'decimal',
+        'refundExclVat' => 'decimal'
     ];
 
     /**
@@ -486,7 +486,7 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess
     /**
      * Gets refundInclVat
      *
-     * @return double
+     * @return float
      */
     public function getRefundInclVat()
     {
@@ -496,7 +496,7 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess
     /**
      * Sets refundInclVat
      *
-     * @param double $refundInclVat Refund amount incl. VAT
+     * @param float $refundInclVat Refund amount incl. VAT
      *
      * @return $this
      */
@@ -510,7 +510,7 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess
     /**
      * Gets refundExclVat
      *
-     * @return double
+     * @return float
      */
     public function getRefundExclVat()
     {
@@ -520,7 +520,7 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess
     /**
      * Sets refundExclVat
      *
-     * @param double $refundExclVat Refund amount excl. VAT
+     * @param float $refundExclVat Refund amount excl. VAT
      *
      * @return $this
      */
