@@ -579,7 +579,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets streetName
      *
-     * @param string $streetName The name of the street (without house number information)
+     * @param string $streetName The name of the street (without house number information)  This field might be empty if address validation is disabled in ChannelEngine
      *
      * @return $this
      */
@@ -610,7 +610,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets houseNr
      *
-     * @param string $houseNr The house number
+     * @param string $houseNr The house number  This field might be empty if address validation is disabled in ChannelEngine
      *
      * @return $this
      */
@@ -641,7 +641,7 @@ class Address implements ModelInterface, ArrayAccess
     /**
      * Sets houseNrAddition
      *
-     * @param string $houseNrAddition Optional. Addition to the house number  If the address is: Groenhazengracht 2c, the address will be:  StreetName: Groenhazengracht  HouseNo: 2  HouseNrAddition: c
+     * @param string $houseNrAddition Optional. Addition to the house number  If the address is: Groenhazengracht 2c, the address will be:  StreetName: Groenhazengracht  HouseNo: 2  HouseNrAddition: c  This field might be empty if address validation is disabled in ChannelEngine
      *
      * @return $this
      */

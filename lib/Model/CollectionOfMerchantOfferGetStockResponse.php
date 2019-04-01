@@ -1,6 +1,6 @@
 <?php
 /**
- * CollectionOfMerchantOrderResponse
+ * CollectionOfMerchantOfferGetStockResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * CollectionOfMerchantOrderResponse Class Doc Comment
+ * CollectionOfMerchantOfferGetStockResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess
+class CollectionOfMerchantOfferGetStockResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CollectionOfMerchantOrderResponse';
+    protected static $swaggerModelName = 'CollectionOfMerchantOfferGetStockResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]',
+        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantOfferGetStockResponse[]',
         'count' => 'int',
         'totalCount' => 'int',
         'itemsPerPage' => 'int',
@@ -256,7 +256,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets content
      *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantOfferGetStockResponse[]
      */
     public function getContent()
     {
@@ -266,7 +266,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets content
      *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[] $content content
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantOfferGetStockResponse[] $content content
      *
      * @return $this
      */

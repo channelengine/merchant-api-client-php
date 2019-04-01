@@ -59,6 +59,7 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
     protected static $swaggerTypes = [
         'content' => 'map[string,string[]]',
         'statusCode' => 'int',
+        'logId' => 'int',
         'success' => 'bool',
         'message' => 'string',
         'validationErrors' => 'map[string,string[]]'
@@ -72,6 +73,7 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
     protected static $swaggerFormats = [
         'content' => null,
         'statusCode' => 'int32',
+        'logId' => 'int32',
         'success' => null,
         'message' => null,
         'validationErrors' => null
@@ -106,6 +108,7 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
     protected static $attributeMap = [
         'content' => 'Content',
         'statusCode' => 'StatusCode',
+        'logId' => 'LogId',
         'success' => 'Success',
         'message' => 'Message',
         'validationErrors' => 'ValidationErrors'
@@ -119,6 +122,7 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
     protected static $setters = [
         'content' => 'setContent',
         'statusCode' => 'setStatusCode',
+        'logId' => 'setLogId',
         'success' => 'setSuccess',
         'message' => 'setMessage',
         'validationErrors' => 'setValidationErrors'
@@ -132,6 +136,7 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
     protected static $getters = [
         'content' => 'getContent',
         'statusCode' => 'getStatusCode',
+        'logId' => 'getLogId',
         'success' => 'getSuccess',
         'message' => 'getMessage',
         'validationErrors' => 'getValidationErrors'
@@ -199,6 +204,7 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
     {
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
         $this->container['statusCode'] = isset($data['statusCode']) ? $data['statusCode'] : null;
+        $this->container['logId'] = isset($data['logId']) ? $data['logId'] : null;
         $this->container['success'] = isset($data['success']) ? $data['success'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['validationErrors'] = isset($data['validationErrors']) ? $data['validationErrors'] : null;
@@ -273,6 +279,30 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
     public function setStatusCode($statusCode)
     {
         $this->container['statusCode'] = $statusCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets logId
+     *
+     * @return int
+     */
+    public function getLogId()
+    {
+        return $this->container['logId'];
+    }
+
+    /**
+     * Sets logId
+     *
+     * @param int $logId logId
+     *
+     * @return $this
+     */
+    public function setLogId($logId)
+    {
+        $this->container['logId'] = $logId;
 
         return $this;
     }

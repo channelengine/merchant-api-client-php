@@ -442,7 +442,7 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess
     /**
      * Sets method
      *
-     * @param string $method Shipment method (carrier)
+     * @param string $method Shipment method: the carrier used for shipping the package. E.g. DHL, postNL
      *
      * @return $this
      */

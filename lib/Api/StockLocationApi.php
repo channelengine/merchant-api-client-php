@@ -1,6 +1,6 @@
 <?php
 /**
- * CancellationApi
+ * StockLocationApi
  * PHP version 5
  *
  * @category Class
@@ -40,14 +40,14 @@ use ChannelEngine\Merchant\ApiClient\HeaderSelector;
 use ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * CancellationApi Class Doc Comment
+ * StockLocationApi Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CancellationApi
+class StockLocationApi
 {
     /**
      * @var ClientInterface
@@ -88,37 +88,35 @@ class CancellationApi
     }
 
     /**
-     * Operation cancellationCreate
+     * Operation stockLocationIndex
      *
-     * Create Cancellation
+     * Get the stock locations (or virtual warehouses)
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $cancellation  (required)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \ChannelEngine\Merchant\ApiClient\Model\ApiResponse
+     * @return \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantStockLocationResponse
      */
-    public function cancellationCreate($cancellation)
+    public function stockLocationIndex()
     {
-        list($response) = $this->cancellationCreateWithHttpInfo($cancellation);
+        list($response) = $this->stockLocationIndexWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation cancellationCreateWithHttpInfo
+     * Operation stockLocationIndexWithHttpInfo
      *
-     * Create Cancellation
+     * Get the stock locations (or virtual warehouses)
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $cancellation  (required)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \ChannelEngine\Merchant\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantStockLocationResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cancellationCreateWithHttpInfo($cancellation)
+    public function stockLocationIndexWithHttpInfo()
     {
-        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
-        $request = $this->cancellationCreateRequest($cancellation);
+        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantStockLocationResponse';
+        $request = $this->stockLocationIndexRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -166,34 +164,10 @@ class CancellationApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 201:
+                case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
+                        '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantStockLocationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -204,18 +178,17 @@ class CancellationApi
     }
 
     /**
-     * Operation cancellationCreateAsync
+     * Operation stockLocationIndexAsync
      *
-     * Create Cancellation
+     * Get the stock locations (or virtual warehouses)
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $cancellation  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancellationCreateAsync($cancellation)
+    public function stockLocationIndexAsync()
     {
-        return $this->cancellationCreateAsyncWithHttpInfo($cancellation)
+        return $this->stockLocationIndexAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -224,19 +197,18 @@ class CancellationApi
     }
 
     /**
-     * Operation cancellationCreateAsyncWithHttpInfo
+     * Operation stockLocationIndexAsyncWithHttpInfo
      *
-     * Create Cancellation
+     * Get the stock locations (or virtual warehouses)
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $cancellation  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancellationCreateAsyncWithHttpInfo($cancellation)
+    public function stockLocationIndexAsyncWithHttpInfo()
     {
-        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
-        $request = $this->cancellationCreateRequest($cancellation);
+        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantStockLocationResponse';
+        $request = $this->stockLocationIndexRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -276,23 +248,16 @@ class CancellationApi
     }
 
     /**
-     * Create request for operation 'cancellationCreate'
+     * Create request for operation 'stockLocationIndex'
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $cancellation  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cancellationCreateRequest($cancellation)
+    protected function stockLocationIndexRequest()
     {
-        // verify the required parameter 'cancellation' is set
-        if ($cancellation === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $cancellation when calling cancellationCreate'
-            );
-        }
 
-        $resourcePath = '/v2/cancellations';
+        $resourcePath = '/v2/stocklocations';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -303,9 +268,6 @@ class CancellationApi
 
         // body params
         $_tempBody = null;
-        if (isset($cancellation)) {
-            $_tempBody = $cancellation;
-        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -314,7 +276,7 @@ class CancellationApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['text/plain', 'application/json', 'text/json'],
-                ['application/json-patch+json', 'application/json', 'text/json', 'application/_*+json']
+                []
             );
         }
 
@@ -373,7 +335,7 @@ class CancellationApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'POST',
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

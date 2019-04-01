@@ -206,6 +206,7 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
     const REASON_REFUSED_DAMAGED = 'REFUSED_DAMAGED';
     const REASON_WRONG_ADDRESS = 'WRONG_ADDRESS';
     const REASON_NOT_COLLECTED = 'NOT_COLLECTED';
+    const REASON_WRONG_SIZE = 'WRONG_SIZE';
     const REASON_OTHER = 'OTHER';
     
 
@@ -226,6 +227,7 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
             self::REASON_REFUSED_DAMAGED,
             self::REASON_WRONG_ADDRESS,
             self::REASON_NOT_COLLECTED,
+            self::REASON_WRONG_SIZE,
             self::REASON_OTHER,
         ];
     }

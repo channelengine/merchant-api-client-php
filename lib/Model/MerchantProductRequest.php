@@ -517,7 +517,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     /**
      * Sets description
      *
-     * @param string $description A description of the product
+     * @param string $description A description of the product. Can contain these HTML tags:  div, span, pre, p, br, hr, hgroup, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, strong, em, b, i, u, img, a, abbr, address, blockquote, area, audio, video, caption, table, tbody, td, tfoot, th, thead, tr
      *
      * @return $this
      */

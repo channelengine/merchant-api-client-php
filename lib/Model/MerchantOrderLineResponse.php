@@ -60,6 +60,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'status' => 'string',
         'isFulfillmentByMarketplace' => 'bool',
         'merchantProductNo' => 'string',
+        'gtin' => 'string',
         'unitVat' => 'float',
         'lineTotalInclVat' => 'float',
         'lineVat' => 'float',
@@ -85,6 +86,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'status' => null,
         'isFulfillmentByMarketplace' => null,
         'merchantProductNo' => null,
+        'gtin' => null,
         'unitVat' => 'decimal',
         'lineTotalInclVat' => 'decimal',
         'lineVat' => 'decimal',
@@ -131,6 +133,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'status' => 'Status',
         'isFulfillmentByMarketplace' => 'IsFulfillmentByMarketplace',
         'merchantProductNo' => 'MerchantProductNo',
+        'gtin' => 'Gtin',
         'unitVat' => 'UnitVat',
         'lineTotalInclVat' => 'LineTotalInclVat',
         'lineVat' => 'LineVat',
@@ -156,6 +159,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'status' => 'setStatus',
         'isFulfillmentByMarketplace' => 'setIsFulfillmentByMarketplace',
         'merchantProductNo' => 'setMerchantProductNo',
+        'gtin' => 'setGtin',
         'unitVat' => 'setUnitVat',
         'lineTotalInclVat' => 'setLineTotalInclVat',
         'lineVat' => 'setLineVat',
@@ -181,6 +185,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'status' => 'getStatus',
         'isFulfillmentByMarketplace' => 'getIsFulfillmentByMarketplace',
         'merchantProductNo' => 'getMerchantProductNo',
+        'gtin' => 'getGtin',
         'unitVat' => 'getUnitVat',
         'lineTotalInclVat' => 'getLineTotalInclVat',
         'lineVat' => 'getLineVat',
@@ -241,7 +246,6 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     const STATUS_IN_PROGRESS = 'IN_PROGRESS';
     const STATUS_SHIPPED = 'SHIPPED';
     const STATUS_IN_BACKORDER = 'IN_BACKORDER';
-    const STATUS_CANCELED = 'CANCELED';
     const STATUS_MANCO = 'MANCO';
     const STATUS_IN_COMBI = 'IN_COMBI';
     const STATUS_CLOSED = 'CLOSED';
@@ -255,6 +259,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     const CONDITION_USED_REASONABLE = 'USED_REASONABLE';
     const CONDITION_USED_MEDIOCRE = 'USED_MEDIOCRE';
     const CONDITION_UNKNOWN = 'UNKNOWN';
+    const CONDITION_USED_VERY_GOOD = 'USED_VERY_GOOD';
     
 
     
@@ -269,7 +274,6 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
             self::STATUS_IN_PROGRESS,
             self::STATUS_SHIPPED,
             self::STATUS_IN_BACKORDER,
-            self::STATUS_CANCELED,
             self::STATUS_MANCO,
             self::STATUS_IN_COMBI,
             self::STATUS_CLOSED,
@@ -294,6 +298,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
             self::CONDITION_USED_REASONABLE,
             self::CONDITION_USED_MEDIOCRE,
             self::CONDITION_UNKNOWN,
+            self::CONDITION_USED_VERY_GOOD,
         ];
     }
     
@@ -316,6 +321,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['isFulfillmentByMarketplace'] = isset($data['isFulfillmentByMarketplace']) ? $data['isFulfillmentByMarketplace'] : null;
         $this->container['merchantProductNo'] = isset($data['merchantProductNo']) ? $data['merchantProductNo'] : null;
+        $this->container['gtin'] = isset($data['gtin']) ? $data['gtin'] : null;
         $this->container['unitVat'] = isset($data['unitVat']) ? $data['unitVat'] : null;
         $this->container['lineTotalInclVat'] = isset($data['lineTotalInclVat']) ? $data['lineTotalInclVat'] : null;
         $this->container['lineVat'] = isset($data['lineVat']) ? $data['lineVat'] : null;
@@ -363,9 +369,6 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         if ($this->container['quantity'] === null) {
             $invalidProperties[] = "'quantity' can't be null";
         }
-        if ($this->container['cancellationRequestedQuantity'] === null) {
-            $invalidProperties[] = "'cancellationRequestedQuantity' can't be null";
-        }
         if ($this->container['unitPriceInclVat'] === null) {
             $invalidProperties[] = "'unitPriceInclVat' can't be null";
         }
@@ -403,9 +406,6 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['quantity'] === null) {
-            return false;
-        }
-        if ($this->container['cancellationRequestedQuantity'] === null) {
             return false;
         }
         if ($this->container['unitPriceInclVat'] === null) {
@@ -496,6 +496,30 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     public function setMerchantProductNo($merchantProductNo)
     {
         $this->container['merchantProductNo'] = $merchantProductNo;
+
+        return $this;
+    }
+
+    /**
+     * Gets gtin
+     *
+     * @return string
+     */
+    public function getGtin()
+    {
+        return $this->container['gtin'];
+    }
+
+    /**
+     * Sets gtin
+     *
+     * @param string $gtin Either the GTIN (EAN, ISBN, UPC etc) provided by the channel, or the the GTIN belonging to the MerchantProductNo in ChannelEngine
+     *
+     * @return $this
+     */
+    public function setGtin($gtin)
+    {
+        $this->container['gtin'] = $gtin;
 
         return $this;
     }

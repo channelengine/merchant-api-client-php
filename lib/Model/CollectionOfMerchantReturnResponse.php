@@ -62,6 +62,7 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
         'totalCount' => 'int',
         'itemsPerPage' => 'int',
         'statusCode' => 'int',
+        'logId' => 'int',
         'success' => 'bool',
         'message' => 'string',
         'validationErrors' => 'map[string,string[]]'
@@ -78,6 +79,7 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
         'totalCount' => 'int32',
         'itemsPerPage' => 'int32',
         'statusCode' => 'int32',
+        'logId' => 'int32',
         'success' => null,
         'message' => null,
         'validationErrors' => null
@@ -115,6 +117,7 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
         'totalCount' => 'TotalCount',
         'itemsPerPage' => 'ItemsPerPage',
         'statusCode' => 'StatusCode',
+        'logId' => 'LogId',
         'success' => 'Success',
         'message' => 'Message',
         'validationErrors' => 'ValidationErrors'
@@ -131,6 +134,7 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
         'totalCount' => 'setTotalCount',
         'itemsPerPage' => 'setItemsPerPage',
         'statusCode' => 'setStatusCode',
+        'logId' => 'setLogId',
         'success' => 'setSuccess',
         'message' => 'setMessage',
         'validationErrors' => 'setValidationErrors'
@@ -147,6 +151,7 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
         'totalCount' => 'getTotalCount',
         'itemsPerPage' => 'getItemsPerPage',
         'statusCode' => 'getStatusCode',
+        'logId' => 'getLogId',
         'success' => 'getSuccess',
         'message' => 'getMessage',
         'validationErrors' => 'getValidationErrors'
@@ -217,6 +222,7 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
         $this->container['totalCount'] = isset($data['totalCount']) ? $data['totalCount'] : null;
         $this->container['itemsPerPage'] = isset($data['itemsPerPage']) ? $data['itemsPerPage'] : null;
         $this->container['statusCode'] = isset($data['statusCode']) ? $data['statusCode'] : null;
+        $this->container['logId'] = isset($data['logId']) ? $data['logId'] : null;
         $this->container['success'] = isset($data['success']) ? $data['success'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['validationErrors'] = isset($data['validationErrors']) ? $data['validationErrors'] : null;
@@ -363,6 +369,30 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
     public function setStatusCode($statusCode)
     {
         $this->container['statusCode'] = $statusCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets logId
+     *
+     * @return int
+     */
+    public function getLogId()
+    {
+        return $this->container['logId'];
+    }
+
+    /**
+     * Sets logId
+     *
+     * @param int $logId logId
+     *
+     * @return $this
+     */
+    public function setLogId($logId)
+    {
+        $this->container['logId'] = $logId;
 
         return $this;
     }

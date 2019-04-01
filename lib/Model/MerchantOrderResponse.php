@@ -305,7 +305,6 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     const STATUS_IN_PROGRESS = 'IN_PROGRESS';
     const STATUS_SHIPPED = 'SHIPPED';
     const STATUS_IN_BACKORDER = 'IN_BACKORDER';
-    const STATUS_CANCELED = 'CANCELED';
     const STATUS_MANCO = 'MANCO';
     const STATUS_IN_COMBI = 'IN_COMBI';
     const STATUS_CLOSED = 'CLOSED';
@@ -341,7 +340,6 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
             self::STATUS_IN_PROGRESS,
             self::STATUS_SHIPPED,
             self::STATUS_IN_BACKORDER,
-            self::STATUS_CANCELED,
             self::STATUS_MANCO,
             self::STATUS_IN_COMBI,
             self::STATUS_CLOSED,
@@ -475,6 +473,10 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         if ($this->container['currencyCode'] === null) {
             $invalidProperties[] = "'currencyCode' can't be null";
         }
+        if ((strlen($this->container['currencyCode']) > 3)) {
+            $invalidProperties[] = "invalid value for 'currencyCode', the character length must be smaller than or equal to 3.";
+        }
+
         if ($this->container['orderDate'] === null) {
             $invalidProperties[] = "'orderDate' can't be null";
         }
@@ -552,6 +554,9 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['currencyCode'] === null) {
+            return false;
+        }
+        if (strlen($this->container['currencyCode']) > 3) {
             return false;
         }
         if ($this->container['orderDate'] === null) {
@@ -1197,6 +1202,10 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
      */
     public function setCurrencyCode($currencyCode)
     {
+        if ((strlen($currencyCode) > 3)) {
+            throw new \InvalidArgumentException('invalid length for $currencyCode when calling MerchantOrderResponse., must be smaller than or equal to 3.');
+        }
+
         $this->container['currencyCode'] = $currencyCode;
 
         return $this;

@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiResponse
+ * MerchantStockLocationResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * ApiResponse Class Doc Comment
+ * MerchantStockLocationResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiResponse implements ModelInterface, ArrayAccess
+class MerchantStockLocationResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiResponse';
+    protected static $swaggerModelName = 'MerchantStockLocationResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,8 @@ class ApiResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'statusCode' => 'int',
-        'logId' => 'int',
-        'success' => 'bool',
-        'message' => 'string',
-        'validationErrors' => 'map[string,string[]]'
+        'id' => 'int',
+        'name' => 'string'
     ];
 
     /**
@@ -70,11 +67,8 @@ class ApiResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'statusCode' => 'int32',
-        'logId' => 'int32',
-        'success' => null,
-        'message' => null,
-        'validationErrors' => null
+        'id' => 'int32',
+        'name' => null
     ];
 
     /**
@@ -104,11 +98,8 @@ class ApiResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'statusCode' => 'StatusCode',
-        'logId' => 'LogId',
-        'success' => 'Success',
-        'message' => 'Message',
-        'validationErrors' => 'ValidationErrors'
+        'id' => 'Id',
+        'name' => 'Name'
     ];
 
     /**
@@ -117,11 +108,8 @@ class ApiResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'statusCode' => 'setStatusCode',
-        'logId' => 'setLogId',
-        'success' => 'setSuccess',
-        'message' => 'setMessage',
-        'validationErrors' => 'setValidationErrors'
+        'id' => 'setId',
+        'name' => 'setName'
     ];
 
     /**
@@ -130,11 +118,8 @@ class ApiResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'statusCode' => 'getStatusCode',
-        'logId' => 'getLogId',
-        'success' => 'getSuccess',
-        'message' => 'getMessage',
-        'validationErrors' => 'getValidationErrors'
+        'id' => 'getId',
+        'name' => 'getName'
     ];
 
     /**
@@ -197,11 +182,8 @@ class ApiResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['statusCode'] = isset($data['statusCode']) ? $data['statusCode'] : null;
-        $this->container['logId'] = isset($data['logId']) ? $data['logId'] : null;
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['validationErrors'] = isset($data['validationErrors']) ? $data['validationErrors'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /**
@@ -230,121 +212,49 @@ class ApiResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets statusCode
+     * Gets id
      *
      * @return int
      */
-    public function getStatusCode()
+    public function getId()
     {
-        return $this->container['statusCode'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets statusCode
+     * Sets id
      *
-     * @param int $statusCode statusCode
+     * @param int $id The ChannelEngine id of the stock location.
      *
      * @return $this
      */
-    public function setStatusCode($statusCode)
+    public function setId($id)
     {
-        $this->container['statusCode'] = $statusCode;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets logId
-     *
-     * @return int
-     */
-    public function getLogId()
-    {
-        return $this->container['logId'];
-    }
-
-    /**
-     * Sets logId
-     *
-     * @param int $logId logId
-     *
-     * @return $this
-     */
-    public function setLogId($logId)
-    {
-        $this->container['logId'] = $logId;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success success
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
+     * Gets name
      *
      * @return string
      */
-    public function getMessage()
+    public function getName()
     {
-        return $this->container['message'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets message
+     * Sets name
      *
-     * @param string $message message
+     * @param string $name The ChannelEngine name of the stock location
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setName($name)
     {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets validationErrors
-     *
-     * @return map[string,string[]]
-     */
-    public function getValidationErrors()
-    {
-        return $this->container['validationErrors'];
-    }
-
-    /**
-     * Sets validationErrors
-     *
-     * @param map[string,string[]] $validationErrors validationErrors
-     *
-     * @return $this
-     */
-    public function setValidationErrors($validationErrors)
-    {
-        $this->container['validationErrors'] = $validationErrors;
+        $this->container['name'] = $name;
 
         return $this;
     }

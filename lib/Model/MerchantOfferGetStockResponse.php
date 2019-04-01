@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiResponse
+ * MerchantOfferGetStockResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * ApiResponse Class Doc Comment
+ * MerchantOfferGetStockResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ApiResponse implements ModelInterface, ArrayAccess
+class MerchantOfferGetStockResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ApiResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiResponse';
+    protected static $swaggerModelName = 'MerchantOfferGetStockResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,9 @@ class ApiResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'statusCode' => 'int',
-        'logId' => 'int',
-        'success' => 'bool',
-        'message' => 'string',
-        'validationErrors' => 'map[string,string[]]'
+        'merchantProductNo' => 'string',
+        'stockLocationId' => 'int',
+        'stock' => 'int'
     ];
 
     /**
@@ -70,11 +68,9 @@ class ApiResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'statusCode' => 'int32',
-        'logId' => 'int32',
-        'success' => null,
-        'message' => null,
-        'validationErrors' => null
+        'merchantProductNo' => null,
+        'stockLocationId' => 'int32',
+        'stock' => 'int32'
     ];
 
     /**
@@ -104,11 +100,9 @@ class ApiResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'statusCode' => 'StatusCode',
-        'logId' => 'LogId',
-        'success' => 'Success',
-        'message' => 'Message',
-        'validationErrors' => 'ValidationErrors'
+        'merchantProductNo' => 'MerchantProductNo',
+        'stockLocationId' => 'StockLocationId',
+        'stock' => 'Stock'
     ];
 
     /**
@@ -117,11 +111,9 @@ class ApiResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'statusCode' => 'setStatusCode',
-        'logId' => 'setLogId',
-        'success' => 'setSuccess',
-        'message' => 'setMessage',
-        'validationErrors' => 'setValidationErrors'
+        'merchantProductNo' => 'setMerchantProductNo',
+        'stockLocationId' => 'setStockLocationId',
+        'stock' => 'setStock'
     ];
 
     /**
@@ -130,11 +122,9 @@ class ApiResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'statusCode' => 'getStatusCode',
-        'logId' => 'getLogId',
-        'success' => 'getSuccess',
-        'message' => 'getMessage',
-        'validationErrors' => 'getValidationErrors'
+        'merchantProductNo' => 'getMerchantProductNo',
+        'stockLocationId' => 'getStockLocationId',
+        'stock' => 'getStock'
     ];
 
     /**
@@ -197,11 +187,9 @@ class ApiResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['statusCode'] = isset($data['statusCode']) ? $data['statusCode'] : null;
-        $this->container['logId'] = isset($data['logId']) ? $data['logId'] : null;
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['validationErrors'] = isset($data['validationErrors']) ? $data['validationErrors'] : null;
+        $this->container['merchantProductNo'] = isset($data['merchantProductNo']) ? $data['merchantProductNo'] : null;
+        $this->container['stockLocationId'] = isset($data['stockLocationId']) ? $data['stockLocationId'] : null;
+        $this->container['stock'] = isset($data['stock']) ? $data['stock'] : null;
     }
 
     /**
@@ -230,121 +218,73 @@ class ApiResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets statusCode
-     *
-     * @return int
-     */
-    public function getStatusCode()
-    {
-        return $this->container['statusCode'];
-    }
-
-    /**
-     * Sets statusCode
-     *
-     * @param int $statusCode statusCode
-     *
-     * @return $this
-     */
-    public function setStatusCode($statusCode)
-    {
-        $this->container['statusCode'] = $statusCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets logId
-     *
-     * @return int
-     */
-    public function getLogId()
-    {
-        return $this->container['logId'];
-    }
-
-    /**
-     * Sets logId
-     *
-     * @param int $logId logId
-     *
-     * @return $this
-     */
-    public function setLogId($logId)
-    {
-        $this->container['logId'] = $logId;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success success
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
+     * Gets merchantProductNo
      *
      * @return string
      */
-    public function getMessage()
+    public function getMerchantProductNo()
     {
-        return $this->container['message'];
+        return $this->container['merchantProductNo'];
     }
 
     /**
-     * Sets message
+     * Sets merchantProductNo
      *
-     * @param string $message message
+     * @param string $merchantProductNo The product SKU
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setMerchantProductNo($merchantProductNo)
     {
-        $this->container['message'] = $message;
+        $this->container['merchantProductNo'] = $merchantProductNo;
 
         return $this;
     }
 
     /**
-     * Gets validationErrors
+     * Gets stockLocationId
      *
-     * @return map[string,string[]]
+     * @return int
      */
-    public function getValidationErrors()
+    public function getStockLocationId()
     {
-        return $this->container['validationErrors'];
+        return $this->container['stockLocationId'];
     }
 
     /**
-     * Sets validationErrors
+     * Sets stockLocationId
      *
-     * @param map[string,string[]] $validationErrors validationErrors
+     * @param int $stockLocationId The ChannelEngine id of the stock location
      *
      * @return $this
      */
-    public function setValidationErrors($validationErrors)
+    public function setStockLocationId($stockLocationId)
     {
-        $this->container['validationErrors'] = $validationErrors;
+        $this->container['stockLocationId'] = $stockLocationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets stock
+     *
+     * @return int
+     */
+    public function getStock()
+    {
+        return $this->container['stock'];
+    }
+
+    /**
+     * Sets stock
+     *
+     * @param int $stock The quantity of products in stock at the stock location
+     *
+     * @return $this
+     */
+    public function setStock($stock)
+    {
+        $this->container['stock'] = $stock;
 
         return $this;
     }
