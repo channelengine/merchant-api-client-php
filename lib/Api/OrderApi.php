@@ -377,21 +377,21 @@ class OrderApi
      *
      * Get Orders By Filter
      *
-     * @param  string[] $filterStatuses Order status(es) to filter on (optional)
-     * @param  string[] $filterMerchantOrderNos Filter on unique order reference used by the merchant (optional)
-     * @param  \DateTime $filterFromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
-     * @param  \DateTime $filterToDate Filter on the order date, until this date. This date is exclusive. (optional)
-     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
-     * @param  string $filterFulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
-     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
+     * @param  string[] $statuses Order status(es) to filter on (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toDate Filter on the order date, until this date. This date is exclusive. (optional)
+     * @param  bool $excludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
+     * @param  string $fulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse
      */
-    public function orderGetByFilter($filterStatuses = null, $filterMerchantOrderNos = null, $filterFromDate = null, $filterToDate = null, $filterExcludeMarketplaceFulfilledOrdersAndLines = null, $filterFulfillmentType = null, $filterPage = null)
+    public function orderGetByFilter($statuses = null, $merchantOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $page = null)
     {
-        list($response) = $this->orderGetByFilterWithHttpInfo($filterStatuses, $filterMerchantOrderNos, $filterFromDate, $filterToDate, $filterExcludeMarketplaceFulfilledOrdersAndLines, $filterFulfillmentType, $filterPage);
+        list($response) = $this->orderGetByFilterWithHttpInfo($statuses, $merchantOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $page);
         return $response;
     }
 
@@ -400,22 +400,22 @@ class OrderApi
      *
      * Get Orders By Filter
      *
-     * @param  string[] $filterStatuses Order status(es) to filter on (optional)
-     * @param  string[] $filterMerchantOrderNos Filter on unique order reference used by the merchant (optional)
-     * @param  \DateTime $filterFromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
-     * @param  \DateTime $filterToDate Filter on the order date, until this date. This date is exclusive. (optional)
-     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
-     * @param  string $filterFulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
-     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
+     * @param  string[] $statuses Order status(es) to filter on (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toDate Filter on the order date, until this date. This date is exclusive. (optional)
+     * @param  bool $excludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
+     * @param  string $fulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderGetByFilterWithHttpInfo($filterStatuses = null, $filterMerchantOrderNos = null, $filterFromDate = null, $filterToDate = null, $filterExcludeMarketplaceFulfilledOrdersAndLines = null, $filterFulfillmentType = null, $filterPage = null)
+    public function orderGetByFilterWithHttpInfo($statuses = null, $merchantOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $page = null)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse';
-        $request = $this->orderGetByFilterRequest($filterStatuses, $filterMerchantOrderNos, $filterFromDate, $filterToDate, $filterExcludeMarketplaceFulfilledOrdersAndLines, $filterFulfillmentType, $filterPage);
+        $request = $this->orderGetByFilterRequest($statuses, $merchantOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -481,20 +481,20 @@ class OrderApi
      *
      * Get Orders By Filter
      *
-     * @param  string[] $filterStatuses Order status(es) to filter on (optional)
-     * @param  string[] $filterMerchantOrderNos Filter on unique order reference used by the merchant (optional)
-     * @param  \DateTime $filterFromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
-     * @param  \DateTime $filterToDate Filter on the order date, until this date. This date is exclusive. (optional)
-     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
-     * @param  string $filterFulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
-     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
+     * @param  string[] $statuses Order status(es) to filter on (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toDate Filter on the order date, until this date. This date is exclusive. (optional)
+     * @param  bool $excludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
+     * @param  string $fulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderGetByFilterAsync($filterStatuses = null, $filterMerchantOrderNos = null, $filterFromDate = null, $filterToDate = null, $filterExcludeMarketplaceFulfilledOrdersAndLines = null, $filterFulfillmentType = null, $filterPage = null)
+    public function orderGetByFilterAsync($statuses = null, $merchantOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $page = null)
     {
-        return $this->orderGetByFilterAsyncWithHttpInfo($filterStatuses, $filterMerchantOrderNos, $filterFromDate, $filterToDate, $filterExcludeMarketplaceFulfilledOrdersAndLines, $filterFulfillmentType, $filterPage)
+        return $this->orderGetByFilterAsyncWithHttpInfo($statuses, $merchantOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -507,21 +507,21 @@ class OrderApi
      *
      * Get Orders By Filter
      *
-     * @param  string[] $filterStatuses Order status(es) to filter on (optional)
-     * @param  string[] $filterMerchantOrderNos Filter on unique order reference used by the merchant (optional)
-     * @param  \DateTime $filterFromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
-     * @param  \DateTime $filterToDate Filter on the order date, until this date. This date is exclusive. (optional)
-     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
-     * @param  string $filterFulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
-     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
+     * @param  string[] $statuses Order status(es) to filter on (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toDate Filter on the order date, until this date. This date is exclusive. (optional)
+     * @param  bool $excludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
+     * @param  string $fulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderGetByFilterAsyncWithHttpInfo($filterStatuses = null, $filterMerchantOrderNos = null, $filterFromDate = null, $filterToDate = null, $filterExcludeMarketplaceFulfilledOrdersAndLines = null, $filterFulfillmentType = null, $filterPage = null)
+    public function orderGetByFilterAsyncWithHttpInfo($statuses = null, $merchantOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $page = null)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse';
-        $request = $this->orderGetByFilterRequest($filterStatuses, $filterMerchantOrderNos, $filterFromDate, $filterToDate, $filterExcludeMarketplaceFulfilledOrdersAndLines, $filterFulfillmentType, $filterPage);
+        $request = $this->orderGetByFilterRequest($statuses, $merchantOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -563,18 +563,18 @@ class OrderApi
     /**
      * Create request for operation 'orderGetByFilter'
      *
-     * @param  string[] $filterStatuses Order status(es) to filter on (optional)
-     * @param  string[] $filterMerchantOrderNos Filter on unique order reference used by the merchant (optional)
-     * @param  \DateTime $filterFromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
-     * @param  \DateTime $filterToDate Filter on the order date, until this date. This date is exclusive. (optional)
-     * @param  bool $filterExcludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
-     * @param  string $filterFulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
-     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
+     * @param  string[] $statuses Order status(es) to filter on (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toDate Filter on the order date, until this date. This date is exclusive. (optional)
+     * @param  bool $excludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
+     * @param  string $fulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderGetByFilterRequest($filterStatuses = null, $filterMerchantOrderNos = null, $filterFromDate = null, $filterToDate = null, $filterExcludeMarketplaceFulfilledOrdersAndLines = null, $filterFulfillmentType = null, $filterPage = null)
+    protected function orderGetByFilterRequest($statuses = null, $merchantOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $page = null)
     {
 
         $resourcePath = '/v2/orders';
@@ -585,38 +585,38 @@ class OrderApi
         $multipart = false;
 
         // query params
-        if (is_array($filterStatuses)) {
-            $queryParams['filter.statuses'] = $filterStatuses;
+        if (is_array($statuses)) {
+            $queryParams['statuses'] = $statuses;
         } else
-        if ($filterStatuses !== null) {
-            $queryParams['filter.statuses'] = ObjectSerializer::toQueryValue($filterStatuses);
+        if ($statuses !== null) {
+            $queryParams['statuses'] = ObjectSerializer::toQueryValue($statuses);
         }
         // query params
-        if (is_array($filterMerchantOrderNos)) {
-            $queryParams['filter.merchantOrderNos'] = $filterMerchantOrderNos;
+        if (is_array($merchantOrderNos)) {
+            $queryParams['merchantOrderNos'] = $merchantOrderNos;
         } else
-        if ($filterMerchantOrderNos !== null) {
-            $queryParams['filter.merchantOrderNos'] = ObjectSerializer::toQueryValue($filterMerchantOrderNos);
+        if ($merchantOrderNos !== null) {
+            $queryParams['merchantOrderNos'] = ObjectSerializer::toQueryValue($merchantOrderNos);
         }
         // query params
-        if ($filterFromDate !== null) {
-            $queryParams['filter.fromDate'] = ObjectSerializer::toQueryValue($filterFromDate);
+        if ($fromDate !== null) {
+            $queryParams['fromDate'] = ObjectSerializer::toQueryValue($fromDate);
         }
         // query params
-        if ($filterToDate !== null) {
-            $queryParams['filter.toDate'] = ObjectSerializer::toQueryValue($filterToDate);
+        if ($toDate !== null) {
+            $queryParams['toDate'] = ObjectSerializer::toQueryValue($toDate);
         }
         // query params
-        if ($filterExcludeMarketplaceFulfilledOrdersAndLines !== null) {
-            $queryParams['filter.excludeMarketplaceFulfilledOrdersAndLines'] = ObjectSerializer::toQueryValue($filterExcludeMarketplaceFulfilledOrdersAndLines);
+        if ($excludeMarketplaceFulfilledOrdersAndLines !== null) {
+            $queryParams['excludeMarketplaceFulfilledOrdersAndLines'] = ObjectSerializer::toQueryValue($excludeMarketplaceFulfilledOrdersAndLines);
         }
         // query params
-        if ($filterFulfillmentType !== null) {
-            $queryParams['filter.fulfillmentType'] = ObjectSerializer::toQueryValue($filterFulfillmentType);
+        if ($fulfillmentType !== null) {
+            $queryParams['fulfillmentType'] = ObjectSerializer::toQueryValue($fulfillmentType);
         }
         // query params
-        if ($filterPage !== null) {
-            $queryParams['filter.page'] = ObjectSerializer::toQueryValue($filterPage);
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
         }
 
 

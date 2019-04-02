@@ -643,18 +643,18 @@ class ProductApi
      *
      * Get Products
      *
-     * @param  string $filterSearch Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters. (optional)
-     * @param  string[] $filterEanList Search products by submitting a list of EAN&#39;s (optional)
-     * @param  string[] $filterMerchantProductNoList Search products by submitting a list of MerchantProductNo&#39;s (optional)
-     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
+     * @param  string $search Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters. (optional)
+     * @param  string[] $eanList Search products by submitting a list of EAN&#39;s (optional)
+     * @param  string[] $merchantProductNoList Search products by submitting a list of MerchantProductNo&#39;s (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantProductResponse
      */
-    public function productGetByFilter($filterSearch = null, $filterEanList = null, $filterMerchantProductNoList = null, $filterPage = null)
+    public function productGetByFilter($search = null, $eanList = null, $merchantProductNoList = null, $page = null)
     {
-        list($response) = $this->productGetByFilterWithHttpInfo($filterSearch, $filterEanList, $filterMerchantProductNoList, $filterPage);
+        list($response) = $this->productGetByFilterWithHttpInfo($search, $eanList, $merchantProductNoList, $page);
         return $response;
     }
 
@@ -663,19 +663,19 @@ class ProductApi
      *
      * Get Products
      *
-     * @param  string $filterSearch Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters. (optional)
-     * @param  string[] $filterEanList Search products by submitting a list of EAN&#39;s (optional)
-     * @param  string[] $filterMerchantProductNoList Search products by submitting a list of MerchantProductNo&#39;s (optional)
-     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
+     * @param  string $search Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters. (optional)
+     * @param  string[] $eanList Search products by submitting a list of EAN&#39;s (optional)
+     * @param  string[] $merchantProductNoList Search products by submitting a list of MerchantProductNo&#39;s (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantProductResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productGetByFilterWithHttpInfo($filterSearch = null, $filterEanList = null, $filterMerchantProductNoList = null, $filterPage = null)
+    public function productGetByFilterWithHttpInfo($search = null, $eanList = null, $merchantProductNoList = null, $page = null)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantProductResponse';
-        $request = $this->productGetByFilterRequest($filterSearch, $filterEanList, $filterMerchantProductNoList, $filterPage);
+        $request = $this->productGetByFilterRequest($search, $eanList, $merchantProductNoList, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -741,17 +741,17 @@ class ProductApi
      *
      * Get Products
      *
-     * @param  string $filterSearch Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters. (optional)
-     * @param  string[] $filterEanList Search products by submitting a list of EAN&#39;s (optional)
-     * @param  string[] $filterMerchantProductNoList Search products by submitting a list of MerchantProductNo&#39;s (optional)
-     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
+     * @param  string $search Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters. (optional)
+     * @param  string[] $eanList Search products by submitting a list of EAN&#39;s (optional)
+     * @param  string[] $merchantProductNoList Search products by submitting a list of MerchantProductNo&#39;s (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productGetByFilterAsync($filterSearch = null, $filterEanList = null, $filterMerchantProductNoList = null, $filterPage = null)
+    public function productGetByFilterAsync($search = null, $eanList = null, $merchantProductNoList = null, $page = null)
     {
-        return $this->productGetByFilterAsyncWithHttpInfo($filterSearch, $filterEanList, $filterMerchantProductNoList, $filterPage)
+        return $this->productGetByFilterAsyncWithHttpInfo($search, $eanList, $merchantProductNoList, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -764,18 +764,18 @@ class ProductApi
      *
      * Get Products
      *
-     * @param  string $filterSearch Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters. (optional)
-     * @param  string[] $filterEanList Search products by submitting a list of EAN&#39;s (optional)
-     * @param  string[] $filterMerchantProductNoList Search products by submitting a list of MerchantProductNo&#39;s (optional)
-     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
+     * @param  string $search Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters. (optional)
+     * @param  string[] $eanList Search products by submitting a list of EAN&#39;s (optional)
+     * @param  string[] $merchantProductNoList Search products by submitting a list of MerchantProductNo&#39;s (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productGetByFilterAsyncWithHttpInfo($filterSearch = null, $filterEanList = null, $filterMerchantProductNoList = null, $filterPage = null)
+    public function productGetByFilterAsyncWithHttpInfo($search = null, $eanList = null, $merchantProductNoList = null, $page = null)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantProductResponse';
-        $request = $this->productGetByFilterRequest($filterSearch, $filterEanList, $filterMerchantProductNoList, $filterPage);
+        $request = $this->productGetByFilterRequest($search, $eanList, $merchantProductNoList, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -817,15 +817,15 @@ class ProductApi
     /**
      * Create request for operation 'productGetByFilter'
      *
-     * @param  string $filterSearch Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters. (optional)
-     * @param  string[] $filterEanList Search products by submitting a list of EAN&#39;s (optional)
-     * @param  string[] $filterMerchantProductNoList Search products by submitting a list of MerchantProductNo&#39;s (optional)
-     * @param  int $filterPage The page to filter on. Starts at 1. (optional)
+     * @param  string $search Search product(s) by Name, MerchantProductNo, Ean or Brand      This search is applied to the result after applying the other filters. (optional)
+     * @param  string[] $eanList Search products by submitting a list of EAN&#39;s (optional)
+     * @param  string[] $merchantProductNoList Search products by submitting a list of MerchantProductNo&#39;s (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function productGetByFilterRequest($filterSearch = null, $filterEanList = null, $filterMerchantProductNoList = null, $filterPage = null)
+    protected function productGetByFilterRequest($search = null, $eanList = null, $merchantProductNoList = null, $page = null)
     {
 
         $resourcePath = '/v2/products';
@@ -836,26 +836,26 @@ class ProductApi
         $multipart = false;
 
         // query params
-        if ($filterSearch !== null) {
-            $queryParams['filter.search'] = ObjectSerializer::toQueryValue($filterSearch);
+        if ($search !== null) {
+            $queryParams['search'] = ObjectSerializer::toQueryValue($search);
         }
         // query params
-        if (is_array($filterEanList)) {
-            $queryParams['filter.eanList'] = $filterEanList;
+        if (is_array($eanList)) {
+            $queryParams['eanList'] = $eanList;
         } else
-        if ($filterEanList !== null) {
-            $queryParams['filter.eanList'] = ObjectSerializer::toQueryValue($filterEanList);
+        if ($eanList !== null) {
+            $queryParams['eanList'] = ObjectSerializer::toQueryValue($eanList);
         }
         // query params
-        if (is_array($filterMerchantProductNoList)) {
-            $queryParams['filter.merchantProductNoList'] = $filterMerchantProductNoList;
+        if (is_array($merchantProductNoList)) {
+            $queryParams['merchantProductNoList'] = $merchantProductNoList;
         } else
-        if ($filterMerchantProductNoList !== null) {
-            $queryParams['filter.merchantProductNoList'] = ObjectSerializer::toQueryValue($filterMerchantProductNoList);
+        if ($merchantProductNoList !== null) {
+            $queryParams['merchantProductNoList'] = ObjectSerializer::toQueryValue($merchantProductNoList);
         }
         // query params
-        if ($filterPage !== null) {
-            $queryParams['filter.page'] = ObjectSerializer::toQueryValue($filterPage);
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
         }
 
 
