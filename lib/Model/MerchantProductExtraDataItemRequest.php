@@ -1,6 +1,6 @@
 <?php
 /**
- * ExtraDataItem
+ * MerchantProductExtraDataItemRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * ExtraDataItem Class Doc Comment
+ * MerchantProductExtraDataItemRequest Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ExtraDataItem implements ModelInterface, ArrayAccess
+class MerchantProductExtraDataItemRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ExtraDataItem implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ExtraDataItem';
+    protected static $swaggerModelName = 'MerchantProductExtraDataItemRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

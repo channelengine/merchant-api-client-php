@@ -92,7 +92,7 @@ class OrderApi
      *
      * Acknowledge Order
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\OrderAcknowledgement $model Relations between the id&#39;s returned by ChannelEngine and the references which the merchant uses (required)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderAcknowledgementRequest $model Relations between the id&#39;s returned by ChannelEngine and the references which the merchant uses (required)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -109,7 +109,7 @@ class OrderApi
      *
      * Acknowledge Order
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\OrderAcknowledgement $model Relations between the id&#39;s returned by ChannelEngine and the references which the merchant uses (required)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderAcknowledgementRequest $model Relations between the id&#39;s returned by ChannelEngine and the references which the merchant uses (required)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -200,7 +200,7 @@ class OrderApi
      *
      * Acknowledge Order
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\OrderAcknowledgement $model Relations between the id&#39;s returned by ChannelEngine and the references which the merchant uses (required)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderAcknowledgementRequest $model Relations between the id&#39;s returned by ChannelEngine and the references which the merchant uses (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -220,7 +220,7 @@ class OrderApi
      *
      * Acknowledge Order
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\OrderAcknowledgement $model Relations between the id&#39;s returned by ChannelEngine and the references which the merchant uses (required)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderAcknowledgementRequest $model Relations between the id&#39;s returned by ChannelEngine and the references which the merchant uses (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -270,7 +270,7 @@ class OrderApi
     /**
      * Create request for operation 'orderAcknowledge'
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\OrderAcknowledgement $model Relations between the id&#39;s returned by ChannelEngine and the references which the merchant uses (required)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderAcknowledgementRequest $model Relations between the id&#39;s returned by ChannelEngine and the references which the merchant uses (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -379,19 +379,21 @@ class OrderApi
      *
      * @param  string[] $statuses Order status(es) to filter on (optional)
      * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
      * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the order date, until this date. This date is exclusive. (optional)
      * @param  bool $excludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
      * @param  string $fulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
+     * @param  bool $onlyWithCancellationRequests Filter on orders containing cancellation requests.  Some channels allow a customer to cancel an order until it has been shipped.  When an order has already been acknowledged in ChannelEngine, it can only be cancelled by creating a cancellation. (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse
      */
-    public function orderGetByFilter($statuses = null, $merchantOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $page = null)
+    public function orderGetByFilter($statuses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
     {
-        list($response) = $this->orderGetByFilterWithHttpInfo($statuses, $merchantOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $page);
+        list($response) = $this->orderGetByFilterWithHttpInfo($statuses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $page);
         return $response;
     }
 
@@ -402,20 +404,22 @@ class OrderApi
      *
      * @param  string[] $statuses Order status(es) to filter on (optional)
      * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
      * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the order date, until this date. This date is exclusive. (optional)
      * @param  bool $excludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
      * @param  string $fulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
+     * @param  bool $onlyWithCancellationRequests Filter on orders containing cancellation requests.  Some channels allow a customer to cancel an order until it has been shipped.  When an order has already been acknowledged in ChannelEngine, it can only be cancelled by creating a cancellation. (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderGetByFilterWithHttpInfo($statuses = null, $merchantOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $page = null)
+    public function orderGetByFilterWithHttpInfo($statuses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse';
-        $request = $this->orderGetByFilterRequest($statuses, $merchantOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $page);
+        $request = $this->orderGetByFilterRequest($statuses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -483,18 +487,20 @@ class OrderApi
      *
      * @param  string[] $statuses Order status(es) to filter on (optional)
      * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
      * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the order date, until this date. This date is exclusive. (optional)
      * @param  bool $excludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
      * @param  string $fulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
+     * @param  bool $onlyWithCancellationRequests Filter on orders containing cancellation requests.  Some channels allow a customer to cancel an order until it has been shipped.  When an order has already been acknowledged in ChannelEngine, it can only be cancelled by creating a cancellation. (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderGetByFilterAsync($statuses = null, $merchantOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $page = null)
+    public function orderGetByFilterAsync($statuses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
     {
-        return $this->orderGetByFilterAsyncWithHttpInfo($statuses, $merchantOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $page)
+        return $this->orderGetByFilterAsyncWithHttpInfo($statuses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -509,19 +515,21 @@ class OrderApi
      *
      * @param  string[] $statuses Order status(es) to filter on (optional)
      * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
      * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the order date, until this date. This date is exclusive. (optional)
      * @param  bool $excludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
      * @param  string $fulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
+     * @param  bool $onlyWithCancellationRequests Filter on orders containing cancellation requests.  Some channels allow a customer to cancel an order until it has been shipped.  When an order has already been acknowledged in ChannelEngine, it can only be cancelled by creating a cancellation. (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderGetByFilterAsyncWithHttpInfo($statuses = null, $merchantOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $page = null)
+    public function orderGetByFilterAsyncWithHttpInfo($statuses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse';
-        $request = $this->orderGetByFilterRequest($statuses, $merchantOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $page);
+        $request = $this->orderGetByFilterRequest($statuses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -565,16 +573,18 @@ class OrderApi
      *
      * @param  string[] $statuses Order status(es) to filter on (optional)
      * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
      * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the order date, until this date. This date is exclusive. (optional)
      * @param  bool $excludeMarketplaceFulfilledOrdersAndLines Exclude order (lines) fulfilled by the marketplace (amazon:FBA, bol:LVB, etc.) (optional)
      * @param  string $fulfillmentType Filter orders on fulfillment type. This will include all orders lines, even if they are partially fulfilled by the marketplace.  To exclude orders and lines that are fulfilled by the marketplace from the response, set ExcludeMarketplaceFulfilledOrdersAndLines to true. (optional)
+     * @param  bool $onlyWithCancellationRequests Filter on orders containing cancellation requests.  Some channels allow a customer to cancel an order until it has been shipped.  When an order has already been acknowledged in ChannelEngine, it can only be cancelled by creating a cancellation. (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderGetByFilterRequest($statuses = null, $merchantOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $page = null)
+    protected function orderGetByFilterRequest($statuses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
     {
 
         $resourcePath = '/v2/orders';
@@ -599,6 +609,13 @@ class OrderApi
             $queryParams['merchantOrderNos'] = ObjectSerializer::toQueryValue($merchantOrderNos);
         }
         // query params
+        if (is_array($channelOrderNos)) {
+            $queryParams['channelOrderNos'] = $channelOrderNos;
+        } else
+        if ($channelOrderNos !== null) {
+            $queryParams['channelOrderNos'] = ObjectSerializer::toQueryValue($channelOrderNos);
+        }
+        // query params
         if ($fromDate !== null) {
             $queryParams['fromDate'] = ObjectSerializer::toQueryValue($fromDate);
         }
@@ -613,6 +630,10 @@ class OrderApi
         // query params
         if ($fulfillmentType !== null) {
             $queryParams['fulfillmentType'] = ObjectSerializer::toQueryValue($fulfillmentType);
+        }
+        // query params
+        if ($onlyWithCancellationRequests !== null) {
+            $queryParams['onlyWithCancellationRequests'] = ObjectSerializer::toQueryValue($onlyWithCancellationRequests);
         }
         // query params
         if ($page !== null) {

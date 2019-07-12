@@ -62,6 +62,9 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         'channelOrderSupport' => 'string',
         'channelOrderNo' => 'string',
         'status' => 'string',
+        'isBusinessOrder' => 'bool',
+        'billingAddress' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantAddressResponse',
+        'shippingAddress' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantAddressResponse',
         'subTotalInclVat' => 'float',
         'subTotalVat' => 'float',
         'shippingCostsVat' => 'float',
@@ -83,8 +86,6 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         'currencyCode' => 'string',
         'orderDate' => '\DateTime',
         'channelCustomerNo' => 'string',
-        'billingAddress' => '\ChannelEngine\Merchant\ApiClient\Model\Address',
-        'shippingAddress' => '\ChannelEngine\Merchant\ApiClient\Model\Address',
         'extraData' => 'map[string,string]'
     ];
 
@@ -99,6 +100,9 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         'channelOrderSupport' => null,
         'channelOrderNo' => null,
         'status' => null,
+        'isBusinessOrder' => null,
+        'billingAddress' => null,
+        'shippingAddress' => null,
         'subTotalInclVat' => 'decimal',
         'subTotalVat' => 'decimal',
         'shippingCostsVat' => 'decimal',
@@ -120,8 +124,6 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         'currencyCode' => null,
         'orderDate' => 'date-time',
         'channelCustomerNo' => null,
-        'billingAddress' => null,
-        'shippingAddress' => null,
         'extraData' => null
     ];
 
@@ -157,6 +159,9 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         'channelOrderSupport' => 'ChannelOrderSupport',
         'channelOrderNo' => 'ChannelOrderNo',
         'status' => 'Status',
+        'isBusinessOrder' => 'IsBusinessOrder',
+        'billingAddress' => 'BillingAddress',
+        'shippingAddress' => 'ShippingAddress',
         'subTotalInclVat' => 'SubTotalInclVat',
         'subTotalVat' => 'SubTotalVat',
         'shippingCostsVat' => 'ShippingCostsVat',
@@ -178,8 +183,6 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         'currencyCode' => 'CurrencyCode',
         'orderDate' => 'OrderDate',
         'channelCustomerNo' => 'ChannelCustomerNo',
-        'billingAddress' => 'BillingAddress',
-        'shippingAddress' => 'ShippingAddress',
         'extraData' => 'ExtraData'
     ];
 
@@ -194,6 +197,9 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         'channelOrderSupport' => 'setChannelOrderSupport',
         'channelOrderNo' => 'setChannelOrderNo',
         'status' => 'setStatus',
+        'isBusinessOrder' => 'setIsBusinessOrder',
+        'billingAddress' => 'setBillingAddress',
+        'shippingAddress' => 'setShippingAddress',
         'subTotalInclVat' => 'setSubTotalInclVat',
         'subTotalVat' => 'setSubTotalVat',
         'shippingCostsVat' => 'setShippingCostsVat',
@@ -215,8 +221,6 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         'currencyCode' => 'setCurrencyCode',
         'orderDate' => 'setOrderDate',
         'channelCustomerNo' => 'setChannelCustomerNo',
-        'billingAddress' => 'setBillingAddress',
-        'shippingAddress' => 'setShippingAddress',
         'extraData' => 'setExtraData'
     ];
 
@@ -231,6 +235,9 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         'channelOrderSupport' => 'getChannelOrderSupport',
         'channelOrderNo' => 'getChannelOrderNo',
         'status' => 'getStatus',
+        'isBusinessOrder' => 'getIsBusinessOrder',
+        'billingAddress' => 'getBillingAddress',
+        'shippingAddress' => 'getShippingAddress',
         'subTotalInclVat' => 'getSubTotalInclVat',
         'subTotalVat' => 'getSubTotalVat',
         'shippingCostsVat' => 'getShippingCostsVat',
@@ -252,8 +259,6 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         'currencyCode' => 'getCurrencyCode',
         'orderDate' => 'getOrderDate',
         'channelCustomerNo' => 'getChannelCustomerNo',
-        'billingAddress' => 'getBillingAddress',
-        'shippingAddress' => 'getShippingAddress',
         'extraData' => 'getExtraData'
     ];
 
@@ -370,6 +375,9 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         $this->container['channelOrderSupport'] = isset($data['channelOrderSupport']) ? $data['channelOrderSupport'] : null;
         $this->container['channelOrderNo'] = isset($data['channelOrderNo']) ? $data['channelOrderNo'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['isBusinessOrder'] = isset($data['isBusinessOrder']) ? $data['isBusinessOrder'] : null;
+        $this->container['billingAddress'] = isset($data['billingAddress']) ? $data['billingAddress'] : null;
+        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
         $this->container['subTotalInclVat'] = isset($data['subTotalInclVat']) ? $data['subTotalInclVat'] : null;
         $this->container['subTotalVat'] = isset($data['subTotalVat']) ? $data['subTotalVat'] : null;
         $this->container['shippingCostsVat'] = isset($data['shippingCostsVat']) ? $data['shippingCostsVat'] : null;
@@ -391,8 +399,6 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         $this->container['currencyCode'] = isset($data['currencyCode']) ? $data['currencyCode'] : null;
         $this->container['orderDate'] = isset($data['orderDate']) ? $data['orderDate'] : null;
         $this->container['channelCustomerNo'] = isset($data['channelCustomerNo']) ? $data['channelCustomerNo'] : null;
-        $this->container['billingAddress'] = isset($data['billingAddress']) ? $data['billingAddress'] : null;
-        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
         $this->container['extraData'] = isset($data['extraData']) ? $data['extraData'] : null;
     }
 
@@ -485,12 +491,6 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'channelCustomerNo', the character length must be bigger than or equal to 0.";
         }
 
-        if ($this->container['billingAddress'] === null) {
-            $invalidProperties[] = "'billingAddress' can't be null";
-        }
-        if ($this->container['shippingAddress'] === null) {
-            $invalidProperties[] = "'shippingAddress' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -560,12 +560,6 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
             return false;
         }
         if (strlen($this->container['channelCustomerNo']) < 0) {
-            return false;
-        }
-        if ($this->container['billingAddress'] === null) {
-            return false;
-        }
-        if ($this->container['shippingAddress'] === null) {
             return false;
         }
         return true;
@@ -706,6 +700,78 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
             );
         }
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets isBusinessOrder
+     *
+     * @return bool
+     */
+    public function getIsBusinessOrder()
+    {
+        return $this->container['isBusinessOrder'];
+    }
+
+    /**
+     * Sets isBusinessOrder
+     *
+     * @param bool $isBusinessOrder Indicating whether the order is a business order
+     *
+     * @return $this
+     */
+    public function setIsBusinessOrder($isBusinessOrder)
+    {
+        $this->container['isBusinessOrder'] = $isBusinessOrder;
+
+        return $this;
+    }
+
+    /**
+     * Gets billingAddress
+     *
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantAddressResponse
+     */
+    public function getBillingAddress()
+    {
+        return $this->container['billingAddress'];
+    }
+
+    /**
+     * Sets billingAddress
+     *
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantAddressResponse $billingAddress The billing or invoice address
+     *
+     * @return $this
+     */
+    public function setBillingAddress($billingAddress)
+    {
+        $this->container['billingAddress'] = $billingAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingAddress
+     *
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantAddressResponse
+     */
+    public function getShippingAddress()
+    {
+        return $this->container['shippingAddress'];
+    }
+
+    /**
+     * Sets shippingAddress
+     *
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantAddressResponse $shippingAddress The shipping address
+     *
+     * @return $this
+     */
+    public function setShippingAddress($shippingAddress)
+    {
+        $this->container['shippingAddress'] = $shippingAddress;
 
         return $this;
     }
@@ -1256,54 +1322,6 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
         }
 
         $this->container['channelCustomerNo'] = $channelCustomerNo;
-
-        return $this;
-    }
-
-    /**
-     * Gets billingAddress
-     *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\Address
-     */
-    public function getBillingAddress()
-    {
-        return $this->container['billingAddress'];
-    }
-
-    /**
-     * Sets billingAddress
-     *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\Address $billingAddress The billing or invoice address
-     *
-     * @return $this
-     */
-    public function setBillingAddress($billingAddress)
-    {
-        $this->container['billingAddress'] = $billingAddress;
-
-        return $this;
-    }
-
-    /**
-     * Gets shippingAddress
-     *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\Address
-     */
-    public function getShippingAddress()
-    {
-        return $this->container['shippingAddress'];
-    }
-
-    /**
-     * Sets shippingAddress
-     *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\Address $shippingAddress The shipping address
-     *
-     * @return $this
-     */
-    public function setShippingAddress($shippingAddress)
-    {
-        $this->container['shippingAddress'] = $shippingAddress;
 
         return $this;
     }

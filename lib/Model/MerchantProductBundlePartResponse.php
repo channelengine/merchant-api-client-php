@@ -1,6 +1,6 @@
 <?php
 /**
- * SingleOfCollectionsDictionary2Generic
+ * MerchantProductBundlePartResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * SingleOfCollectionsDictionary2Generic Class Doc Comment
+ * MerchantProductBundlePartResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAccess
+class MerchantProductBundlePartResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SingleOfCollectionsDictionary&#x60;2Generic';
+    protected static $swaggerModelName = 'MerchantProductBundlePartResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,11 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content' => 'map[string,string[]]',
-        'statusCode' => 'int',
-        'logId' => 'int',
-        'success' => 'bool',
-        'message' => 'string',
-        'validationErrors' => 'map[string,string[]]'
+        'merchantProductNo' => 'string',
+        'ean' => 'string',
+        'name' => 'string',
+        'quantity' => 'int',
+        'price' => 'float'
     ];
 
     /**
@@ -71,12 +70,11 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'content' => null,
-        'statusCode' => 'int32',
-        'logId' => 'int32',
-        'success' => null,
-        'message' => null,
-        'validationErrors' => null
+        'merchantProductNo' => null,
+        'ean' => null,
+        'name' => null,
+        'quantity' => 'int32',
+        'price' => 'decimal'
     ];
 
     /**
@@ -106,12 +104,11 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'content' => 'Content',
-        'statusCode' => 'StatusCode',
-        'logId' => 'LogId',
-        'success' => 'Success',
-        'message' => 'Message',
-        'validationErrors' => 'ValidationErrors'
+        'merchantProductNo' => 'MerchantProductNo',
+        'ean' => 'Ean',
+        'name' => 'Name',
+        'quantity' => 'Quantity',
+        'price' => 'Price'
     ];
 
     /**
@@ -120,12 +117,11 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'content' => 'setContent',
-        'statusCode' => 'setStatusCode',
-        'logId' => 'setLogId',
-        'success' => 'setSuccess',
-        'message' => 'setMessage',
-        'validationErrors' => 'setValidationErrors'
+        'merchantProductNo' => 'setMerchantProductNo',
+        'ean' => 'setEan',
+        'name' => 'setName',
+        'quantity' => 'setQuantity',
+        'price' => 'setPrice'
     ];
 
     /**
@@ -134,12 +130,11 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'content' => 'getContent',
-        'statusCode' => 'getStatusCode',
-        'logId' => 'getLogId',
-        'success' => 'getSuccess',
-        'message' => 'getMessage',
-        'validationErrors' => 'getValidationErrors'
+        'merchantProductNo' => 'getMerchantProductNo',
+        'ean' => 'getEan',
+        'name' => 'getName',
+        'quantity' => 'getQuantity',
+        'price' => 'getPrice'
     ];
 
     /**
@@ -202,12 +197,11 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['statusCode'] = isset($data['statusCode']) ? $data['statusCode'] : null;
-        $this->container['logId'] = isset($data['logId']) ? $data['logId'] : null;
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['validationErrors'] = isset($data['validationErrors']) ? $data['validationErrors'] : null;
+        $this->container['merchantProductNo'] = isset($data['merchantProductNo']) ? $data['merchantProductNo'] : null;
+        $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
     }
 
     /**
@@ -236,145 +230,121 @@ class SingleOfCollectionsDictionary2Generic implements ModelInterface, ArrayAcce
 
 
     /**
-     * Gets content
-     *
-     * @return map[string,string[]]
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     *
-     * @param map[string,string[]] $content content
-     *
-     * @return $this
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Gets statusCode
-     *
-     * @return int
-     */
-    public function getStatusCode()
-    {
-        return $this->container['statusCode'];
-    }
-
-    /**
-     * Sets statusCode
-     *
-     * @param int $statusCode statusCode
-     *
-     * @return $this
-     */
-    public function setStatusCode($statusCode)
-    {
-        $this->container['statusCode'] = $statusCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets logId
-     *
-     * @return int
-     */
-    public function getLogId()
-    {
-        return $this->container['logId'];
-    }
-
-    /**
-     * Sets logId
-     *
-     * @param int $logId logId
-     *
-     * @return $this
-     */
-    public function setLogId($logId)
-    {
-        $this->container['logId'] = $logId;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success success
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
+     * Gets merchantProductNo
      *
      * @return string
      */
-    public function getMessage()
+    public function getMerchantProductNo()
     {
-        return $this->container['message'];
+        return $this->container['merchantProductNo'];
     }
 
     /**
-     * Sets message
+     * Sets merchantProductNo
      *
-     * @param string $message message
+     * @param string $merchantProductNo merchantProductNo
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setMerchantProductNo($merchantProductNo)
     {
-        $this->container['message'] = $message;
+        $this->container['merchantProductNo'] = $merchantProductNo;
 
         return $this;
     }
 
     /**
-     * Gets validationErrors
+     * Gets ean
      *
-     * @return map[string,string[]]
+     * @return string
      */
-    public function getValidationErrors()
+    public function getEan()
     {
-        return $this->container['validationErrors'];
+        return $this->container['ean'];
     }
 
     /**
-     * Sets validationErrors
+     * Sets ean
      *
-     * @param map[string,string[]] $validationErrors validationErrors
+     * @param string $ean ean
      *
      * @return $this
      */
-    public function setValidationErrors($validationErrors)
+    public function setEan($ean)
     {
-        $this->container['validationErrors'] = $validationErrors;
+        $this->container['ean'] = $ean;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     *
+     * @return int
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     *
+     * @param int $quantity quantity
+     *
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+        $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
+     *
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     *
+     * @param float $price price
+     *
+     * @return $this
+     */
+    public function setPrice($price)
+    {
+        $this->container['price'] = $price;
 
         return $this;
     }

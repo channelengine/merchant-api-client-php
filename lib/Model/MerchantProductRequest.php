@@ -60,6 +60,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         'merchantProductNo' => 'string',
         'parentMerchantProductNo' => 'string',
         'parentMerchantProductNo2' => 'string',
+        'extraData' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantProductExtraDataItemRequest[]',
         'name' => 'string',
         'description' => 'string',
         'brand' => 'string',
@@ -85,8 +86,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         'extraImageUrl7' => 'string',
         'extraImageUrl8' => 'string',
         'extraImageUrl9' => 'string',
-        'categoryTrail' => 'string',
-        'extraData' => '\ChannelEngine\Merchant\ApiClient\Model\ExtraDataItem[]'
+        'categoryTrail' => 'string'
     ];
 
     /**
@@ -98,6 +98,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         'merchantProductNo' => null,
         'parentMerchantProductNo' => null,
         'parentMerchantProductNo2' => null,
+        'extraData' => null,
         'name' => null,
         'description' => null,
         'brand' => null,
@@ -123,8 +124,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         'extraImageUrl7' => null,
         'extraImageUrl8' => null,
         'extraImageUrl9' => null,
-        'categoryTrail' => null,
-        'extraData' => null
+        'categoryTrail' => null
     ];
 
     /**
@@ -157,6 +157,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         'merchantProductNo' => 'MerchantProductNo',
         'parentMerchantProductNo' => 'ParentMerchantProductNo',
         'parentMerchantProductNo2' => 'ParentMerchantProductNo2',
+        'extraData' => 'ExtraData',
         'name' => 'Name',
         'description' => 'Description',
         'brand' => 'Brand',
@@ -182,8 +183,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         'extraImageUrl7' => 'ExtraImageUrl7',
         'extraImageUrl8' => 'ExtraImageUrl8',
         'extraImageUrl9' => 'ExtraImageUrl9',
-        'categoryTrail' => 'CategoryTrail',
-        'extraData' => 'ExtraData'
+        'categoryTrail' => 'CategoryTrail'
     ];
 
     /**
@@ -195,6 +195,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         'merchantProductNo' => 'setMerchantProductNo',
         'parentMerchantProductNo' => 'setParentMerchantProductNo',
         'parentMerchantProductNo2' => 'setParentMerchantProductNo2',
+        'extraData' => 'setExtraData',
         'name' => 'setName',
         'description' => 'setDescription',
         'brand' => 'setBrand',
@@ -220,8 +221,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         'extraImageUrl7' => 'setExtraImageUrl7',
         'extraImageUrl8' => 'setExtraImageUrl8',
         'extraImageUrl9' => 'setExtraImageUrl9',
-        'categoryTrail' => 'setCategoryTrail',
-        'extraData' => 'setExtraData'
+        'categoryTrail' => 'setCategoryTrail'
     ];
 
     /**
@@ -233,6 +233,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         'merchantProductNo' => 'getMerchantProductNo',
         'parentMerchantProductNo' => 'getParentMerchantProductNo',
         'parentMerchantProductNo2' => 'getParentMerchantProductNo2',
+        'extraData' => 'getExtraData',
         'name' => 'getName',
         'description' => 'getDescription',
         'brand' => 'getBrand',
@@ -258,8 +259,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         'extraImageUrl7' => 'getExtraImageUrl7',
         'extraImageUrl8' => 'getExtraImageUrl8',
         'extraImageUrl9' => 'getExtraImageUrl9',
-        'categoryTrail' => 'getCategoryTrail',
-        'extraData' => 'getExtraData'
+        'categoryTrail' => 'getCategoryTrail'
     ];
 
     /**
@@ -342,6 +342,7 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         $this->container['merchantProductNo'] = isset($data['merchantProductNo']) ? $data['merchantProductNo'] : null;
         $this->container['parentMerchantProductNo'] = isset($data['parentMerchantProductNo']) ? $data['parentMerchantProductNo'] : null;
         $this->container['parentMerchantProductNo2'] = isset($data['parentMerchantProductNo2']) ? $data['parentMerchantProductNo2'] : null;
+        $this->container['extraData'] = isset($data['extraData']) ? $data['extraData'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['brand'] = isset($data['brand']) ? $data['brand'] : null;
@@ -368,7 +369,6 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
         $this->container['extraImageUrl8'] = isset($data['extraImageUrl8']) ? $data['extraImageUrl8'] : null;
         $this->container['extraImageUrl9'] = isset($data['extraImageUrl9']) ? $data['extraImageUrl9'] : null;
         $this->container['categoryTrail'] = isset($data['categoryTrail']) ? $data['categoryTrail'] : null;
-        $this->container['extraData'] = isset($data['extraData']) ? $data['extraData'] : null;
     }
 
     /**
@@ -476,6 +476,30 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     public function setParentMerchantProductNo2($parentMerchantProductNo2)
     {
         $this->container['parentMerchantProductNo2'] = $parentMerchantProductNo2;
+
+        return $this;
+    }
+
+    /**
+     * Gets extraData
+     *
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantProductExtraDataItemRequest[]
+     */
+    public function getExtraData()
+    {
+        return $this->container['extraData'];
+    }
+
+    /**
+     * Sets extraData
+     *
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantProductExtraDataItemRequest[] $extraData An optional list of key-value pairs containing  extra data about this product. This data can be  sent to channels or used for filtering products.
+     *
+     * @return $this
+     */
+    public function setExtraData($extraData)
+    {
+        $this->container['extraData'] = $extraData;
 
         return $this;
     }
@@ -1109,30 +1133,6 @@ class MerchantProductRequest implements ModelInterface, ArrayAccess
     public function setCategoryTrail($categoryTrail)
     {
         $this->container['categoryTrail'] = $categoryTrail;
-
-        return $this;
-    }
-
-    /**
-     * Gets extraData
-     *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\ExtraDataItem[]
-     */
-    public function getExtraData()
-    {
-        return $this->container['extraData'];
-    }
-
-    /**
-     * Sets extraData
-     *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\ExtraDataItem[] $extraData An optional list of key-value pairs containing  extra data about this product. This data can be  sent to channels or used for filtering products.
-     *
-     * @return $this
-     */
-    public function setExtraData($extraData)
-    {
-        $this->container['extraData'] = $extraData;
 
         return $this;
     }

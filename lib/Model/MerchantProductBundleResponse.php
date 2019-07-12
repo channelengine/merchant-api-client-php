@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderAcknowledgement
+ * MerchantProductBundleResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * OrderAcknowledgement Class Doc Comment
+ * MerchantProductBundleResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OrderAcknowledgement implements ModelInterface, ArrayAccess
+class MerchantProductBundleResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrderAcknowledgement';
+    protected static $swaggerModelName = 'MerchantProductBundleResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,11 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchantOrderNo' => 'string',
-        'orderId' => 'int'
+        'merchantProductNo' => 'string',
+        'ean' => 'string',
+        'name' => 'string',
+        'price' => 'float',
+        'parts' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantProductBundlePartResponse[]'
     ];
 
     /**
@@ -67,8 +70,11 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'merchantOrderNo' => null,
-        'orderId' => 'int32'
+        'merchantProductNo' => null,
+        'ean' => null,
+        'name' => null,
+        'price' => 'decimal',
+        'parts' => null
     ];
 
     /**
@@ -98,8 +104,11 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchantOrderNo' => 'MerchantOrderNo',
-        'orderId' => 'OrderId'
+        'merchantProductNo' => 'MerchantProductNo',
+        'ean' => 'Ean',
+        'name' => 'Name',
+        'price' => 'Price',
+        'parts' => 'Parts'
     ];
 
     /**
@@ -108,8 +117,11 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchantOrderNo' => 'setMerchantOrderNo',
-        'orderId' => 'setOrderId'
+        'merchantProductNo' => 'setMerchantProductNo',
+        'ean' => 'setEan',
+        'name' => 'setName',
+        'price' => 'setPrice',
+        'parts' => 'setParts'
     ];
 
     /**
@@ -118,8 +130,11 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchantOrderNo' => 'getMerchantOrderNo',
-        'orderId' => 'getOrderId'
+        'merchantProductNo' => 'getMerchantProductNo',
+        'ean' => 'getEan',
+        'name' => 'getName',
+        'price' => 'getPrice',
+        'parts' => 'getParts'
     ];
 
     /**
@@ -182,8 +197,11 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchantOrderNo'] = isset($data['merchantOrderNo']) ? $data['merchantOrderNo'] : null;
-        $this->container['orderId'] = isset($data['orderId']) ? $data['orderId'] : null;
+        $this->container['merchantProductNo'] = isset($data['merchantProductNo']) ? $data['merchantProductNo'] : null;
+        $this->container['ean'] = isset($data['ean']) ? $data['ean'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['parts'] = isset($data['parts']) ? $data['parts'] : null;
     }
 
     /**
@@ -195,20 +213,6 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['merchantOrderNo'] === null) {
-            $invalidProperties[] = "'merchantOrderNo' can't be null";
-        }
-        if ((strlen($this->container['merchantOrderNo']) > 50)) {
-            $invalidProperties[] = "invalid value for 'merchantOrderNo', the character length must be smaller than or equal to 50.";
-        }
-
-        if ((strlen($this->container['merchantOrderNo']) < 0)) {
-            $invalidProperties[] = "invalid value for 'merchantOrderNo', the character length must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['orderId'] === null) {
-            $invalidProperties[] = "'orderId' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -221,73 +225,126 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess
     public function valid()
     {
 
-        if ($this->container['merchantOrderNo'] === null) {
-            return false;
-        }
-        if (strlen($this->container['merchantOrderNo']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['merchantOrderNo']) < 0) {
-            return false;
-        }
-        if ($this->container['orderId'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets merchantOrderNo
+     * Gets merchantProductNo
      *
      * @return string
      */
-    public function getMerchantOrderNo()
+    public function getMerchantProductNo()
     {
-        return $this->container['merchantOrderNo'];
+        return $this->container['merchantProductNo'];
     }
 
     /**
-     * Sets merchantOrderNo
+     * Sets merchantProductNo
      *
-     * @param string $merchantOrderNo Your own order reference, this will be used in consecutive order processing API calls
+     * @param string $merchantProductNo merchantProductNo
      *
      * @return $this
      */
-    public function setMerchantOrderNo($merchantOrderNo)
+    public function setMerchantProductNo($merchantProductNo)
     {
-        if ((strlen($merchantOrderNo) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $merchantOrderNo when calling OrderAcknowledgement., must be smaller than or equal to 50.');
-        }
-        if ((strlen($merchantOrderNo) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $merchantOrderNo when calling OrderAcknowledgement., must be bigger than or equal to 0.');
-        }
-
-        $this->container['merchantOrderNo'] = $merchantOrderNo;
+        $this->container['merchantProductNo'] = $merchantProductNo;
 
         return $this;
     }
 
     /**
-     * Gets orderId
+     * Gets ean
      *
-     * @return int
+     * @return string
      */
-    public function getOrderId()
+    public function getEan()
     {
-        return $this->container['orderId'];
+        return $this->container['ean'];
     }
 
     /**
-     * Sets orderId
+     * Sets ean
      *
-     * @param int $orderId The ChannelEngine order ID of the order you would like to acknowledge
+     * @param string $ean ean
      *
      * @return $this
      */
-    public function setOrderId($orderId)
+    public function setEan($ean)
     {
-        $this->container['orderId'] = $orderId;
+        $this->container['ean'] = $ean;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
+     *
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     *
+     * @param float $price price
+     *
+     * @return $this
+     */
+    public function setPrice($price)
+    {
+        $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets parts
+     *
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantProductBundlePartResponse[]
+     */
+    public function getParts()
+    {
+        return $this->container['parts'];
+    }
+
+    /**
+     * Sets parts
+     *
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantProductBundlePartResponse[] $parts parts
+     *
+     * @return $this
+     */
+    public function setParts($parts)
+    {
+        $this->container['parts'] = $parts;
 
         return $this;
     }

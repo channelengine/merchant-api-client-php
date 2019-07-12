@@ -61,6 +61,8 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess
         'lines' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantReturnLineResponse[]',
         'createdAt' => '\DateTime',
         'updatedAt' => '\DateTime',
+        'merchantReturnNo' => 'string',
+        'channelReturnNo' => 'string',
         'id' => 'int',
         'reason' => 'string',
         'customerComment' => 'string',
@@ -79,6 +81,8 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess
         'lines' => null,
         'createdAt' => 'date-time',
         'updatedAt' => 'date-time',
+        'merchantReturnNo' => null,
+        'channelReturnNo' => null,
         'id' => 'int32',
         'reason' => null,
         'customerComment' => null,
@@ -118,6 +122,8 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess
         'lines' => 'Lines',
         'createdAt' => 'CreatedAt',
         'updatedAt' => 'UpdatedAt',
+        'merchantReturnNo' => 'MerchantReturnNo',
+        'channelReturnNo' => 'ChannelReturnNo',
         'id' => 'Id',
         'reason' => 'Reason',
         'customerComment' => 'CustomerComment',
@@ -136,6 +142,8 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess
         'lines' => 'setLines',
         'createdAt' => 'setCreatedAt',
         'updatedAt' => 'setUpdatedAt',
+        'merchantReturnNo' => 'setMerchantReturnNo',
+        'channelReturnNo' => 'setChannelReturnNo',
         'id' => 'setId',
         'reason' => 'setReason',
         'customerComment' => 'setCustomerComment',
@@ -154,6 +162,8 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess
         'lines' => 'getLines',
         'createdAt' => 'getCreatedAt',
         'updatedAt' => 'getUpdatedAt',
+        'merchantReturnNo' => 'getMerchantReturnNo',
+        'channelReturnNo' => 'getChannelReturnNo',
         'id' => 'getId',
         'reason' => 'getReason',
         'customerComment' => 'getCustomerComment',
@@ -257,6 +267,8 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess
         $this->container['lines'] = isset($data['lines']) ? $data['lines'] : null;
         $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
         $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
+        $this->container['merchantReturnNo'] = isset($data['merchantReturnNo']) ? $data['merchantReturnNo'] : null;
+        $this->container['channelReturnNo'] = isset($data['channelReturnNo']) ? $data['channelReturnNo'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['customerComment'] = isset($data['customerComment']) ? $data['customerComment'] : null;
@@ -422,6 +434,54 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess
     public function setUpdatedAt($updatedAt)
     {
         $this->container['updatedAt'] = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantReturnNo
+     *
+     * @return string
+     */
+    public function getMerchantReturnNo()
+    {
+        return $this->container['merchantReturnNo'];
+    }
+
+    /**
+     * Sets merchantReturnNo
+     *
+     * @param string $merchantReturnNo The unique return reference used by the Merchant, will be empty in case of a channel or unacknowledged return
+     *
+     * @return $this
+     */
+    public function setMerchantReturnNo($merchantReturnNo)
+    {
+        $this->container['merchantReturnNo'] = $merchantReturnNo;
+
+        return $this;
+    }
+
+    /**
+     * Gets channelReturnNo
+     *
+     * @return string
+     */
+    public function getChannelReturnNo()
+    {
+        return $this->container['channelReturnNo'];
+    }
+
+    /**
+     * Sets channelReturnNo
+     *
+     * @param string $channelReturnNo The unique return reference used by the Channel, will be empty in case of a merchant return
+     *
+     * @return $this
+     */
+    public function setChannelReturnNo($channelReturnNo)
+    {
+        $this->container['channelReturnNo'] = $channelReturnNo;
 
         return $this;
     }

@@ -68,6 +68,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'originalUnitVat' => 'float',
         'originalLineTotalInclVat' => 'float',
         'originalLineVat' => 'float',
+        'bundleProductMerchantProductNo' => 'string',
         'channelProductNo' => 'string',
         'quantity' => 'int',
         'cancellationRequestedQuantity' => 'int',
@@ -94,6 +95,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'originalUnitVat' => 'decimal',
         'originalLineTotalInclVat' => 'decimal',
         'originalLineVat' => 'decimal',
+        'bundleProductMerchantProductNo' => null,
         'channelProductNo' => null,
         'quantity' => 'int32',
         'cancellationRequestedQuantity' => 'int32',
@@ -141,6 +143,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'originalUnitVat' => 'OriginalUnitVat',
         'originalLineTotalInclVat' => 'OriginalLineTotalInclVat',
         'originalLineVat' => 'OriginalLineVat',
+        'bundleProductMerchantProductNo' => 'BundleProductMerchantProductNo',
         'channelProductNo' => 'ChannelProductNo',
         'quantity' => 'Quantity',
         'cancellationRequestedQuantity' => 'CancellationRequestedQuantity',
@@ -167,6 +170,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'originalUnitVat' => 'setOriginalUnitVat',
         'originalLineTotalInclVat' => 'setOriginalLineTotalInclVat',
         'originalLineVat' => 'setOriginalLineVat',
+        'bundleProductMerchantProductNo' => 'setBundleProductMerchantProductNo',
         'channelProductNo' => 'setChannelProductNo',
         'quantity' => 'setQuantity',
         'cancellationRequestedQuantity' => 'setCancellationRequestedQuantity',
@@ -193,6 +197,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'originalUnitVat' => 'getOriginalUnitVat',
         'originalLineTotalInclVat' => 'getOriginalLineTotalInclVat',
         'originalLineVat' => 'getOriginalLineVat',
+        'bundleProductMerchantProductNo' => 'getBundleProductMerchantProductNo',
         'channelProductNo' => 'getChannelProductNo',
         'quantity' => 'getQuantity',
         'cancellationRequestedQuantity' => 'getCancellationRequestedQuantity',
@@ -329,6 +334,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         $this->container['originalUnitVat'] = isset($data['originalUnitVat']) ? $data['originalUnitVat'] : null;
         $this->container['originalLineTotalInclVat'] = isset($data['originalLineTotalInclVat']) ? $data['originalLineTotalInclVat'] : null;
         $this->container['originalLineVat'] = isset($data['originalLineVat']) ? $data['originalLineVat'] : null;
+        $this->container['bundleProductMerchantProductNo'] = isset($data['bundleProductMerchantProductNo']) ? $data['bundleProductMerchantProductNo'] : null;
         $this->container['channelProductNo'] = isset($data['channelProductNo']) ? $data['channelProductNo'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['cancellationRequestedQuantity'] = isset($data['cancellationRequestedQuantity']) ? $data['cancellationRequestedQuantity'] : null;
@@ -688,6 +694,30 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     public function setOriginalLineVat($originalLineVat)
     {
         $this->container['originalLineVat'] = $originalLineVat;
+
+        return $this;
+    }
+
+    /**
+     * Gets bundleProductMerchantProductNo
+     *
+     * @return string
+     */
+    public function getBundleProductMerchantProductNo()
+    {
+        return $this->container['bundleProductMerchantProductNo'];
+    }
+
+    /**
+     * Sets bundleProductMerchantProductNo
+     *
+     * @param string $bundleProductMerchantProductNo If the product is ordered part of a bundle, this field contains the MerchantProductNo of  the product bundle.
+     *
+     * @return $this
+     */
+    public function setBundleProductMerchantProductNo($bundleProductMerchantProductNo)
+    {
+        $this->container['bundleProductMerchantProductNo'] = $bundleProductMerchantProductNo;
 
         return $this;
     }

@@ -387,7 +387,7 @@ class OfferApi
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \ChannelEngine\Merchant\ApiClient\Model\SingleOfCollectionsDictionary2Generic
+     * @return \ChannelEngine\Merchant\ApiClient\Model\SingleOfDictionary2
      */
     public function offerStockPriceUpdate($updates)
     {
@@ -404,11 +404,11 @@ class OfferApi
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \ChannelEngine\Merchant\ApiClient\Model\SingleOfCollectionsDictionary2Generic, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ChannelEngine\Merchant\ApiClient\Model\SingleOfDictionary2, HTTP status code, HTTP response headers (array of strings)
      */
     public function offerStockPriceUpdateWithHttpInfo($updates)
     {
-        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\SingleOfCollectionsDictionary2Generic';
+        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\SingleOfDictionary2';
         $request = $this->offerStockPriceUpdateRequest($updates);
 
         try {
@@ -460,7 +460,7 @@ class OfferApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\SingleOfCollectionsDictionary2Generic',
+                        '\ChannelEngine\Merchant\ApiClient\Model\SingleOfDictionary2',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -502,7 +502,7 @@ class OfferApi
      */
     public function offerStockPriceUpdateAsyncWithHttpInfo($updates)
     {
-        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\SingleOfCollectionsDictionary2Generic';
+        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\SingleOfDictionary2';
         $request = $this->offerStockPriceUpdateRequest($updates);
 
         return $this->client
