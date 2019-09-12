@@ -1,6 +1,6 @@
 <?php
 /**
- * CollectionOfMerchantReturnResponse
+ * MerchantSingleOrderReturnLineResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * CollectionOfMerchantReturnResponse Class Doc Comment
+ * MerchantSingleOrderReturnLineResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
+class MerchantSingleOrderReturnLineResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CollectionOfMerchantReturnResponse';
+    protected static $swaggerModelName = 'MerchantSingleOrderReturnLineResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,15 +57,10 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantReturnResponse[]',
-        'count' => 'int',
-        'totalCount' => 'int',
-        'itemsPerPage' => 'int',
-        'statusCode' => 'int',
-        'logId' => 'int',
-        'success' => 'bool',
-        'message' => 'string',
-        'validationErrors' => 'map[string,string[]]'
+        'merchantProductNo' => 'string',
+        'acceptedQuantity' => 'int',
+        'rejectedQuantity' => 'int',
+        'quantity' => 'int'
     ];
 
     /**
@@ -74,15 +69,10 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'content' => null,
-        'count' => 'int32',
-        'totalCount' => 'int32',
-        'itemsPerPage' => 'int32',
-        'statusCode' => 'int32',
-        'logId' => 'int32',
-        'success' => null,
-        'message' => null,
-        'validationErrors' => null
+        'merchantProductNo' => null,
+        'acceptedQuantity' => 'int32',
+        'rejectedQuantity' => 'int32',
+        'quantity' => 'int32'
     ];
 
     /**
@@ -112,15 +102,10 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'content' => 'Content',
-        'count' => 'Count',
-        'totalCount' => 'TotalCount',
-        'itemsPerPage' => 'ItemsPerPage',
-        'statusCode' => 'StatusCode',
-        'logId' => 'LogId',
-        'success' => 'Success',
-        'message' => 'Message',
-        'validationErrors' => 'ValidationErrors'
+        'merchantProductNo' => 'MerchantProductNo',
+        'acceptedQuantity' => 'AcceptedQuantity',
+        'rejectedQuantity' => 'RejectedQuantity',
+        'quantity' => 'Quantity'
     ];
 
     /**
@@ -129,15 +114,10 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'content' => 'setContent',
-        'count' => 'setCount',
-        'totalCount' => 'setTotalCount',
-        'itemsPerPage' => 'setItemsPerPage',
-        'statusCode' => 'setStatusCode',
-        'logId' => 'setLogId',
-        'success' => 'setSuccess',
-        'message' => 'setMessage',
-        'validationErrors' => 'setValidationErrors'
+        'merchantProductNo' => 'setMerchantProductNo',
+        'acceptedQuantity' => 'setAcceptedQuantity',
+        'rejectedQuantity' => 'setRejectedQuantity',
+        'quantity' => 'setQuantity'
     ];
 
     /**
@@ -146,15 +126,10 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'content' => 'getContent',
-        'count' => 'getCount',
-        'totalCount' => 'getTotalCount',
-        'itemsPerPage' => 'getItemsPerPage',
-        'statusCode' => 'getStatusCode',
-        'logId' => 'getLogId',
-        'success' => 'getSuccess',
-        'message' => 'getMessage',
-        'validationErrors' => 'getValidationErrors'
+        'merchantProductNo' => 'getMerchantProductNo',
+        'acceptedQuantity' => 'getAcceptedQuantity',
+        'rejectedQuantity' => 'getRejectedQuantity',
+        'quantity' => 'getQuantity'
     ];
 
     /**
@@ -217,15 +192,10 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['totalCount'] = isset($data['totalCount']) ? $data['totalCount'] : null;
-        $this->container['itemsPerPage'] = isset($data['itemsPerPage']) ? $data['itemsPerPage'] : null;
-        $this->container['statusCode'] = isset($data['statusCode']) ? $data['statusCode'] : null;
-        $this->container['logId'] = isset($data['logId']) ? $data['logId'] : null;
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['validationErrors'] = isset($data['validationErrors']) ? $data['validationErrors'] : null;
+        $this->container['merchantProductNo'] = isset($data['merchantProductNo']) ? $data['merchantProductNo'] : null;
+        $this->container['acceptedQuantity'] = isset($data['acceptedQuantity']) ? $data['acceptedQuantity'] : null;
+        $this->container['rejectedQuantity'] = isset($data['rejectedQuantity']) ? $data['rejectedQuantity'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
     }
 
     /**
@@ -237,6 +207,9 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['quantity'] === null) {
+            $invalidProperties[] = "'quantity' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -253,217 +226,97 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets content
-     *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnResponse[]
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnResponse[] $content content
-     *
-     * @return $this
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     *
-     * @return int
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     *
-     * @param int $count The number of items in the current response
-     *
-     * @return $this
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
-
-        return $this;
-    }
-
-    /**
-     * Gets totalCount
-     *
-     * @return int
-     */
-    public function getTotalCount()
-    {
-        return $this->container['totalCount'];
-    }
-
-    /**
-     * Sets totalCount
-     *
-     * @param int $totalCount The total number of items
-     *
-     * @return $this
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->container['totalCount'] = $totalCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets itemsPerPage
-     *
-     * @return int
-     */
-    public function getItemsPerPage()
-    {
-        return $this->container['itemsPerPage'];
-    }
-
-    /**
-     * Sets itemsPerPage
-     *
-     * @param int $itemsPerPage The number of items per page
-     *
-     * @return $this
-     */
-    public function setItemsPerPage($itemsPerPage)
-    {
-        $this->container['itemsPerPage'] = $itemsPerPage;
-
-        return $this;
-    }
-
-    /**
-     * Gets statusCode
-     *
-     * @return int
-     */
-    public function getStatusCode()
-    {
-        return $this->container['statusCode'];
-    }
-
-    /**
-     * Sets statusCode
-     *
-     * @param int $statusCode statusCode
-     *
-     * @return $this
-     */
-    public function setStatusCode($statusCode)
-    {
-        $this->container['statusCode'] = $statusCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets logId
-     *
-     * @return int
-     */
-    public function getLogId()
-    {
-        return $this->container['logId'];
-    }
-
-    /**
-     * Sets logId
-     *
-     * @param int $logId logId
-     *
-     * @return $this
-     */
-    public function setLogId($logId)
-    {
-        $this->container['logId'] = $logId;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success success
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
+     * Gets merchantProductNo
      *
      * @return string
      */
-    public function getMessage()
+    public function getMerchantProductNo()
     {
-        return $this->container['message'];
+        return $this->container['merchantProductNo'];
     }
 
     /**
-     * Sets message
+     * Sets merchantProductNo
      *
-     * @param string $message message
+     * @param string $merchantProductNo The unique product reference used by the Merchant (sku)
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setMerchantProductNo($merchantProductNo)
     {
-        $this->container['message'] = $message;
+        $this->container['merchantProductNo'] = $merchantProductNo;
 
         return $this;
     }
 
     /**
-     * Gets validationErrors
+     * Gets acceptedQuantity
      *
-     * @return map[string,string[]]
+     * @return int
      */
-    public function getValidationErrors()
+    public function getAcceptedQuantity()
     {
-        return $this->container['validationErrors'];
+        return $this->container['acceptedQuantity'];
     }
 
     /**
-     * Sets validationErrors
+     * Sets acceptedQuantity
      *
-     * @param map[string,string[]] $validationErrors validationErrors
+     * @param int $acceptedQuantity The accepted quantity of returned products in this orderline
      *
      * @return $this
      */
-    public function setValidationErrors($validationErrors)
+    public function setAcceptedQuantity($acceptedQuantity)
     {
-        $this->container['validationErrors'] = $validationErrors;
+        $this->container['acceptedQuantity'] = $acceptedQuantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets rejectedQuantity
+     *
+     * @return int
+     */
+    public function getRejectedQuantity()
+    {
+        return $this->container['rejectedQuantity'];
+    }
+
+    /**
+     * Sets rejectedQuantity
+     *
+     * @param int $rejectedQuantity The rejected quantity of returned products in this orderline
+     *
+     * @return $this
+     */
+    public function setRejectedQuantity($rejectedQuantity)
+    {
+        $this->container['rejectedQuantity'] = $rejectedQuantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     *
+     * @return int
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     *
+     * @param int $quantity Number of items of the product in this return
+     *
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+        $this->container['quantity'] = $quantity;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantReturnRequest
+ * MerchantSingleOrderReturnResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * MerchantReturnRequest Class Doc Comment
+ * MerchantSingleOrderReturnResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MerchantReturnRequest implements ModelInterface, ArrayAccess
+class MerchantSingleOrderReturnResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'MerchantReturnRequest';
+    protected static $swaggerModelName = 'MerchantSingleOrderReturnResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,12 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'merchantOrderNo' => 'string',
+        'lines' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantSingleOrderReturnLineResponse[]',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
         'merchantReturnNo' => 'string',
-        'lines' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantReturnLineRequest[]',
+        'channelReturnNo' => 'string',
+        'status' => 'string',
         'id' => 'int',
         'reason' => 'string',
         'customerComment' => 'string',
@@ -75,8 +79,12 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'merchantOrderNo' => null,
-        'merchantReturnNo' => null,
         'lines' => null,
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
+        'merchantReturnNo' => null,
+        'channelReturnNo' => null,
+        'status' => null,
         'id' => 'int32',
         'reason' => null,
         'customerComment' => null,
@@ -113,8 +121,12 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'merchantOrderNo' => 'MerchantOrderNo',
-        'merchantReturnNo' => 'MerchantReturnNo',
         'lines' => 'Lines',
+        'createdAt' => 'CreatedAt',
+        'updatedAt' => 'UpdatedAt',
+        'merchantReturnNo' => 'MerchantReturnNo',
+        'channelReturnNo' => 'ChannelReturnNo',
+        'status' => 'Status',
         'id' => 'Id',
         'reason' => 'Reason',
         'customerComment' => 'CustomerComment',
@@ -130,8 +142,12 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'merchantOrderNo' => 'setMerchantOrderNo',
-        'merchantReturnNo' => 'setMerchantReturnNo',
         'lines' => 'setLines',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
+        'merchantReturnNo' => 'setMerchantReturnNo',
+        'channelReturnNo' => 'setChannelReturnNo',
+        'status' => 'setStatus',
         'id' => 'setId',
         'reason' => 'setReason',
         'customerComment' => 'setCustomerComment',
@@ -147,8 +163,12 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'merchantOrderNo' => 'getMerchantOrderNo',
-        'merchantReturnNo' => 'getMerchantReturnNo',
         'lines' => 'getLines',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
+        'merchantReturnNo' => 'getMerchantReturnNo',
+        'channelReturnNo' => 'getChannelReturnNo',
+        'status' => 'getStatus',
         'id' => 'getId',
         'reason' => 'getReason',
         'customerComment' => 'getCustomerComment',
@@ -198,6 +218,9 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const STATUS_IN_PROGRESS = 'IN_PROGRESS';
+    const STATUS_RECEIVED = 'RECEIVED';
+    const STATUS_CANCELLED = 'CANCELLED';
     const REASON_PRODUCT_DEFECT = 'PRODUCT_DEFECT';
     const REASON_PRODUCT_UNSATISFACTORY = 'PRODUCT_UNSATISFACTORY';
     const REASON_WRONG_PRODUCT = 'WRONG_PRODUCT';
@@ -210,6 +233,20 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
     const REASON_OTHER = 'OTHER';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_IN_PROGRESS,
+            self::STATUS_RECEIVED,
+            self::STATUS_CANCELLED,
+        ];
+    }
     
     /**
      * Gets allowable values of the enum
@@ -249,8 +286,12 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['merchantOrderNo'] = isset($data['merchantOrderNo']) ? $data['merchantOrderNo'] : null;
-        $this->container['merchantReturnNo'] = isset($data['merchantReturnNo']) ? $data['merchantReturnNo'] : null;
         $this->container['lines'] = isset($data['lines']) ? $data['lines'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
+        $this->container['merchantReturnNo'] = isset($data['merchantReturnNo']) ? $data['merchantReturnNo'] : null;
+        $this->container['channelReturnNo'] = isset($data['channelReturnNo']) ? $data['channelReturnNo'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['customerComment'] = isset($data['customerComment']) ? $data['customerComment'] : null;
@@ -268,15 +309,14 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['merchantOrderNo'] === null) {
-            $invalidProperties[] = "'merchantOrderNo' can't be null";
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'status', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
         }
-        if ($this->container['merchantReturnNo'] === null) {
-            $invalidProperties[] = "'merchantReturnNo' can't be null";
-        }
-        if ($this->container['lines'] === null) {
-            $invalidProperties[] = "'lines' can't be null";
-        }
+
         $allowedValues = $this->getReasonAllowableValues();
         if (!is_null($this->container['reason']) && !in_array($this->container['reason'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -329,13 +369,85 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
     /**
      * Sets merchantOrderNo
      *
-     * @param string $merchantOrderNo The unique order reference used by the Merchant (sku)
+     * @param string $merchantOrderNo The unique order reference used by the Merchant
      *
      * @return $this
      */
     public function setMerchantOrderNo($merchantOrderNo)
     {
         $this->container['merchantOrderNo'] = $merchantOrderNo;
+
+        return $this;
+    }
+
+    /**
+     * Gets lines
+     *
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantSingleOrderReturnLineResponse[]
+     */
+    public function getLines()
+    {
+        return $this->container['lines'];
+    }
+
+    /**
+     * Sets lines
+     *
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantSingleOrderReturnLineResponse[] $lines lines
+     *
+     * @return $this
+     */
+    public function setLines($lines)
+    {
+        $this->container['lines'] = $lines;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param \DateTime $createdAt The date at which the return was created in ChannelEngine
+     *
+     * @return $this
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updatedAt'];
+    }
+
+    /**
+     * Sets updatedAt
+     *
+     * @param \DateTime $updatedAt The date at which the return was last modified in ChannelEngine
+     *
+     * @return $this
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }
@@ -353,7 +465,7 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
     /**
      * Sets merchantReturnNo
      *
-     * @param string $merchantReturnNo The unique return reference used by the Merchant (sku)
+     * @param string $merchantReturnNo The unique return reference used by the Merchant, will be empty in case of a channel or unacknowledged return
      *
      * @return $this
      */
@@ -365,25 +477,58 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets lines
+     * Gets channelReturnNo
      *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnLineRequest[]
+     * @return string
      */
-    public function getLines()
+    public function getChannelReturnNo()
     {
-        return $this->container['lines'];
+        return $this->container['channelReturnNo'];
     }
 
     /**
-     * Sets lines
+     * Sets channelReturnNo
      *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnLineRequest[] $lines lines
+     * @param string $channelReturnNo The unique return reference used by the Channel, will be empty in case of a merchant return
      *
      * @return $this
      */
-    public function setLines($lines)
+    public function setChannelReturnNo($channelReturnNo)
     {
-        $this->container['lines'] = $lines;
+        $this->container['channelReturnNo'] = $channelReturnNo;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status The current status of the return
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'status', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['status'] = $status;
 
         return $this;
     }
@@ -465,10 +610,10 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
     public function setCustomerComment($customerComment)
     {
         if (!is_null($customerComment) && (mb_strlen($customerComment) > 4001)) {
-            throw new \InvalidArgumentException('invalid length for $customerComment when calling MerchantReturnRequest., must be smaller than or equal to 4001.');
+            throw new \InvalidArgumentException('invalid length for $customerComment when calling MerchantSingleOrderReturnResponse., must be smaller than or equal to 4001.');
         }
         if (!is_null($customerComment) && (mb_strlen($customerComment) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $customerComment when calling MerchantReturnRequest., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid length for $customerComment when calling MerchantSingleOrderReturnResponse., must be bigger than or equal to 0.');
         }
 
         $this->container['customerComment'] = $customerComment;
@@ -496,10 +641,10 @@ class MerchantReturnRequest implements ModelInterface, ArrayAccess
     public function setMerchantComment($merchantComment)
     {
         if (!is_null($merchantComment) && (mb_strlen($merchantComment) > 4001)) {
-            throw new \InvalidArgumentException('invalid length for $merchantComment when calling MerchantReturnRequest., must be smaller than or equal to 4001.');
+            throw new \InvalidArgumentException('invalid length for $merchantComment when calling MerchantSingleOrderReturnResponse., must be smaller than or equal to 4001.');
         }
         if (!is_null($merchantComment) && (mb_strlen($merchantComment) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $merchantComment when calling MerchantReturnRequest., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid length for $merchantComment when calling MerchantSingleOrderReturnResponse., must be bigger than or equal to 0.');
         }
 
         $this->container['merchantComment'] = $merchantComment;

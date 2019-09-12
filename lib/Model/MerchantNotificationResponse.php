@@ -1,6 +1,6 @@
 <?php
 /**
- * CollectionOfMerchantReturnResponse
+ * MerchantNotificationResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * CollectionOfMerchantReturnResponse Class Doc Comment
+ * MerchantNotificationResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
+class MerchantNotificationResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CollectionOfMerchantReturnResponse';
+    protected static $swaggerModelName = 'MerchantNotificationResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,15 +57,12 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantReturnResponse[]',
-        'count' => 'int',
-        'totalCount' => 'int',
-        'itemsPerPage' => 'int',
-        'statusCode' => 'int',
-        'logId' => 'int',
-        'success' => 'bool',
+        'id' => 'int',
+        'read' => 'bool',
+        'createdAt' => '\DateTime',
         'message' => 'string',
-        'validationErrors' => 'map[string,string[]]'
+        'subject' => 'string',
+        'count' => 'int'
     ];
 
     /**
@@ -74,15 +71,12 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'content' => null,
-        'count' => 'int32',
-        'totalCount' => 'int32',
-        'itemsPerPage' => 'int32',
-        'statusCode' => 'int32',
-        'logId' => 'int32',
-        'success' => null,
+        'id' => 'int32',
+        'read' => null,
+        'createdAt' => 'date-time',
         'message' => null,
-        'validationErrors' => null
+        'subject' => null,
+        'count' => 'int32'
     ];
 
     /**
@@ -112,15 +106,12 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'content' => 'Content',
-        'count' => 'Count',
-        'totalCount' => 'TotalCount',
-        'itemsPerPage' => 'ItemsPerPage',
-        'statusCode' => 'StatusCode',
-        'logId' => 'LogId',
-        'success' => 'Success',
+        'id' => 'Id',
+        'read' => 'Read',
+        'createdAt' => 'CreatedAt',
         'message' => 'Message',
-        'validationErrors' => 'ValidationErrors'
+        'subject' => 'Subject',
+        'count' => 'Count'
     ];
 
     /**
@@ -129,15 +120,12 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'content' => 'setContent',
-        'count' => 'setCount',
-        'totalCount' => 'setTotalCount',
-        'itemsPerPage' => 'setItemsPerPage',
-        'statusCode' => 'setStatusCode',
-        'logId' => 'setLogId',
-        'success' => 'setSuccess',
+        'id' => 'setId',
+        'read' => 'setRead',
+        'createdAt' => 'setCreatedAt',
         'message' => 'setMessage',
-        'validationErrors' => 'setValidationErrors'
+        'subject' => 'setSubject',
+        'count' => 'setCount'
     ];
 
     /**
@@ -146,15 +134,12 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'content' => 'getContent',
-        'count' => 'getCount',
-        'totalCount' => 'getTotalCount',
-        'itemsPerPage' => 'getItemsPerPage',
-        'statusCode' => 'getStatusCode',
-        'logId' => 'getLogId',
-        'success' => 'getSuccess',
+        'id' => 'getId',
+        'read' => 'getRead',
+        'createdAt' => 'getCreatedAt',
         'message' => 'getMessage',
-        'validationErrors' => 'getValidationErrors'
+        'subject' => 'getSubject',
+        'count' => 'getCount'
     ];
 
     /**
@@ -217,15 +202,12 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['totalCount'] = isset($data['totalCount']) ? $data['totalCount'] : null;
-        $this->container['itemsPerPage'] = isset($data['itemsPerPage']) ? $data['itemsPerPage'] : null;
-        $this->container['statusCode'] = isset($data['statusCode']) ? $data['statusCode'] : null;
-        $this->container['logId'] = isset($data['logId']) ? $data['logId'] : null;
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['read'] = isset($data['read']) ? $data['read'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['validationErrors'] = isset($data['validationErrors']) ? $data['validationErrors'] : null;
+        $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
     }
 
     /**
@@ -253,169 +235,73 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets content
-     *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnResponse[]
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnResponse[] $content content
-     *
-     * @return $this
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
+     * Gets id
      *
      * @return int
      */
-    public function getCount()
+    public function getId()
     {
-        return $this->container['count'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets count
+     * Sets id
      *
-     * @param int $count The number of items in the current response
+     * @param int $id Unique identifier used by ChannelEngine
      *
      * @return $this
      */
-    public function setCount($count)
+    public function setId($id)
     {
-        $this->container['count'] = $count;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets totalCount
-     *
-     * @return int
-     */
-    public function getTotalCount()
-    {
-        return $this->container['totalCount'];
-    }
-
-    /**
-     * Sets totalCount
-     *
-     * @param int $totalCount The total number of items
-     *
-     * @return $this
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->container['totalCount'] = $totalCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets itemsPerPage
-     *
-     * @return int
-     */
-    public function getItemsPerPage()
-    {
-        return $this->container['itemsPerPage'];
-    }
-
-    /**
-     * Sets itemsPerPage
-     *
-     * @param int $itemsPerPage The number of items per page
-     *
-     * @return $this
-     */
-    public function setItemsPerPage($itemsPerPage)
-    {
-        $this->container['itemsPerPage'] = $itemsPerPage;
-
-        return $this;
-    }
-
-    /**
-     * Gets statusCode
-     *
-     * @return int
-     */
-    public function getStatusCode()
-    {
-        return $this->container['statusCode'];
-    }
-
-    /**
-     * Sets statusCode
-     *
-     * @param int $statusCode statusCode
-     *
-     * @return $this
-     */
-    public function setStatusCode($statusCode)
-    {
-        $this->container['statusCode'] = $statusCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets logId
-     *
-     * @return int
-     */
-    public function getLogId()
-    {
-        return $this->container['logId'];
-    }
-
-    /**
-     * Sets logId
-     *
-     * @param int $logId logId
-     *
-     * @return $this
-     */
-    public function setLogId($logId)
-    {
-        $this->container['logId'] = $logId;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
+     * Gets read
      *
      * @return bool
      */
-    public function getSuccess()
+    public function getRead()
     {
-        return $this->container['success'];
+        return $this->container['read'];
     }
 
     /**
-     * Sets success
+     * Sets read
      *
-     * @param bool $success success
+     * @param bool $read Indicating whether the notification is already read using the backoffice
      *
      * @return $this
      */
-    public function setSuccess($success)
+    public function setRead($read)
     {
-        $this->container['success'] = $success;
+        $this->container['read'] = $read;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param \DateTime $createdAt Get the created date time
+     *
+     * @return $this
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
@@ -445,25 +331,49 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets validationErrors
+     * Gets subject
      *
-     * @return map[string,string[]]
+     * @return string
      */
-    public function getValidationErrors()
+    public function getSubject()
     {
-        return $this->container['validationErrors'];
+        return $this->container['subject'];
     }
 
     /**
-     * Sets validationErrors
+     * Sets subject
      *
-     * @param map[string,string[]] $validationErrors validationErrors
+     * @param string $subject subject
      *
      * @return $this
      */
-    public function setValidationErrors($validationErrors)
+    public function setSubject($subject)
     {
-        $this->container['validationErrors'] = $validationErrors;
+        $this->container['subject'] = $subject;
+
+        return $this;
+    }
+
+    /**
+     * Gets count
+     *
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     *
+     * @param int $count count
+     *
+     * @return $this
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
 
         return $this;
     }

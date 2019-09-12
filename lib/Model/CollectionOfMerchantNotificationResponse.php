@@ -1,6 +1,6 @@
 <?php
 /**
- * CollectionOfMerchantReturnResponse
+ * CollectionOfMerchantNotificationResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * CollectionOfMerchantReturnResponse Class Doc Comment
+ * CollectionOfMerchantNotificationResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
+class CollectionOfMerchantNotificationResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CollectionOfMerchantReturnResponse';
+    protected static $swaggerModelName = 'CollectionOfMerchantNotificationResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantReturnResponse[]',
+        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantNotificationResponse[]',
         'count' => 'int',
         'totalCount' => 'int',
         'itemsPerPage' => 'int',
@@ -255,7 +255,7 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
     /**
      * Gets content
      *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnResponse[]
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantNotificationResponse[]
      */
     public function getContent()
     {
@@ -265,7 +265,7 @@ class CollectionOfMerchantReturnResponse implements ModelInterface, ArrayAccess
     /**
      * Sets content
      *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnResponse[] $content content
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantNotificationResponse[] $content content
      *
      * @return $this
      */

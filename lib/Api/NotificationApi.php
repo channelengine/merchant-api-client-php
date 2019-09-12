@@ -1,6 +1,6 @@
 <?php
 /**
- * StockLocationApi
+ * NotificationApi
  * PHP version 5
  *
  * @category Class
@@ -40,14 +40,14 @@ use ChannelEngine\Merchant\ApiClient\HeaderSelector;
 use ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * StockLocationApi Class Doc Comment
+ * NotificationApi Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class StockLocationApi
+class NotificationApi
 {
     /**
      * @var ClientInterface
@@ -88,35 +88,53 @@ class StockLocationApi
     }
 
     /**
-     * Operation stockLocationIndex
+     * Operation notificationIndex
      *
-     * Get the stock locations (or virtual warehouses)
+     * Get Notifications
      *
+     * @param  \DateTime $fromDate Filter on the notification date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toDate Filter on the notification date, until this date. This date is exclusive. (optional)
+     * @param  string[] $types Notification type(s) to filter on (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
+     * @param  string[] $merchantReturnNos Filter on unique return reference used by the merchant (optional)
+     * @param  string[] $channelReturnNos Filter on unique return reference used by the channel (optional)
+     * @param  string[] $merchantShipmentNos Filter on unique shipment reference used by the merchant (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantStockLocationResponse
+     * @return \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantNotificationResponse
      */
-    public function stockLocationIndex()
+    public function notificationIndex($fromDate = null, $toDate = null, $types = null, $merchantOrderNos = null, $channelOrderNos = null, $merchantReturnNos = null, $channelReturnNos = null, $merchantShipmentNos = null, $page = null)
     {
-        list($response) = $this->stockLocationIndexWithHttpInfo();
+        list($response) = $this->notificationIndexWithHttpInfo($fromDate, $toDate, $types, $merchantOrderNos, $channelOrderNos, $merchantReturnNos, $channelReturnNos, $merchantShipmentNos, $page);
         return $response;
     }
 
     /**
-     * Operation stockLocationIndexWithHttpInfo
+     * Operation notificationIndexWithHttpInfo
      *
-     * Get the stock locations (or virtual warehouses)
+     * Get Notifications
      *
+     * @param  \DateTime $fromDate Filter on the notification date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toDate Filter on the notification date, until this date. This date is exclusive. (optional)
+     * @param  string[] $types Notification type(s) to filter on (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
+     * @param  string[] $merchantReturnNos Filter on unique return reference used by the merchant (optional)
+     * @param  string[] $channelReturnNos Filter on unique return reference used by the channel (optional)
+     * @param  string[] $merchantShipmentNos Filter on unique shipment reference used by the merchant (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantStockLocationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantNotificationResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function stockLocationIndexWithHttpInfo()
+    public function notificationIndexWithHttpInfo($fromDate = null, $toDate = null, $types = null, $merchantOrderNos = null, $channelOrderNos = null, $merchantReturnNos = null, $channelReturnNos = null, $merchantShipmentNos = null, $page = null)
     {
-        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantStockLocationResponse';
-        $request = $this->stockLocationIndexRequest();
+        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantNotificationResponse';
+        $request = $this->notificationIndexRequest($fromDate, $toDate, $types, $merchantOrderNos, $channelOrderNos, $merchantReturnNos, $channelReturnNos, $merchantShipmentNos, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -167,7 +185,7 @@ class StockLocationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantStockLocationResponse',
+                        '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantNotificationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -178,17 +196,26 @@ class StockLocationApi
     }
 
     /**
-     * Operation stockLocationIndexAsync
+     * Operation notificationIndexAsync
      *
-     * Get the stock locations (or virtual warehouses)
+     * Get Notifications
      *
+     * @param  \DateTime $fromDate Filter on the notification date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toDate Filter on the notification date, until this date. This date is exclusive. (optional)
+     * @param  string[] $types Notification type(s) to filter on (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
+     * @param  string[] $merchantReturnNos Filter on unique return reference used by the merchant (optional)
+     * @param  string[] $channelReturnNos Filter on unique return reference used by the channel (optional)
+     * @param  string[] $merchantShipmentNos Filter on unique shipment reference used by the merchant (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function stockLocationIndexAsync()
+    public function notificationIndexAsync($fromDate = null, $toDate = null, $types = null, $merchantOrderNos = null, $channelOrderNos = null, $merchantReturnNos = null, $channelReturnNos = null, $merchantShipmentNos = null, $page = null)
     {
-        return $this->stockLocationIndexAsyncWithHttpInfo()
+        return $this->notificationIndexAsyncWithHttpInfo($fromDate, $toDate, $types, $merchantOrderNos, $channelOrderNos, $merchantReturnNos, $channelReturnNos, $merchantShipmentNos, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -197,18 +224,27 @@ class StockLocationApi
     }
 
     /**
-     * Operation stockLocationIndexAsyncWithHttpInfo
+     * Operation notificationIndexAsyncWithHttpInfo
      *
-     * Get the stock locations (or virtual warehouses)
+     * Get Notifications
      *
+     * @param  \DateTime $fromDate Filter on the notification date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toDate Filter on the notification date, until this date. This date is exclusive. (optional)
+     * @param  string[] $types Notification type(s) to filter on (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
+     * @param  string[] $merchantReturnNos Filter on unique return reference used by the merchant (optional)
+     * @param  string[] $channelReturnNos Filter on unique return reference used by the channel (optional)
+     * @param  string[] $merchantShipmentNos Filter on unique shipment reference used by the merchant (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function stockLocationIndexAsyncWithHttpInfo()
+    public function notificationIndexAsyncWithHttpInfo($fromDate = null, $toDate = null, $types = null, $merchantOrderNos = null, $channelOrderNos = null, $merchantReturnNos = null, $channelReturnNos = null, $merchantShipmentNos = null, $page = null)
     {
-        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantStockLocationResponse';
-        $request = $this->stockLocationIndexRequest();
+        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantNotificationResponse';
+        $request = $this->notificationIndexRequest($fromDate, $toDate, $types, $merchantOrderNos, $channelOrderNos, $merchantReturnNos, $channelReturnNos, $merchantShipmentNos, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -248,22 +284,85 @@ class StockLocationApi
     }
 
     /**
-     * Create request for operation 'stockLocationIndex'
+     * Create request for operation 'notificationIndex'
      *
+     * @param  \DateTime $fromDate Filter on the notification date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toDate Filter on the notification date, until this date. This date is exclusive. (optional)
+     * @param  string[] $types Notification type(s) to filter on (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
+     * @param  string[] $merchantReturnNos Filter on unique return reference used by the merchant (optional)
+     * @param  string[] $channelReturnNos Filter on unique return reference used by the channel (optional)
+     * @param  string[] $merchantShipmentNos Filter on unique shipment reference used by the merchant (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function stockLocationIndexRequest()
+    protected function notificationIndexRequest($fromDate = null, $toDate = null, $types = null, $merchantOrderNos = null, $channelOrderNos = null, $merchantReturnNos = null, $channelReturnNos = null, $merchantShipmentNos = null, $page = null)
     {
 
-        $resourcePath = '/v2/stocklocations';
+        $resourcePath = '/v2/notifications';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($fromDate !== null) {
+            $queryParams['fromDate'] = ObjectSerializer::toQueryValue($fromDate);
+        }
+        // query params
+        if ($toDate !== null) {
+            $queryParams['toDate'] = ObjectSerializer::toQueryValue($toDate);
+        }
+        // query params
+        if (is_array($types)) {
+            $queryParams['types'] = $types;
+        } else
+        if ($types !== null) {
+            $queryParams['types'] = ObjectSerializer::toQueryValue($types);
+        }
+        // query params
+        if (is_array($merchantOrderNos)) {
+            $queryParams['merchantOrderNos'] = $merchantOrderNos;
+        } else
+        if ($merchantOrderNos !== null) {
+            $queryParams['merchantOrderNos'] = ObjectSerializer::toQueryValue($merchantOrderNos);
+        }
+        // query params
+        if (is_array($channelOrderNos)) {
+            $queryParams['channelOrderNos'] = $channelOrderNos;
+        } else
+        if ($channelOrderNos !== null) {
+            $queryParams['channelOrderNos'] = ObjectSerializer::toQueryValue($channelOrderNos);
+        }
+        // query params
+        if (is_array($merchantReturnNos)) {
+            $queryParams['merchantReturnNos'] = $merchantReturnNos;
+        } else
+        if ($merchantReturnNos !== null) {
+            $queryParams['merchantReturnNos'] = ObjectSerializer::toQueryValue($merchantReturnNos);
+        }
+        // query params
+        if (is_array($channelReturnNos)) {
+            $queryParams['channelReturnNos'] = $channelReturnNos;
+        } else
+        if ($channelReturnNos !== null) {
+            $queryParams['channelReturnNos'] = ObjectSerializer::toQueryValue($channelReturnNos);
+        }
+        // query params
+        if (is_array($merchantShipmentNos)) {
+            $queryParams['merchantShipmentNos'] = $merchantShipmentNos;
+        } else
+        if ($merchantShipmentNos !== null) {
+            $queryParams['merchantShipmentNos'] = ObjectSerializer::toQueryValue($merchantShipmentNos);
+        }
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
 
 
         // body params
