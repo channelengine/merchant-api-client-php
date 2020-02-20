@@ -69,6 +69,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'originalLineTotalInclVat' => 'float',
         'originalLineVat' => 'float',
         'bundleProductMerchantProductNo' => 'string',
+        'extraData' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantOrderLineExtraDataResponse[]',
         'channelProductNo' => 'string',
         'quantity' => 'int',
         'cancellationRequestedQuantity' => 'int',
@@ -96,6 +97,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'originalLineTotalInclVat' => 'decimal',
         'originalLineVat' => 'decimal',
         'bundleProductMerchantProductNo' => null,
+        'extraData' => null,
         'channelProductNo' => null,
         'quantity' => 'int32',
         'cancellationRequestedQuantity' => 'int32',
@@ -144,6 +146,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'originalLineTotalInclVat' => 'OriginalLineTotalInclVat',
         'originalLineVat' => 'OriginalLineVat',
         'bundleProductMerchantProductNo' => 'BundleProductMerchantProductNo',
+        'extraData' => 'ExtraData',
         'channelProductNo' => 'ChannelProductNo',
         'quantity' => 'Quantity',
         'cancellationRequestedQuantity' => 'CancellationRequestedQuantity',
@@ -171,6 +174,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'originalLineTotalInclVat' => 'setOriginalLineTotalInclVat',
         'originalLineVat' => 'setOriginalLineVat',
         'bundleProductMerchantProductNo' => 'setBundleProductMerchantProductNo',
+        'extraData' => 'setExtraData',
         'channelProductNo' => 'setChannelProductNo',
         'quantity' => 'setQuantity',
         'cancellationRequestedQuantity' => 'setCancellationRequestedQuantity',
@@ -198,6 +202,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         'originalLineTotalInclVat' => 'getOriginalLineTotalInclVat',
         'originalLineVat' => 'getOriginalLineVat',
         'bundleProductMerchantProductNo' => 'getBundleProductMerchantProductNo',
+        'extraData' => 'getExtraData',
         'channelProductNo' => 'getChannelProductNo',
         'quantity' => 'getQuantity',
         'cancellationRequestedQuantity' => 'getCancellationRequestedQuantity',
@@ -335,6 +340,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
         $this->container['originalLineTotalInclVat'] = isset($data['originalLineTotalInclVat']) ? $data['originalLineTotalInclVat'] : null;
         $this->container['originalLineVat'] = isset($data['originalLineVat']) ? $data['originalLineVat'] : null;
         $this->container['bundleProductMerchantProductNo'] = isset($data['bundleProductMerchantProductNo']) ? $data['bundleProductMerchantProductNo'] : null;
+        $this->container['extraData'] = isset($data['extraData']) ? $data['extraData'] : null;
         $this->container['channelProductNo'] = isset($data['channelProductNo']) ? $data['channelProductNo'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['cancellationRequestedQuantity'] = isset($data['cancellationRequestedQuantity']) ? $data['cancellationRequestedQuantity'] : null;
@@ -699,6 +705,30 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets extraData
+     *
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderLineExtraDataResponse[]
+     */
+    public function getExtraData()
+    {
+        return $this->container['extraData'];
+    }
+
+    /**
+     * Sets extraData
+     *
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderLineExtraDataResponse[] $extraData extraData
+     *
+     * @return $this
+     */
+    public function setExtraData($extraData)
+    {
+        $this->container['extraData'] = $extraData;
+
+        return $this;
+    }
+
+    /**
      * Gets channelProductNo
      *
      * @return string
@@ -711,7 +741,7 @@ class MerchantOrderLineResponse implements ModelInterface, ArrayAccess
     /**
      * Sets channelProductNo
      *
-     * @param string $channelProductNo The unique order reference used by the channel
+     * @param string $channelProductNo The unique product reference used by the channel
      *
      * @return $this
      */

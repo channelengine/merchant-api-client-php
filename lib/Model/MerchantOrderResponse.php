@@ -59,10 +59,16 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'channelName' => 'string',
+        'channelId' => 'int',
+        'globalChannelName' => 'string',
+        'globalChannelId' => 'int',
         'channelOrderSupport' => 'string',
         'channelOrderNo' => 'string',
         'status' => 'string',
         'isBusinessOrder' => 'bool',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
+        'merchantComment' => 'string',
         'billingAddress' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantAddressResponse',
         'shippingAddress' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantAddressResponse',
         'subTotalInclVat' => 'float',
@@ -97,10 +103,16 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => 'int32',
         'channelName' => null,
+        'channelId' => 'int32',
+        'globalChannelName' => null,
+        'globalChannelId' => 'int32',
         'channelOrderSupport' => null,
         'channelOrderNo' => null,
         'status' => null,
         'isBusinessOrder' => null,
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
+        'merchantComment' => null,
         'billingAddress' => null,
         'shippingAddress' => null,
         'subTotalInclVat' => 'decimal',
@@ -156,10 +168,16 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'Id',
         'channelName' => 'ChannelName',
+        'channelId' => 'ChannelId',
+        'globalChannelName' => 'GlobalChannelName',
+        'globalChannelId' => 'GlobalChannelId',
         'channelOrderSupport' => 'ChannelOrderSupport',
         'channelOrderNo' => 'ChannelOrderNo',
         'status' => 'Status',
         'isBusinessOrder' => 'IsBusinessOrder',
+        'createdAt' => 'CreatedAt',
+        'updatedAt' => 'UpdatedAt',
+        'merchantComment' => 'MerchantComment',
         'billingAddress' => 'BillingAddress',
         'shippingAddress' => 'ShippingAddress',
         'subTotalInclVat' => 'SubTotalInclVat',
@@ -194,10 +212,16 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'channelName' => 'setChannelName',
+        'channelId' => 'setChannelId',
+        'globalChannelName' => 'setGlobalChannelName',
+        'globalChannelId' => 'setGlobalChannelId',
         'channelOrderSupport' => 'setChannelOrderSupport',
         'channelOrderNo' => 'setChannelOrderNo',
         'status' => 'setStatus',
         'isBusinessOrder' => 'setIsBusinessOrder',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
+        'merchantComment' => 'setMerchantComment',
         'billingAddress' => 'setBillingAddress',
         'shippingAddress' => 'setShippingAddress',
         'subTotalInclVat' => 'setSubTotalInclVat',
@@ -232,10 +256,16 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'channelName' => 'getChannelName',
+        'channelId' => 'getChannelId',
+        'globalChannelName' => 'getGlobalChannelName',
+        'globalChannelId' => 'getGlobalChannelId',
         'channelOrderSupport' => 'getChannelOrderSupport',
         'channelOrderNo' => 'getChannelOrderNo',
         'status' => 'getStatus',
         'isBusinessOrder' => 'getIsBusinessOrder',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
+        'merchantComment' => 'getMerchantComment',
         'billingAddress' => 'getBillingAddress',
         'shippingAddress' => 'getShippingAddress',
         'subTotalInclVat' => 'getSubTotalInclVat',
@@ -372,10 +402,16 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['channelName'] = isset($data['channelName']) ? $data['channelName'] : null;
+        $this->container['channelId'] = isset($data['channelId']) ? $data['channelId'] : null;
+        $this->container['globalChannelName'] = isset($data['globalChannelName']) ? $data['globalChannelName'] : null;
+        $this->container['globalChannelId'] = isset($data['globalChannelId']) ? $data['globalChannelId'] : null;
         $this->container['channelOrderSupport'] = isset($data['channelOrderSupport']) ? $data['channelOrderSupport'] : null;
         $this->container['channelOrderNo'] = isset($data['channelOrderNo']) ? $data['channelOrderNo'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['isBusinessOrder'] = isset($data['isBusinessOrder']) ? $data['isBusinessOrder'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
+        $this->container['merchantComment'] = isset($data['merchantComment']) ? $data['merchantComment'] : null;
         $this->container['billingAddress'] = isset($data['billingAddress']) ? $data['billingAddress'] : null;
         $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
         $this->container['subTotalInclVat'] = isset($data['subTotalInclVat']) ? $data['subTotalInclVat'] : null;
@@ -543,13 +579,85 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets channelName
      *
-     * @param string $channelName The name of the channel
+     * @param string $channelName The name of the channel for this specific environment/account
      *
      * @return $this
      */
     public function setChannelName($channelName)
     {
         $this->container['channelName'] = $channelName;
+
+        return $this;
+    }
+
+    /**
+     * Gets channelId
+     *
+     * @return int
+     */
+    public function getChannelId()
+    {
+        return $this->container['channelId'];
+    }
+
+    /**
+     * Sets channelId
+     *
+     * @param int $channelId The unique ID of the channel for this specific environment/account
+     *
+     * @return $this
+     */
+    public function setChannelId($channelId)
+    {
+        $this->container['channelId'] = $channelId;
+
+        return $this;
+    }
+
+    /**
+     * Gets globalChannelName
+     *
+     * @return string
+     */
+    public function getGlobalChannelName()
+    {
+        return $this->container['globalChannelName'];
+    }
+
+    /**
+     * Sets globalChannelName
+     *
+     * @param string $globalChannelName The name of the channel across all of ChannelEngine
+     *
+     * @return $this
+     */
+    public function setGlobalChannelName($globalChannelName)
+    {
+        $this->container['globalChannelName'] = $globalChannelName;
+
+        return $this;
+    }
+
+    /**
+     * Gets globalChannelId
+     *
+     * @return int
+     */
+    public function getGlobalChannelId()
+    {
+        return $this->container['globalChannelId'];
+    }
+
+    /**
+     * Sets globalChannelId
+     *
+     * @param int $globalChannelId The unique ID of the channel across all of ChannelEngine
+     *
+     * @return $this
+     */
+    public function setGlobalChannelId($globalChannelId)
+    {
+        $this->container['globalChannelId'] = $globalChannelId;
 
         return $this;
     }
@@ -600,7 +708,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets channelOrderNo
      *
-     * @param string $channelOrderNo The unique order reference used by the channel
+     * @param string $channelOrderNo The order reference used by the channel.   This number is not guaranteed to be unique accross all orders,  because different channels can use the same order number format.
      *
      * @return $this
      */
@@ -664,6 +772,78 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     public function setIsBusinessOrder($isBusinessOrder)
     {
         $this->container['isBusinessOrder'] = $isBusinessOrder;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param \DateTime $createdAt The date the order was created in ChannelEngine
+     *
+     * @return $this
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updatedAt'];
+    }
+
+    /**
+     * Sets updatedAt
+     *
+     * @param \DateTime $updatedAt The date the order was last updated in ChannelEngine
+     *
+     * @return $this
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->container['updatedAt'] = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantComment
+     *
+     * @return string
+     */
+    public function getMerchantComment()
+    {
+        return $this->container['merchantComment'];
+    }
+
+    /**
+     * Sets merchantComment
+     *
+     * @param string $merchantComment The optional comment a merchant can add to an order
+     *
+     * @return $this
+     */
+    public function setMerchantComment($merchantComment)
+    {
+        $this->container['merchantComment'] = $merchantComment;
 
         return $this;
     }
@@ -1224,7 +1404,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets orderDate
      *
-     * @param \DateTime $orderDate The date the order was done
+     * @param \DateTime $orderDate The date the order was created at the channel
      *
      * @return $this
      */

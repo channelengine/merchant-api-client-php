@@ -378,6 +378,7 @@ class OrderApi
      * Get Orders By Filter
      *
      * @param  string[] $statuses Order status(es) to filter on (optional)
+     * @param  string[] $emailAddresses Client emailaddresses to filter on (optional)
      * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
      * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
      * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
@@ -391,9 +392,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse
      */
-    public function orderGetByFilter($statuses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
+    public function orderGetByFilter($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
     {
-        list($response) = $this->orderGetByFilterWithHttpInfo($statuses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $page);
+        list($response) = $this->orderGetByFilterWithHttpInfo($statuses, $emailAddresses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $page);
         return $response;
     }
 
@@ -403,6 +404,7 @@ class OrderApi
      * Get Orders By Filter
      *
      * @param  string[] $statuses Order status(es) to filter on (optional)
+     * @param  string[] $emailAddresses Client emailaddresses to filter on (optional)
      * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
      * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
      * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
@@ -416,10 +418,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderGetByFilterWithHttpInfo($statuses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
+    public function orderGetByFilterWithHttpInfo($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse';
-        $request = $this->orderGetByFilterRequest($statuses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $page);
+        $request = $this->orderGetByFilterRequest($statuses, $emailAddresses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -486,6 +488,7 @@ class OrderApi
      * Get Orders By Filter
      *
      * @param  string[] $statuses Order status(es) to filter on (optional)
+     * @param  string[] $emailAddresses Client emailaddresses to filter on (optional)
      * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
      * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
      * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
@@ -498,9 +501,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderGetByFilterAsync($statuses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
+    public function orderGetByFilterAsync($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
     {
-        return $this->orderGetByFilterAsyncWithHttpInfo($statuses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $page)
+        return $this->orderGetByFilterAsyncWithHttpInfo($statuses, $emailAddresses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -514,6 +517,7 @@ class OrderApi
      * Get Orders By Filter
      *
      * @param  string[] $statuses Order status(es) to filter on (optional)
+     * @param  string[] $emailAddresses Client emailaddresses to filter on (optional)
      * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
      * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
      * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
@@ -526,10 +530,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderGetByFilterAsyncWithHttpInfo($statuses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
+    public function orderGetByFilterAsyncWithHttpInfo($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse';
-        $request = $this->orderGetByFilterRequest($statuses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $page);
+        $request = $this->orderGetByFilterRequest($statuses, $emailAddresses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -572,6 +576,7 @@ class OrderApi
      * Create request for operation 'orderGetByFilter'
      *
      * @param  string[] $statuses Order status(es) to filter on (optional)
+     * @param  string[] $emailAddresses Client emailaddresses to filter on (optional)
      * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant (optional)
      * @param  string[] $channelOrderNos Filter on unique order reference used by the channel (optional)
      * @param  \DateTime $fromDate Filter on the order date, starting from this date. This date is inclusive. (optional)
@@ -584,7 +589,7 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderGetByFilterRequest($statuses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
+    protected function orderGetByFilterRequest($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $page = null)
     {
 
         $resourcePath = '/v2/orders';
@@ -600,6 +605,13 @@ class OrderApi
         } else
         if ($statuses !== null) {
             $queryParams['statuses'] = ObjectSerializer::toQueryValue($statuses);
+        }
+        // query params
+        if (is_array($emailAddresses)) {
+            $queryParams['emailAddresses'] = $emailAddresses;
+        } else
+        if ($emailAddresses !== null) {
+            $queryParams['emailAddresses'] = ObjectSerializer::toQueryValue($emailAddresses);
         }
         // query params
         if (is_array($merchantOrderNos)) {
@@ -1548,6 +1560,291 @@ class OrderApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation orderUpdate
+     *
+     * Update Comment
+     *
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderCommentUpdateRequest $model  (required)
+     *
+     * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \ChannelEngine\Merchant\ApiClient\Model\ApiResponse
+     */
+    public function orderUpdate($model)
+    {
+        list($response) = $this->orderUpdateWithHttpInfo($model);
+        return $response;
+    }
+
+    /**
+     * Operation orderUpdateWithHttpInfo
+     *
+     * Update Comment
+     *
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderCommentUpdateRequest $model  (required)
+     *
+     * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \ChannelEngine\Merchant\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function orderUpdateWithHttpInfo($model)
+    {
+        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
+        $request = $this->orderUpdateRequest($model);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation orderUpdateAsync
+     *
+     * Update Comment
+     *
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderCommentUpdateRequest $model  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderUpdateAsync($model)
+    {
+        return $this->orderUpdateAsyncWithHttpInfo($model)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation orderUpdateAsyncWithHttpInfo
+     *
+     * Update Comment
+     *
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderCommentUpdateRequest $model  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderUpdateAsyncWithHttpInfo($model)
+    {
+        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
+        $request = $this->orderUpdateRequest($model);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'orderUpdate'
+     *
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderCommentUpdateRequest $model  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function orderUpdateRequest($model)
+    {
+        // verify the required parameter 'model' is set
+        if ($model === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $model when calling orderUpdate'
+            );
+        }
+
+        $resourcePath = '/v2/orders/comment';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($model)) {
+            $_tempBody = $model;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/plain', 'application/json', 'text/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/plain', 'application/json', 'text/json'],
+                ['application/json-patch+json', 'application/json', 'text/json', 'application/_*+json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apikey');
+        if ($apiKey !== null) {
+            $queryParams['apikey'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
