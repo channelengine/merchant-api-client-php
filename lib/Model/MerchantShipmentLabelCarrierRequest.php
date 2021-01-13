@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantNotificationResponse
+ * MerchantShipmentLabelCarrierRequest
  *
  * PHP version 7.2
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * MerchantNotificationResponse Class Doc Comment
+ * MerchantShipmentLabelCarrierRequest Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class MerchantNotificationResponse implements ModelInterface, ArrayAccess
+class MerchantShipmentLabelCarrierRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class MerchantNotificationResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MerchantNotificationResponse';
+    protected static $openAPIModelName = 'MerchantShipmentLabelCarrierRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,9 @@ class MerchantNotificationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'read' => 'bool',
-        'createdAt' => '\DateTime',
-        'message' => 'string',
-        'subject' => 'string',
-        'count' => 'int'
+        'lines' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLineRequest[]',
+        'dimensions' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentPackageDimensionsRequest',
+        'weight' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentPackageWeightRequest'
     ];
 
     /**
@@ -71,12 +68,9 @@ class MerchantNotificationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'id' => 'int32',
-        'read' => null,
-        'createdAt' => 'date-time',
-        'message' => null,
-        'subject' => null,
-        'count' => 'int32'
+        'lines' => null,
+        'dimensions' => null,
+        'weight' => null
     ];
 
     /**
@@ -106,12 +100,9 @@ class MerchantNotificationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'Id',
-        'read' => 'Read',
-        'createdAt' => 'CreatedAt',
-        'message' => 'Message',
-        'subject' => 'Subject',
-        'count' => 'Count'
+        'lines' => 'Lines',
+        'dimensions' => 'Dimensions',
+        'weight' => 'Weight'
     ];
 
     /**
@@ -120,12 +111,9 @@ class MerchantNotificationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'read' => 'setRead',
-        'createdAt' => 'setCreatedAt',
-        'message' => 'setMessage',
-        'subject' => 'setSubject',
-        'count' => 'setCount'
+        'lines' => 'setLines',
+        'dimensions' => 'setDimensions',
+        'weight' => 'setWeight'
     ];
 
     /**
@@ -134,12 +122,9 @@ class MerchantNotificationResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'read' => 'getRead',
-        'createdAt' => 'getCreatedAt',
-        'message' => 'getMessage',
-        'subject' => 'getSubject',
-        'count' => 'getCount'
+        'lines' => 'getLines',
+        'dimensions' => 'getDimensions',
+        'weight' => 'getWeight'
     ];
 
     /**
@@ -202,12 +187,9 @@ class MerchantNotificationResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['read'] = isset($data['read']) ? $data['read'] : null;
-        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['lines'] = isset($data['lines']) ? $data['lines'] : null;
+        $this->container['dimensions'] = isset($data['dimensions']) ? $data['dimensions'] : null;
+        $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
     }
 
     /**
@@ -219,6 +201,15 @@ class MerchantNotificationResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['lines'] === null) {
+            $invalidProperties[] = "'lines' can't be null";
+        }
+        if ($this->container['dimensions'] === null) {
+            $invalidProperties[] = "'dimensions' can't be null";
+        }
+        if ($this->container['weight'] === null) {
+            $invalidProperties[] = "'weight' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -235,145 +226,73 @@ class MerchantNotificationResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets lines
      *
-     * @return int|null
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLineRequest[]
      */
-    public function getId()
+    public function getLines()
     {
-        return $this->container['id'];
+        return $this->container['lines'];
     }
 
     /**
-     * Sets id
+     * Sets lines
      *
-     * @param int|null $id Unique identifier used by ChannelEngine.
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLineRequest[] $lines lines
      *
      * @return $this
      */
-    public function setId($id)
+    public function setLines($lines)
     {
-        $this->container['id'] = $id;
+        $this->container['lines'] = $lines;
 
         return $this;
     }
 
     /**
-     * Gets read
+     * Gets dimensions
      *
-     * @return bool|null
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentPackageDimensionsRequest
      */
-    public function getRead()
+    public function getDimensions()
     {
-        return $this->container['read'];
+        return $this->container['dimensions'];
     }
 
     /**
-     * Sets read
+     * Sets dimensions
      *
-     * @param bool|null $read Indicating whether the notification is already read using the backoffice.
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentPackageDimensionsRequest $dimensions dimensions
      *
      * @return $this
      */
-    public function setRead($read)
+    public function setDimensions($dimensions)
     {
-        $this->container['read'] = $read;
+        $this->container['dimensions'] = $dimensions;
 
         return $this;
     }
 
     /**
-     * Gets createdAt
+     * Gets weight
      *
-     * @return \DateTime|null
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentPackageWeightRequest
      */
-    public function getCreatedAt()
+    public function getWeight()
     {
-        return $this->container['createdAt'];
+        return $this->container['weight'];
     }
 
     /**
-     * Sets createdAt
+     * Sets weight
      *
-     * @param \DateTime|null $createdAt Get the created date time.
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentPackageWeightRequest $weight weight
      *
      * @return $this
      */
-    public function setCreatedAt($createdAt)
+    public function setWeight($weight)
     {
-        $this->container['createdAt'] = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string|null
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string|null $message message
-     *
-     * @return $this
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets subject
-     *
-     * @return string|null
-     */
-    public function getSubject()
-    {
-        return $this->container['subject'];
-    }
-
-    /**
-     * Sets subject
-     *
-     * @param string|null $subject subject
-     *
-     * @return $this
-     */
-    public function setSubject($subject)
-    {
-        $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     *
-     * @return int|null
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     *
-     * @param int|null $count count
-     *
-     * @return $this
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
+        $this->container['weight'] = $weight;
 
         return $this;
     }

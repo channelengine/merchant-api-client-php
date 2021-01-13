@@ -41,6 +41,7 @@ lib\Model\MancoReason.php
 lib\Model\MerchantAddressResponse.php
 lib\Model\MerchantCancellationLineRequest.php
 lib\Model\MerchantCancellationRequest.php
+lib\Model\MerchantChannelLabelShipmentRequest.php
 lib\Model\MerchantNotificationResponse.php
 lib\Model\MerchantOfferGetStockResponse.php
 lib\Model\MerchantOrderAcknowledgementRequest.php
@@ -60,7 +61,10 @@ lib\Model\MerchantReturnLineUpdateRequest.php
 lib\Model\MerchantReturnRequest.php
 lib\Model\MerchantReturnResponse.php
 lib\Model\MerchantReturnUpdateRequest.php
+lib\Model\MerchantShipmentLabelCarrierRequest.php
 lib\Model\MerchantShipmentLineRequest.php
+lib\Model\MerchantShipmentPackageDimensionsRequest.php
+lib\Model\MerchantShipmentPackageWeightRequest.php
 lib\Model\MerchantShipmentRequest.php
 lib\Model\MerchantShipmentTrackingRequest.php
 lib\Model\MerchantSingleOrderReturnLineResponse.php
@@ -72,6 +76,8 @@ lib\Model\NotificationType.php
 lib\Model\Operation.php
 lib\Model\OrderStatusView.php
 lib\Model\OrderSupport.php
+lib\Model\PackageDimensionsUnit.php
+lib\Model\PackageWeightUnit.php
 lib\Model\ProductCreationResult.php
 lib\Model\ProductMessage.php
 lib\Model\ReturnReason.php

@@ -1,6 +1,6 @@
 <?php
 /**
- * ReturnReason
+ * PackageDimensionsUnit
  *
  * PHP version 7.2
  *
@@ -31,28 +31,20 @@ namespace ChannelEngine\Merchant\ApiClient\Model;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * ReturnReason Class Doc Comment
+ * PackageDimensionsUnit Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ReturnReason
+class PackageDimensionsUnit
 {
     /**
      * Possible values of this enum
      */
-    const PRODUCT_DEFECT = 'PRODUCT_DEFECT';
-    const PRODUCT_UNSATISFACTORY = 'PRODUCT_UNSATISFACTORY';
-    const WRONG_PRODUCT = 'WRONG_PRODUCT';
-    const TOO_MANY_PRODUCTS = 'TOO_MANY_PRODUCTS';
-    const REFUSED = 'REFUSED';
-    const REFUSED_DAMAGED = 'REFUSED_DAMAGED';
-    const WRONG_ADDRESS = 'WRONG_ADDRESS';
-    const NOT_COLLECTED = 'NOT_COLLECTED';
-    const WRONG_SIZE = 'WRONG_SIZE';
-    const OTHER = 'OTHER';
+    const CM = 'CM';
+    const INCH = 'INCH';
     
     /**
      * Gets allowable values of the enum
@@ -61,16 +53,8 @@ class ReturnReason
     public static function getAllowableEnumValues()
     {
         return [
-            self::PRODUCT_DEFECT,
-            self::PRODUCT_UNSATISFACTORY,
-            self::WRONG_PRODUCT,
-            self::TOO_MANY_PRODUCTS,
-            self::REFUSED,
-            self::REFUSED_DAMAGED,
-            self::WRONG_ADDRESS,
-            self::NOT_COLLECTED,
-            self::WRONG_SIZE,
-            self::OTHER,
+            self::CM,
+            self::INCH,
         ];
     }
 }

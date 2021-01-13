@@ -1,6 +1,6 @@
 {
     "name": "channelengine/merchant-api-client-php",
-    "version": "2.9.3",
+    "version": "2.9.4",
     "description": "ChannelEngine API for merchants",
     "keywords": [
         "openapitools",
