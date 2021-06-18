@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantReturnLineUpdateRequest
+ * PatchMerchantProductDto
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * MerchantReturnLineUpdateRequest Class Doc Comment
+ * PatchMerchantProductDto Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class MerchantReturnLineUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class PatchMerchantProductDto implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class MerchantReturnLineUpdateRequest implements ModelInterface, ArrayAccess, \J
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MerchantReturnLineUpdateRequest';
+    protected static $openAPIModelName = 'PatchMerchantProductDto';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,8 @@ class MerchantReturnLineUpdateRequest implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'merchantProductNo' => 'string',
-        'acceptedQuantity' => 'int',
-        'rejectedQuantity' => 'int'
+        'propertiesToUpdate' => 'string[]',
+        'merchantProductRequestModels' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantProductRequest[]'
     ];
 
     /**
@@ -72,9 +71,8 @@ class MerchantReturnLineUpdateRequest implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'merchantProductNo' => null,
-        'acceptedQuantity' => 'int32',
-        'rejectedQuantity' => 'int32'
+        'propertiesToUpdate' => null,
+        'merchantProductRequestModels' => null
     ];
 
     /**
@@ -104,9 +102,8 @@ class MerchantReturnLineUpdateRequest implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchantProductNo' => 'MerchantProductNo',
-        'acceptedQuantity' => 'AcceptedQuantity',
-        'rejectedQuantity' => 'RejectedQuantity'
+        'propertiesToUpdate' => 'PropertiesToUpdate',
+        'merchantProductRequestModels' => 'MerchantProductRequestModels'
     ];
 
     /**
@@ -115,9 +112,8 @@ class MerchantReturnLineUpdateRequest implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'merchantProductNo' => 'setMerchantProductNo',
-        'acceptedQuantity' => 'setAcceptedQuantity',
-        'rejectedQuantity' => 'setRejectedQuantity'
+        'propertiesToUpdate' => 'setPropertiesToUpdate',
+        'merchantProductRequestModels' => 'setMerchantProductRequestModels'
     ];
 
     /**
@@ -126,9 +122,8 @@ class MerchantReturnLineUpdateRequest implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'merchantProductNo' => 'getMerchantProductNo',
-        'acceptedQuantity' => 'getAcceptedQuantity',
-        'rejectedQuantity' => 'getRejectedQuantity'
+        'propertiesToUpdate' => 'getPropertiesToUpdate',
+        'merchantProductRequestModels' => 'getMerchantProductRequestModels'
     ];
 
     /**
@@ -188,9 +183,8 @@ class MerchantReturnLineUpdateRequest implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchantProductNo'] = $data['merchantProductNo'] ?? null;
-        $this->container['acceptedQuantity'] = $data['acceptedQuantity'] ?? null;
-        $this->container['rejectedQuantity'] = $data['rejectedQuantity'] ?? null;
+        $this->container['propertiesToUpdate'] = $data['propertiesToUpdate'] ?? null;
+        $this->container['merchantProductRequestModels'] = $data['merchantProductRequestModels'] ?? null;
     }
 
     /**
@@ -202,15 +196,6 @@ class MerchantReturnLineUpdateRequest implements ModelInterface, ArrayAccess, \J
     {
         $invalidProperties = [];
 
-        if ($this->container['merchantProductNo'] === null) {
-            $invalidProperties[] = "'merchantProductNo' can't be null";
-        }
-        if ($this->container['acceptedQuantity'] === null) {
-            $invalidProperties[] = "'acceptedQuantity' can't be null";
-        }
-        if ($this->container['rejectedQuantity'] === null) {
-            $invalidProperties[] = "'rejectedQuantity' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -227,73 +212,49 @@ class MerchantReturnLineUpdateRequest implements ModelInterface, ArrayAccess, \J
 
 
     /**
-     * Gets merchantProductNo
+     * Gets propertiesToUpdate
      *
-     * @return string
+     * @return string[]|null
      */
-    public function getMerchantProductNo()
+    public function getPropertiesToUpdate()
     {
-        return $this->container['merchantProductNo'];
+        return $this->container['propertiesToUpdate'];
     }
 
     /**
-     * Sets merchantProductNo
+     * Sets propertiesToUpdate
      *
-     * @param string $merchantProductNo The unique product reference used by the Merchant (sku).
+     * @param string[]|null $propertiesToUpdate propertiesToUpdate
      *
      * @return self
      */
-    public function setMerchantProductNo($merchantProductNo)
+    public function setPropertiesToUpdate($propertiesToUpdate)
     {
-        $this->container['merchantProductNo'] = $merchantProductNo;
+        $this->container['propertiesToUpdate'] = $propertiesToUpdate;
 
         return $this;
     }
 
     /**
-     * Gets acceptedQuantity
+     * Gets merchantProductRequestModels
      *
-     * @return int
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantProductRequest[]|null
      */
-    public function getAcceptedQuantity()
+    public function getMerchantProductRequestModels()
     {
-        return $this->container['acceptedQuantity'];
+        return $this->container['merchantProductRequestModels'];
     }
 
     /**
-     * Sets acceptedQuantity
+     * Sets merchantProductRequestModels
      *
-     * @param int $acceptedQuantity The amount of items that have been accepted.
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantProductRequest[]|null $merchantProductRequestModels merchantProductRequestModels
      *
      * @return self
      */
-    public function setAcceptedQuantity($acceptedQuantity)
+    public function setMerchantProductRequestModels($merchantProductRequestModels)
     {
-        $this->container['acceptedQuantity'] = $acceptedQuantity;
-
-        return $this;
-    }
-
-    /**
-     * Gets rejectedQuantity
-     *
-     * @return int
-     */
-    public function getRejectedQuantity()
-    {
-        return $this->container['rejectedQuantity'];
-    }
-
-    /**
-     * Sets rejectedQuantity
-     *
-     * @param int $rejectedQuantity The amount of items that have been rejected.
-     *
-     * @return self
-     */
-    public function setRejectedQuantity($rejectedQuantity)
-    {
-        $this->container['rejectedQuantity'] = $rejectedQuantity;
+        $this->container['merchantProductRequestModels'] = $merchantProductRequestModels;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 {
     "name": "channelengine/merchant-api-client-php",
-    "version": "2.9.4",
+    "version": "2.9.7",
     "description": "ChannelEngine API for merchants",
     "keywords": [
         "openapitools",
@@ -34,6 +34,6 @@
         "psr-4": { "ChannelEngine\\Merchant\\ApiClient\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "ChannelEngine\\Merchant\\ApiClient\\" : "test/" }
+        "psr-4": { "ChannelEngine\\Merchant\\ApiClient\\Test\\" : "test/" }
     }
 }

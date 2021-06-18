@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderSupport
+ * ShipmentLineStatus
  *
  * PHP version 7.2
  *
@@ -30,22 +30,21 @@ namespace ChannelEngine\Merchant\ApiClient\Model;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * OrderSupport Class Doc Comment
+ * ShipmentLineStatus Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class OrderSupport
+class ShipmentLineStatus
 {
     /**
      * Possible values of this enum
      */
-    const NONE = 'NONE';
-    const ORDERS = 'ORDERS';
-    const SPLIT_ORDERS = 'SPLIT_ORDERS';
-    const SPLIT_ORDER_LINES = 'SPLIT_ORDER_LINES';
+    const SHIPPED = 'SHIPPED';
+    const IN_BACKORDER = 'IN_BACKORDER';
+    const MANCO = 'MANCO';
     
     /**
      * Gets allowable values of the enum
@@ -54,10 +53,9 @@ class OrderSupport
     public static function getAllowableEnumValues()
     {
         return [
-            self::NONE,
-            self::ORDERS,
-            self::SPLIT_ORDERS,
-            self::SPLIT_ORDER_LINES,
+            self::SHIPPED,
+            self::IN_BACKORDER,
+            self::MANCO,
         ];
     }
 }
