@@ -1,6 +1,6 @@
 <?php
 /**
- * ShipmentApi
+ * WebhookApi
  * PHP version 7.2
  *
  * @category Class
@@ -39,14 +39,14 @@ use ChannelEngine\Merchant\ApiClient\HeaderSelector;
 use ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * ShipmentApi Class Doc Comment
+ * WebhookApi Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ShipmentApi
+class WebhookApi
 {
     /**
      * @var ClientInterface
@@ -115,36 +115,36 @@ class ShipmentApi
     }
 
     /**
-     * Operation shipmentCreate
+     * Operation webhooksCreate
      *
-     * Create Shipment.
+     * Create Webhook.
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentRequest $merchantShipmentRequest merchantShipmentRequest (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantWebhookRequest $merchantWebhookRequest merchantWebhookRequest (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse
+     * @return \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse
      */
-    public function shipmentCreate($merchantShipmentRequest = null)
+    public function webhooksCreate($merchantWebhookRequest = null)
     {
-        list($response) = $this->shipmentCreateWithHttpInfo($merchantShipmentRequest);
+        list($response) = $this->webhooksCreateWithHttpInfo($merchantWebhookRequest);
         return $response;
     }
 
     /**
-     * Operation shipmentCreateWithHttpInfo
+     * Operation webhooksCreateWithHttpInfo
      *
-     * Create Shipment.
+     * Create Webhook.
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentRequest $merchantShipmentRequest (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantWebhookRequest $merchantWebhookRequest (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function shipmentCreateWithHttpInfo($merchantShipmentRequest = null)
+    public function webhooksCreateWithHttpInfo($merchantWebhookRequest = null)
     {
-        $request = $this->shipmentCreateRequest($merchantShipmentRequest);
+        $request = $this->webhooksCreateRequest($merchantWebhookRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -188,18 +188,6 @@ class ShipmentApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
                     if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
@@ -256,14 +244,6 @@ class ShipmentApi
                     );
                     $e->setResponseObject($data);
                     break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
                 case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -278,18 +258,18 @@ class ShipmentApi
     }
 
     /**
-     * Operation shipmentCreateAsync
+     * Operation webhooksCreateAsync
      *
-     * Create Shipment.
+     * Create Webhook.
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentRequest $merchantShipmentRequest (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantWebhookRequest $merchantWebhookRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function shipmentCreateAsync($merchantShipmentRequest = null)
+    public function webhooksCreateAsync($merchantWebhookRequest = null)
     {
-        return $this->shipmentCreateAsyncWithHttpInfo($merchantShipmentRequest)
+        return $this->webhooksCreateAsyncWithHttpInfo($merchantWebhookRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -298,19 +278,19 @@ class ShipmentApi
     }
 
     /**
-     * Operation shipmentCreateAsyncWithHttpInfo
+     * Operation webhooksCreateAsyncWithHttpInfo
      *
-     * Create Shipment.
+     * Create Webhook.
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentRequest $merchantShipmentRequest (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantWebhookRequest $merchantWebhookRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function shipmentCreateAsyncWithHttpInfo($merchantShipmentRequest = null)
+    public function webhooksCreateAsyncWithHttpInfo($merchantWebhookRequest = null)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
-        $request = $this->shipmentCreateRequest($merchantShipmentRequest);
+        $request = $this->webhooksCreateRequest($merchantWebhookRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -346,17 +326,17 @@ class ShipmentApi
     }
 
     /**
-     * Create request for operation 'shipmentCreate'
+     * Create request for operation 'webhooksCreate'
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentRequest $merchantShipmentRequest (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantWebhookRequest $merchantWebhookRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function shipmentCreateRequest($merchantShipmentRequest = null)
+    public function webhooksCreateRequest($merchantWebhookRequest = null)
     {
 
-        $resourcePath = '/v2/shipments';
+        $resourcePath = '/v2/webhooks';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -379,11 +359,11 @@ class ShipmentApi
         }
 
         // for model (json/xml)
-        if (isset($merchantShipmentRequest)) {
+        if (isset($merchantWebhookRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($merchantShipmentRequest));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($merchantWebhookRequest));
             } else {
-                $httpBody = $merchantShipmentRequest;
+                $httpBody = $merchantWebhookRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -436,36 +416,36 @@ class ShipmentApi
     }
 
     /**
-     * Operation shipmentCreateForChannelMethod
+     * Operation webhooksDelete
      *
-     * Create shipment for channel provided shipping labels
+     * Delete Webhook.
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantChannelLabelShipmentRequest $merchantChannelLabelShipmentRequest The shipment to create (optional)
+     * @param  string $webhookName webhookName (required)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse
+     * @return \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse
      */
-    public function shipmentCreateForChannelMethod($merchantChannelLabelShipmentRequest = null)
+    public function webhooksDelete($webhookName)
     {
-        list($response) = $this->shipmentCreateForChannelMethodWithHttpInfo($merchantChannelLabelShipmentRequest);
+        list($response) = $this->webhooksDeleteWithHttpInfo($webhookName);
         return $response;
     }
 
     /**
-     * Operation shipmentCreateForChannelMethodWithHttpInfo
+     * Operation webhooksDeleteWithHttpInfo
      *
-     * Create shipment for channel provided shipping labels
+     * Delete Webhook.
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantChannelLabelShipmentRequest $merchantChannelLabelShipmentRequest The shipment to create (optional)
+     * @param  string $webhookName (required)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function shipmentCreateForChannelMethodWithHttpInfo($merchantChannelLabelShipmentRequest = null)
+    public function webhooksDeleteWithHttpInfo($webhookName)
     {
-        $request = $this->shipmentCreateForChannelMethodRequest($merchantChannelLabelShipmentRequest);
+        $request = $this->webhooksDeleteRequest($webhookName);
 
         try {
             $options = $this->createHttpClientOption();
@@ -497,18 +477,6 @@ class ShipmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 400:
                     if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
@@ -557,14 +525,6 @@ class ShipmentApi
                     );
                     $e->setResponseObject($data);
                     break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -579,18 +539,18 @@ class ShipmentApi
     }
 
     /**
-     * Operation shipmentCreateForChannelMethodAsync
+     * Operation webhooksDeleteAsync
      *
-     * Create shipment for channel provided shipping labels
+     * Delete Webhook.
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantChannelLabelShipmentRequest $merchantChannelLabelShipmentRequest The shipment to create (optional)
+     * @param  string $webhookName (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function shipmentCreateForChannelMethodAsync($merchantChannelLabelShipmentRequest = null)
+    public function webhooksDeleteAsync($webhookName)
     {
-        return $this->shipmentCreateForChannelMethodAsyncWithHttpInfo($merchantChannelLabelShipmentRequest)
+        return $this->webhooksDeleteAsyncWithHttpInfo($webhookName)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -599,19 +559,19 @@ class ShipmentApi
     }
 
     /**
-     * Operation shipmentCreateForChannelMethodAsyncWithHttpInfo
+     * Operation webhooksDeleteAsyncWithHttpInfo
      *
-     * Create shipment for channel provided shipping labels
+     * Delete Webhook.
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantChannelLabelShipmentRequest $merchantChannelLabelShipmentRequest The shipment to create (optional)
+     * @param  string $webhookName (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function shipmentCreateForChannelMethodAsyncWithHttpInfo($merchantChannelLabelShipmentRequest = null)
+    public function webhooksDeleteAsyncWithHttpInfo($webhookName)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
-        $request = $this->shipmentCreateForChannelMethodRequest($merchantChannelLabelShipmentRequest);
+        $request = $this->webhooksDeleteRequest($webhookName);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -647,17 +607,23 @@ class ShipmentApi
     }
 
     /**
-     * Create request for operation 'shipmentCreateForChannelMethod'
+     * Create request for operation 'webhooksDelete'
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantChannelLabelShipmentRequest $merchantChannelLabelShipmentRequest The shipment to create (optional)
+     * @param  string $webhookName (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function shipmentCreateForChannelMethodRequest($merchantChannelLabelShipmentRequest = null)
+    public function webhooksDeleteRequest($webhookName)
     {
+        // verify the required parameter 'webhookName' is set
+        if ($webhookName === null || (is_array($webhookName) && count($webhookName) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $webhookName when calling webhooksDelete'
+            );
+        }
 
-        $resourcePath = '/v2/shipments/channelmethod';
+        $resourcePath = '/v2/webhooks/{webhookName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -666,6 +632,14 @@ class ShipmentApi
 
 
 
+        // path params
+        if ($webhookName !== null) {
+            $resourcePath = str_replace(
+                '{' . 'webhookName' . '}',
+                ObjectSerializer::toPathValue($webhookName),
+                $resourcePath
+            );
+        }
 
 
         if ($multipart) {
@@ -675,18 +649,12 @@ class ShipmentApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json-patch+json', 'application/json', 'application/_*+json']
+                []
             );
         }
 
         // for model (json/xml)
-        if (isset($merchantChannelLabelShipmentRequest)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($merchantChannelLabelShipmentRequest));
-            } else {
-                $httpBody = $merchantChannelLabelShipmentRequest;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -729,7 +697,7 @@ class ShipmentApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'POST',
+            'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -737,38 +705,34 @@ class ShipmentApi
     }
 
     /**
-     * Operation shipmentGetShipmentLabelCarriers
+     * Operation webhooksGetAll
      *
-     * Get carriers for channel provided shipping labels
+     * Get Webhooks.
      *
-     * @param  string $merchantOrderNo The merchant&#39;s order reference. (required)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLabelCarrierRequest $merchantShipmentLabelCarrierRequest The parcel information (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse
+     * @return \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantWebhookResponse
      */
-    public function shipmentGetShipmentLabelCarriers($merchantOrderNo, $merchantShipmentLabelCarrierRequest = null)
+    public function webhooksGetAll()
     {
-        list($response) = $this->shipmentGetShipmentLabelCarriersWithHttpInfo($merchantOrderNo, $merchantShipmentLabelCarrierRequest);
+        list($response) = $this->webhooksGetAllWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation shipmentGetShipmentLabelCarriersWithHttpInfo
+     * Operation webhooksGetAllWithHttpInfo
      *
-     * Get carriers for channel provided shipping labels
+     * Get Webhooks.
      *
-     * @param  string $merchantOrderNo The merchant&#39;s order reference. (required)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLabelCarrierRequest $merchantShipmentLabelCarrierRequest The parcel information (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantWebhookResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function shipmentGetShipmentLabelCarriersWithHttpInfo($merchantOrderNo, $merchantShipmentLabelCarrierRequest = null)
+    public function webhooksGetAllWithHttpInfo()
     {
-        $request = $this->shipmentGetShipmentLabelCarriersRequest($merchantOrderNo, $merchantShipmentLabelCarrierRequest);
+        $request = $this->webhooksGetAllRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -800,44 +764,20 @@ class ShipmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
+                    if ('\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantWebhookResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 400:
-                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
-                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
+                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantWebhookResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
+            $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantWebhookResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -855,23 +795,7 @@ class ShipmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
+                        '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantWebhookResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -882,19 +806,17 @@ class ShipmentApi
     }
 
     /**
-     * Operation shipmentGetShipmentLabelCarriersAsync
+     * Operation webhooksGetAllAsync
      *
-     * Get carriers for channel provided shipping labels
+     * Get Webhooks.
      *
-     * @param  string $merchantOrderNo The merchant&#39;s order reference. (required)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLabelCarrierRequest $merchantShipmentLabelCarrierRequest The parcel information (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function shipmentGetShipmentLabelCarriersAsync($merchantOrderNo, $merchantShipmentLabelCarrierRequest = null)
+    public function webhooksGetAllAsync()
     {
-        return $this->shipmentGetShipmentLabelCarriersAsyncWithHttpInfo($merchantOrderNo, $merchantShipmentLabelCarrierRequest)
+        return $this->webhooksGetAllAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -903,20 +825,18 @@ class ShipmentApi
     }
 
     /**
-     * Operation shipmentGetShipmentLabelCarriersAsyncWithHttpInfo
+     * Operation webhooksGetAllAsyncWithHttpInfo
      *
-     * Get carriers for channel provided shipping labels
+     * Get Webhooks.
      *
-     * @param  string $merchantOrderNo The merchant&#39;s order reference. (required)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLabelCarrierRequest $merchantShipmentLabelCarrierRequest The parcel information (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function shipmentGetShipmentLabelCarriersAsyncWithHttpInfo($merchantOrderNo, $merchantShipmentLabelCarrierRequest = null)
+    public function webhooksGetAllAsyncWithHttpInfo()
     {
-        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
-        $request = $this->shipmentGetShipmentLabelCarriersRequest($merchantOrderNo, $merchantShipmentLabelCarrierRequest);
+        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantWebhookResponse';
+        $request = $this->webhooksGetAllRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -952,24 +872,16 @@ class ShipmentApi
     }
 
     /**
-     * Create request for operation 'shipmentGetShipmentLabelCarriers'
+     * Create request for operation 'webhooksGetAll'
      *
-     * @param  string $merchantOrderNo The merchant&#39;s order reference. (required)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLabelCarrierRequest $merchantShipmentLabelCarrierRequest The parcel information (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function shipmentGetShipmentLabelCarriersRequest($merchantOrderNo, $merchantShipmentLabelCarrierRequest = null)
+    public function webhooksGetAllRequest()
     {
-        // verify the required parameter 'merchantOrderNo' is set
-        if ($merchantOrderNo === null || (is_array($merchantOrderNo) && count($merchantOrderNo) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $merchantOrderNo when calling shipmentGetShipmentLabelCarriers'
-            );
-        }
 
-        $resourcePath = '/v2/carriers/{merchantOrderNo}';
+        $resourcePath = '/v2/webhooks';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -978,14 +890,6 @@ class ShipmentApi
 
 
 
-        // path params
-        if ($merchantOrderNo !== null) {
-            $resourcePath = str_replace(
-                '{' . 'merchantOrderNo' . '}',
-                ObjectSerializer::toPathValue($merchantOrderNo),
-                $resourcePath
-            );
-        }
 
 
         if ($multipart) {
@@ -995,301 +899,6 @@ class ShipmentApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json-patch+json', 'application/json', 'application/_*+json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($merchantShipmentLabelCarrierRequest)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($merchantShipmentLabelCarrierRequest));
-            } else {
-                $httpBody = $merchantShipmentLabelCarrierRequest;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('apikey');
-        if ($apiKey !== null) {
-            $queryParams['apikey'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation shipmentShippingLabel
-     *
-     * Download shipping label.
-     *
-     * @param  string $merchantShipmentNo The unique shipment reference as used by the merchant. (required)
-     *
-     * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \SplFileObject|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse
-     */
-    public function shipmentShippingLabel($merchantShipmentNo)
-    {
-        list($response) = $this->shipmentShippingLabelWithHttpInfo($merchantShipmentNo);
-        return $response;
-    }
-
-    /**
-     * Operation shipmentShippingLabelWithHttpInfo
-     *
-     * Download shipping label.
-     *
-     * @param  string $merchantShipmentNo The unique shipment reference as used by the merchant. (required)
-     *
-     * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \SplFileObject|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function shipmentShippingLabelWithHttpInfo($merchantShipmentNo)
-    {
-        $request = $this->shipmentShippingLabelRequest($merchantShipmentNo);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\SplFileObject' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\SplFileObject', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
-                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\SplFileObject';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SplFileObject',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation shipmentShippingLabelAsync
-     *
-     * Download shipping label.
-     *
-     * @param  string $merchantShipmentNo The unique shipment reference as used by the merchant. (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function shipmentShippingLabelAsync($merchantShipmentNo)
-    {
-        return $this->shipmentShippingLabelAsyncWithHttpInfo($merchantShipmentNo)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation shipmentShippingLabelAsyncWithHttpInfo
-     *
-     * Download shipping label.
-     *
-     * @param  string $merchantShipmentNo The unique shipment reference as used by the merchant. (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function shipmentShippingLabelAsyncWithHttpInfo($merchantShipmentNo)
-    {
-        $returnType = '\SplFileObject';
-        $request = $this->shipmentShippingLabelRequest($merchantShipmentNo);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'shipmentShippingLabel'
-     *
-     * @param  string $merchantShipmentNo The unique shipment reference as used by the merchant. (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function shipmentShippingLabelRequest($merchantShipmentNo)
-    {
-        // verify the required parameter 'merchantShipmentNo' is set
-        if ($merchantShipmentNo === null || (is_array($merchantShipmentNo) && count($merchantShipmentNo) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $merchantShipmentNo when calling shipmentShippingLabel'
-            );
-        }
-
-        $resourcePath = '/v2/orders/{merchantShipmentNo}/shippinglabel';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($merchantShipmentNo !== null) {
-            $resourcePath = str_replace(
-                '{' . 'merchantShipmentNo' . '}',
-                ObjectSerializer::toPathValue($merchantShipmentNo),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/vnd.shippingLabel', 'application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/vnd.shippingLabel', 'application/json'],
                 []
             );
         }
@@ -1346,38 +955,36 @@ class ShipmentApi
     }
 
     /**
-     * Operation shipmentUpdate
+     * Operation webhooksUpdate
      *
-     * Update Shipment.
+     * Update Webhook.
      *
-     * @param  string $merchantShipmentNo The merchant&#39;s shipment reference. (required)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentTrackingRequest $merchantShipmentTrackingRequest The updated tracking information. (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantWebhookRequest $merchantWebhookRequest merchantWebhookRequest (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse
      */
-    public function shipmentUpdate($merchantShipmentNo, $merchantShipmentTrackingRequest = null)
+    public function webhooksUpdate($merchantWebhookRequest = null)
     {
-        list($response) = $this->shipmentUpdateWithHttpInfo($merchantShipmentNo, $merchantShipmentTrackingRequest);
+        list($response) = $this->webhooksUpdateWithHttpInfo($merchantWebhookRequest);
         return $response;
     }
 
     /**
-     * Operation shipmentUpdateWithHttpInfo
+     * Operation webhooksUpdateWithHttpInfo
      *
-     * Update Shipment.
+     * Update Webhook.
      *
-     * @param  string $merchantShipmentNo The merchant&#39;s shipment reference. (required)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentTrackingRequest $merchantShipmentTrackingRequest The updated tracking information. (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantWebhookRequest $merchantWebhookRequest (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function shipmentUpdateWithHttpInfo($merchantShipmentNo, $merchantShipmentTrackingRequest = null)
+    public function webhooksUpdateWithHttpInfo($merchantWebhookRequest = null)
     {
-        $request = $this->shipmentUpdateRequest($merchantShipmentNo, $merchantShipmentTrackingRequest);
+        $request = $this->webhooksUpdateRequest($merchantWebhookRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1491,19 +1098,18 @@ class ShipmentApi
     }
 
     /**
-     * Operation shipmentUpdateAsync
+     * Operation webhooksUpdateAsync
      *
-     * Update Shipment.
+     * Update Webhook.
      *
-     * @param  string $merchantShipmentNo The merchant&#39;s shipment reference. (required)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentTrackingRequest $merchantShipmentTrackingRequest The updated tracking information. (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantWebhookRequest $merchantWebhookRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function shipmentUpdateAsync($merchantShipmentNo, $merchantShipmentTrackingRequest = null)
+    public function webhooksUpdateAsync($merchantWebhookRequest = null)
     {
-        return $this->shipmentUpdateAsyncWithHttpInfo($merchantShipmentNo, $merchantShipmentTrackingRequest)
+        return $this->webhooksUpdateAsyncWithHttpInfo($merchantWebhookRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1512,20 +1118,19 @@ class ShipmentApi
     }
 
     /**
-     * Operation shipmentUpdateAsyncWithHttpInfo
+     * Operation webhooksUpdateAsyncWithHttpInfo
      *
-     * Update Shipment.
+     * Update Webhook.
      *
-     * @param  string $merchantShipmentNo The merchant&#39;s shipment reference. (required)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentTrackingRequest $merchantShipmentTrackingRequest The updated tracking information. (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantWebhookRequest $merchantWebhookRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function shipmentUpdateAsyncWithHttpInfo($merchantShipmentNo, $merchantShipmentTrackingRequest = null)
+    public function webhooksUpdateAsyncWithHttpInfo($merchantWebhookRequest = null)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
-        $request = $this->shipmentUpdateRequest($merchantShipmentNo, $merchantShipmentTrackingRequest);
+        $request = $this->webhooksUpdateRequest($merchantWebhookRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1561,24 +1166,17 @@ class ShipmentApi
     }
 
     /**
-     * Create request for operation 'shipmentUpdate'
+     * Create request for operation 'webhooksUpdate'
      *
-     * @param  string $merchantShipmentNo The merchant&#39;s shipment reference. (required)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentTrackingRequest $merchantShipmentTrackingRequest The updated tracking information. (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantWebhookRequest $merchantWebhookRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function shipmentUpdateRequest($merchantShipmentNo, $merchantShipmentTrackingRequest = null)
+    public function webhooksUpdateRequest($merchantWebhookRequest = null)
     {
-        // verify the required parameter 'merchantShipmentNo' is set
-        if ($merchantShipmentNo === null || (is_array($merchantShipmentNo) && count($merchantShipmentNo) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $merchantShipmentNo when calling shipmentUpdate'
-            );
-        }
 
-        $resourcePath = '/v2/shipments/{merchantShipmentNo}';
+        $resourcePath = '/v2/webhooks';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1587,14 +1185,6 @@ class ShipmentApi
 
 
 
-        // path params
-        if ($merchantShipmentNo !== null) {
-            $resourcePath = str_replace(
-                '{' . 'merchantShipmentNo' . '}',
-                ObjectSerializer::toPathValue($merchantShipmentNo),
-                $resourcePath
-            );
-        }
 
 
         if ($multipart) {
@@ -1609,11 +1199,11 @@ class ShipmentApi
         }
 
         // for model (json/xml)
-        if (isset($merchantShipmentTrackingRequest)) {
+        if (isset($merchantWebhookRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($merchantShipmentTrackingRequest));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($merchantWebhookRequest));
             } else {
-                $httpBody = $merchantShipmentTrackingRequest;
+                $httpBody = $merchantWebhookRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

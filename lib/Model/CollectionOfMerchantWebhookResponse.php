@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantOrderAcknowledgementRequest
+ * CollectionOfMerchantWebhookResponse
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * MerchantOrderAcknowledgementRequest Class Doc Comment
+ * CollectionOfMerchantWebhookResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class CollectionOfMerchantWebhookResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MerchantOrderAcknowledgementRequest';
+    protected static $openAPIModelName = 'CollectionOfMerchantWebhookResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +59,15 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'merchantOrderNo' => 'string',
-        'orderId' => 'int'
+        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantWebhookResponse[]',
+        'count' => 'int',
+        'totalCount' => 'int',
+        'itemsPerPage' => 'int',
+        'statusCode' => 'int',
+        'logId' => 'int',
+        'success' => 'bool',
+        'message' => 'string',
+        'validationErrors' => 'array<string,string[]>'
     ];
 
     /**
@@ -71,8 +78,15 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'merchantOrderNo' => null,
-        'orderId' => 'int32'
+        'content' => null,
+        'count' => 'int32',
+        'totalCount' => 'int32',
+        'itemsPerPage' => 'int32',
+        'statusCode' => 'int32',
+        'logId' => 'int32',
+        'success' => null,
+        'message' => null,
+        'validationErrors' => null
     ];
 
     /**
@@ -102,8 +116,15 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchantOrderNo' => 'MerchantOrderNo',
-        'orderId' => 'OrderId'
+        'content' => 'Content',
+        'count' => 'Count',
+        'totalCount' => 'TotalCount',
+        'itemsPerPage' => 'ItemsPerPage',
+        'statusCode' => 'StatusCode',
+        'logId' => 'LogId',
+        'success' => 'Success',
+        'message' => 'Message',
+        'validationErrors' => 'ValidationErrors'
     ];
 
     /**
@@ -112,8 +133,15 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchantOrderNo' => 'setMerchantOrderNo',
-        'orderId' => 'setOrderId'
+        'content' => 'setContent',
+        'count' => 'setCount',
+        'totalCount' => 'setTotalCount',
+        'itemsPerPage' => 'setItemsPerPage',
+        'statusCode' => 'setStatusCode',
+        'logId' => 'setLogId',
+        'success' => 'setSuccess',
+        'message' => 'setMessage',
+        'validationErrors' => 'setValidationErrors'
     ];
 
     /**
@@ -122,8 +150,15 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchantOrderNo' => 'getMerchantOrderNo',
-        'orderId' => 'getOrderId'
+        'content' => 'getContent',
+        'count' => 'getCount',
+        'totalCount' => 'getTotalCount',
+        'itemsPerPage' => 'getItemsPerPage',
+        'statusCode' => 'getStatusCode',
+        'logId' => 'getLogId',
+        'success' => 'getSuccess',
+        'message' => 'getMessage',
+        'validationErrors' => 'getValidationErrors'
     ];
 
     /**
@@ -183,8 +218,15 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchantOrderNo'] = $data['merchantOrderNo'] ?? null;
-        $this->container['orderId'] = $data['orderId'] ?? null;
+        $this->container['content'] = $data['content'] ?? null;
+        $this->container['count'] = $data['count'] ?? null;
+        $this->container['totalCount'] = $data['totalCount'] ?? null;
+        $this->container['itemsPerPage'] = $data['itemsPerPage'] ?? null;
+        $this->container['statusCode'] = $data['statusCode'] ?? null;
+        $this->container['logId'] = $data['logId'] ?? null;
+        $this->container['success'] = $data['success'] ?? null;
+        $this->container['message'] = $data['message'] ?? null;
+        $this->container['validationErrors'] = $data['validationErrors'] ?? null;
     }
 
     /**
@@ -196,20 +238,6 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['merchantOrderNo'] === null) {
-            $invalidProperties[] = "'merchantOrderNo' can't be null";
-        }
-        if ((mb_strlen($this->container['merchantOrderNo']) > 50)) {
-            $invalidProperties[] = "invalid value for 'merchantOrderNo', the character length must be smaller than or equal to 50.";
-        }
-
-        if ((mb_strlen($this->container['merchantOrderNo']) < 0)) {
-            $invalidProperties[] = "invalid value for 'merchantOrderNo', the character length must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['orderId'] === null) {
-            $invalidProperties[] = "'orderId' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -226,56 +254,217 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets merchantOrderNo
+     * Gets content
      *
-     * @return string
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantWebhookResponse[]|null
      */
-    public function getMerchantOrderNo()
+    public function getContent()
     {
-        return $this->container['merchantOrderNo'];
+        return $this->container['content'];
     }
 
     /**
-     * Sets merchantOrderNo
+     * Sets content
      *
-     * @param string $merchantOrderNo Your own order reference, this will be used in consecutive order processing API calls.
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantWebhookResponse[]|null $content content
      *
      * @return self
      */
-    public function setMerchantOrderNo($merchantOrderNo)
+    public function setContent($content)
     {
-        if ((mb_strlen($merchantOrderNo) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $merchantOrderNo when calling MerchantOrderAcknowledgementRequest., must be smaller than or equal to 50.');
-        }
-        if ((mb_strlen($merchantOrderNo) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $merchantOrderNo when calling MerchantOrderAcknowledgementRequest., must be bigger than or equal to 0.');
-        }
-
-        $this->container['merchantOrderNo'] = $merchantOrderNo;
+        $this->container['content'] = $content;
 
         return $this;
     }
 
     /**
-     * Gets orderId
+     * Gets count
      *
-     * @return int
+     * @return int|null
      */
-    public function getOrderId()
+    public function getCount()
     {
-        return $this->container['orderId'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets orderId
+     * Sets count
      *
-     * @param int $orderId The ChannelEngine order ID of the order you would like to acknowledge.
+     * @param int|null $count count
      *
      * @return self
      */
-    public function setOrderId($orderId)
+    public function setCount($count)
     {
-        $this->container['orderId'] = $orderId;
+        $this->container['count'] = $count;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalCount
+     *
+     * @return int|null
+     */
+    public function getTotalCount()
+    {
+        return $this->container['totalCount'];
+    }
+
+    /**
+     * Sets totalCount
+     *
+     * @param int|null $totalCount totalCount
+     *
+     * @return self
+     */
+    public function setTotalCount($totalCount)
+    {
+        $this->container['totalCount'] = $totalCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets itemsPerPage
+     *
+     * @return int|null
+     */
+    public function getItemsPerPage()
+    {
+        return $this->container['itemsPerPage'];
+    }
+
+    /**
+     * Sets itemsPerPage
+     *
+     * @param int|null $itemsPerPage itemsPerPage
+     *
+     * @return self
+     */
+    public function setItemsPerPage($itemsPerPage)
+    {
+        $this->container['itemsPerPage'] = $itemsPerPage;
+
+        return $this;
+    }
+
+    /**
+     * Gets statusCode
+     *
+     * @return int|null
+     */
+    public function getStatusCode()
+    {
+        return $this->container['statusCode'];
+    }
+
+    /**
+     * Sets statusCode
+     *
+     * @param int|null $statusCode statusCode
+     *
+     * @return self
+     */
+    public function setStatusCode($statusCode)
+    {
+        $this->container['statusCode'] = $statusCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets logId
+     *
+     * @return int|null
+     */
+    public function getLogId()
+    {
+        return $this->container['logId'];
+    }
+
+    /**
+     * Sets logId
+     *
+     * @param int|null $logId logId
+     *
+     * @return self
+     */
+    public function setLogId($logId)
+    {
+        $this->container['logId'] = $logId;
+
+        return $this;
+    }
+
+    /**
+     * Gets success
+     *
+     * @return bool|null
+     */
+    public function getSuccess()
+    {
+        return $this->container['success'];
+    }
+
+    /**
+     * Sets success
+     *
+     * @param bool|null $success success
+     *
+     * @return self
+     */
+    public function setSuccess($success)
+    {
+        $this->container['success'] = $success;
+
+        return $this;
+    }
+
+    /**
+     * Gets message
+     *
+     * @return string|null
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     *
+     * @param string|null $message message
+     *
+     * @return self
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets validationErrors
+     *
+     * @return array<string,string[]>|null
+     */
+    public function getValidationErrors()
+    {
+        return $this->container['validationErrors'];
+    }
+
+    /**
+     * Sets validationErrors
+     *
+     * @param array<string,string[]>|null $validationErrors validationErrors
+     *
+     * @return self
+     */
+    public function setValidationErrors($validationErrors)
+    {
+        $this->container['validationErrors'] = $validationErrors;
 
         return $this;
     }
