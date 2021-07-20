@@ -15,6 +15,7 @@ lib/Api/ProductBundleApi.php
 lib/Api/ReturnApi.php
 lib/Api/ShipmentApi.php
 lib/Api/StockLocationApi.php
+lib/Api/WebhookApi.php
 lib/Configuration.php
 lib/HeaderSelector.php
 lib/Model/ApiResponse.php
@@ -31,6 +32,7 @@ lib/Model/CollectionOfMerchantProductResponse.php
 lib/Model/CollectionOfMerchantReturnResponse.php
 lib/Model/CollectionOfMerchantSingleOrderReturnResponse.php
 lib/Model/CollectionOfMerchantStockLocationResponse.php
+lib/Model/CollectionOfMerchantWebhookResponse.php
 lib/Model/Condition.php
 lib/Model/CreatorFilter.php
 lib/Model/ExtraDataType.php
@@ -72,6 +74,8 @@ lib/Model/MerchantSingleOrderReturnLineResponse.php
 lib/Model/MerchantSingleOrderReturnResponse.php
 lib/Model/MerchantStockLocationResponse.php
 lib/Model/MerchantStockPriceUpdateRequest.php
+lib/Model/MerchantWebhookRequest.php
+lib/Model/MerchantWebhookResponse.php
 lib/Model/ModelInterface.php
 lib/Model/NotificationType.php
 lib/Model/Operation.php
@@ -89,5 +93,6 @@ lib/Model/SingleOfDictionaryOfStringAndListOfString.php
 lib/Model/SingleOfMerchantProductResponse.php
 lib/Model/SingleOfProductCreationResult.php
 lib/Model/VatRateType.php
+lib/Model/WebhookEventType.php
 lib/ObjectSerializer.php
 phpunit.xml.dist

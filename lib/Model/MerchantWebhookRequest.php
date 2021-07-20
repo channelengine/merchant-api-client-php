@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantOrderAcknowledgementRequest
+ * MerchantWebhookRequest
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * MerchantOrderAcknowledgementRequest Class Doc Comment
+ * MerchantWebhookRequest Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class MerchantWebhookRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MerchantOrderAcknowledgementRequest';
+    protected static $openAPIModelName = 'MerchantWebhookRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +59,10 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'merchantOrderNo' => 'string',
-        'orderId' => 'int'
+        'name' => 'string',
+        'url' => 'string',
+        'isActive' => 'bool',
+        'events' => '\ChannelEngine\Merchant\ApiClient\Model\WebhookEventType[]'
     ];
 
     /**
@@ -71,8 +73,10 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'merchantOrderNo' => null,
-        'orderId' => 'int32'
+        'name' => null,
+        'url' => null,
+        'isActive' => null,
+        'events' => null
     ];
 
     /**
@@ -102,8 +106,10 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchantOrderNo' => 'MerchantOrderNo',
-        'orderId' => 'OrderId'
+        'name' => 'Name',
+        'url' => 'Url',
+        'isActive' => 'IsActive',
+        'events' => 'Events'
     ];
 
     /**
@@ -112,8 +118,10 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchantOrderNo' => 'setMerchantOrderNo',
-        'orderId' => 'setOrderId'
+        'name' => 'setName',
+        'url' => 'setUrl',
+        'isActive' => 'setIsActive',
+        'events' => 'setEvents'
     ];
 
     /**
@@ -122,8 +130,10 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchantOrderNo' => 'getMerchantOrderNo',
-        'orderId' => 'getOrderId'
+        'name' => 'getName',
+        'url' => 'getUrl',
+        'isActive' => 'getIsActive',
+        'events' => 'getEvents'
     ];
 
     /**
@@ -183,8 +193,10 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchantOrderNo'] = $data['merchantOrderNo'] ?? null;
-        $this->container['orderId'] = $data['orderId'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
+        $this->container['isActive'] = $data['isActive'] ?? null;
+        $this->container['events'] = $data['events'] ?? null;
     }
 
     /**
@@ -196,19 +208,30 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['merchantOrderNo'] === null) {
-            $invalidProperties[] = "'merchantOrderNo' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
-        if ((mb_strlen($this->container['merchantOrderNo']) > 50)) {
-            $invalidProperties[] = "invalid value for 'merchantOrderNo', the character length must be smaller than or equal to 50.";
-        }
-
-        if ((mb_strlen($this->container['merchantOrderNo']) < 0)) {
-            $invalidProperties[] = "invalid value for 'merchantOrderNo', the character length must be bigger than or equal to 0.";
+        if ((mb_strlen($this->container['name']) > 128)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 128.";
         }
 
-        if ($this->container['orderId'] === null) {
-            $invalidProperties[] = "'orderId' can't be null";
+        if ((mb_strlen($this->container['name']) < 0)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['url'] === null) {
+            $invalidProperties[] = "'url' can't be null";
+        }
+        if ((mb_strlen($this->container['url']) > 1028)) {
+            $invalidProperties[] = "invalid value for 'url', the character length must be smaller than or equal to 1028.";
+        }
+
+        if ((mb_strlen($this->container['url']) < 0)) {
+            $invalidProperties[] = "invalid value for 'url', the character length must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['events'] === null) {
+            $invalidProperties[] = "'events' can't be null";
         }
         return $invalidProperties;
     }
@@ -226,56 +249,111 @@ class MerchantOrderAcknowledgementRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets merchantOrderNo
+     * Gets name
      *
      * @return string
      */
-    public function getMerchantOrderNo()
+    public function getName()
     {
-        return $this->container['merchantOrderNo'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets merchantOrderNo
+     * Sets name
      *
-     * @param string $merchantOrderNo Your own order reference, this will be used in consecutive order processing API calls.
+     * @param string $name The unique webhook name.
      *
      * @return self
      */
-    public function setMerchantOrderNo($merchantOrderNo)
+    public function setName($name)
     {
-        if ((mb_strlen($merchantOrderNo) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $merchantOrderNo when calling MerchantOrderAcknowledgementRequest., must be smaller than or equal to 50.');
+        if ((mb_strlen($name) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling MerchantWebhookRequest., must be smaller than or equal to 128.');
         }
-        if ((mb_strlen($merchantOrderNo) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $merchantOrderNo when calling MerchantOrderAcknowledgementRequest., must be bigger than or equal to 0.');
+        if ((mb_strlen($name) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling MerchantWebhookRequest., must be bigger than or equal to 0.');
         }
 
-        $this->container['merchantOrderNo'] = $merchantOrderNo;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets orderId
+     * Gets url
      *
-     * @return int
+     * @return string
      */
-    public function getOrderId()
+    public function getUrl()
     {
-        return $this->container['orderId'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets orderId
+     * Sets url
      *
-     * @param int $orderId The ChannelEngine order ID of the order you would like to acknowledge.
+     * @param string $url The callback URL using by the webhook.
      *
      * @return self
      */
-    public function setOrderId($orderId)
+    public function setUrl($url)
     {
-        $this->container['orderId'] = $orderId;
+        if ((mb_strlen($url) > 1028)) {
+            throw new \InvalidArgumentException('invalid length for $url when calling MerchantWebhookRequest., must be smaller than or equal to 1028.');
+        }
+        if ((mb_strlen($url) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $url when calling MerchantWebhookRequest., must be bigger than or equal to 0.');
+        }
+
+        $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets isActive
+     *
+     * @return bool|null
+     */
+    public function getIsActive()
+    {
+        return $this->container['isActive'];
+    }
+
+    /**
+     * Sets isActive
+     *
+     * @param bool|null $isActive Determining if the webhook should be active and callbacks should proceed or not.
+     *
+     * @return self
+     */
+    public function setIsActive($isActive)
+    {
+        $this->container['isActive'] = $isActive;
+
+        return $this;
+    }
+
+    /**
+     * Gets events
+     *
+     * @return \ChannelEngine\Merchant\ApiClient\Model\WebhookEventType[]
+     */
+    public function getEvents()
+    {
+        return $this->container['events'];
+    }
+
+    /**
+     * Sets events
+     *
+     * @param \ChannelEngine\Merchant\ApiClient\Model\WebhookEventType[] $events Events supported by the webhook.
+     *
+     * @return self
+     */
+    public function setEvents($events)
+    {
+        $this->container['events'] = $events;
 
         return $this;
     }

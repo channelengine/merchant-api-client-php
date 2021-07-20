@@ -1,6 +1,6 @@
 <?php
 /**
- * ListedProductExportStatus
+ * WebhookEventType
  *
  * PHP version 7.2
  *
@@ -30,22 +30,24 @@ namespace ChannelEngine\Merchant\ApiClient\Model;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * ListedProductExportStatus Class Doc Comment
+ * WebhookEventType Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ListedProductExportStatus
+class WebhookEventType
 {
     /**
      * Possible values of this enum
      */
-    const CREATED = 'CREATED';
-    const UPDATED = 'UPDATED';
-    const DELETED = 'DELETED';
-    const CREATE_FAILED = 'CREATE_FAILED';
+    const ORDERS_CHANGE = 'ORDERS_CHANGE';
+    const PRODUCTS_CHANGE = 'PRODUCTS_CHANGE';
+    const RETURNS_CHANGE = 'RETURNS_CHANGE';
+    const SHIPMENTS_CHANGE = 'SHIPMENTS_CHANGE';
+    const NOTIFICATIONS_CHANGE = 'NOTIFICATIONS_CHANGE';
+    const BUNDLE_PRODUCTS_CHANGE = 'BUNDLE_PRODUCTS_CHANGE';
     
     /**
      * Gets allowable values of the enum
@@ -54,10 +56,12 @@ class ListedProductExportStatus
     public static function getAllowableEnumValues()
     {
         return [
-            self::CREATED,
-            self::UPDATED,
-            self::DELETED,
-            self::CREATE_FAILED,
+            self::ORDERS_CHANGE,
+            self::PRODUCTS_CHANGE,
+            self::RETURNS_CHANGE,
+            self::SHIPMENTS_CHANGE,
+            self::NOTIFICATIONS_CHANGE,
+            self::BUNDLE_PRODUCTS_CHANGE,
         ];
     }
 }
