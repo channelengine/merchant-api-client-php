@@ -1,6 +1,6 @@
 <?php
 /**
- * CollectionOfMerchantOrderResponse
+ * SettingsResponse
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * CollectionOfMerchantOrderResponse Class Doc Comment
+ * SettingsResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class SettingsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CollectionOfMerchantOrderResponse';
+    protected static $openAPIModelName = 'SettingsResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,15 +59,8 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]',
-        'count' => 'int',
-        'totalCount' => 'int',
-        'itemsPerPage' => 'int',
-        'statusCode' => 'int',
-        'logId' => 'int',
-        'success' => 'bool',
-        'message' => 'string',
-        'validationErrors' => 'array<string,string[]>'
+        'shipment' => '\ChannelEngine\Merchant\ApiClient\Model\ShipmentSettingsResponse',
+        'advanced' => '\ChannelEngine\Merchant\ApiClient\Model\AdvanceSettingsResponse'
     ];
 
     /**
@@ -78,15 +71,8 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'content' => null,
-        'count' => 'int32',
-        'totalCount' => 'int32',
-        'itemsPerPage' => 'int32',
-        'statusCode' => 'int32',
-        'logId' => 'int32',
-        'success' => null,
-        'message' => null,
-        'validationErrors' => null
+        'shipment' => null,
+        'advanced' => null
     ];
 
     /**
@@ -116,15 +102,8 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'content' => 'Content',
-        'count' => 'Count',
-        'totalCount' => 'TotalCount',
-        'itemsPerPage' => 'ItemsPerPage',
-        'statusCode' => 'StatusCode',
-        'logId' => 'LogId',
-        'success' => 'Success',
-        'message' => 'Message',
-        'validationErrors' => 'ValidationErrors'
+        'shipment' => 'Shipment',
+        'advanced' => 'Advanced'
     ];
 
     /**
@@ -133,15 +112,8 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'content' => 'setContent',
-        'count' => 'setCount',
-        'totalCount' => 'setTotalCount',
-        'itemsPerPage' => 'setItemsPerPage',
-        'statusCode' => 'setStatusCode',
-        'logId' => 'setLogId',
-        'success' => 'setSuccess',
-        'message' => 'setMessage',
-        'validationErrors' => 'setValidationErrors'
+        'shipment' => 'setShipment',
+        'advanced' => 'setAdvanced'
     ];
 
     /**
@@ -150,15 +122,8 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'content' => 'getContent',
-        'count' => 'getCount',
-        'totalCount' => 'getTotalCount',
-        'itemsPerPage' => 'getItemsPerPage',
-        'statusCode' => 'getStatusCode',
-        'logId' => 'getLogId',
-        'success' => 'getSuccess',
-        'message' => 'getMessage',
-        'validationErrors' => 'getValidationErrors'
+        'shipment' => 'getShipment',
+        'advanced' => 'getAdvanced'
     ];
 
     /**
@@ -218,15 +183,8 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['content'] = $data['content'] ?? null;
-        $this->container['count'] = $data['count'] ?? null;
-        $this->container['totalCount'] = $data['totalCount'] ?? null;
-        $this->container['itemsPerPage'] = $data['itemsPerPage'] ?? null;
-        $this->container['statusCode'] = $data['statusCode'] ?? null;
-        $this->container['logId'] = $data['logId'] ?? null;
-        $this->container['success'] = $data['success'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['validationErrors'] = $data['validationErrors'] ?? null;
+        $this->container['shipment'] = $data['shipment'] ?? null;
+        $this->container['advanced'] = $data['advanced'] ?? null;
     }
 
     /**
@@ -254,217 +212,49 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets content
+     * Gets shipment
      *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]|null
+     * @return \ChannelEngine\Merchant\ApiClient\Model\ShipmentSettingsResponse|null
      */
-    public function getContent()
+    public function getShipment()
     {
-        return $this->container['content'];
+        return $this->container['shipment'];
     }
 
     /**
-     * Sets content
+     * Sets shipment
      *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]|null $content content
+     * @param \ChannelEngine\Merchant\ApiClient\Model\ShipmentSettingsResponse|null $shipment shipment
      *
      * @return self
      */
-    public function setContent($content)
+    public function setShipment($shipment)
     {
-        $this->container['content'] = $content;
+        $this->container['shipment'] = $shipment;
 
         return $this;
     }
 
     /**
-     * Gets count
+     * Gets advanced
      *
-     * @return int|null
+     * @return \ChannelEngine\Merchant\ApiClient\Model\AdvanceSettingsResponse|null
      */
-    public function getCount()
+    public function getAdvanced()
     {
-        return $this->container['count'];
+        return $this->container['advanced'];
     }
 
     /**
-     * Sets count
+     * Sets advanced
      *
-     * @param int|null $count count
+     * @param \ChannelEngine\Merchant\ApiClient\Model\AdvanceSettingsResponse|null $advanced advanced
      *
      * @return self
      */
-    public function setCount($count)
+    public function setAdvanced($advanced)
     {
-        $this->container['count'] = $count;
-
-        return $this;
-    }
-
-    /**
-     * Gets totalCount
-     *
-     * @return int|null
-     */
-    public function getTotalCount()
-    {
-        return $this->container['totalCount'];
-    }
-
-    /**
-     * Sets totalCount
-     *
-     * @param int|null $totalCount totalCount
-     *
-     * @return self
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->container['totalCount'] = $totalCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets itemsPerPage
-     *
-     * @return int|null
-     */
-    public function getItemsPerPage()
-    {
-        return $this->container['itemsPerPage'];
-    }
-
-    /**
-     * Sets itemsPerPage
-     *
-     * @param int|null $itemsPerPage itemsPerPage
-     *
-     * @return self
-     */
-    public function setItemsPerPage($itemsPerPage)
-    {
-        $this->container['itemsPerPage'] = $itemsPerPage;
-
-        return $this;
-    }
-
-    /**
-     * Gets statusCode
-     *
-     * @return int|null
-     */
-    public function getStatusCode()
-    {
-        return $this->container['statusCode'];
-    }
-
-    /**
-     * Sets statusCode
-     *
-     * @param int|null $statusCode statusCode
-     *
-     * @return self
-     */
-    public function setStatusCode($statusCode)
-    {
-        $this->container['statusCode'] = $statusCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets logId
-     *
-     * @return int|null
-     */
-    public function getLogId()
-    {
-        return $this->container['logId'];
-    }
-
-    /**
-     * Sets logId
-     *
-     * @param int|null $logId logId
-     *
-     * @return self
-     */
-    public function setLogId($logId)
-    {
-        $this->container['logId'] = $logId;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool|null
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool|null $success success
-     *
-     * @return self
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string|null
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string|null $message message
-     *
-     * @return self
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets validationErrors
-     *
-     * @return array<string,string[]>|null
-     */
-    public function getValidationErrors()
-    {
-        return $this->container['validationErrors'];
-    }
-
-    /**
-     * Sets validationErrors
-     *
-     * @param array<string,string[]>|null $validationErrors validationErrors
-     *
-     * @return self
-     */
-    public function setValidationErrors($validationErrors)
-    {
-        $this->container['validationErrors'] = $validationErrors;
+        $this->container['advanced'] = $advanced;
 
         return $this;
     }

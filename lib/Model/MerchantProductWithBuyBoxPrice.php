@@ -1,6 +1,6 @@
 <?php
 /**
- * CollectionOfMerchantOrderResponse
+ * MerchantProductWithBuyBoxPrice
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * CollectionOfMerchantOrderResponse Class Doc Comment
+ * MerchantProductWithBuyBoxPrice Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class MerchantProductWithBuyBoxPrice implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CollectionOfMerchantOrderResponse';
+    protected static $openAPIModelName = 'MerchantProductWithBuyBoxPrice';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,15 +59,11 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]',
-        'count' => 'int',
-        'totalCount' => 'int',
-        'itemsPerPage' => 'int',
-        'statusCode' => 'int',
-        'logId' => 'int',
-        'success' => 'bool',
-        'message' => 'string',
-        'validationErrors' => 'array<string,string[]>'
+        'sku' => 'string',
+        'gtin' => 'string',
+        'buyBoxPrice' => 'float',
+        'buyBoxPriceInclShipping' => 'float',
+        'isMerchantBuyBoxWinner' => 'bool'
     ];
 
     /**
@@ -78,15 +74,11 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'content' => null,
-        'count' => 'int32',
-        'totalCount' => 'int32',
-        'itemsPerPage' => 'int32',
-        'statusCode' => 'int32',
-        'logId' => 'int32',
-        'success' => null,
-        'message' => null,
-        'validationErrors' => null
+        'sku' => null,
+        'gtin' => null,
+        'buyBoxPrice' => 'decimal',
+        'buyBoxPriceInclShipping' => 'decimal',
+        'isMerchantBuyBoxWinner' => null
     ];
 
     /**
@@ -116,15 +108,11 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'content' => 'Content',
-        'count' => 'Count',
-        'totalCount' => 'TotalCount',
-        'itemsPerPage' => 'ItemsPerPage',
-        'statusCode' => 'StatusCode',
-        'logId' => 'LogId',
-        'success' => 'Success',
-        'message' => 'Message',
-        'validationErrors' => 'ValidationErrors'
+        'sku' => 'Sku',
+        'gtin' => 'Gtin',
+        'buyBoxPrice' => 'BuyBoxPrice',
+        'buyBoxPriceInclShipping' => 'BuyBoxPriceInclShipping',
+        'isMerchantBuyBoxWinner' => 'IsMerchantBuyBoxWinner'
     ];
 
     /**
@@ -133,15 +121,11 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'content' => 'setContent',
-        'count' => 'setCount',
-        'totalCount' => 'setTotalCount',
-        'itemsPerPage' => 'setItemsPerPage',
-        'statusCode' => 'setStatusCode',
-        'logId' => 'setLogId',
-        'success' => 'setSuccess',
-        'message' => 'setMessage',
-        'validationErrors' => 'setValidationErrors'
+        'sku' => 'setSku',
+        'gtin' => 'setGtin',
+        'buyBoxPrice' => 'setBuyBoxPrice',
+        'buyBoxPriceInclShipping' => 'setBuyBoxPriceInclShipping',
+        'isMerchantBuyBoxWinner' => 'setIsMerchantBuyBoxWinner'
     ];
 
     /**
@@ -150,15 +134,11 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'content' => 'getContent',
-        'count' => 'getCount',
-        'totalCount' => 'getTotalCount',
-        'itemsPerPage' => 'getItemsPerPage',
-        'statusCode' => 'getStatusCode',
-        'logId' => 'getLogId',
-        'success' => 'getSuccess',
-        'message' => 'getMessage',
-        'validationErrors' => 'getValidationErrors'
+        'sku' => 'getSku',
+        'gtin' => 'getGtin',
+        'buyBoxPrice' => 'getBuyBoxPrice',
+        'buyBoxPriceInclShipping' => 'getBuyBoxPriceInclShipping',
+        'isMerchantBuyBoxWinner' => 'getIsMerchantBuyBoxWinner'
     ];
 
     /**
@@ -218,15 +198,11 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['content'] = $data['content'] ?? null;
-        $this->container['count'] = $data['count'] ?? null;
-        $this->container['totalCount'] = $data['totalCount'] ?? null;
-        $this->container['itemsPerPage'] = $data['itemsPerPage'] ?? null;
-        $this->container['statusCode'] = $data['statusCode'] ?? null;
-        $this->container['logId'] = $data['logId'] ?? null;
-        $this->container['success'] = $data['success'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['validationErrors'] = $data['validationErrors'] ?? null;
+        $this->container['sku'] = $data['sku'] ?? null;
+        $this->container['gtin'] = $data['gtin'] ?? null;
+        $this->container['buyBoxPrice'] = $data['buyBoxPrice'] ?? null;
+        $this->container['buyBoxPriceInclShipping'] = $data['buyBoxPriceInclShipping'] ?? null;
+        $this->container['isMerchantBuyBoxWinner'] = $data['isMerchantBuyBoxWinner'] ?? null;
     }
 
     /**
@@ -254,217 +230,121 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets content
-     *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]|null
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]|null $content content
-     *
-     * @return self
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     *
-     * @return int|null
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     *
-     * @param int|null $count count
-     *
-     * @return self
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
-
-        return $this;
-    }
-
-    /**
-     * Gets totalCount
-     *
-     * @return int|null
-     */
-    public function getTotalCount()
-    {
-        return $this->container['totalCount'];
-    }
-
-    /**
-     * Sets totalCount
-     *
-     * @param int|null $totalCount totalCount
-     *
-     * @return self
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->container['totalCount'] = $totalCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets itemsPerPage
-     *
-     * @return int|null
-     */
-    public function getItemsPerPage()
-    {
-        return $this->container['itemsPerPage'];
-    }
-
-    /**
-     * Sets itemsPerPage
-     *
-     * @param int|null $itemsPerPage itemsPerPage
-     *
-     * @return self
-     */
-    public function setItemsPerPage($itemsPerPage)
-    {
-        $this->container['itemsPerPage'] = $itemsPerPage;
-
-        return $this;
-    }
-
-    /**
-     * Gets statusCode
-     *
-     * @return int|null
-     */
-    public function getStatusCode()
-    {
-        return $this->container['statusCode'];
-    }
-
-    /**
-     * Sets statusCode
-     *
-     * @param int|null $statusCode statusCode
-     *
-     * @return self
-     */
-    public function setStatusCode($statusCode)
-    {
-        $this->container['statusCode'] = $statusCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets logId
-     *
-     * @return int|null
-     */
-    public function getLogId()
-    {
-        return $this->container['logId'];
-    }
-
-    /**
-     * Sets logId
-     *
-     * @param int|null $logId logId
-     *
-     * @return self
-     */
-    public function setLogId($logId)
-    {
-        $this->container['logId'] = $logId;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool|null
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool|null $success success
-     *
-     * @return self
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
+     * Gets sku
      *
      * @return string|null
      */
-    public function getMessage()
+    public function getSku()
     {
-        return $this->container['message'];
+        return $this->container['sku'];
     }
 
     /**
-     * Sets message
+     * Sets sku
      *
-     * @param string|null $message message
+     * @param string|null $sku Product SKU number
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setSku($sku)
     {
-        $this->container['message'] = $message;
+        $this->container['sku'] = $sku;
 
         return $this;
     }
 
     /**
-     * Gets validationErrors
+     * Gets gtin
      *
-     * @return array<string,string[]>|null
+     * @return string|null
      */
-    public function getValidationErrors()
+    public function getGtin()
     {
-        return $this->container['validationErrors'];
+        return $this->container['gtin'];
     }
 
     /**
-     * Sets validationErrors
+     * Sets gtin
      *
-     * @param array<string,string[]>|null $validationErrors validationErrors
+     * @param string|null $gtin Product GTIN
      *
      * @return self
      */
-    public function setValidationErrors($validationErrors)
+    public function setGtin($gtin)
     {
-        $this->container['validationErrors'] = $validationErrors;
+        $this->container['gtin'] = $gtin;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyBoxPrice
+     *
+     * @return float|null
+     */
+    public function getBuyBoxPrice()
+    {
+        return $this->container['buyBoxPrice'];
+    }
+
+    /**
+     * Sets buyBoxPrice
+     *
+     * @param float|null $buyBoxPrice Price of Buy box winner (excl. shipping cost)  Note: not all channels have a separate shipping cost field (e.g. bol.com), so can be the same as BuyBoxPriceInclShipping
+     *
+     * @return self
+     */
+    public function setBuyBoxPrice($buyBoxPrice)
+    {
+        $this->container['buyBoxPrice'] = $buyBoxPrice;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyBoxPriceInclShipping
+     *
+     * @return float|null
+     */
+    public function getBuyBoxPriceInclShipping()
+    {
+        return $this->container['buyBoxPriceInclShipping'];
+    }
+
+    /**
+     * Sets buyBoxPriceInclShipping
+     *
+     * @param float|null $buyBoxPriceInclShipping Price of Buy box winner (incl. shipping cost).  If null, then there is no data or no Buy box winner
+     *
+     * @return self
+     */
+    public function setBuyBoxPriceInclShipping($buyBoxPriceInclShipping)
+    {
+        $this->container['buyBoxPriceInclShipping'] = $buyBoxPriceInclShipping;
+
+        return $this;
+    }
+
+    /**
+     * Gets isMerchantBuyBoxWinner
+     *
+     * @return bool|null
+     */
+    public function getIsMerchantBuyBoxWinner()
+    {
+        return $this->container['isMerchantBuyBoxWinner'];
+    }
+
+    /**
+     * Sets isMerchantBuyBoxWinner
+     *
+     * @param bool|null $isMerchantBuyBoxWinner Are you the Buy box winner or not?
+     *
+     * @return self
+     */
+    public function setIsMerchantBuyBoxWinner($isMerchantBuyBoxWinner)
+    {
+        $this->container['isMerchantBuyBoxWinner'] = $isMerchantBuyBoxWinner;
 
         return $this;
     }

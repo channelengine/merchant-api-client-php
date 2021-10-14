@@ -1,6 +1,6 @@
 <?php
 /**
- * CancellationApi
+ * CompetitionPriceApi
  * PHP version 7.2
  *
  * @category Class
@@ -39,14 +39,14 @@ use ChannelEngine\Merchant\ApiClient\HeaderSelector;
 use ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * CancellationApi Class Doc Comment
+ * CompetitionPriceApi Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class CancellationApi
+class CompetitionPriceApi
 {
     /**
      * @var ClientInterface
@@ -115,36 +115,42 @@ class CancellationApi
     }
 
     /**
-     * Operation cancellationCreate
+     * Operation competitionPricesGetBuyBoxPrices
      *
-     * Create Cancellation.
+     * Get the BuyBox winner prices
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $merchantCancellationRequest merchantCancellationRequest (optional)
+     * @param  int $channelId The id of the channel (optional)
+     * @param  string[] $gtinList Search products by submitting a list of GTIN&#39;s. (optional)&lt;br /&gt;Max. 2000. (optional)
+     * @param  string[] $skuList Search products by submitting a list of Sku&#39;s. (optional)&lt;br /&gt;Max. 2000. If GtinList is already set, this one is ignored. (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse
+     * @return \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantProductWithBuyBoxPrice|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse
      */
-    public function cancellationCreate($merchantCancellationRequest = null)
+    public function competitionPricesGetBuyBoxPrices($channelId = null, $gtinList = null, $skuList = null, $page = null)
     {
-        list($response) = $this->cancellationCreateWithHttpInfo($merchantCancellationRequest);
+        list($response) = $this->competitionPricesGetBuyBoxPricesWithHttpInfo($channelId, $gtinList, $skuList, $page);
         return $response;
     }
 
     /**
-     * Operation cancellationCreateWithHttpInfo
+     * Operation competitionPricesGetBuyBoxPricesWithHttpInfo
      *
-     * Create Cancellation.
+     * Get the BuyBox winner prices
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $merchantCancellationRequest (optional)
+     * @param  int $channelId The id of the channel (optional)
+     * @param  string[] $gtinList Search products by submitting a list of GTIN&#39;s. (optional)&lt;br /&gt;Max. 2000. (optional)
+     * @param  string[] $skuList Search products by submitting a list of Sku&#39;s. (optional)&lt;br /&gt;Max. 2000. If GtinList is already set, this one is ignored. (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantProductWithBuyBoxPrice|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cancellationCreateWithHttpInfo($merchantCancellationRequest = null)
+    public function competitionPricesGetBuyBoxPricesWithHttpInfo($channelId = null, $gtinList = null, $skuList = null, $page = null)
     {
-        $request = $this->cancellationCreateRequest($merchantCancellationRequest);
+        $request = $this->competitionPricesGetBuyBoxPricesRequest($channelId, $gtinList, $skuList, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -175,15 +181,15 @@ class CancellationApi
             }
 
             switch($statusCode) {
-                case 201:
-                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
+                case 200:
+                    if ('\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantProductWithBuyBoxPrice' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
+                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantProductWithBuyBoxPrice', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -199,33 +205,9 @@ class CancellationApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
-                case 404:
-                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 409:
-                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
             }
 
-            $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
+            $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantProductWithBuyBoxPrice';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -240,31 +222,15 @@ class CancellationApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 201:
+                case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
+                        '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantProductWithBuyBoxPrice',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
@@ -278,18 +244,21 @@ class CancellationApi
     }
 
     /**
-     * Operation cancellationCreateAsync
+     * Operation competitionPricesGetBuyBoxPricesAsync
      *
-     * Create Cancellation.
+     * Get the BuyBox winner prices
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $merchantCancellationRequest (optional)
+     * @param  int $channelId The id of the channel (optional)
+     * @param  string[] $gtinList Search products by submitting a list of GTIN&#39;s. (optional)&lt;br /&gt;Max. 2000. (optional)
+     * @param  string[] $skuList Search products by submitting a list of Sku&#39;s. (optional)&lt;br /&gt;Max. 2000. If GtinList is already set, this one is ignored. (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancellationCreateAsync($merchantCancellationRequest = null)
+    public function competitionPricesGetBuyBoxPricesAsync($channelId = null, $gtinList = null, $skuList = null, $page = null)
     {
-        return $this->cancellationCreateAsyncWithHttpInfo($merchantCancellationRequest)
+        return $this->competitionPricesGetBuyBoxPricesAsyncWithHttpInfo($channelId, $gtinList, $skuList, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -298,19 +267,22 @@ class CancellationApi
     }
 
     /**
-     * Operation cancellationCreateAsyncWithHttpInfo
+     * Operation competitionPricesGetBuyBoxPricesAsyncWithHttpInfo
      *
-     * Create Cancellation.
+     * Get the BuyBox winner prices
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $merchantCancellationRequest (optional)
+     * @param  int $channelId The id of the channel (optional)
+     * @param  string[] $gtinList Search products by submitting a list of GTIN&#39;s. (optional)&lt;br /&gt;Max. 2000. (optional)
+     * @param  string[] $skuList Search products by submitting a list of Sku&#39;s. (optional)&lt;br /&gt;Max. 2000. If GtinList is already set, this one is ignored. (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancellationCreateAsyncWithHttpInfo($merchantCancellationRequest = null)
+    public function competitionPricesGetBuyBoxPricesAsyncWithHttpInfo($channelId = null, $gtinList = null, $skuList = null, $page = null)
     {
-        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
-        $request = $this->cancellationCreateRequest($merchantCancellationRequest);
+        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantProductWithBuyBoxPrice';
+        $request = $this->competitionPricesGetBuyBoxPricesRequest($channelId, $gtinList, $skuList, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -346,23 +318,70 @@ class CancellationApi
     }
 
     /**
-     * Create request for operation 'cancellationCreate'
+     * Create request for operation 'competitionPricesGetBuyBoxPrices'
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $merchantCancellationRequest (optional)
+     * @param  int $channelId The id of the channel (optional)
+     * @param  string[] $gtinList Search products by submitting a list of GTIN&#39;s. (optional)&lt;br /&gt;Max. 2000. (optional)
+     * @param  string[] $skuList Search products by submitting a list of Sku&#39;s. (optional)&lt;br /&gt;Max. 2000. If GtinList is already set, this one is ignored. (optional)
+     * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cancellationCreateRequest($merchantCancellationRequest = null)
+    public function competitionPricesGetBuyBoxPricesRequest($channelId = null, $gtinList = null, $skuList = null, $page = null)
     {
 
-        $resourcePath = '/v2/cancellations';
+        $resourcePath = '/v2/competitionprices/buyboxprices';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($channelId !== null) {
+            if('form' === 'form' && is_array($channelId)) {
+                foreach($channelId as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['channelId'] = $channelId;
+            }
+        }
+        // query params
+        if ($gtinList !== null) {
+            if('form' === 'form' && is_array($gtinList)) {
+                foreach($gtinList as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['gtinList'] = $gtinList;
+            }
+        }
+        // query params
+        if ($skuList !== null) {
+            if('form' === 'form' && is_array($skuList)) {
+                foreach($skuList as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['skuList'] = $skuList;
+            }
+        }
+        // query params
+        if ($page !== null) {
+            if('form' === 'form' && is_array($page)) {
+                foreach($page as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['page'] = $page;
+            }
+        }
 
 
 
@@ -374,18 +393,12 @@ class CancellationApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json-patch+json', 'application/json', 'application/_*+json']
+                []
             );
         }
 
         // for model (json/xml)
-        if (isset($merchantCancellationRequest)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($merchantCancellationRequest));
-            } else {
-                $httpBody = $merchantCancellationRequest;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -428,7 +441,7 @@ class CancellationApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'POST',
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
