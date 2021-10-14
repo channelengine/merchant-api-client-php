@@ -1,6 +1,6 @@
 <?php
 /**
- * CollectionOfMerchantOrderResponse
+ * SingleOfMerchantSettingsResponse
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * CollectionOfMerchantOrderResponse Class Doc Comment
+ * SingleOfMerchantSettingsResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CollectionOfMerchantOrderResponse';
+    protected static $openAPIModelName = 'SingleOfMerchantSettingsResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]',
-        'count' => 'int',
-        'totalCount' => 'int',
-        'itemsPerPage' => 'int',
+        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantSettingsResponse',
         'statusCode' => 'int',
         'logId' => 'int',
         'success' => 'bool',
@@ -79,9 +76,6 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPIFormats = [
         'content' => null,
-        'count' => 'int32',
-        'totalCount' => 'int32',
-        'itemsPerPage' => 'int32',
         'statusCode' => 'int32',
         'logId' => 'int32',
         'success' => null,
@@ -117,9 +111,6 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      */
     protected static $attributeMap = [
         'content' => 'Content',
-        'count' => 'Count',
-        'totalCount' => 'TotalCount',
-        'itemsPerPage' => 'ItemsPerPage',
         'statusCode' => 'StatusCode',
         'logId' => 'LogId',
         'success' => 'Success',
@@ -134,9 +125,6 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      */
     protected static $setters = [
         'content' => 'setContent',
-        'count' => 'setCount',
-        'totalCount' => 'setTotalCount',
-        'itemsPerPage' => 'setItemsPerPage',
         'statusCode' => 'setStatusCode',
         'logId' => 'setLogId',
         'success' => 'setSuccess',
@@ -151,9 +139,6 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      */
     protected static $getters = [
         'content' => 'getContent',
-        'count' => 'getCount',
-        'totalCount' => 'getTotalCount',
-        'itemsPerPage' => 'getItemsPerPage',
         'statusCode' => 'getStatusCode',
         'logId' => 'getLogId',
         'success' => 'getSuccess',
@@ -219,9 +204,6 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
     public function __construct(array $data = null)
     {
         $this->container['content'] = $data['content'] ?? null;
-        $this->container['count'] = $data['count'] ?? null;
-        $this->container['totalCount'] = $data['totalCount'] ?? null;
-        $this->container['itemsPerPage'] = $data['itemsPerPage'] ?? null;
         $this->container['statusCode'] = $data['statusCode'] ?? null;
         $this->container['logId'] = $data['logId'] ?? null;
         $this->container['success'] = $data['success'] ?? null;
@@ -256,7 +238,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
     /**
      * Gets content
      *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]|null
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantSettingsResponse|null
      */
     public function getContent()
     {
@@ -266,85 +248,13 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
     /**
      * Sets content
      *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]|null $content content
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantSettingsResponse|null $content content
      *
      * @return self
      */
     public function setContent($content)
     {
         $this->container['content'] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     *
-     * @return int|null
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     *
-     * @param int|null $count count
-     *
-     * @return self
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
-
-        return $this;
-    }
-
-    /**
-     * Gets totalCount
-     *
-     * @return int|null
-     */
-    public function getTotalCount()
-    {
-        return $this->container['totalCount'];
-    }
-
-    /**
-     * Sets totalCount
-     *
-     * @param int|null $totalCount totalCount
-     *
-     * @return self
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->container['totalCount'] = $totalCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets itemsPerPage
-     *
-     * @return int|null
-     */
-    public function getItemsPerPage()
-    {
-        return $this->container['itemsPerPage'];
-    }
-
-    /**
-     * Sets itemsPerPage
-     *
-     * @param int|null $itemsPerPage itemsPerPage
-     *
-     * @return self
-     */
-    public function setItemsPerPage($itemsPerPage)
-    {
-        $this->container['itemsPerPage'] = $itemsPerPage;
 
         return $this;
     }

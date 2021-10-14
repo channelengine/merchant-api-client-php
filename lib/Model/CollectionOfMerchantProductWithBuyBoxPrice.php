@@ -1,6 +1,6 @@
 <?php
 /**
- * CollectionOfMerchantOrderResponse
+ * CollectionOfMerchantProductWithBuyBoxPrice
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * CollectionOfMerchantOrderResponse Class Doc Comment
+ * CollectionOfMerchantProductWithBuyBoxPrice Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class CollectionOfMerchantProductWithBuyBoxPrice implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CollectionOfMerchantOrderResponse';
+    protected static $openAPIModelName = 'CollectionOfMerchantProductWithBuyBoxPrice';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]',
+        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantProductWithBuyBoxPrice[]',
         'count' => 'int',
         'totalCount' => 'int',
         'itemsPerPage' => 'int',
@@ -256,7 +256,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
     /**
      * Gets content
      *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]|null
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantProductWithBuyBoxPrice[]|null
      */
     public function getContent()
     {
@@ -266,7 +266,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
     /**
      * Sets content
      *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]|null $content content
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantProductWithBuyBoxPrice[]|null $content content
      *
      * @return self
      */

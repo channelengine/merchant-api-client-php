@@ -1,6 +1,6 @@
 <?php
 /**
- * CollectionOfMerchantOrderResponse
+ * MerchantSettingsResponse
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * CollectionOfMerchantOrderResponse Class Doc Comment
+ * MerchantSettingsResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class MerchantSettingsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CollectionOfMerchantOrderResponse';
+    protected static $openAPIModelName = 'MerchantSettingsResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,15 +59,12 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]',
-        'count' => 'int',
-        'totalCount' => 'int',
-        'itemsPerPage' => 'int',
-        'statusCode' => 'int',
-        'logId' => 'int',
-        'success' => 'bool',
-        'message' => 'string',
-        'validationErrors' => 'array<string,string[]>'
+        'name' => 'string',
+        'companyName' => 'string',
+        'currencyCode' => 'string',
+        'defaultCultureCode' => 'string',
+        'settings' => '\ChannelEngine\Merchant\ApiClient\Model\SettingsResponse',
+        'vat' => '\ChannelEngine\Merchant\ApiClient\Model\VatSettingsResponse[]'
     ];
 
     /**
@@ -78,15 +75,12 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'content' => null,
-        'count' => 'int32',
-        'totalCount' => 'int32',
-        'itemsPerPage' => 'int32',
-        'statusCode' => 'int32',
-        'logId' => 'int32',
-        'success' => null,
-        'message' => null,
-        'validationErrors' => null
+        'name' => null,
+        'companyName' => null,
+        'currencyCode' => null,
+        'defaultCultureCode' => null,
+        'settings' => null,
+        'vat' => null
     ];
 
     /**
@@ -116,15 +110,12 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'content' => 'Content',
-        'count' => 'Count',
-        'totalCount' => 'TotalCount',
-        'itemsPerPage' => 'ItemsPerPage',
-        'statusCode' => 'StatusCode',
-        'logId' => 'LogId',
-        'success' => 'Success',
-        'message' => 'Message',
-        'validationErrors' => 'ValidationErrors'
+        'name' => 'Name',
+        'companyName' => 'CompanyName',
+        'currencyCode' => 'CurrencyCode',
+        'defaultCultureCode' => 'DefaultCultureCode',
+        'settings' => 'Settings',
+        'vat' => 'Vat'
     ];
 
     /**
@@ -133,15 +124,12 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'content' => 'setContent',
-        'count' => 'setCount',
-        'totalCount' => 'setTotalCount',
-        'itemsPerPage' => 'setItemsPerPage',
-        'statusCode' => 'setStatusCode',
-        'logId' => 'setLogId',
-        'success' => 'setSuccess',
-        'message' => 'setMessage',
-        'validationErrors' => 'setValidationErrors'
+        'name' => 'setName',
+        'companyName' => 'setCompanyName',
+        'currencyCode' => 'setCurrencyCode',
+        'defaultCultureCode' => 'setDefaultCultureCode',
+        'settings' => 'setSettings',
+        'vat' => 'setVat'
     ];
 
     /**
@@ -150,15 +138,12 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'content' => 'getContent',
-        'count' => 'getCount',
-        'totalCount' => 'getTotalCount',
-        'itemsPerPage' => 'getItemsPerPage',
-        'statusCode' => 'getStatusCode',
-        'logId' => 'getLogId',
-        'success' => 'getSuccess',
-        'message' => 'getMessage',
-        'validationErrors' => 'getValidationErrors'
+        'name' => 'getName',
+        'companyName' => 'getCompanyName',
+        'currencyCode' => 'getCurrencyCode',
+        'defaultCultureCode' => 'getDefaultCultureCode',
+        'settings' => 'getSettings',
+        'vat' => 'getVat'
     ];
 
     /**
@@ -218,15 +203,12 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['content'] = $data['content'] ?? null;
-        $this->container['count'] = $data['count'] ?? null;
-        $this->container['totalCount'] = $data['totalCount'] ?? null;
-        $this->container['itemsPerPage'] = $data['itemsPerPage'] ?? null;
-        $this->container['statusCode'] = $data['statusCode'] ?? null;
-        $this->container['logId'] = $data['logId'] ?? null;
-        $this->container['success'] = $data['success'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['validationErrors'] = $data['validationErrors'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['companyName'] = $data['companyName'] ?? null;
+        $this->container['currencyCode'] = $data['currencyCode'] ?? null;
+        $this->container['defaultCultureCode'] = $data['defaultCultureCode'] ?? null;
+        $this->container['settings'] = $data['settings'] ?? null;
+        $this->container['vat'] = $data['vat'] ?? null;
     }
 
     /**
@@ -254,217 +236,145 @@ class CollectionOfMerchantOrderResponse implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets content
-     *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]|null
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderResponse[]|null $content content
-     *
-     * @return self
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     *
-     * @return int|null
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     *
-     * @param int|null $count count
-     *
-     * @return self
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
-
-        return $this;
-    }
-
-    /**
-     * Gets totalCount
-     *
-     * @return int|null
-     */
-    public function getTotalCount()
-    {
-        return $this->container['totalCount'];
-    }
-
-    /**
-     * Sets totalCount
-     *
-     * @param int|null $totalCount totalCount
-     *
-     * @return self
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->container['totalCount'] = $totalCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets itemsPerPage
-     *
-     * @return int|null
-     */
-    public function getItemsPerPage()
-    {
-        return $this->container['itemsPerPage'];
-    }
-
-    /**
-     * Sets itemsPerPage
-     *
-     * @param int|null $itemsPerPage itemsPerPage
-     *
-     * @return self
-     */
-    public function setItemsPerPage($itemsPerPage)
-    {
-        $this->container['itemsPerPage'] = $itemsPerPage;
-
-        return $this;
-    }
-
-    /**
-     * Gets statusCode
-     *
-     * @return int|null
-     */
-    public function getStatusCode()
-    {
-        return $this->container['statusCode'];
-    }
-
-    /**
-     * Sets statusCode
-     *
-     * @param int|null $statusCode statusCode
-     *
-     * @return self
-     */
-    public function setStatusCode($statusCode)
-    {
-        $this->container['statusCode'] = $statusCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets logId
-     *
-     * @return int|null
-     */
-    public function getLogId()
-    {
-        return $this->container['logId'];
-    }
-
-    /**
-     * Sets logId
-     *
-     * @param int|null $logId logId
-     *
-     * @return self
-     */
-    public function setLogId($logId)
-    {
-        $this->container['logId'] = $logId;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
-     *
-     * @return bool|null
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool|null $success success
-     *
-     * @return self
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
+     * Gets name
      *
      * @return string|null
      */
-    public function getMessage()
+    public function getName()
     {
-        return $this->container['message'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets message
+     * Sets name
      *
-     * @param string|null $message message
+     * @param string|null $name name
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setName($name)
     {
-        $this->container['message'] = $message;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets validationErrors
+     * Gets companyName
      *
-     * @return array<string,string[]>|null
+     * @return string|null
      */
-    public function getValidationErrors()
+    public function getCompanyName()
     {
-        return $this->container['validationErrors'];
+        return $this->container['companyName'];
     }
 
     /**
-     * Sets validationErrors
+     * Sets companyName
      *
-     * @param array<string,string[]>|null $validationErrors validationErrors
+     * @param string|null $companyName companyName
      *
      * @return self
      */
-    public function setValidationErrors($validationErrors)
+    public function setCompanyName($companyName)
     {
-        $this->container['validationErrors'] = $validationErrors;
+        $this->container['companyName'] = $companyName;
+
+        return $this;
+    }
+
+    /**
+     * Gets currencyCode
+     *
+     * @return string|null
+     */
+    public function getCurrencyCode()
+    {
+        return $this->container['currencyCode'];
+    }
+
+    /**
+     * Sets currencyCode
+     *
+     * @param string|null $currencyCode currencyCode
+     *
+     * @return self
+     */
+    public function setCurrencyCode($currencyCode)
+    {
+        $this->container['currencyCode'] = $currencyCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets defaultCultureCode
+     *
+     * @return string|null
+     */
+    public function getDefaultCultureCode()
+    {
+        return $this->container['defaultCultureCode'];
+    }
+
+    /**
+     * Sets defaultCultureCode
+     *
+     * @param string|null $defaultCultureCode defaultCultureCode
+     *
+     * @return self
+     */
+    public function setDefaultCultureCode($defaultCultureCode)
+    {
+        $this->container['defaultCultureCode'] = $defaultCultureCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets settings
+     *
+     * @return \ChannelEngine\Merchant\ApiClient\Model\SettingsResponse|null
+     */
+    public function getSettings()
+    {
+        return $this->container['settings'];
+    }
+
+    /**
+     * Sets settings
+     *
+     * @param \ChannelEngine\Merchant\ApiClient\Model\SettingsResponse|null $settings settings
+     *
+     * @return self
+     */
+    public function setSettings($settings)
+    {
+        $this->container['settings'] = $settings;
+
+        return $this;
+    }
+
+    /**
+     * Gets vat
+     *
+     * @return \ChannelEngine\Merchant\ApiClient\Model\VatSettingsResponse[]|null
+     */
+    public function getVat()
+    {
+        return $this->container['vat'];
+    }
+
+    /**
+     * Sets vat
+     *
+     * @param \ChannelEngine\Merchant\ApiClient\Model\VatSettingsResponse[]|null $vat vat
+     *
+     * @return self
+     */
+    public function setVat($vat)
+    {
+        $this->container['vat'] = $vat;
 
         return $this;
     }

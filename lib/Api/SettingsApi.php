@@ -1,6 +1,6 @@
 <?php
 /**
- * CancellationApi
+ * SettingsApi
  * PHP version 7.2
  *
  * @category Class
@@ -39,14 +39,14 @@ use ChannelEngine\Merchant\ApiClient\HeaderSelector;
 use ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * CancellationApi Class Doc Comment
+ * SettingsApi Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class CancellationApi
+class SettingsApi
 {
     /**
      * @var ClientInterface
@@ -115,36 +115,34 @@ class CancellationApi
     }
 
     /**
-     * Operation cancellationCreate
+     * Operation settingsGet
      *
-     * Create Cancellation.
+     * Get settings.
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $merchantCancellationRequest merchantCancellationRequest (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse
+     * @return \ChannelEngine\Merchant\ApiClient\Model\SingleOfMerchantSettingsResponse
      */
-    public function cancellationCreate($merchantCancellationRequest = null)
+    public function settingsGet()
     {
-        list($response) = $this->cancellationCreateWithHttpInfo($merchantCancellationRequest);
+        list($response) = $this->settingsGetWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation cancellationCreateWithHttpInfo
+     * Operation settingsGetWithHttpInfo
      *
-     * Create Cancellation.
+     * Get settings.
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $merchantCancellationRequest (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ChannelEngine\Merchant\ApiClient\Model\SingleOfMerchantSettingsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cancellationCreateWithHttpInfo($merchantCancellationRequest = null)
+    public function settingsGetWithHttpInfo()
     {
-        $request = $this->cancellationCreateRequest($merchantCancellationRequest);
+        $request = $this->settingsGetRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -175,57 +173,21 @@ class CancellationApi
             }
 
             switch($statusCode) {
-                case 201:
-                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
+                case 200:
+                    if ('\ChannelEngine\Merchant\ApiClient\Model\SingleOfMerchantSettingsResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 400:
-                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
-                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 409:
-                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
+                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\SingleOfMerchantSettingsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
+            $returnType = '\ChannelEngine\Merchant\ApiClient\Model\SingleOfMerchantSettingsResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -240,34 +202,10 @@ class CancellationApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 201:
+                case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
+                        '\ChannelEngine\Merchant\ApiClient\Model\SingleOfMerchantSettingsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -278,18 +216,17 @@ class CancellationApi
     }
 
     /**
-     * Operation cancellationCreateAsync
+     * Operation settingsGetAsync
      *
-     * Create Cancellation.
+     * Get settings.
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $merchantCancellationRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancellationCreateAsync($merchantCancellationRequest = null)
+    public function settingsGetAsync()
     {
-        return $this->cancellationCreateAsyncWithHttpInfo($merchantCancellationRequest)
+        return $this->settingsGetAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -298,19 +235,18 @@ class CancellationApi
     }
 
     /**
-     * Operation cancellationCreateAsyncWithHttpInfo
+     * Operation settingsGetAsyncWithHttpInfo
      *
-     * Create Cancellation.
+     * Get settings.
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $merchantCancellationRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cancellationCreateAsyncWithHttpInfo($merchantCancellationRequest = null)
+    public function settingsGetAsyncWithHttpInfo()
     {
-        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
-        $request = $this->cancellationCreateRequest($merchantCancellationRequest);
+        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\SingleOfMerchantSettingsResponse';
+        $request = $this->settingsGetRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -346,17 +282,16 @@ class CancellationApi
     }
 
     /**
-     * Create request for operation 'cancellationCreate'
+     * Create request for operation 'settingsGet'
      *
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationRequest $merchantCancellationRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cancellationCreateRequest($merchantCancellationRequest = null)
+    public function settingsGetRequest()
     {
 
-        $resourcePath = '/v2/cancellations';
+        $resourcePath = '/v2/settings';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -374,18 +309,12 @@ class CancellationApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json-patch+json', 'application/json', 'application/_*+json']
+                []
             );
         }
 
         // for model (json/xml)
-        if (isset($merchantCancellationRequest)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($merchantCancellationRequest));
-            } else {
-                $httpBody = $merchantCancellationRequest;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -428,7 +357,7 @@ class CancellationApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'POST',
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
