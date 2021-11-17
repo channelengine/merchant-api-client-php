@@ -1,6 +1,6 @@
 <?php
 /**
- * PackageDimensionsUnit
+ * ChannelCarrierCollectionMethodApi
  *
  * PHP version 7.2
  *
@@ -30,20 +30,20 @@ namespace ChannelEngine\Merchant\ApiClient\Model;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * PackageDimensionsUnit Class Doc Comment
+ * ChannelCarrierCollectionMethodApi Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PackageDimensionsUnit
+class ChannelCarrierCollectionMethodApi
 {
     /**
      * Possible values of this enum
      */
-    const CM = 'CM';
-    const INCH = 'INCH';
+    const DROP_OFF = 'DROP_OFF';
+    const PICK_UP = 'PICK_UP';
     
     /**
      * Gets allowable values of the enum
@@ -52,8 +52,8 @@ class PackageDimensionsUnit
     public static function getAllowableEnumValues()
     {
         return [
-            self::CM,
-            self::INCH,
+            self::DROP_OFF,
+            self::PICK_UP,
         ];
     }
 }

@@ -22,6 +22,8 @@ lib/Configuration.php
 lib/HeaderSelector.php
 lib/Model/AdvanceSettingsResponse.php
 lib/Model/ApiResponse.php
+lib/Model/ChannelCarrierCollectionMethodApi.php
+lib/Model/ChannelCarrierRecommendationApi.php
 lib/Model/ChannelChannelResponse.php
 lib/Model/ChannelGlobalChannelResponse.php
 lib/Model/ChannelListedProductResponse.php
@@ -34,6 +36,7 @@ lib/Model/CollectionOfMerchantProductBundleResponse.php
 lib/Model/CollectionOfMerchantProductResponse.php
 lib/Model/CollectionOfMerchantProductWithBuyBoxPrice.php
 lib/Model/CollectionOfMerchantReturnResponse.php
+lib/Model/CollectionOfMerchantShipmentLabelCarrierResponse.php
 lib/Model/CollectionOfMerchantSingleOrderReturnResponse.php
 lib/Model/CollectionOfMerchantStockLocationResponse.php
 lib/Model/CollectionOfMerchantWebhookResponse.php
@@ -71,6 +74,7 @@ lib/Model/MerchantReturnResponse.php
 lib/Model/MerchantReturnUpdateRequest.php
 lib/Model/MerchantSettingsResponse.php
 lib/Model/MerchantShipmentLabelCarrierRequest.php
+lib/Model/MerchantShipmentLabelCarrierResponse.php
 lib/Model/MerchantShipmentLineRequest.php
 lib/Model/MerchantShipmentPackageDimensionsRequest.php
 lib/Model/MerchantShipmentPackageWeightRequest.php

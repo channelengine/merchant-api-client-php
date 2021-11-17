@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantProductWithBuyBoxPrice
+ * MerchantShipmentLabelCarrierResponse
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * MerchantProductWithBuyBoxPrice Class Doc Comment
+ * MerchantShipmentLabelCarrierResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class MerchantProductWithBuyBoxPrice implements ModelInterface, ArrayAccess, \JsonSerializable
+class MerchantShipmentLabelCarrierResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class MerchantProductWithBuyBoxPrice implements ModelInterface, ArrayAccess, \Js
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MerchantProductWithBuyBoxPrice';
+    protected static $openAPIModelName = 'MerchantShipmentLabelCarrierResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,11 +59,13 @@ class MerchantProductWithBuyBoxPrice implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sku' => 'string',
-        'gtin' => 'string',
-        'buyBoxPrice' => 'float',
-        'buyBoxPriceInclShipping' => 'float',
-        'isMerchantBuyBoxWinner' => 'bool'
+        'name' => 'string',
+        'code' => 'string',
+        'restrictions' => 'string',
+        'price' => 'float',
+        'recommendation' => '\ChannelEngine\Merchant\ApiClient\Model\ChannelCarrierRecommendationApi',
+        'collectionMethod' => '\ChannelEngine\Merchant\ApiClient\Model\ChannelCarrierCollectionMethodApi',
+        'handoverDateTime' => '\DateTime'
     ];
 
     /**
@@ -74,11 +76,13 @@ class MerchantProductWithBuyBoxPrice implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sku' => null,
-        'gtin' => null,
-        'buyBoxPrice' => 'decimal',
-        'buyBoxPriceInclShipping' => 'decimal',
-        'isMerchantBuyBoxWinner' => null
+        'name' => null,
+        'code' => null,
+        'restrictions' => null,
+        'price' => 'decimal',
+        'recommendation' => null,
+        'collectionMethod' => null,
+        'handoverDateTime' => 'date-time'
     ];
 
     /**
@@ -108,11 +112,13 @@ class MerchantProductWithBuyBoxPrice implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'sku' => 'Sku',
-        'gtin' => 'Gtin',
-        'buyBoxPrice' => 'BuyBoxPrice',
-        'buyBoxPriceInclShipping' => 'BuyBoxPriceInclShipping',
-        'isMerchantBuyBoxWinner' => 'IsMerchantBuyBoxWinner'
+        'name' => 'Name',
+        'code' => 'Code',
+        'restrictions' => 'Restrictions',
+        'price' => 'Price',
+        'recommendation' => 'Recommendation',
+        'collectionMethod' => 'CollectionMethod',
+        'handoverDateTime' => 'HandoverDateTime'
     ];
 
     /**
@@ -121,11 +127,13 @@ class MerchantProductWithBuyBoxPrice implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'sku' => 'setSku',
-        'gtin' => 'setGtin',
-        'buyBoxPrice' => 'setBuyBoxPrice',
-        'buyBoxPriceInclShipping' => 'setBuyBoxPriceInclShipping',
-        'isMerchantBuyBoxWinner' => 'setIsMerchantBuyBoxWinner'
+        'name' => 'setName',
+        'code' => 'setCode',
+        'restrictions' => 'setRestrictions',
+        'price' => 'setPrice',
+        'recommendation' => 'setRecommendation',
+        'collectionMethod' => 'setCollectionMethod',
+        'handoverDateTime' => 'setHandoverDateTime'
     ];
 
     /**
@@ -134,11 +142,13 @@ class MerchantProductWithBuyBoxPrice implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'sku' => 'getSku',
-        'gtin' => 'getGtin',
-        'buyBoxPrice' => 'getBuyBoxPrice',
-        'buyBoxPriceInclShipping' => 'getBuyBoxPriceInclShipping',
-        'isMerchantBuyBoxWinner' => 'getIsMerchantBuyBoxWinner'
+        'name' => 'getName',
+        'code' => 'getCode',
+        'restrictions' => 'getRestrictions',
+        'price' => 'getPrice',
+        'recommendation' => 'getRecommendation',
+        'collectionMethod' => 'getCollectionMethod',
+        'handoverDateTime' => 'getHandoverDateTime'
     ];
 
     /**
@@ -198,11 +208,13 @@ class MerchantProductWithBuyBoxPrice implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->container['sku'] = $data['sku'] ?? null;
-        $this->container['gtin'] = $data['gtin'] ?? null;
-        $this->container['buyBoxPrice'] = $data['buyBoxPrice'] ?? null;
-        $this->container['buyBoxPriceInclShipping'] = $data['buyBoxPriceInclShipping'] ?? null;
-        $this->container['isMerchantBuyBoxWinner'] = $data['isMerchantBuyBoxWinner'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['code'] = $data['code'] ?? null;
+        $this->container['restrictions'] = $data['restrictions'] ?? null;
+        $this->container['price'] = $data['price'] ?? null;
+        $this->container['recommendation'] = $data['recommendation'] ?? null;
+        $this->container['collectionMethod'] = $data['collectionMethod'] ?? null;
+        $this->container['handoverDateTime'] = $data['handoverDateTime'] ?? null;
     }
 
     /**
@@ -230,121 +242,169 @@ class MerchantProductWithBuyBoxPrice implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets sku
+     * Gets name
      *
      * @return string|null
      */
-    public function getSku()
+    public function getName()
     {
-        return $this->container['sku'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets sku
+     * Sets name
      *
-     * @param string|null $sku Product SKU number
+     * @param string|null $name The channel's name for the shipping label carrier
      *
      * @return self
      */
-    public function setSku($sku)
+    public function setName($name)
     {
-        $this->container['sku'] = $sku;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets gtin
+     * Gets code
      *
      * @return string|null
      */
-    public function getGtin()
+    public function getCode()
     {
-        return $this->container['gtin'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets gtin
+     * Sets code
      *
-     * @param string|null $gtin Product GTIN
+     * @param string|null $code The channel's code for the shipping label carrier
      *
      * @return self
      */
-    public function setGtin($gtin)
+    public function setCode($code)
     {
-        $this->container['gtin'] = $gtin;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets buyBoxPrice
+     * Gets restrictions
+     *
+     * @return string|null
+     */
+    public function getRestrictions()
+    {
+        return $this->container['restrictions'];
+    }
+
+    /**
+     * Sets restrictions
+     *
+     * @param string|null $restrictions Optional. Any restrictions on this carriers, e.g. weight and/or dimensions
+     *
+     * @return self
+     */
+    public function setRestrictions($restrictions)
+    {
+        $this->container['restrictions'] = $restrictions;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
      *
      * @return float|null
      */
-    public function getBuyBoxPrice()
+    public function getPrice()
     {
-        return $this->container['buyBoxPrice'];
+        return $this->container['price'];
     }
 
     /**
-     * Sets buyBoxPrice
+     * Sets price
      *
-     * @param float|null $buyBoxPrice Price of Buy box winner (excl. shipping cost)  Note: not all channels have a separate shipping cost field (e.g. bol.com), so can be the same as BuyBoxPriceInclShipping
+     * @param float|null $price Optional. Price for this shipping label
      *
      * @return self
      */
-    public function setBuyBoxPrice($buyBoxPrice)
+    public function setPrice($price)
     {
-        $this->container['buyBoxPrice'] = $buyBoxPrice;
+        $this->container['price'] = $price;
 
         return $this;
     }
 
     /**
-     * Gets buyBoxPriceInclShipping
+     * Gets recommendation
      *
-     * @return float|null
+     * @return \ChannelEngine\Merchant\ApiClient\Model\ChannelCarrierRecommendationApi|null
      */
-    public function getBuyBoxPriceInclShipping()
+    public function getRecommendation()
     {
-        return $this->container['buyBoxPriceInclShipping'];
+        return $this->container['recommendation'];
     }
 
     /**
-     * Sets buyBoxPriceInclShipping
+     * Sets recommendation
      *
-     * @param float|null $buyBoxPriceInclShipping Price of Buy box winner (incl. shipping cost).  If null, then there is no data or no Buy box winner
+     * @param \ChannelEngine\Merchant\ApiClient\Model\ChannelCarrierRecommendationApi|null $recommendation recommendation
      *
      * @return self
      */
-    public function setBuyBoxPriceInclShipping($buyBoxPriceInclShipping)
+    public function setRecommendation($recommendation)
     {
-        $this->container['buyBoxPriceInclShipping'] = $buyBoxPriceInclShipping;
+        $this->container['recommendation'] = $recommendation;
 
         return $this;
     }
 
     /**
-     * Gets isMerchantBuyBoxWinner
+     * Gets collectionMethod
      *
-     * @return bool|null
+     * @return \ChannelEngine\Merchant\ApiClient\Model\ChannelCarrierCollectionMethodApi|null
      */
-    public function getIsMerchantBuyBoxWinner()
+    public function getCollectionMethod()
     {
-        return $this->container['isMerchantBuyBoxWinner'];
+        return $this->container['collectionMethod'];
     }
 
     /**
-     * Sets isMerchantBuyBoxWinner
+     * Sets collectionMethod
      *
-     * @param bool|null $isMerchantBuyBoxWinner Are you the Buy box winner or not?
+     * @param \ChannelEngine\Merchant\ApiClient\Model\ChannelCarrierCollectionMethodApi|null $collectionMethod collectionMethod
      *
      * @return self
      */
-    public function setIsMerchantBuyBoxWinner($isMerchantBuyBoxWinner)
+    public function setCollectionMethod($collectionMethod)
     {
-        $this->container['isMerchantBuyBoxWinner'] = $isMerchantBuyBoxWinner;
+        $this->container['collectionMethod'] = $collectionMethod;
+
+        return $this;
+    }
+
+    /**
+     * Gets handoverDateTime
+     *
+     * @return \DateTime|null
+     */
+    public function getHandoverDateTime()
+    {
+        return $this->container['handoverDateTime'];
+    }
+
+    /**
+     * Sets handoverDateTime
+     *
+     * @param \DateTime|null $handoverDateTime Optional. When to handover the package to the carrier  It is in the ISO format including the timezone offset.  E.g. 2020-10-03T18:00:00+02:00  which is 3rd Oct 2020, at 18:00 PM in Amsterdam (Summer Time aka CEST: UTC +2:00 )
+     *
+     * @return self
+     */
+    public function setHandoverDateTime($handoverDateTime)
+    {
+        $this->container['handoverDateTime'] = $handoverDateTime;
 
         return $this;
     }
