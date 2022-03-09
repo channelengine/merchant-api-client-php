@@ -45,6 +45,7 @@ lib/Model/CreatorFilter.php
 lib/Model/ExtraDataType.php
 lib/Model/FulfillmentType.php
 lib/Model/Gender.php
+lib/Model/JsonPatchOperationOfMerchantProductRequest.php
 lib/Model/ListedProductChannelStatus.php
 lib/Model/ListedProductExportStatus.php
 lib/Model/MancoReason.php
@@ -54,6 +55,7 @@ lib/Model/MerchantCancellationRequest.php
 lib/Model/MerchantChannelLabelShipmentRequest.php
 lib/Model/MerchantNotificationResponse.php
 lib/Model/MerchantOfferGetStockResponse.php
+lib/Model/MerchantOfferStockUpdateRequest.php
 lib/Model/MerchantOrderAcknowledgementRequest.php
 lib/Model/MerchantOrderCommentUpdateRequest.php
 lib/Model/MerchantOrderLineExtraDataResponse.php
@@ -83,6 +85,7 @@ lib/Model/MerchantShipmentTrackingRequest.php
 lib/Model/MerchantSingleOrderReturnLineResponse.php
 lib/Model/MerchantSingleOrderReturnResponse.php
 lib/Model/MerchantStockLocationResponse.php
+lib/Model/MerchantStockLocationUpdateRequest.php
 lib/Model/MerchantStockPriceUpdateRequest.php
 lib/Model/MerchantWebhookRequest.php
 lib/Model/MerchantWebhookResponse.php

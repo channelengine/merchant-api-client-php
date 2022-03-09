@@ -1,6 +1,6 @@
 <?php
 /**
- * ChannelChannelResponse
+ * MerchantOfferStockUpdateRequest
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * ChannelChannelResponse Class Doc Comment
+ * MerchantOfferStockUpdateRequest Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class MerchantOfferStockUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ChannelChannelResponse';
+    protected static $openAPIModelName = 'MerchantOfferStockUpdateRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,8 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'channelId' => 'int',
-        'isEnabled' => 'bool',
-        'channelName' => 'string'
+        'merchantProductNo' => 'string',
+        'stockLocations' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantStockLocationUpdateRequest[]'
     ];
 
     /**
@@ -72,9 +71,8 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'channelId' => 'int32',
-        'isEnabled' => null,
-        'channelName' => null
+        'merchantProductNo' => null,
+        'stockLocations' => null
     ];
 
     /**
@@ -104,9 +102,8 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'channelId' => 'ChannelId',
-        'isEnabled' => 'IsEnabled',
-        'channelName' => 'ChannelName'
+        'merchantProductNo' => 'MerchantProductNo',
+        'stockLocations' => 'StockLocations'
     ];
 
     /**
@@ -115,9 +112,8 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'channelId' => 'setChannelId',
-        'isEnabled' => 'setIsEnabled',
-        'channelName' => 'setChannelName'
+        'merchantProductNo' => 'setMerchantProductNo',
+        'stockLocations' => 'setStockLocations'
     ];
 
     /**
@@ -126,9 +122,8 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'channelId' => 'getChannelId',
-        'isEnabled' => 'getIsEnabled',
-        'channelName' => 'getChannelName'
+        'merchantProductNo' => 'getMerchantProductNo',
+        'stockLocations' => 'getStockLocations'
     ];
 
     /**
@@ -188,9 +183,8 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['channelId'] = $data['channelId'] ?? null;
-        $this->container['isEnabled'] = $data['isEnabled'] ?? null;
-        $this->container['channelName'] = $data['channelName'] ?? null;
+        $this->container['merchantProductNo'] = $data['merchantProductNo'] ?? null;
+        $this->container['stockLocations'] = $data['stockLocations'] ?? null;
     }
 
     /**
@@ -202,6 +196,20 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
+        if ($this->container['merchantProductNo'] === null) {
+            $invalidProperties[] = "'merchantProductNo' can't be null";
+        }
+        if ((mb_strlen($this->container['merchantProductNo']) > 64)) {
+            $invalidProperties[] = "invalid value for 'merchantProductNo', the character length must be smaller than or equal to 64.";
+        }
+
+        if ((mb_strlen($this->container['merchantProductNo']) < 0)) {
+            $invalidProperties[] = "invalid value for 'merchantProductNo', the character length must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['stockLocations'] === null) {
+            $invalidProperties[] = "'stockLocations' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -218,73 +226,56 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets channelId
+     * Gets merchantProductNo
      *
-     * @return int|null
+     * @return string
      */
-    public function getChannelId()
+    public function getMerchantProductNo()
     {
-        return $this->container['channelId'];
+        return $this->container['merchantProductNo'];
     }
 
     /**
-     * Sets channelId
+     * Sets merchantProductNo
      *
-     * @param int|null $channelId The ID of the Channel.
+     * @param string $merchantProductNo The unique product reference used by the Merchant (sku).
      *
      * @return self
      */
-    public function setChannelId($channelId)
+    public function setMerchantProductNo($merchantProductNo)
     {
-        $this->container['channelId'] = $channelId;
+        if ((mb_strlen($merchantProductNo) > 64)) {
+            throw new \InvalidArgumentException('invalid length for $merchantProductNo when calling MerchantOfferStockUpdateRequest., must be smaller than or equal to 64.');
+        }
+        if ((mb_strlen($merchantProductNo) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $merchantProductNo when calling MerchantOfferStockUpdateRequest., must be bigger than or equal to 0.');
+        }
+
+        $this->container['merchantProductNo'] = $merchantProductNo;
 
         return $this;
     }
 
     /**
-     * Gets isEnabled
+     * Gets stockLocations
      *
-     * @return bool|null
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantStockLocationUpdateRequest[]
      */
-    public function getIsEnabled()
+    public function getStockLocations()
     {
-        return $this->container['isEnabled'];
+        return $this->container['stockLocations'];
     }
 
     /**
-     * Sets isEnabled
+     * Sets stockLocations
      *
-     * @param bool|null $isEnabled A boolean value indicating whether the Channel is enabled.
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantStockLocationUpdateRequest[] $stockLocations Stock locations data
      *
      * @return self
      */
-    public function setIsEnabled($isEnabled)
+    public function setStockLocations($stockLocations)
     {
-        $this->container['isEnabled'] = $isEnabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets channelName
-     *
-     * @return string|null
-     */
-    public function getChannelName()
-    {
-        return $this->container['channelName'];
-    }
-
-    /**
-     * Sets channelName
-     *
-     * @param string|null $channelName The name of the Channel.
-     *
-     * @return self
-     */
-    public function setChannelName($channelName)
-    {
-        $this->container['channelName'] = $channelName;
+        $this->container['stockLocations'] = $stockLocations;
 
         return $this;
     }

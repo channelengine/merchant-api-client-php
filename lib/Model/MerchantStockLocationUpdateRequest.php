@@ -1,6 +1,6 @@
 <?php
 /**
- * ChannelChannelResponse
+ * MerchantStockLocationUpdateRequest
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * ChannelChannelResponse Class Doc Comment
+ * MerchantStockLocationUpdateRequest Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class MerchantStockLocationUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ChannelChannelResponse';
+    protected static $openAPIModelName = 'MerchantStockLocationUpdateRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,8 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'channelId' => 'int',
-        'isEnabled' => 'bool',
-        'channelName' => 'string'
+        'stock' => 'int',
+        'stockLocationId' => 'int'
     ];
 
     /**
@@ -72,9 +71,8 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'channelId' => 'int32',
-        'isEnabled' => null,
-        'channelName' => null
+        'stock' => 'int32',
+        'stockLocationId' => 'int32'
     ];
 
     /**
@@ -104,9 +102,8 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'channelId' => 'ChannelId',
-        'isEnabled' => 'IsEnabled',
-        'channelName' => 'ChannelName'
+        'stock' => 'Stock',
+        'stockLocationId' => 'StockLocationId'
     ];
 
     /**
@@ -115,9 +112,8 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'channelId' => 'setChannelId',
-        'isEnabled' => 'setIsEnabled',
-        'channelName' => 'setChannelName'
+        'stock' => 'setStock',
+        'stockLocationId' => 'setStockLocationId'
     ];
 
     /**
@@ -126,9 +122,8 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'channelId' => 'getChannelId',
-        'isEnabled' => 'getIsEnabled',
-        'channelName' => 'getChannelName'
+        'stock' => 'getStock',
+        'stockLocationId' => 'getStockLocationId'
     ];
 
     /**
@@ -188,9 +183,8 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['channelId'] = $data['channelId'] ?? null;
-        $this->container['isEnabled'] = $data['isEnabled'] ?? null;
-        $this->container['channelName'] = $data['channelName'] ?? null;
+        $this->container['stock'] = $data['stock'] ?? null;
+        $this->container['stockLocationId'] = $data['stockLocationId'] ?? null;
     }
 
     /**
@@ -201,6 +195,10 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['stock']) && ($this->container['stock'] < 0)) {
+            $invalidProperties[] = "invalid value for 'stock', must be bigger than or equal to 0.";
+        }
 
         return $invalidProperties;
     }
@@ -218,73 +216,54 @@ class ChannelChannelResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets channelId
+     * Gets stock
      *
      * @return int|null
      */
-    public function getChannelId()
+    public function getStock()
     {
-        return $this->container['channelId'];
+        return $this->container['stock'];
     }
 
     /**
-     * Sets channelId
+     * Sets stock
      *
-     * @param int|null $channelId The ID of the Channel.
+     * @param int|null $stock The stock of the product. Should not be negative.
      *
      * @return self
      */
-    public function setChannelId($channelId)
+    public function setStock($stock)
     {
-        $this->container['channelId'] = $channelId;
+
+        if (!is_null($stock) && ($stock < 0)) {
+            throw new \InvalidArgumentException('invalid value for $stock when calling MerchantStockLocationUpdateRequest., must be bigger than or equal to 0.');
+        }
+
+        $this->container['stock'] = $stock;
 
         return $this;
     }
 
     /**
-     * Gets isEnabled
+     * Gets stockLocationId
      *
-     * @return bool|null
+     * @return int|null
      */
-    public function getIsEnabled()
+    public function getStockLocationId()
     {
-        return $this->container['isEnabled'];
+        return $this->container['stockLocationId'];
     }
 
     /**
-     * Sets isEnabled
+     * Sets stockLocationId
      *
-     * @param bool|null $isEnabled A boolean value indicating whether the Channel is enabled.
+     * @param int|null $stockLocationId The stock location id of updated stok.  If not provided stock from default stock location will be updated.
      *
      * @return self
      */
-    public function setIsEnabled($isEnabled)
+    public function setStockLocationId($stockLocationId)
     {
-        $this->container['isEnabled'] = $isEnabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets channelName
-     *
-     * @return string|null
-     */
-    public function getChannelName()
-    {
-        return $this->container['channelName'];
-    }
-
-    /**
-     * Sets channelName
-     *
-     * @param string|null $channelName The name of the Channel.
-     *
-     * @return self
-     */
-    public function setChannelName($channelName)
-    {
-        $this->container['channelName'] = $channelName;
+        $this->container['stockLocationId'] = $stockLocationId;
 
         return $this;
     }
