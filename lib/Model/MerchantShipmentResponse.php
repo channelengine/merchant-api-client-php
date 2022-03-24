@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantShipmentRequest
+ * MerchantShipmentResponse
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * MerchantShipmentRequest Class Doc Comment
+ * MerchantShipmentResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class MerchantShipmentResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MerchantShipmentRequest';
+    protected static $openAPIModelName = 'MerchantShipmentResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +61,9 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'merchantShipmentNo' => 'string',
         'merchantOrderNo' => 'string',
-        'lines' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLineRequest[]',
+        'lines' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLineResponse[]',
+        'createdAt' => '\DateTime',
+        'updatedAt' => '\DateTime',
         'extraData' => 'array<string,string>',
         'trackTraceNo' => 'string',
         'trackTraceUrl' => 'string',
@@ -82,6 +84,8 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'merchantShipmentNo' => null,
         'merchantOrderNo' => null,
         'lines' => null,
+        'createdAt' => 'date-time',
+        'updatedAt' => 'date-time',
         'extraData' => null,
         'trackTraceNo' => null,
         'trackTraceUrl' => null,
@@ -121,6 +125,8 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'merchantShipmentNo' => 'MerchantShipmentNo',
         'merchantOrderNo' => 'MerchantOrderNo',
         'lines' => 'Lines',
+        'createdAt' => 'CreatedAt',
+        'updatedAt' => 'UpdatedAt',
         'extraData' => 'ExtraData',
         'trackTraceNo' => 'TrackTraceNo',
         'trackTraceUrl' => 'TrackTraceUrl',
@@ -139,6 +145,8 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'merchantShipmentNo' => 'setMerchantShipmentNo',
         'merchantOrderNo' => 'setMerchantOrderNo',
         'lines' => 'setLines',
+        'createdAt' => 'setCreatedAt',
+        'updatedAt' => 'setUpdatedAt',
         'extraData' => 'setExtraData',
         'trackTraceNo' => 'setTrackTraceNo',
         'trackTraceUrl' => 'setTrackTraceUrl',
@@ -157,6 +165,8 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'merchantShipmentNo' => 'getMerchantShipmentNo',
         'merchantOrderNo' => 'getMerchantOrderNo',
         'lines' => 'getLines',
+        'createdAt' => 'getCreatedAt',
+        'updatedAt' => 'getUpdatedAt',
         'extraData' => 'getExtraData',
         'trackTraceNo' => 'getTrackTraceNo',
         'trackTraceUrl' => 'getTrackTraceUrl',
@@ -226,6 +236,8 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['merchantShipmentNo'] = $data['merchantShipmentNo'] ?? null;
         $this->container['merchantOrderNo'] = $data['merchantOrderNo'] ?? null;
         $this->container['lines'] = $data['lines'] ?? null;
+        $this->container['createdAt'] = $data['createdAt'] ?? null;
+        $this->container['updatedAt'] = $data['updatedAt'] ?? null;
         $this->container['extraData'] = $data['extraData'] ?? null;
         $this->container['trackTraceNo'] = $data['trackTraceNo'] ?? null;
         $this->container['trackTraceUrl'] = $data['trackTraceUrl'] ?? null;
@@ -247,32 +259,6 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['merchantShipmentNo'] === null) {
             $invalidProperties[] = "'merchantShipmentNo' can't be null";
         }
-        if ((mb_strlen($this->container['merchantShipmentNo']) > 250)) {
-            $invalidProperties[] = "invalid value for 'merchantShipmentNo', the character length must be smaller than or equal to 250.";
-        }
-
-        if ((mb_strlen($this->container['merchantShipmentNo']) < 0)) {
-            $invalidProperties[] = "invalid value for 'merchantShipmentNo', the character length must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['merchantOrderNo'] === null) {
-            $invalidProperties[] = "'merchantOrderNo' can't be null";
-        }
-        if ((mb_strlen($this->container['merchantOrderNo']) > 50)) {
-            $invalidProperties[] = "invalid value for 'merchantOrderNo', the character length must be smaller than or equal to 50.";
-        }
-
-        if ((mb_strlen($this->container['merchantOrderNo']) < 0)) {
-            $invalidProperties[] = "invalid value for 'merchantOrderNo', the character length must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['lines'] === null) {
-            $invalidProperties[] = "'lines' can't be null";
-        }
-        if ((count($this->container['lines']) < 1)) {
-            $invalidProperties[] = "invalid value for 'lines', number of items must be greater than or equal to 1.";
-        }
-
         if (!is_null($this->container['trackTraceNo']) && (mb_strlen($this->container['trackTraceNo']) > 50)) {
             $invalidProperties[] = "invalid value for 'trackTraceNo', the character length must be smaller than or equal to 50.";
         }
@@ -347,13 +333,6 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setMerchantShipmentNo($merchantShipmentNo)
     {
-        if ((mb_strlen($merchantShipmentNo) > 250)) {
-            throw new \InvalidArgumentException('invalid length for $merchantShipmentNo when calling MerchantShipmentRequest., must be smaller than or equal to 250.');
-        }
-        if ((mb_strlen($merchantShipmentNo) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $merchantShipmentNo when calling MerchantShipmentRequest., must be bigger than or equal to 0.');
-        }
-
         $this->container['merchantShipmentNo'] = $merchantShipmentNo;
 
         return $this;
@@ -362,7 +341,7 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets merchantOrderNo
      *
-     * @return string
+     * @return string|null
      */
     public function getMerchantOrderNo()
     {
@@ -372,19 +351,12 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets merchantOrderNo
      *
-     * @param string $merchantOrderNo The unique order reference used by the Merchant.
+     * @param string|null $merchantOrderNo The unique order reference used by the Merchant.
      *
      * @return self
      */
     public function setMerchantOrderNo($merchantOrderNo)
     {
-        if ((mb_strlen($merchantOrderNo) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $merchantOrderNo when calling MerchantShipmentRequest., must be smaller than or equal to 50.');
-        }
-        if ((mb_strlen($merchantOrderNo) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $merchantOrderNo when calling MerchantShipmentRequest., must be bigger than or equal to 0.');
-        }
-
         $this->container['merchantOrderNo'] = $merchantOrderNo;
 
         return $this;
@@ -393,7 +365,7 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets lines
      *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLineRequest[]
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLineResponse[]|null
      */
     public function getLines()
     {
@@ -403,18 +375,61 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets lines
      *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLineRequest[] $lines lines
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentLineResponse[]|null $lines lines
      *
      * @return self
      */
     public function setLines($lines)
     {
-
-
-        if ((count($lines) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $lines when calling MerchantShipmentRequest., number of items must be greater than or equal to 1.');
-        }
         $this->container['lines'] = $lines;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param \DateTime|null $createdAt The date at which the shipment was created in ChannelEngine.
+     *
+     * @return self
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets updatedAt
+     *
+     * @return \DateTime|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updatedAt'];
+    }
+
+    /**
+     * Sets updatedAt
+     *
+     * @param \DateTime|null $updatedAt The date at which the shipment was last modified in ChannelEngine.
+     *
+     * @return self
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->container['updatedAt'] = $updatedAt;
 
         return $this;
     }
@@ -463,10 +478,10 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function setTrackTraceNo($trackTraceNo)
     {
         if (!is_null($trackTraceNo) && (mb_strlen($trackTraceNo) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $trackTraceNo when calling MerchantShipmentRequest., must be smaller than or equal to 50.');
+            throw new \InvalidArgumentException('invalid length for $trackTraceNo when calling MerchantShipmentResponse., must be smaller than or equal to 50.');
         }
         if (!is_null($trackTraceNo) && (mb_strlen($trackTraceNo) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $trackTraceNo when calling MerchantShipmentRequest., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid length for $trackTraceNo when calling MerchantShipmentResponse., must be bigger than or equal to 0.');
         }
 
         $this->container['trackTraceNo'] = $trackTraceNo;
@@ -494,10 +509,10 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function setTrackTraceUrl($trackTraceUrl)
     {
         if (!is_null($trackTraceUrl) && (mb_strlen($trackTraceUrl) > 250)) {
-            throw new \InvalidArgumentException('invalid length for $trackTraceUrl when calling MerchantShipmentRequest., must be smaller than or equal to 250.');
+            throw new \InvalidArgumentException('invalid length for $trackTraceUrl when calling MerchantShipmentResponse., must be smaller than or equal to 250.');
         }
         if (!is_null($trackTraceUrl) && (mb_strlen($trackTraceUrl) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $trackTraceUrl when calling MerchantShipmentRequest., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid length for $trackTraceUrl when calling MerchantShipmentResponse., must be bigger than or equal to 0.');
         }
 
         $this->container['trackTraceUrl'] = $trackTraceUrl;
@@ -525,10 +540,10 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function setReturnTrackTraceNo($returnTrackTraceNo)
     {
         if (!is_null($returnTrackTraceNo) && (mb_strlen($returnTrackTraceNo) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $returnTrackTraceNo when calling MerchantShipmentRequest., must be smaller than or equal to 50.');
+            throw new \InvalidArgumentException('invalid length for $returnTrackTraceNo when calling MerchantShipmentResponse., must be smaller than or equal to 50.');
         }
         if (!is_null($returnTrackTraceNo) && (mb_strlen($returnTrackTraceNo) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $returnTrackTraceNo when calling MerchantShipmentRequest., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid length for $returnTrackTraceNo when calling MerchantShipmentResponse., must be bigger than or equal to 0.');
         }
 
         $this->container['returnTrackTraceNo'] = $returnTrackTraceNo;
@@ -556,10 +571,10 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function setMethod($method)
     {
         if (!is_null($method) && (mb_strlen($method) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $method when calling MerchantShipmentRequest., must be smaller than or equal to 50.');
+            throw new \InvalidArgumentException('invalid length for $method when calling MerchantShipmentResponse., must be smaller than or equal to 50.');
         }
         if (!is_null($method) && (mb_strlen($method) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $method when calling MerchantShipmentRequest., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid length for $method when calling MerchantShipmentResponse., must be bigger than or equal to 0.');
         }
 
         $this->container['method'] = $method;
@@ -587,10 +602,10 @@ class MerchantShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function setShippedFromCountryCode($shippedFromCountryCode)
     {
         if (!is_null($shippedFromCountryCode) && (mb_strlen($shippedFromCountryCode) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $shippedFromCountryCode when calling MerchantShipmentRequest., must be smaller than or equal to 3.');
+            throw new \InvalidArgumentException('invalid length for $shippedFromCountryCode when calling MerchantShipmentResponse., must be smaller than or equal to 3.');
         }
         if (!is_null($shippedFromCountryCode) && (mb_strlen($shippedFromCountryCode) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $shippedFromCountryCode when calling MerchantShipmentRequest., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid length for $shippedFromCountryCode when calling MerchantShipmentResponse., must be bigger than or equal to 0.');
         }
 
         $this->container['shippedFromCountryCode'] = $shippedFromCountryCode;

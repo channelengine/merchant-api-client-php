@@ -37,6 +37,7 @@ lib/Model/CollectionOfMerchantProductResponse.php
 lib/Model/CollectionOfMerchantProductWithBuyBoxPrice.php
 lib/Model/CollectionOfMerchantReturnResponse.php
 lib/Model/CollectionOfMerchantShipmentLabelCarrierResponse.php
+lib/Model/CollectionOfMerchantShipmentResponse.php
 lib/Model/CollectionOfMerchantSingleOrderReturnResponse.php
 lib/Model/CollectionOfMerchantStockLocationResponse.php
 lib/Model/CollectionOfMerchantWebhookResponse.php
@@ -78,9 +79,11 @@ lib/Model/MerchantSettingsResponse.php
 lib/Model/MerchantShipmentLabelCarrierRequest.php
 lib/Model/MerchantShipmentLabelCarrierResponse.php
 lib/Model/MerchantShipmentLineRequest.php
+lib/Model/MerchantShipmentLineResponse.php
 lib/Model/MerchantShipmentPackageDimensionsRequest.php
 lib/Model/MerchantShipmentPackageWeightRequest.php
 lib/Model/MerchantShipmentRequest.php
+lib/Model/MerchantShipmentResponse.php
 lib/Model/MerchantShipmentTrackingRequest.php
 lib/Model/MerchantSingleOrderReturnLineResponse.php
 lib/Model/MerchantSingleOrderReturnResponse.php

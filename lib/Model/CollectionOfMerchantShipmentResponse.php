@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantProductExtraDataItemResponse
+ * CollectionOfMerchantShipmentResponse
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * MerchantProductExtraDataItemResponse Class Doc Comment
+ * CollectionOfMerchantShipmentResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class CollectionOfMerchantShipmentResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MerchantProductExtraDataItemResponse';
+    protected static $openAPIModelName = 'CollectionOfMerchantShipmentResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,15 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'key' => 'string',
-        'value' => 'string',
-        'type' => '\ChannelEngine\Merchant\ApiClient\Model\ExtraDataType',
-        'isPublic' => 'bool'
+        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentResponse[]',
+        'count' => 'int',
+        'totalCount' => 'int',
+        'itemsPerPage' => 'int',
+        'statusCode' => 'int',
+        'logId' => 'int',
+        'success' => 'bool',
+        'message' => 'string',
+        'validationErrors' => 'array<string,string[]>'
     ];
 
     /**
@@ -73,10 +78,15 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'key' => null,
-        'value' => null,
-        'type' => null,
-        'isPublic' => null
+        'content' => null,
+        'count' => 'int32',
+        'totalCount' => 'int32',
+        'itemsPerPage' => 'int32',
+        'statusCode' => 'int32',
+        'logId' => 'int32',
+        'success' => null,
+        'message' => null,
+        'validationErrors' => null
     ];
 
     /**
@@ -106,10 +116,15 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'key' => 'Key',
-        'value' => 'Value',
-        'type' => 'Type',
-        'isPublic' => 'IsPublic'
+        'content' => 'Content',
+        'count' => 'Count',
+        'totalCount' => 'TotalCount',
+        'itemsPerPage' => 'ItemsPerPage',
+        'statusCode' => 'StatusCode',
+        'logId' => 'LogId',
+        'success' => 'Success',
+        'message' => 'Message',
+        'validationErrors' => 'ValidationErrors'
     ];
 
     /**
@@ -118,10 +133,15 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'key' => 'setKey',
-        'value' => 'setValue',
-        'type' => 'setType',
-        'isPublic' => 'setIsPublic'
+        'content' => 'setContent',
+        'count' => 'setCount',
+        'totalCount' => 'setTotalCount',
+        'itemsPerPage' => 'setItemsPerPage',
+        'statusCode' => 'setStatusCode',
+        'logId' => 'setLogId',
+        'success' => 'setSuccess',
+        'message' => 'setMessage',
+        'validationErrors' => 'setValidationErrors'
     ];
 
     /**
@@ -130,10 +150,15 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'key' => 'getKey',
-        'value' => 'getValue',
-        'type' => 'getType',
-        'isPublic' => 'getIsPublic'
+        'content' => 'getContent',
+        'count' => 'getCount',
+        'totalCount' => 'getTotalCount',
+        'itemsPerPage' => 'getItemsPerPage',
+        'statusCode' => 'getStatusCode',
+        'logId' => 'getLogId',
+        'success' => 'getSuccess',
+        'message' => 'getMessage',
+        'validationErrors' => 'getValidationErrors'
     ];
 
     /**
@@ -193,10 +218,15 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->container['key'] = $data['key'] ?? null;
-        $this->container['value'] = $data['value'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['isPublic'] = $data['isPublic'] ?? null;
+        $this->container['content'] = $data['content'] ?? null;
+        $this->container['count'] = $data['count'] ?? null;
+        $this->container['totalCount'] = $data['totalCount'] ?? null;
+        $this->container['itemsPerPage'] = $data['itemsPerPage'] ?? null;
+        $this->container['statusCode'] = $data['statusCode'] ?? null;
+        $this->container['logId'] = $data['logId'] ?? null;
+        $this->container['success'] = $data['success'] ?? null;
+        $this->container['message'] = $data['message'] ?? null;
+        $this->container['validationErrors'] = $data['validationErrors'] ?? null;
     }
 
     /**
@@ -207,14 +237,6 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if (!is_null($this->container['key']) && (mb_strlen($this->container['key']) > 100)) {
-            $invalidProperties[] = "invalid value for 'key', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['key']) && (mb_strlen($this->container['key']) < 0)) {
-            $invalidProperties[] = "invalid value for 'key', the character length must be bigger than or equal to 0.";
-        }
 
         return $invalidProperties;
     }
@@ -232,104 +254,217 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
 
 
     /**
-     * Gets key
+     * Gets content
      *
-     * @return string|null
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentResponse[]|null
      */
-    public function getKey()
+    public function getContent()
     {
-        return $this->container['key'];
+        return $this->container['content'];
     }
 
     /**
-     * Sets key
+     * Sets content
      *
-     * @param string|null $key Name of the extra data field.
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantShipmentResponse[]|null $content content
      *
      * @return self
      */
-    public function setKey($key)
+    public function setContent($content)
     {
-        if (!is_null($key) && (mb_strlen($key) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $key when calling MerchantProductExtraDataItemResponse., must be smaller than or equal to 100.');
-        }
-        if (!is_null($key) && (mb_strlen($key) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $key when calling MerchantProductExtraDataItemResponse., must be bigger than or equal to 0.');
-        }
-
-        $this->container['key'] = $key;
+        $this->container['content'] = $content;
 
         return $this;
     }
 
     /**
-     * Gets value
+     * Gets count
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getValue()
+    public function getCount()
     {
-        return $this->container['value'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets value
+     * Sets count
      *
-     * @param string|null $value Value of the extra data field.
+     * @param int|null $count count
      *
      * @return self
      */
-    public function setValue($value)
+    public function setCount($count)
     {
-        $this->container['value'] = $value;
+        $this->container['count'] = $count;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets totalCount
      *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\ExtraDataType|null
+     * @return int|null
      */
-    public function getType()
+    public function getTotalCount()
     {
-        return $this->container['type'];
+        return $this->container['totalCount'];
     }
 
     /**
-     * Sets type
+     * Sets totalCount
      *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\ExtraDataType|null $type type
+     * @param int|null $totalCount totalCount
      *
      * @return self
      */
-    public function setType($type)
+    public function setTotalCount($totalCount)
     {
-        $this->container['type'] = $type;
+        $this->container['totalCount'] = $totalCount;
 
         return $this;
     }
 
     /**
-     * Gets isPublic
+     * Gets itemsPerPage
+     *
+     * @return int|null
+     */
+    public function getItemsPerPage()
+    {
+        return $this->container['itemsPerPage'];
+    }
+
+    /**
+     * Sets itemsPerPage
+     *
+     * @param int|null $itemsPerPage itemsPerPage
+     *
+     * @return self
+     */
+    public function setItemsPerPage($itemsPerPage)
+    {
+        $this->container['itemsPerPage'] = $itemsPerPage;
+
+        return $this;
+    }
+
+    /**
+     * Gets statusCode
+     *
+     * @return int|null
+     */
+    public function getStatusCode()
+    {
+        return $this->container['statusCode'];
+    }
+
+    /**
+     * Sets statusCode
+     *
+     * @param int|null $statusCode statusCode
+     *
+     * @return self
+     */
+    public function setStatusCode($statusCode)
+    {
+        $this->container['statusCode'] = $statusCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets logId
+     *
+     * @return int|null
+     */
+    public function getLogId()
+    {
+        return $this->container['logId'];
+    }
+
+    /**
+     * Sets logId
+     *
+     * @param int|null $logId logId
+     *
+     * @return self
+     */
+    public function setLogId($logId)
+    {
+        $this->container['logId'] = $logId;
+
+        return $this;
+    }
+
+    /**
+     * Gets success
      *
      * @return bool|null
      */
-    public function getIsPublic()
+    public function getSuccess()
     {
-        return $this->container['isPublic'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets isPublic
+     * Sets success
      *
-     * @param bool|null $isPublic Add this field to the export of the product feed to the channel.
+     * @param bool|null $success success
      *
      * @return self
      */
-    public function setIsPublic($isPublic)
+    public function setSuccess($success)
     {
-        $this->container['isPublic'] = $isPublic;
+        $this->container['success'] = $success;
+
+        return $this;
+    }
+
+    /**
+     * Gets message
+     *
+     * @return string|null
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     *
+     * @param string|null $message message
+     *
+     * @return self
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets validationErrors
+     *
+     * @return array<string,string[]>|null
+     */
+    public function getValidationErrors()
+    {
+        return $this->container['validationErrors'];
+    }
+
+    /**
+     * Sets validationErrors
+     *
+     * @param array<string,string[]>|null $validationErrors validationErrors
+     *
+     * @return self
+     */
+    public function setValidationErrors($validationErrors)
+    {
+        $this->container['validationErrors'] = $validationErrors;
 
         return $this;
     }

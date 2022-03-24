@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantProductExtraDataItemResponse
+ * MerchantShipmentLineResponse
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * MerchantProductExtraDataItemResponse Class Doc Comment
+ * MerchantShipmentLineResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class MerchantShipmentLineResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MerchantProductExtraDataItemResponse';
+    protected static $openAPIModelName = 'MerchantShipmentLineResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,12 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'key' => 'string',
-        'value' => 'string',
-        'type' => '\ChannelEngine\Merchant\ApiClient\Model\ExtraDataType',
-        'isPublic' => 'bool'
+        'merchantProductNo' => 'string',
+        'channelProductNo' => 'string',
+        'orderLine' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantOrderLineResponse',
+        'shipmentStatus' => '\ChannelEngine\Merchant\ApiClient\Model\ShipmentLineStatus',
+        'extraData' => 'array<string,string>',
+        'quantity' => 'int'
     ];
 
     /**
@@ -73,10 +75,12 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'key' => null,
-        'value' => null,
-        'type' => null,
-        'isPublic' => null
+        'merchantProductNo' => null,
+        'channelProductNo' => null,
+        'orderLine' => null,
+        'shipmentStatus' => null,
+        'extraData' => null,
+        'quantity' => 'int32'
     ];
 
     /**
@@ -106,10 +110,12 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'key' => 'Key',
-        'value' => 'Value',
-        'type' => 'Type',
-        'isPublic' => 'IsPublic'
+        'merchantProductNo' => 'MerchantProductNo',
+        'channelProductNo' => 'ChannelProductNo',
+        'orderLine' => 'OrderLine',
+        'shipmentStatus' => 'ShipmentStatus',
+        'extraData' => 'ExtraData',
+        'quantity' => 'Quantity'
     ];
 
     /**
@@ -118,10 +124,12 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'key' => 'setKey',
-        'value' => 'setValue',
-        'type' => 'setType',
-        'isPublic' => 'setIsPublic'
+        'merchantProductNo' => 'setMerchantProductNo',
+        'channelProductNo' => 'setChannelProductNo',
+        'orderLine' => 'setOrderLine',
+        'shipmentStatus' => 'setShipmentStatus',
+        'extraData' => 'setExtraData',
+        'quantity' => 'setQuantity'
     ];
 
     /**
@@ -130,10 +138,12 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'key' => 'getKey',
-        'value' => 'getValue',
-        'type' => 'getType',
-        'isPublic' => 'getIsPublic'
+        'merchantProductNo' => 'getMerchantProductNo',
+        'channelProductNo' => 'getChannelProductNo',
+        'orderLine' => 'getOrderLine',
+        'shipmentStatus' => 'getShipmentStatus',
+        'extraData' => 'getExtraData',
+        'quantity' => 'getQuantity'
     ];
 
     /**
@@ -193,10 +203,12 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->container['key'] = $data['key'] ?? null;
-        $this->container['value'] = $data['value'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
-        $this->container['isPublic'] = $data['isPublic'] ?? null;
+        $this->container['merchantProductNo'] = $data['merchantProductNo'] ?? null;
+        $this->container['channelProductNo'] = $data['channelProductNo'] ?? null;
+        $this->container['orderLine'] = $data['orderLine'] ?? null;
+        $this->container['shipmentStatus'] = $data['shipmentStatus'] ?? null;
+        $this->container['extraData'] = $data['extraData'] ?? null;
+        $this->container['quantity'] = $data['quantity'] ?? null;
     }
 
     /**
@@ -208,12 +220,14 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['key']) && (mb_strlen($this->container['key']) > 100)) {
-            $invalidProperties[] = "invalid value for 'key', the character length must be smaller than or equal to 100.";
+        if ($this->container['merchantProductNo'] === null) {
+            $invalidProperties[] = "'merchantProductNo' can't be null";
         }
-
-        if (!is_null($this->container['key']) && (mb_strlen($this->container['key']) < 0)) {
-            $invalidProperties[] = "invalid value for 'key', the character length must be bigger than or equal to 0.";
+        if ($this->container['quantity'] === null) {
+            $invalidProperties[] = "'quantity' can't be null";
+        }
+        if (($this->container['quantity'] < 0)) {
+            $invalidProperties[] = "invalid value for 'quantity', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -232,104 +246,150 @@ class MerchantProductExtraDataItemResponse implements ModelInterface, ArrayAcces
 
 
     /**
-     * Gets key
+     * Gets merchantProductNo
+     *
+     * @return string
+     */
+    public function getMerchantProductNo()
+    {
+        return $this->container['merchantProductNo'];
+    }
+
+    /**
+     * Sets merchantProductNo
+     *
+     * @param string $merchantProductNo The unique product reference used by the Merchant.
+     *
+     * @return self
+     */
+    public function setMerchantProductNo($merchantProductNo)
+    {
+        $this->container['merchantProductNo'] = $merchantProductNo;
+
+        return $this;
+    }
+
+    /**
+     * Gets channelProductNo
      *
      * @return string|null
      */
-    public function getKey()
+    public function getChannelProductNo()
     {
-        return $this->container['key'];
+        return $this->container['channelProductNo'];
     }
 
     /**
-     * Sets key
+     * Sets channelProductNo
      *
-     * @param string|null $key Name of the extra data field.
+     * @param string|null $channelProductNo The unique product reference used by the Channel.
      *
      * @return self
      */
-    public function setKey($key)
+    public function setChannelProductNo($channelProductNo)
     {
-        if (!is_null($key) && (mb_strlen($key) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $key when calling MerchantProductExtraDataItemResponse., must be smaller than or equal to 100.');
+        $this->container['channelProductNo'] = $channelProductNo;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderLine
+     *
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderLineResponse|null
+     */
+    public function getOrderLine()
+    {
+        return $this->container['orderLine'];
+    }
+
+    /**
+     * Sets orderLine
+     *
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderLineResponse|null $orderLine orderLine
+     *
+     * @return self
+     */
+    public function setOrderLine($orderLine)
+    {
+        $this->container['orderLine'] = $orderLine;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipmentStatus
+     *
+     * @return \ChannelEngine\Merchant\ApiClient\Model\ShipmentLineStatus|null
+     */
+    public function getShipmentStatus()
+    {
+        return $this->container['shipmentStatus'];
+    }
+
+    /**
+     * Sets shipmentStatus
+     *
+     * @param \ChannelEngine\Merchant\ApiClient\Model\ShipmentLineStatus|null $shipmentStatus shipmentStatus
+     *
+     * @return self
+     */
+    public function setShipmentStatus($shipmentStatus)
+    {
+        $this->container['shipmentStatus'] = $shipmentStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets extraData
+     *
+     * @return array<string,string>|null
+     */
+    public function getExtraData()
+    {
+        return $this->container['extraData'];
+    }
+
+    /**
+     * Sets extraData
+     *
+     * @param array<string,string>|null $extraData Extra data on the shipment line. Each item must have an unqiue key
+     *
+     * @return self
+     */
+    public function setExtraData($extraData)
+    {
+        $this->container['extraData'] = $extraData;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     *
+     * @return int
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     *
+     * @param int $quantity Number of items of the product in the shipment.
+     *
+     * @return self
+     */
+    public function setQuantity($quantity)
+    {
+
+        if (($quantity < 0)) {
+            throw new \InvalidArgumentException('invalid value for $quantity when calling MerchantShipmentLineResponse., must be bigger than or equal to 0.');
         }
-        if (!is_null($key) && (mb_strlen($key) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $key when calling MerchantProductExtraDataItemResponse., must be bigger than or equal to 0.');
-        }
 
-        $this->container['key'] = $key;
-
-        return $this;
-    }
-
-    /**
-     * Gets value
-     *
-     * @return string|null
-     */
-    public function getValue()
-    {
-        return $this->container['value'];
-    }
-
-    /**
-     * Sets value
-     *
-     * @param string|null $value Value of the extra data field.
-     *
-     * @return self
-     */
-    public function setValue($value)
-    {
-        $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\ExtraDataType|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\ExtraDataType|null $type type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets isPublic
-     *
-     * @return bool|null
-     */
-    public function getIsPublic()
-    {
-        return $this->container['isPublic'];
-    }
-
-    /**
-     * Sets isPublic
-     *
-     * @param bool|null $isPublic Add this field to the export of the product feed to the channel.
-     *
-     * @return self
-     */
-    public function setIsPublic($isPublic)
-    {
-        $this->container['isPublic'] = $isPublic;
+        $this->container['quantity'] = $quantity;
 
         return $this;
     }
