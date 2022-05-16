@@ -105,6 +105,7 @@ lib/Model/ProductMessage.php
 lib/Model/ReturnReason.php
 lib/Model/ReturnStatus.php
 lib/Model/SettingsResponse.php
+lib/Model/ShipmentFulfillmentType.php
 lib/Model/ShipmentLineStatus.php
 lib/Model/ShipmentSettingsResponse.php
 lib/Model/SingleOfDictionaryOfStringAndListOfString.php

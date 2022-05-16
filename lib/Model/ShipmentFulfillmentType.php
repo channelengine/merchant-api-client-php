@@ -1,6 +1,6 @@
 <?php
 /**
- * ShipmentLineStatus
+ * ShipmentFulfillmentType
  *
  * PHP version 7.3
  *
@@ -30,23 +30,24 @@ namespace ChannelEngine\Merchant\ApiClient\Model;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * ShipmentLineStatus Class Doc Comment
+ * ShipmentFulfillmentType Class Doc Comment
  *
  * @category Class
+ * @description Shipment is fully fulfilled by channel or merchant  so no make sense to use FulfillmentType for orders  It is created to keep it consistent with others
  * @package  ChannelEngine\Merchant\ApiClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ShipmentLineStatus
+class ShipmentFulfillmentType
 {
     /**
      * Possible values of this enum
      */
-    const SHIPPED = 'SHIPPED';
+    const ALL = 'ALL';
 
-    const IN_BACKORDER = 'IN_BACKORDER';
+    const ONLY_MERCHANT = 'ONLY_MERCHANT';
 
-    const MANCO = 'MANCO';
+    const ONLY_CHANNEL = 'ONLY_CHANNEL';
 
     /**
      * Gets allowable values of the enum
@@ -55,9 +56,9 @@ class ShipmentLineStatus
     public static function getAllowableEnumValues()
     {
         return [
-            self::SHIPPED,
-            self::IN_BACKORDER,
-            self::MANCO
+            self::ALL,
+            self::ONLY_MERCHANT,
+            self::ONLY_CHANNEL
         ];
     }
 }
