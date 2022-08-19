@@ -1,6 +1,6 @@
 <?php
 /**
- * MerchantSingleOrderReturnLineResponse
+ * MerchantReturnAcknowledgeRequest
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * MerchantSingleOrderReturnLineResponse Class Doc Comment
+ * MerchantReturnAcknowledgeRequest Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class MerchantSingleOrderReturnLineResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class MerchantReturnAcknowledgeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class MerchantSingleOrderReturnLineResponse implements ModelInterface, ArrayAcce
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MerchantSingleOrderReturnLineResponse';
+    protected static $openAPIModelName = 'MerchantReturnAcknowledgeRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,13 +59,8 @@ class MerchantSingleOrderReturnLineResponse implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'merchantProductNo' => 'string',
-        'acceptedQuantity' => 'int',
-        'rejectedQuantity' => 'int',
-        'orderLine' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantOrderLineResponse',
-        'shipmentStatus' => '\ChannelEngine\Merchant\ApiClient\Model\ShipmentLineStatus',
-        'quantity' => 'int',
-        'extraData' => 'array<string,string>'
+        'returnId' => 'int',
+        'merchantReturnNo' => 'string'
     ];
 
     /**
@@ -76,13 +71,8 @@ class MerchantSingleOrderReturnLineResponse implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'merchantProductNo' => null,
-        'acceptedQuantity' => 'int32',
-        'rejectedQuantity' => 'int32',
-        'orderLine' => null,
-        'shipmentStatus' => null,
-        'quantity' => 'int32',
-        'extraData' => null
+        'returnId' => 'int32',
+        'merchantReturnNo' => null
     ];
 
     /**
@@ -112,13 +102,8 @@ class MerchantSingleOrderReturnLineResponse implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchantProductNo' => 'MerchantProductNo',
-        'acceptedQuantity' => 'AcceptedQuantity',
-        'rejectedQuantity' => 'RejectedQuantity',
-        'orderLine' => 'OrderLine',
-        'shipmentStatus' => 'ShipmentStatus',
-        'quantity' => 'Quantity',
-        'extraData' => 'ExtraData'
+        'returnId' => 'ReturnId',
+        'merchantReturnNo' => 'MerchantReturnNo'
     ];
 
     /**
@@ -127,13 +112,8 @@ class MerchantSingleOrderReturnLineResponse implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'merchantProductNo' => 'setMerchantProductNo',
-        'acceptedQuantity' => 'setAcceptedQuantity',
-        'rejectedQuantity' => 'setRejectedQuantity',
-        'orderLine' => 'setOrderLine',
-        'shipmentStatus' => 'setShipmentStatus',
-        'quantity' => 'setQuantity',
-        'extraData' => 'setExtraData'
+        'returnId' => 'setReturnId',
+        'merchantReturnNo' => 'setMerchantReturnNo'
     ];
 
     /**
@@ -142,13 +122,8 @@ class MerchantSingleOrderReturnLineResponse implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'merchantProductNo' => 'getMerchantProductNo',
-        'acceptedQuantity' => 'getAcceptedQuantity',
-        'rejectedQuantity' => 'getRejectedQuantity',
-        'orderLine' => 'getOrderLine',
-        'shipmentStatus' => 'getShipmentStatus',
-        'quantity' => 'getQuantity',
-        'extraData' => 'getExtraData'
+        'returnId' => 'getReturnId',
+        'merchantReturnNo' => 'getMerchantReturnNo'
     ];
 
     /**
@@ -208,13 +183,8 @@ class MerchantSingleOrderReturnLineResponse implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchantProductNo'] = $data['merchantProductNo'] ?? null;
-        $this->container['acceptedQuantity'] = $data['acceptedQuantity'] ?? null;
-        $this->container['rejectedQuantity'] = $data['rejectedQuantity'] ?? null;
-        $this->container['orderLine'] = $data['orderLine'] ?? null;
-        $this->container['shipmentStatus'] = $data['shipmentStatus'] ?? null;
-        $this->container['quantity'] = $data['quantity'] ?? null;
-        $this->container['extraData'] = $data['extraData'] ?? null;
+        $this->container['returnId'] = $data['returnId'] ?? null;
+        $this->container['merchantReturnNo'] = $data['merchantReturnNo'] ?? null;
     }
 
     /**
@@ -226,13 +196,9 @@ class MerchantSingleOrderReturnLineResponse implements ModelInterface, ArrayAcce
     {
         $invalidProperties = [];
 
-        if ($this->container['quantity'] === null) {
-            $invalidProperties[] = "'quantity' can't be null";
+        if ($this->container['merchantReturnNo'] === null) {
+            $invalidProperties[] = "'merchantReturnNo' can't be null";
         }
-        if (($this->container['quantity'] < 0)) {
-            $invalidProperties[] = "invalid value for 'quantity', must be bigger than or equal to 0.";
-        }
-
         return $invalidProperties;
     }
 
@@ -249,174 +215,49 @@ class MerchantSingleOrderReturnLineResponse implements ModelInterface, ArrayAcce
 
 
     /**
-     * Gets merchantProductNo
-     *
-     * @return string|null
-     */
-    public function getMerchantProductNo()
-    {
-        return $this->container['merchantProductNo'];
-    }
-
-    /**
-     * Sets merchantProductNo
-     *
-     * @param string|null $merchantProductNo The unique product reference used by the Merchant (sku).
-     *
-     * @return self
-     */
-    public function setMerchantProductNo($merchantProductNo)
-    {
-        $this->container['merchantProductNo'] = $merchantProductNo;
-
-        return $this;
-    }
-
-    /**
-     * Gets acceptedQuantity
+     * Gets returnId
      *
      * @return int|null
      */
-    public function getAcceptedQuantity()
+    public function getReturnId()
     {
-        return $this->container['acceptedQuantity'];
+        return $this->container['returnId'];
     }
 
     /**
-     * Sets acceptedQuantity
+     * Sets returnId
      *
-     * @param int|null $acceptedQuantity The accepted quantity of returned products in this orderline.
+     * @param int|null $returnId returnId
      *
      * @return self
      */
-    public function setAcceptedQuantity($acceptedQuantity)
+    public function setReturnId($returnId)
     {
-        $this->container['acceptedQuantity'] = $acceptedQuantity;
+        $this->container['returnId'] = $returnId;
 
         return $this;
     }
 
     /**
-     * Gets rejectedQuantity
+     * Gets merchantReturnNo
      *
-     * @return int|null
+     * @return string
      */
-    public function getRejectedQuantity()
+    public function getMerchantReturnNo()
     {
-        return $this->container['rejectedQuantity'];
+        return $this->container['merchantReturnNo'];
     }
 
     /**
-     * Sets rejectedQuantity
+     * Sets merchantReturnNo
      *
-     * @param int|null $rejectedQuantity The rejected quantity of returned products in this orderline.
+     * @param string $merchantReturnNo merchantReturnNo
      *
      * @return self
      */
-    public function setRejectedQuantity($rejectedQuantity)
+    public function setMerchantReturnNo($merchantReturnNo)
     {
-        $this->container['rejectedQuantity'] = $rejectedQuantity;
-
-        return $this;
-    }
-
-    /**
-     * Gets orderLine
-     *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderLineResponse|null
-     */
-    public function getOrderLine()
-    {
-        return $this->container['orderLine'];
-    }
-
-    /**
-     * Sets orderLine
-     *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantOrderLineResponse|null $orderLine orderLine
-     *
-     * @return self
-     */
-    public function setOrderLine($orderLine)
-    {
-        $this->container['orderLine'] = $orderLine;
-
-        return $this;
-    }
-
-    /**
-     * Gets shipmentStatus
-     *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\ShipmentLineStatus|null
-     */
-    public function getShipmentStatus()
-    {
-        return $this->container['shipmentStatus'];
-    }
-
-    /**
-     * Sets shipmentStatus
-     *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\ShipmentLineStatus|null $shipmentStatus shipmentStatus
-     *
-     * @return self
-     */
-    public function setShipmentStatus($shipmentStatus)
-    {
-        $this->container['shipmentStatus'] = $shipmentStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets quantity
-     *
-     * @return int
-     */
-    public function getQuantity()
-    {
-        return $this->container['quantity'];
-    }
-
-    /**
-     * Sets quantity
-     *
-     * @param int $quantity Number of items of the product in this return.
-     *
-     * @return self
-     */
-    public function setQuantity($quantity)
-    {
-
-        if (($quantity < 0)) {
-            throw new \InvalidArgumentException('invalid value for $quantity when calling MerchantSingleOrderReturnLineResponse., must be bigger than or equal to 0.');
-        }
-
-        $this->container['quantity'] = $quantity;
-
-        return $this;
-    }
-
-    /**
-     * Gets extraData
-     *
-     * @return array<string,string>|null
-     */
-    public function getExtraData()
-    {
-        return $this->container['extraData'];
-    }
-
-    /**
-     * Sets extraData
-     *
-     * @param array<string,string>|null $extraData Extra data on the returnline. Each item must have an unqiue key
-     *
-     * @return self
-     */
-    public function setExtraData($extraData)
-    {
-        $this->container['extraData'] = $extraData;
+        $this->container['merchantReturnNo'] = $merchantReturnNo;
 
         return $this;
     }

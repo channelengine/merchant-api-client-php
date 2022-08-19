@@ -60,7 +60,8 @@ class MerchantReturnLineRequest implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'merchantProductNo' => 'string',
-        'quantity' => 'int'
+        'quantity' => 'int',
+        'extraData' => 'array<string,string>'
     ];
 
     /**
@@ -72,7 +73,8 @@ class MerchantReturnLineRequest implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPIFormats = [
         'merchantProductNo' => null,
-        'quantity' => 'int32'
+        'quantity' => 'int32',
+        'extraData' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class MerchantReturnLineRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $attributeMap = [
         'merchantProductNo' => 'MerchantProductNo',
-        'quantity' => 'Quantity'
+        'quantity' => 'Quantity',
+        'extraData' => 'ExtraData'
     ];
 
     /**
@@ -113,7 +116,8 @@ class MerchantReturnLineRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $setters = [
         'merchantProductNo' => 'setMerchantProductNo',
-        'quantity' => 'setQuantity'
+        'quantity' => 'setQuantity',
+        'extraData' => 'setExtraData'
     ];
 
     /**
@@ -123,7 +127,8 @@ class MerchantReturnLineRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $getters = [
         'merchantProductNo' => 'getMerchantProductNo',
-        'quantity' => 'getQuantity'
+        'quantity' => 'getQuantity',
+        'extraData' => 'getExtraData'
     ];
 
     /**
@@ -185,6 +190,7 @@ class MerchantReturnLineRequest implements ModelInterface, ArrayAccess, \JsonSer
     {
         $this->container['merchantProductNo'] = $data['merchantProductNo'] ?? null;
         $this->container['quantity'] = $data['quantity'] ?? null;
+        $this->container['extraData'] = $data['extraData'] ?? null;
     }
 
     /**
@@ -285,6 +291,30 @@ class MerchantReturnLineRequest implements ModelInterface, ArrayAccess, \JsonSer
         }
 
         $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets extraData
+     *
+     * @return array<string,string>|null
+     */
+    public function getExtraData()
+    {
+        return $this->container['extraData'];
+    }
+
+    /**
+     * Sets extraData
+     *
+     * @param array<string,string>|null $extraData Extra data on the returnline. Each item must have an unqiue key
+     *
+     * @return self
+     */
+    public function setExtraData($extraData)
+    {
+        $this->container['extraData'] = $extraData;
 
         return $this;
     }

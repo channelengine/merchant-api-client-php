@@ -83,14 +83,14 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'http://dev.channelengine.local/api';
+    protected $host = 'https://demo.channelengine.net/api';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
      *
      * @var string
      */
-    protected $userAgent = 'OpenAPI-Generator/2.11.0/PHP';
+    protected $userAgent = 'OpenAPI-Generator/2.12.0/PHP';
 
     /**
      * Debug switch (default set to false)
@@ -399,7 +399,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 2.11.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 2.11.0' . PHP_EOL;
+        $report .= '    SDK Package Version: 2.12.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
@@ -439,7 +439,7 @@ class Configuration
     {
         return [
             [
-                "url" => "http://dev.channelengine.local/api",
+                "url" => "https://demo.channelengine.net/api",
                 "description" => "No description provided",
             ]
         ];

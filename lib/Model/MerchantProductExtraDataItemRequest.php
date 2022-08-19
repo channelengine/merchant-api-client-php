@@ -208,11 +208,14 @@ class MerchantProductExtraDataItemRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['key']) && (mb_strlen($this->container['key']) > 100)) {
+        if ($this->container['key'] === null) {
+            $invalidProperties[] = "'key' can't be null";
+        }
+        if ((mb_strlen($this->container['key']) > 100)) {
             $invalidProperties[] = "invalid value for 'key', the character length must be smaller than or equal to 100.";
         }
 
-        if (!is_null($this->container['key']) && (mb_strlen($this->container['key']) < 0)) {
+        if ((mb_strlen($this->container['key']) < 0)) {
             $invalidProperties[] = "invalid value for 'key', the character length must be bigger than or equal to 0.";
         }
 
@@ -234,7 +237,7 @@ class MerchantProductExtraDataItemRequest implements ModelInterface, ArrayAccess
     /**
      * Gets key
      *
-     * @return string|null
+     * @return string
      */
     public function getKey()
     {
@@ -244,16 +247,16 @@ class MerchantProductExtraDataItemRequest implements ModelInterface, ArrayAccess
     /**
      * Sets key
      *
-     * @param string|null $key Name of the extra data field.
+     * @param string $key Name of the extra data field.
      *
      * @return self
      */
     public function setKey($key)
     {
-        if (!is_null($key) && (mb_strlen($key) > 100)) {
+        if ((mb_strlen($key) > 100)) {
             throw new \InvalidArgumentException('invalid length for $key when calling MerchantProductExtraDataItemRequest., must be smaller than or equal to 100.');
         }
-        if (!is_null($key) && (mb_strlen($key) < 0)) {
+        if ((mb_strlen($key) < 0)) {
             throw new \InvalidArgumentException('invalid length for $key when calling MerchantProductExtraDataItemRequest., must be bigger than or equal to 0.');
         }
 

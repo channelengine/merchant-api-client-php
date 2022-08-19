@@ -443,16 +443,18 @@ class OrderApi
      * @param  int[] $stockLocationIds Filter on stock locations (optional)
      * @param  bool $isAcknowledged Filter on acknowledged value (optional)
      * @param  \DateTime $fromUpdatedAtDate Filter on the order update date, starting from this date. This date is inclusive. (optional)
-     * @param  \DateTime $toUpdatedAtDate Filter on the order update date, unitl from this date. This date is exclusive. (optional)
+     * @param  \DateTime $toUpdatedAtDate Filter on the order update date, unitl this date. This date is exclusive. (optional)
+     * @param  \DateTime $fromAcknowledgedDate Filter on the order acknowledged date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toAcknowledgedDate Filter on the order acknowledged date, unitl this date. This date is exclusive. (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse
      */
-    public function orderGetByFilter($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $fromCreatedAtDate = null, $toCreatedAtDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $channelIds = null, $stockLocationIds = null, $isAcknowledged = null, $fromUpdatedAtDate = null, $toUpdatedAtDate = null, $page = null)
+    public function orderGetByFilter($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $fromCreatedAtDate = null, $toCreatedAtDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $channelIds = null, $stockLocationIds = null, $isAcknowledged = null, $fromUpdatedAtDate = null, $toUpdatedAtDate = null, $fromAcknowledgedDate = null, $toAcknowledgedDate = null, $page = null)
     {
-        list($response) = $this->orderGetByFilterWithHttpInfo($statuses, $emailAddresses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $fromCreatedAtDate, $toCreatedAtDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $channelIds, $stockLocationIds, $isAcknowledged, $fromUpdatedAtDate, $toUpdatedAtDate, $page);
+        list($response) = $this->orderGetByFilterWithHttpInfo($statuses, $emailAddresses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $fromCreatedAtDate, $toCreatedAtDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $channelIds, $stockLocationIds, $isAcknowledged, $fromUpdatedAtDate, $toUpdatedAtDate, $fromAcknowledgedDate, $toAcknowledgedDate, $page);
         return $response;
     }
 
@@ -476,16 +478,18 @@ class OrderApi
      * @param  int[] $stockLocationIds Filter on stock locations (optional)
      * @param  bool $isAcknowledged Filter on acknowledged value (optional)
      * @param  \DateTime $fromUpdatedAtDate Filter on the order update date, starting from this date. This date is inclusive. (optional)
-     * @param  \DateTime $toUpdatedAtDate Filter on the order update date, unitl from this date. This date is exclusive. (optional)
+     * @param  \DateTime $toUpdatedAtDate Filter on the order update date, unitl this date. This date is exclusive. (optional)
+     * @param  \DateTime $fromAcknowledgedDate Filter on the order acknowledged date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toAcknowledgedDate Filter on the order acknowledged date, unitl this date. This date is exclusive. (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderGetByFilterWithHttpInfo($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $fromCreatedAtDate = null, $toCreatedAtDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $channelIds = null, $stockLocationIds = null, $isAcknowledged = null, $fromUpdatedAtDate = null, $toUpdatedAtDate = null, $page = null)
+    public function orderGetByFilterWithHttpInfo($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $fromCreatedAtDate = null, $toCreatedAtDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $channelIds = null, $stockLocationIds = null, $isAcknowledged = null, $fromUpdatedAtDate = null, $toUpdatedAtDate = null, $fromAcknowledgedDate = null, $toAcknowledgedDate = null, $page = null)
     {
-        $request = $this->orderGetByFilterRequest($statuses, $emailAddresses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $fromCreatedAtDate, $toCreatedAtDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $channelIds, $stockLocationIds, $isAcknowledged, $fromUpdatedAtDate, $toUpdatedAtDate, $page);
+        $request = $this->orderGetByFilterRequest($statuses, $emailAddresses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $fromCreatedAtDate, $toCreatedAtDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $channelIds, $stockLocationIds, $isAcknowledged, $fromUpdatedAtDate, $toUpdatedAtDate, $fromAcknowledgedDate, $toAcknowledgedDate, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -585,15 +589,17 @@ class OrderApi
      * @param  int[] $stockLocationIds Filter on stock locations (optional)
      * @param  bool $isAcknowledged Filter on acknowledged value (optional)
      * @param  \DateTime $fromUpdatedAtDate Filter on the order update date, starting from this date. This date is inclusive. (optional)
-     * @param  \DateTime $toUpdatedAtDate Filter on the order update date, unitl from this date. This date is exclusive. (optional)
+     * @param  \DateTime $toUpdatedAtDate Filter on the order update date, unitl this date. This date is exclusive. (optional)
+     * @param  \DateTime $fromAcknowledgedDate Filter on the order acknowledged date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toAcknowledgedDate Filter on the order acknowledged date, unitl this date. This date is exclusive. (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderGetByFilterAsync($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $fromCreatedAtDate = null, $toCreatedAtDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $channelIds = null, $stockLocationIds = null, $isAcknowledged = null, $fromUpdatedAtDate = null, $toUpdatedAtDate = null, $page = null)
+    public function orderGetByFilterAsync($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $fromCreatedAtDate = null, $toCreatedAtDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $channelIds = null, $stockLocationIds = null, $isAcknowledged = null, $fromUpdatedAtDate = null, $toUpdatedAtDate = null, $fromAcknowledgedDate = null, $toAcknowledgedDate = null, $page = null)
     {
-        return $this->orderGetByFilterAsyncWithHttpInfo($statuses, $emailAddresses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $fromCreatedAtDate, $toCreatedAtDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $channelIds, $stockLocationIds, $isAcknowledged, $fromUpdatedAtDate, $toUpdatedAtDate, $page)
+        return $this->orderGetByFilterAsyncWithHttpInfo($statuses, $emailAddresses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $fromCreatedAtDate, $toCreatedAtDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $channelIds, $stockLocationIds, $isAcknowledged, $fromUpdatedAtDate, $toUpdatedAtDate, $fromAcknowledgedDate, $toAcknowledgedDate, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -621,16 +627,18 @@ class OrderApi
      * @param  int[] $stockLocationIds Filter on stock locations (optional)
      * @param  bool $isAcknowledged Filter on acknowledged value (optional)
      * @param  \DateTime $fromUpdatedAtDate Filter on the order update date, starting from this date. This date is inclusive. (optional)
-     * @param  \DateTime $toUpdatedAtDate Filter on the order update date, unitl from this date. This date is exclusive. (optional)
+     * @param  \DateTime $toUpdatedAtDate Filter on the order update date, unitl this date. This date is exclusive. (optional)
+     * @param  \DateTime $fromAcknowledgedDate Filter on the order acknowledged date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toAcknowledgedDate Filter on the order acknowledged date, unitl this date. This date is exclusive. (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderGetByFilterAsyncWithHttpInfo($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $fromCreatedAtDate = null, $toCreatedAtDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $channelIds = null, $stockLocationIds = null, $isAcknowledged = null, $fromUpdatedAtDate = null, $toUpdatedAtDate = null, $page = null)
+    public function orderGetByFilterAsyncWithHttpInfo($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $fromCreatedAtDate = null, $toCreatedAtDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $channelIds = null, $stockLocationIds = null, $isAcknowledged = null, $fromUpdatedAtDate = null, $toUpdatedAtDate = null, $fromAcknowledgedDate = null, $toAcknowledgedDate = null, $page = null)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantOrderResponse';
-        $request = $this->orderGetByFilterRequest($statuses, $emailAddresses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $fromCreatedAtDate, $toCreatedAtDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $channelIds, $stockLocationIds, $isAcknowledged, $fromUpdatedAtDate, $toUpdatedAtDate, $page);
+        $request = $this->orderGetByFilterRequest($statuses, $emailAddresses, $merchantOrderNos, $channelOrderNos, $fromDate, $toDate, $fromCreatedAtDate, $toCreatedAtDate, $excludeMarketplaceFulfilledOrdersAndLines, $fulfillmentType, $onlyWithCancellationRequests, $channelIds, $stockLocationIds, $isAcknowledged, $fromUpdatedAtDate, $toUpdatedAtDate, $fromAcknowledgedDate, $toAcknowledgedDate, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -683,13 +691,15 @@ class OrderApi
      * @param  int[] $stockLocationIds Filter on stock locations (optional)
      * @param  bool $isAcknowledged Filter on acknowledged value (optional)
      * @param  \DateTime $fromUpdatedAtDate Filter on the order update date, starting from this date. This date is inclusive. (optional)
-     * @param  \DateTime $toUpdatedAtDate Filter on the order update date, unitl from this date. This date is exclusive. (optional)
+     * @param  \DateTime $toUpdatedAtDate Filter on the order update date, unitl this date. This date is exclusive. (optional)
+     * @param  \DateTime $fromAcknowledgedDate Filter on the order acknowledged date, starting from this date. This date is inclusive. (optional)
+     * @param  \DateTime $toAcknowledgedDate Filter on the order acknowledged date, unitl this date. This date is exclusive. (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderGetByFilterRequest($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $fromCreatedAtDate = null, $toCreatedAtDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $channelIds = null, $stockLocationIds = null, $isAcknowledged = null, $fromUpdatedAtDate = null, $toUpdatedAtDate = null, $page = null)
+    public function orderGetByFilterRequest($statuses = null, $emailAddresses = null, $merchantOrderNos = null, $channelOrderNos = null, $fromDate = null, $toDate = null, $fromCreatedAtDate = null, $toCreatedAtDate = null, $excludeMarketplaceFulfilledOrdersAndLines = null, $fulfillmentType = null, $onlyWithCancellationRequests = null, $channelIds = null, $stockLocationIds = null, $isAcknowledged = null, $fromUpdatedAtDate = null, $toUpdatedAtDate = null, $fromAcknowledgedDate = null, $toAcknowledgedDate = null, $page = null)
     {
 
         $resourcePath = '/v2/orders';
@@ -873,6 +883,28 @@ class OrderApi
             }
             else {
                 $queryParams['toUpdatedAtDate'] = $toUpdatedAtDate;
+            }
+        }
+        // query params
+        if ($fromAcknowledgedDate !== null) {
+            if('form' === 'form' && is_array($fromAcknowledgedDate)) {
+                foreach($fromAcknowledgedDate as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['fromAcknowledgedDate'] = $fromAcknowledgedDate;
+            }
+        }
+        // query params
+        if ($toAcknowledgedDate !== null) {
+            if('form' === 'form' && is_array($toAcknowledgedDate)) {
+                foreach($toAcknowledgedDate as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['toAcknowledgedDate'] = $toAcknowledgedDate;
             }
         }
         // query params

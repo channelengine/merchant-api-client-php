@@ -62,7 +62,8 @@ class MerchantReturnLineResponse implements ModelInterface, ArrayAccess, \JsonSe
         'merchantProductNo' => 'string',
         'orderLine' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantOrderLineResponse',
         'shipmentStatus' => '\ChannelEngine\Merchant\ApiClient\Model\ShipmentLineStatus',
-        'quantity' => 'int'
+        'quantity' => 'int',
+        'extraData' => 'array<string,string>'
     ];
 
     /**
@@ -76,7 +77,8 @@ class MerchantReturnLineResponse implements ModelInterface, ArrayAccess, \JsonSe
         'merchantProductNo' => null,
         'orderLine' => null,
         'shipmentStatus' => null,
-        'quantity' => 'int32'
+        'quantity' => 'int32',
+        'extraData' => null
     ];
 
     /**
@@ -109,7 +111,8 @@ class MerchantReturnLineResponse implements ModelInterface, ArrayAccess, \JsonSe
         'merchantProductNo' => 'MerchantProductNo',
         'orderLine' => 'OrderLine',
         'shipmentStatus' => 'ShipmentStatus',
-        'quantity' => 'Quantity'
+        'quantity' => 'Quantity',
+        'extraData' => 'ExtraData'
     ];
 
     /**
@@ -121,7 +124,8 @@ class MerchantReturnLineResponse implements ModelInterface, ArrayAccess, \JsonSe
         'merchantProductNo' => 'setMerchantProductNo',
         'orderLine' => 'setOrderLine',
         'shipmentStatus' => 'setShipmentStatus',
-        'quantity' => 'setQuantity'
+        'quantity' => 'setQuantity',
+        'extraData' => 'setExtraData'
     ];
 
     /**
@@ -133,7 +137,8 @@ class MerchantReturnLineResponse implements ModelInterface, ArrayAccess, \JsonSe
         'merchantProductNo' => 'getMerchantProductNo',
         'orderLine' => 'getOrderLine',
         'shipmentStatus' => 'getShipmentStatus',
-        'quantity' => 'getQuantity'
+        'quantity' => 'getQuantity',
+        'extraData' => 'getExtraData'
     ];
 
     /**
@@ -197,6 +202,7 @@ class MerchantReturnLineResponse implements ModelInterface, ArrayAccess, \JsonSe
         $this->container['orderLine'] = $data['orderLine'] ?? null;
         $this->container['shipmentStatus'] = $data['shipmentStatus'] ?? null;
         $this->container['quantity'] = $data['quantity'] ?? null;
+        $this->container['extraData'] = $data['extraData'] ?? null;
     }
 
     /**
@@ -327,6 +333,30 @@ class MerchantReturnLineResponse implements ModelInterface, ArrayAccess, \JsonSe
         }
 
         $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets extraData
+     *
+     * @return array<string,string>|null
+     */
+    public function getExtraData()
+    {
+        return $this->container['extraData'];
+    }
+
+    /**
+     * Sets extraData
+     *
+     * @param array<string,string>|null $extraData Extra data on the returnline. Each item must have an unqiue key
+     *
+     * @return self
+     */
+    public function setExtraData($extraData)
+    {
+        $this->container['extraData'] = $extraData;
 
         return $this;
     }

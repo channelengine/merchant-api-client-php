@@ -116,6 +116,334 @@ class ReturnApi
     }
 
     /**
+     * Operation returnAcknowledge
+     *
+     * Acknowledge Return.
+     *
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnAcknowledgeRequest $merchantReturnAcknowledgeRequest merchantReturnAcknowledgeRequest (optional)
+     *
+     * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse
+     */
+    public function returnAcknowledge($merchantReturnAcknowledgeRequest = null)
+    {
+        list($response) = $this->returnAcknowledgeWithHttpInfo($merchantReturnAcknowledgeRequest);
+        return $response;
+    }
+
+    /**
+     * Operation returnAcknowledgeWithHttpInfo
+     *
+     * Acknowledge Return.
+     *
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnAcknowledgeRequest $merchantReturnAcknowledgeRequest (optional)
+     *
+     * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse|\ChannelEngine\Merchant\ApiClient\Model\ApiResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function returnAcknowledgeWithHttpInfo($merchantReturnAcknowledgeRequest = null)
+    {
+        $request = $this->returnAcknowledgeRequest($merchantReturnAcknowledgeRequest);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\ChannelEngine\Merchant\ApiClient\Model\ApiResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation returnAcknowledgeAsync
+     *
+     * Acknowledge Return.
+     *
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnAcknowledgeRequest $merchantReturnAcknowledgeRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function returnAcknowledgeAsync($merchantReturnAcknowledgeRequest = null)
+    {
+        return $this->returnAcknowledgeAsyncWithHttpInfo($merchantReturnAcknowledgeRequest)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation returnAcknowledgeAsyncWithHttpInfo
+     *
+     * Acknowledge Return.
+     *
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnAcknowledgeRequest $merchantReturnAcknowledgeRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function returnAcknowledgeAsyncWithHttpInfo($merchantReturnAcknowledgeRequest = null)
+    {
+        $returnType = '\ChannelEngine\Merchant\ApiClient\Model\ApiResponse';
+        $request = $this->returnAcknowledgeRequest($merchantReturnAcknowledgeRequest);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'returnAcknowledge'
+     *
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantReturnAcknowledgeRequest $merchantReturnAcknowledgeRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function returnAcknowledgeRequest($merchantReturnAcknowledgeRequest = null)
+    {
+
+        $resourcePath = '/v2/returns/merchant/acknowledge';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json-patch+json', 'application/json', 'application/_*+json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($merchantReturnAcknowledgeRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($merchantReturnAcknowledgeRequest));
+            } else {
+                $httpBody = $merchantReturnAcknowledgeRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('apikey');
+        if ($apiKey !== null) {
+            $queryParams['apikey'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation returnDeclareForMerchant
      *
      * Create Return.
@@ -724,23 +1052,24 @@ class ReturnApi
      *
      * Get Returns.
      *
-     * @param  int[] $channelIds Filter on Channel IDs (optional)
-     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant. (optional)
-     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel. (optional)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType $fulfillmentType Filter on the fulfillment type of the order. (optional)
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnStatus[] $statuses Return status(es) to filter on. (optional)
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnReason[] $reasons Return reason(s) to filter on. (optional)
      * @param  \DateTime $fromDate Filter on the creation date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the creation date, until this date. This date is exclusive. (optional)
+     * @param  bool $isAcknowledged Filters based on acknowledgements (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
+     * @param  int[] $channelIds Filter on Channel IDs (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant. (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel. (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType $fulfillmentType Filter on the fulfillment type of the order. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantReturnResponse
      */
-    public function returnGetDeclaredByChannel($channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $page = null)
+    public function returnGetDeclaredByChannel($statuses = null, $reasons = null, $fromDate = null, $toDate = null, $isAcknowledged = null, $page = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null)
     {
-        list($response) = $this->returnGetDeclaredByChannelWithHttpInfo($channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType, $statuses, $reasons, $fromDate, $toDate, $page);
+        list($response) = $this->returnGetDeclaredByChannelWithHttpInfo($statuses, $reasons, $fromDate, $toDate, $isAcknowledged, $page, $channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType);
         return $response;
     }
 
@@ -749,23 +1078,24 @@ class ReturnApi
      *
      * Get Returns.
      *
-     * @param  int[] $channelIds Filter on Channel IDs (optional)
-     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant. (optional)
-     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel. (optional)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType $fulfillmentType Filter on the fulfillment type of the order. (optional)
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnStatus[] $statuses Return status(es) to filter on. (optional)
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnReason[] $reasons Return reason(s) to filter on. (optional)
      * @param  \DateTime $fromDate Filter on the creation date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the creation date, until this date. This date is exclusive. (optional)
+     * @param  bool $isAcknowledged Filters based on acknowledgements (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
+     * @param  int[] $channelIds Filter on Channel IDs (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant. (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel. (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType $fulfillmentType Filter on the fulfillment type of the order. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantReturnResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function returnGetDeclaredByChannelWithHttpInfo($channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $page = null)
+    public function returnGetDeclaredByChannelWithHttpInfo($statuses = null, $reasons = null, $fromDate = null, $toDate = null, $isAcknowledged = null, $page = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null)
     {
-        $request = $this->returnGetDeclaredByChannelRequest($channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType, $statuses, $reasons, $fromDate, $toDate, $page);
+        $request = $this->returnGetDeclaredByChannelRequest($statuses, $reasons, $fromDate, $toDate, $isAcknowledged, $page, $channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -850,22 +1180,23 @@ class ReturnApi
      *
      * Get Returns.
      *
-     * @param  int[] $channelIds Filter on Channel IDs (optional)
-     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant. (optional)
-     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel. (optional)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType $fulfillmentType Filter on the fulfillment type of the order. (optional)
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnStatus[] $statuses Return status(es) to filter on. (optional)
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnReason[] $reasons Return reason(s) to filter on. (optional)
      * @param  \DateTime $fromDate Filter on the creation date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the creation date, until this date. This date is exclusive. (optional)
+     * @param  bool $isAcknowledged Filters based on acknowledgements (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
+     * @param  int[] $channelIds Filter on Channel IDs (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant. (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel. (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType $fulfillmentType Filter on the fulfillment type of the order. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function returnGetDeclaredByChannelAsync($channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $page = null)
+    public function returnGetDeclaredByChannelAsync($statuses = null, $reasons = null, $fromDate = null, $toDate = null, $isAcknowledged = null, $page = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null)
     {
-        return $this->returnGetDeclaredByChannelAsyncWithHttpInfo($channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType, $statuses, $reasons, $fromDate, $toDate, $page)
+        return $this->returnGetDeclaredByChannelAsyncWithHttpInfo($statuses, $reasons, $fromDate, $toDate, $isAcknowledged, $page, $channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -878,23 +1209,24 @@ class ReturnApi
      *
      * Get Returns.
      *
-     * @param  int[] $channelIds Filter on Channel IDs (optional)
-     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant. (optional)
-     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel. (optional)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType $fulfillmentType Filter on the fulfillment type of the order. (optional)
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnStatus[] $statuses Return status(es) to filter on. (optional)
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnReason[] $reasons Return reason(s) to filter on. (optional)
      * @param  \DateTime $fromDate Filter on the creation date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the creation date, until this date. This date is exclusive. (optional)
+     * @param  bool $isAcknowledged Filters based on acknowledgements (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
+     * @param  int[] $channelIds Filter on Channel IDs (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant. (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel. (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType $fulfillmentType Filter on the fulfillment type of the order. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function returnGetDeclaredByChannelAsyncWithHttpInfo($channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $page = null)
+    public function returnGetDeclaredByChannelAsyncWithHttpInfo($statuses = null, $reasons = null, $fromDate = null, $toDate = null, $isAcknowledged = null, $page = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantReturnResponse';
-        $request = $this->returnGetDeclaredByChannelRequest($channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType, $statuses, $reasons, $fromDate, $toDate, $page);
+        $request = $this->returnGetDeclaredByChannelRequest($statuses, $reasons, $fromDate, $toDate, $isAcknowledged, $page, $channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -932,20 +1264,21 @@ class ReturnApi
     /**
      * Create request for operation 'returnGetDeclaredByChannel'
      *
-     * @param  int[] $channelIds Filter on Channel IDs (optional)
-     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant. (optional)
-     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel. (optional)
-     * @param  \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType $fulfillmentType Filter on the fulfillment type of the order. (optional)
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnStatus[] $statuses Return status(es) to filter on. (optional)
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnReason[] $reasons Return reason(s) to filter on. (optional)
      * @param  \DateTime $fromDate Filter on the creation date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the creation date, until this date. This date is exclusive. (optional)
+     * @param  bool $isAcknowledged Filters based on acknowledgements (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
+     * @param  int[] $channelIds Filter on Channel IDs (optional)
+     * @param  string[] $merchantOrderNos Filter on unique order reference used by the merchant. (optional)
+     * @param  string[] $channelOrderNos Filter on unique order reference used by the channel. (optional)
+     * @param  \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType $fulfillmentType Filter on the fulfillment type of the order. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function returnGetDeclaredByChannelRequest($channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $page = null)
+    public function returnGetDeclaredByChannelRequest($statuses = null, $reasons = null, $fromDate = null, $toDate = null, $isAcknowledged = null, $page = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null)
     {
 
         $resourcePath = '/v2/returns/merchant';
@@ -955,50 +1288,6 @@ class ReturnApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        if ($channelIds !== null) {
-            if('form' === 'form' && is_array($channelIds)) {
-                foreach($channelIds as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['channelIds'] = $channelIds;
-            }
-        }
-        // query params
-        if ($merchantOrderNos !== null) {
-            if('form' === 'form' && is_array($merchantOrderNos)) {
-                foreach($merchantOrderNos as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['merchantOrderNos'] = $merchantOrderNos;
-            }
-        }
-        // query params
-        if ($channelOrderNos !== null) {
-            if('form' === 'form' && is_array($channelOrderNos)) {
-                foreach($channelOrderNos as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['channelOrderNos'] = $channelOrderNos;
-            }
-        }
-        // query params
-        if ($fulfillmentType !== null) {
-            if('form' === 'form' && is_array($fulfillmentType)) {
-                foreach($fulfillmentType as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['fulfillmentType'] = $fulfillmentType;
-            }
-        }
         // query params
         if ($statuses !== null) {
             if('form' === 'form' && is_array($statuses)) {
@@ -1044,6 +1333,17 @@ class ReturnApi
             }
         }
         // query params
+        if ($isAcknowledged !== null) {
+            if('form' === 'form' && is_array($isAcknowledged)) {
+                foreach($isAcknowledged as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['isAcknowledged'] = $isAcknowledged;
+            }
+        }
+        // query params
         if ($page !== null) {
             if('form' === 'form' && is_array($page)) {
                 foreach($page as $key => $value) {
@@ -1052,6 +1352,50 @@ class ReturnApi
             }
             else {
                 $queryParams['page'] = $page;
+            }
+        }
+        // query params
+        if ($channelIds !== null) {
+            if('form' === 'form' && is_array($channelIds)) {
+                foreach($channelIds as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['channelIds'] = $channelIds;
+            }
+        }
+        // query params
+        if ($merchantOrderNos !== null) {
+            if('form' === 'form' && is_array($merchantOrderNos)) {
+                foreach($merchantOrderNos as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['merchantOrderNos'] = $merchantOrderNos;
+            }
+        }
+        // query params
+        if ($channelOrderNos !== null) {
+            if('form' === 'form' && is_array($channelOrderNos)) {
+                foreach($channelOrderNos as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['channelOrderNos'] = $channelOrderNos;
+            }
+        }
+        // query params
+        if ($fulfillmentType !== null) {
+            if('form' === 'form' && is_array($fulfillmentType)) {
+                foreach($fulfillmentType as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['fulfillmentType'] = $fulfillmentType;
             }
         }
 
@@ -1134,15 +1478,16 @@ class ReturnApi
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnReason[] $reasons Return reason(s) to filter on. (optional)
      * @param  \DateTime $fromDate Filter on the creation date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the creation date, until this date. This date is exclusive. (optional)
+     * @param  bool $isAcknowledged Filters based on acknowledgements (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantReturnResponse
      */
-    public function returnGetReturns($creatorType = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $page = null)
+    public function returnGetReturns($creatorType = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $isAcknowledged = null, $page = null)
     {
-        list($response) = $this->returnGetReturnsWithHttpInfo($creatorType, $channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType, $statuses, $reasons, $fromDate, $toDate, $page);
+        list($response) = $this->returnGetReturnsWithHttpInfo($creatorType, $channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType, $statuses, $reasons, $fromDate, $toDate, $isAcknowledged, $page);
         return $response;
     }
 
@@ -1160,15 +1505,16 @@ class ReturnApi
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnReason[] $reasons Return reason(s) to filter on. (optional)
      * @param  \DateTime $fromDate Filter on the creation date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the creation date, until this date. This date is exclusive. (optional)
+     * @param  bool $isAcknowledged Filters based on acknowledgements (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantReturnResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function returnGetReturnsWithHttpInfo($creatorType = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $page = null)
+    public function returnGetReturnsWithHttpInfo($creatorType = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $isAcknowledged = null, $page = null)
     {
-        $request = $this->returnGetReturnsRequest($creatorType, $channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType, $statuses, $reasons, $fromDate, $toDate, $page);
+        $request = $this->returnGetReturnsRequest($creatorType, $channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType, $statuses, $reasons, $fromDate, $toDate, $isAcknowledged, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1262,14 +1608,15 @@ class ReturnApi
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnReason[] $reasons Return reason(s) to filter on. (optional)
      * @param  \DateTime $fromDate Filter on the creation date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the creation date, until this date. This date is exclusive. (optional)
+     * @param  bool $isAcknowledged Filters based on acknowledgements (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function returnGetReturnsAsync($creatorType = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $page = null)
+    public function returnGetReturnsAsync($creatorType = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $isAcknowledged = null, $page = null)
     {
-        return $this->returnGetReturnsAsyncWithHttpInfo($creatorType, $channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType, $statuses, $reasons, $fromDate, $toDate, $page)
+        return $this->returnGetReturnsAsyncWithHttpInfo($creatorType, $channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType, $statuses, $reasons, $fromDate, $toDate, $isAcknowledged, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1291,15 +1638,16 @@ class ReturnApi
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnReason[] $reasons Return reason(s) to filter on. (optional)
      * @param  \DateTime $fromDate Filter on the creation date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the creation date, until this date. This date is exclusive. (optional)
+     * @param  bool $isAcknowledged Filters based on acknowledgements (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function returnGetReturnsAsyncWithHttpInfo($creatorType = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $page = null)
+    public function returnGetReturnsAsyncWithHttpInfo($creatorType = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $isAcknowledged = null, $page = null)
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantReturnResponse';
-        $request = $this->returnGetReturnsRequest($creatorType, $channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType, $statuses, $reasons, $fromDate, $toDate, $page);
+        $request = $this->returnGetReturnsRequest($creatorType, $channelIds, $merchantOrderNos, $channelOrderNos, $fulfillmentType, $statuses, $reasons, $fromDate, $toDate, $isAcknowledged, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1346,12 +1694,13 @@ class ReturnApi
      * @param  \ChannelEngine\Merchant\ApiClient\Model\ReturnReason[] $reasons Return reason(s) to filter on. (optional)
      * @param  \DateTime $fromDate Filter on the creation date, starting from this date. This date is inclusive. (optional)
      * @param  \DateTime $toDate Filter on the creation date, until this date. This date is exclusive. (optional)
+     * @param  bool $isAcknowledged Filters based on acknowledgements (optional)
      * @param  int $page The page to filter on. Starts at 1. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function returnGetReturnsRequest($creatorType = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $page = null)
+    public function returnGetReturnsRequest($creatorType = null, $channelIds = null, $merchantOrderNos = null, $channelOrderNos = null, $fulfillmentType = null, $statuses = null, $reasons = null, $fromDate = null, $toDate = null, $isAcknowledged = null, $page = null)
     {
 
         $resourcePath = '/v2/returns';
@@ -1458,6 +1807,17 @@ class ReturnApi
             }
             else {
                 $queryParams['toDate'] = $toDate;
+            }
+        }
+        // query params
+        if ($isAcknowledged !== null) {
+            if('form' === 'form' && is_array($isAcknowledged)) {
+                foreach($isAcknowledged as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['isAcknowledged'] = $isAcknowledged;
             }
         }
         // query params

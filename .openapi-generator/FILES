@@ -69,6 +69,7 @@ lib/Model/MerchantProductExtraDataItemResponse.php
 lib/Model/MerchantProductRequest.php
 lib/Model/MerchantProductResponse.php
 lib/Model/MerchantProductWithBuyBoxPrice.php
+lib/Model/MerchantReturnAcknowledgeRequest.php
 lib/Model/MerchantReturnLineRequest.php
 lib/Model/MerchantReturnLineResponse.php
 lib/Model/MerchantReturnLineUpdateRequest.php

@@ -75,7 +75,8 @@ class MerchantSingleOrderReturnResponse implements ModelInterface, ArrayAccess, 
         'merchantComment' => 'string',
         'refundInclVat' => 'float',
         'refundExclVat' => 'float',
-        'returnDate' => '\DateTime'
+        'returnDate' => '\DateTime',
+        'extraData' => 'array<string,string>'
     ];
 
     /**
@@ -102,7 +103,8 @@ class MerchantSingleOrderReturnResponse implements ModelInterface, ArrayAccess, 
         'merchantComment' => null,
         'refundInclVat' => 'decimal',
         'refundExclVat' => 'decimal',
-        'returnDate' => 'date-time'
+        'returnDate' => 'date-time',
+        'extraData' => null
     ];
 
     /**
@@ -148,7 +150,8 @@ class MerchantSingleOrderReturnResponse implements ModelInterface, ArrayAccess, 
         'merchantComment' => 'MerchantComment',
         'refundInclVat' => 'RefundInclVat',
         'refundExclVat' => 'RefundExclVat',
-        'returnDate' => 'ReturnDate'
+        'returnDate' => 'ReturnDate',
+        'extraData' => 'ExtraData'
     ];
 
     /**
@@ -173,7 +176,8 @@ class MerchantSingleOrderReturnResponse implements ModelInterface, ArrayAccess, 
         'merchantComment' => 'setMerchantComment',
         'refundInclVat' => 'setRefundInclVat',
         'refundExclVat' => 'setRefundExclVat',
-        'returnDate' => 'setReturnDate'
+        'returnDate' => 'setReturnDate',
+        'extraData' => 'setExtraData'
     ];
 
     /**
@@ -198,7 +202,8 @@ class MerchantSingleOrderReturnResponse implements ModelInterface, ArrayAccess, 
         'merchantComment' => 'getMerchantComment',
         'refundInclVat' => 'getRefundInclVat',
         'refundExclVat' => 'getRefundExclVat',
-        'returnDate' => 'getReturnDate'
+        'returnDate' => 'getReturnDate',
+        'extraData' => 'getExtraData'
     ];
 
     /**
@@ -275,6 +280,7 @@ class MerchantSingleOrderReturnResponse implements ModelInterface, ArrayAccess, 
         $this->container['refundInclVat'] = $data['refundInclVat'] ?? null;
         $this->container['refundExclVat'] = $data['refundExclVat'] ?? null;
         $this->container['returnDate'] = $data['returnDate'] ?? null;
+        $this->container['extraData'] = $data['extraData'] ?? null;
     }
 
     /**
@@ -753,6 +759,30 @@ class MerchantSingleOrderReturnResponse implements ModelInterface, ArrayAccess, 
     public function setReturnDate($returnDate)
     {
         $this->container['returnDate'] = $returnDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets extraData
+     *
+     * @return array<string,string>|null
+     */
+    public function getExtraData()
+    {
+        return $this->container['extraData'];
+    }
+
+    /**
+     * Sets extraData
+     *
+     * @param array<string,string>|null $extraData Extra data on the return. Each item must have an unqiue key
+     *
+     * @return self
+     */
+    public function setExtraData($extraData)
+    {
+        $this->container['extraData'] = $extraData;
 
         return $this;
     }

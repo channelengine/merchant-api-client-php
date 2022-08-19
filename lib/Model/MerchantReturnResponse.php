@@ -70,13 +70,15 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'merchantReturnNo' => 'string',
         'channelReturnNo' => 'string',
         'status' => '\ChannelEngine\Merchant\ApiClient\Model\ReturnStatus',
+        'acknowledgedDate' => '\DateTime',
         'id' => 'int',
         'reason' => '\ChannelEngine\Merchant\ApiClient\Model\ReturnReason',
         'customerComment' => 'string',
         'merchantComment' => 'string',
         'refundInclVat' => 'float',
         'refundExclVat' => 'float',
-        'returnDate' => '\DateTime'
+        'returnDate' => '\DateTime',
+        'extraData' => 'array<string,string>'
     ];
 
     /**
@@ -98,13 +100,15 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'merchantReturnNo' => null,
         'channelReturnNo' => null,
         'status' => null,
+        'acknowledgedDate' => 'date-time',
         'id' => 'int32',
         'reason' => null,
         'customerComment' => null,
         'merchantComment' => null,
         'refundInclVat' => 'decimal',
         'refundExclVat' => 'decimal',
-        'returnDate' => 'date-time'
+        'returnDate' => 'date-time',
+        'extraData' => null
     ];
 
     /**
@@ -145,13 +149,15 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'merchantReturnNo' => 'MerchantReturnNo',
         'channelReturnNo' => 'ChannelReturnNo',
         'status' => 'Status',
+        'acknowledgedDate' => 'AcknowledgedDate',
         'id' => 'Id',
         'reason' => 'Reason',
         'customerComment' => 'CustomerComment',
         'merchantComment' => 'MerchantComment',
         'refundInclVat' => 'RefundInclVat',
         'refundExclVat' => 'RefundExclVat',
-        'returnDate' => 'ReturnDate'
+        'returnDate' => 'ReturnDate',
+        'extraData' => 'ExtraData'
     ];
 
     /**
@@ -171,13 +177,15 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'merchantReturnNo' => 'setMerchantReturnNo',
         'channelReturnNo' => 'setChannelReturnNo',
         'status' => 'setStatus',
+        'acknowledgedDate' => 'setAcknowledgedDate',
         'id' => 'setId',
         'reason' => 'setReason',
         'customerComment' => 'setCustomerComment',
         'merchantComment' => 'setMerchantComment',
         'refundInclVat' => 'setRefundInclVat',
         'refundExclVat' => 'setRefundExclVat',
-        'returnDate' => 'setReturnDate'
+        'returnDate' => 'setReturnDate',
+        'extraData' => 'setExtraData'
     ];
 
     /**
@@ -197,13 +205,15 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'merchantReturnNo' => 'getMerchantReturnNo',
         'channelReturnNo' => 'getChannelReturnNo',
         'status' => 'getStatus',
+        'acknowledgedDate' => 'getAcknowledgedDate',
         'id' => 'getId',
         'reason' => 'getReason',
         'customerComment' => 'getCustomerComment',
         'merchantComment' => 'getMerchantComment',
         'refundInclVat' => 'getRefundInclVat',
         'refundExclVat' => 'getRefundExclVat',
-        'returnDate' => 'getReturnDate'
+        'returnDate' => 'getReturnDate',
+        'extraData' => 'getExtraData'
     ];
 
     /**
@@ -274,6 +284,7 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess, \JsonSerial
         $this->container['merchantReturnNo'] = $data['merchantReturnNo'] ?? null;
         $this->container['channelReturnNo'] = $data['channelReturnNo'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
+        $this->container['acknowledgedDate'] = $data['acknowledgedDate'] ?? null;
         $this->container['id'] = $data['id'] ?? null;
         $this->container['reason'] = $data['reason'] ?? null;
         $this->container['customerComment'] = $data['customerComment'] ?? null;
@@ -281,6 +292,7 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess, \JsonSerial
         $this->container['refundInclVat'] = $data['refundInclVat'] ?? null;
         $this->container['refundExclVat'] = $data['refundExclVat'] ?? null;
         $this->container['returnDate'] = $data['returnDate'] ?? null;
+        $this->container['extraData'] = $data['extraData'] ?? null;
     }
 
     /**
@@ -596,6 +608,30 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets acknowledgedDate
+     *
+     * @return \DateTime|null
+     */
+    public function getAcknowledgedDate()
+    {
+        return $this->container['acknowledgedDate'];
+    }
+
+    /**
+     * Sets acknowledgedDate
+     *
+     * @param \DateTime|null $acknowledgedDate Date of acknowledgement
+     *
+     * @return self
+     */
+    public function setAcknowledgedDate($acknowledgedDate)
+    {
+        $this->container['acknowledgedDate'] = $acknowledgedDate;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int|null
@@ -783,6 +819,30 @@ class MerchantReturnResponse implements ModelInterface, ArrayAccess, \JsonSerial
     public function setReturnDate($returnDate)
     {
         $this->container['returnDate'] = $returnDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets extraData
+     *
+     * @return array<string,string>|null
+     */
+    public function getExtraData()
+    {
+        return $this->container['extraData'];
+    }
+
+    /**
+     * Sets extraData
+     *
+     * @param array<string,string>|null $extraData Extra data on the return. Each item must have an unqiue key
+     *
+     * @return self
+     */
+    public function setExtraData($extraData)
+    {
+        $this->container['extraData'] = $extraData;
 
         return $this;
     }

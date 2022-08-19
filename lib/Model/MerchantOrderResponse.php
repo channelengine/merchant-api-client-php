@@ -69,6 +69,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         'merchantOrderNo' => 'string',
         'status' => '\ChannelEngine\Merchant\ApiClient\Model\OrderStatusView',
         'isBusinessOrder' => 'bool',
+        'acknowledgedDate' => '\DateTime',
         'createdAt' => '\DateTime',
         'updatedAt' => '\DateTime',
         'merchantComment' => 'string',
@@ -117,6 +118,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         'merchantOrderNo' => null,
         'status' => null,
         'isBusinessOrder' => null,
+        'acknowledgedDate' => 'date-time',
         'createdAt' => 'date-time',
         'updatedAt' => 'date-time',
         'merchantComment' => null,
@@ -184,6 +186,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         'merchantOrderNo' => 'MerchantOrderNo',
         'status' => 'Status',
         'isBusinessOrder' => 'IsBusinessOrder',
+        'acknowledgedDate' => 'AcknowledgedDate',
         'createdAt' => 'CreatedAt',
         'updatedAt' => 'UpdatedAt',
         'merchantComment' => 'MerchantComment',
@@ -230,6 +233,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         'merchantOrderNo' => 'setMerchantOrderNo',
         'status' => 'setStatus',
         'isBusinessOrder' => 'setIsBusinessOrder',
+        'acknowledgedDate' => 'setAcknowledgedDate',
         'createdAt' => 'setCreatedAt',
         'updatedAt' => 'setUpdatedAt',
         'merchantComment' => 'setMerchantComment',
@@ -276,6 +280,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         'merchantOrderNo' => 'getMerchantOrderNo',
         'status' => 'getStatus',
         'isBusinessOrder' => 'getIsBusinessOrder',
+        'acknowledgedDate' => 'getAcknowledgedDate',
         'createdAt' => 'getCreatedAt',
         'updatedAt' => 'getUpdatedAt',
         'merchantComment' => 'getMerchantComment',
@@ -373,6 +378,7 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->container['merchantOrderNo'] = $data['merchantOrderNo'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
         $this->container['isBusinessOrder'] = $data['isBusinessOrder'] ?? null;
+        $this->container['acknowledgedDate'] = $data['acknowledgedDate'] ?? null;
         $this->container['createdAt'] = $data['createdAt'] ?? null;
         $this->container['updatedAt'] = $data['updatedAt'] ?? null;
         $this->container['merchantComment'] = $data['merchantComment'] ?? null;
@@ -732,6 +738,30 @@ class MerchantOrderResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setIsBusinessOrder($isBusinessOrder)
     {
         $this->container['isBusinessOrder'] = $isBusinessOrder;
+
+        return $this;
+    }
+
+    /**
+     * Gets acknowledgedDate
+     *
+     * @return \DateTime|null
+     */
+    public function getAcknowledgedDate()
+    {
+        return $this->container['acknowledgedDate'];
+    }
+
+    /**
+     * Sets acknowledgedDate
+     *
+     * @param \DateTime|null $acknowledgedDate The date the order was acknowledged in ChannelEngine.
+     *
+     * @return self
+     */
+    public function setAcknowledgedDate($acknowledgedDate)
+    {
+        $this->container['acknowledgedDate'] = $acknowledgedDate;
 
         return $this;
     }
