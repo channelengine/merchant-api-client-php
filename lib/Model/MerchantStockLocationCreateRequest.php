@@ -1,6 +1,6 @@
 <?php
 /**
- * SingleOfMerchantSettingsResponse
+ * MerchantStockLocationCreateRequest
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * SingleOfMerchantSettingsResponse Class Doc Comment
+ * MerchantStockLocationCreateRequest Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class MerchantStockLocationCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SingleOfMerchantSettingsResponse';
+    protected static $openAPIModelName = 'MerchantStockLocationCreateRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,13 +59,10 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantSettingsResponse',
-        'statusCode' => 'int',
-        'requestId' => 'string',
-        'logId' => 'string',
-        'success' => 'bool',
-        'message' => 'string',
-        'validationErrors' => 'array<string,string[]>'
+        'name' => 'string',
+        'isDefault' => 'bool',
+        'fallBackToDefault' => 'bool',
+        'address' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantStockLocationAddressRequest'
     ];
 
     /**
@@ -76,13 +73,10 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'content' => null,
-        'statusCode' => 'int32',
-        'requestId' => null,
-        'logId' => null,
-        'success' => null,
-        'message' => null,
-        'validationErrors' => null
+        'name' => null,
+        'isDefault' => null,
+        'fallBackToDefault' => null,
+        'address' => null
     ];
 
     /**
@@ -112,13 +106,10 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'content' => 'Content',
-        'statusCode' => 'StatusCode',
-        'requestId' => 'RequestId',
-        'logId' => 'LogId',
-        'success' => 'Success',
-        'message' => 'Message',
-        'validationErrors' => 'ValidationErrors'
+        'name' => 'Name',
+        'isDefault' => 'IsDefault',
+        'fallBackToDefault' => 'FallBackToDefault',
+        'address' => 'Address'
     ];
 
     /**
@@ -127,13 +118,10 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'content' => 'setContent',
-        'statusCode' => 'setStatusCode',
-        'requestId' => 'setRequestId',
-        'logId' => 'setLogId',
-        'success' => 'setSuccess',
-        'message' => 'setMessage',
-        'validationErrors' => 'setValidationErrors'
+        'name' => 'setName',
+        'isDefault' => 'setIsDefault',
+        'fallBackToDefault' => 'setFallBackToDefault',
+        'address' => 'setAddress'
     ];
 
     /**
@@ -142,13 +130,10 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'content' => 'getContent',
-        'statusCode' => 'getStatusCode',
-        'requestId' => 'getRequestId',
-        'logId' => 'getLogId',
-        'success' => 'getSuccess',
-        'message' => 'getMessage',
-        'validationErrors' => 'getValidationErrors'
+        'name' => 'getName',
+        'isDefault' => 'getIsDefault',
+        'fallBackToDefault' => 'getFallBackToDefault',
+        'address' => 'getAddress'
     ];
 
     /**
@@ -208,13 +193,10 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->container['content'] = $data['content'] ?? null;
-        $this->container['statusCode'] = $data['statusCode'] ?? null;
-        $this->container['requestId'] = $data['requestId'] ?? null;
-        $this->container['logId'] = $data['logId'] ?? null;
-        $this->container['success'] = $data['success'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['validationErrors'] = $data['validationErrors'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['isDefault'] = $data['isDefault'] ?? null;
+        $this->container['fallBackToDefault'] = $data['fallBackToDefault'] ?? null;
+        $this->container['address'] = $data['address'] ?? null;
     }
 
     /**
@@ -226,6 +208,9 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -242,169 +227,97 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets content
+     * Gets name
      *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantSettingsResponse|null
+     * @return string
      */
-    public function getContent()
+    public function getName()
     {
-        return $this->container['content'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets content
+     * Sets name
      *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantSettingsResponse|null $content content
+     * @param string $name name
      *
      * @return self
      */
-    public function setContent($content)
+    public function setName($name)
     {
-        $this->container['content'] = $content;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets statusCode
-     *
-     * @return int|null
-     */
-    public function getStatusCode()
-    {
-        return $this->container['statusCode'];
-    }
-
-    /**
-     * Sets statusCode
-     *
-     * @param int|null $statusCode statusCode
-     *
-     * @return self
-     */
-    public function setStatusCode($statusCode)
-    {
-        $this->container['statusCode'] = $statusCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets requestId
-     *
-     * @return string|null
-     */
-    public function getRequestId()
-    {
-        return $this->container['requestId'];
-    }
-
-    /**
-     * Sets requestId
-     *
-     * @param string|null $requestId requestId
-     *
-     * @return self
-     */
-    public function setRequestId($requestId)
-    {
-        $this->container['requestId'] = $requestId;
-
-        return $this;
-    }
-
-    /**
-     * Gets logId
-     *
-     * @return string|null
-     */
-    public function getLogId()
-    {
-        return $this->container['logId'];
-    }
-
-    /**
-     * Sets logId
-     *
-     * @param string|null $logId logId
-     *
-     * @return self
-     */
-    public function setLogId($logId)
-    {
-        $this->container['logId'] = $logId;
-
-        return $this;
-    }
-
-    /**
-     * Gets success
+     * Gets isDefault
      *
      * @return bool|null
      */
-    public function getSuccess()
+    public function getIsDefault()
     {
-        return $this->container['success'];
+        return $this->container['isDefault'];
     }
 
     /**
-     * Sets success
+     * Sets isDefault
      *
-     * @param bool|null $success success
+     * @param bool|null $isDefault isDefault
      *
      * @return self
      */
-    public function setSuccess($success)
+    public function setIsDefault($isDefault)
     {
-        $this->container['success'] = $success;
+        $this->container['isDefault'] = $isDefault;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets fallBackToDefault
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getMessage()
+    public function getFallBackToDefault()
     {
-        return $this->container['message'];
+        return $this->container['fallBackToDefault'];
     }
 
     /**
-     * Sets message
+     * Sets fallBackToDefault
      *
-     * @param string|null $message message
+     * @param bool|null $fallBackToDefault If false: only use fulfillment by channel, else (also) use merchant fulfillment.
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setFallBackToDefault($fallBackToDefault)
     {
-        $this->container['message'] = $message;
+        $this->container['fallBackToDefault'] = $fallBackToDefault;
 
         return $this;
     }
 
     /**
-     * Gets validationErrors
+     * Gets address
      *
-     * @return array<string,string[]>|null
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantStockLocationAddressRequest|null
      */
-    public function getValidationErrors()
+    public function getAddress()
     {
-        return $this->container['validationErrors'];
+        return $this->container['address'];
     }
 
     /**
-     * Sets validationErrors
+     * Sets address
      *
-     * @param array<string,string[]>|null $validationErrors validationErrors
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantStockLocationAddressRequest|null $address address
      *
      * @return self
      */
-    public function setValidationErrors($validationErrors)
+    public function setAddress($address)
     {
-        $this->container['validationErrors'] = $validationErrors;
+        $this->container['address'] = $address;
 
         return $this;
     }

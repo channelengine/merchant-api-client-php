@@ -29,6 +29,7 @@ lib/Model/ChannelGlobalChannelResponse.php
 lib/Model/ChannelListedProductResponse.php
 lib/Model/CollectionOfChannelGlobalChannelResponse.php
 lib/Model/CollectionOfChannelListedProductResponse.php
+lib/Model/CollectionOfMerchantCancellationResponse.php
 lib/Model/CollectionOfMerchantNotificationResponse.php
 lib/Model/CollectionOfMerchantOfferGetStockResponse.php
 lib/Model/CollectionOfMerchantOrderResponse.php
@@ -52,7 +53,9 @@ lib/Model/ListedProductExportStatus.php
 lib/Model/MancoReason.php
 lib/Model/MerchantAddressResponse.php
 lib/Model/MerchantCancellationLineRequest.php
+lib/Model/MerchantCancellationLineResponse.php
 lib/Model/MerchantCancellationRequest.php
+lib/Model/MerchantCancellationResponse.php
 lib/Model/MerchantChannelLabelShipmentRequest.php
 lib/Model/MerchantNotificationResponse.php
 lib/Model/MerchantOfferGetStockResponse.php
@@ -88,6 +91,8 @@ lib/Model/MerchantShipmentResponse.php
 lib/Model/MerchantShipmentTrackingRequest.php
 lib/Model/MerchantSingleOrderReturnLineResponse.php
 lib/Model/MerchantSingleOrderReturnResponse.php
+lib/Model/MerchantStockLocationAddressRequest.php
+lib/Model/MerchantStockLocationCreateRequest.php
 lib/Model/MerchantStockLocationResponse.php
 lib/Model/MerchantStockLocationUpdateRequest.php
 lib/Model/MerchantStockPriceUpdateRequest.php

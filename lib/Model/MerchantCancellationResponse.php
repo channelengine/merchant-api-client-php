@@ -1,6 +1,6 @@
 <?php
 /**
- * SingleOfMerchantSettingsResponse
+ * MerchantCancellationResponse
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * SingleOfMerchantSettingsResponse Class Doc Comment
+ * MerchantCancellationResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class MerchantCancellationResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SingleOfMerchantSettingsResponse';
+    protected static $openAPIModelName = 'MerchantCancellationResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,13 +59,13 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantSettingsResponse',
-        'statusCode' => 'int',
-        'requestId' => 'string',
-        'logId' => 'string',
-        'success' => 'bool',
-        'message' => 'string',
-        'validationErrors' => 'array<string,string[]>'
+        'merchantCancellationNo' => 'string',
+        'merchantOrderNo' => 'string',
+        'channelOrderNo' => 'string',
+        'lines' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationLineResponse[]',
+        'createdAt' => '\DateTime',
+        'reason' => 'string',
+        'reasonCode' => '\ChannelEngine\Merchant\ApiClient\Model\MancoReason'
     ];
 
     /**
@@ -76,13 +76,13 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'content' => null,
-        'statusCode' => 'int32',
-        'requestId' => null,
-        'logId' => null,
-        'success' => null,
-        'message' => null,
-        'validationErrors' => null
+        'merchantCancellationNo' => null,
+        'merchantOrderNo' => null,
+        'channelOrderNo' => null,
+        'lines' => null,
+        'createdAt' => 'date-time',
+        'reason' => null,
+        'reasonCode' => null
     ];
 
     /**
@@ -112,13 +112,13 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'content' => 'Content',
-        'statusCode' => 'StatusCode',
-        'requestId' => 'RequestId',
-        'logId' => 'LogId',
-        'success' => 'Success',
-        'message' => 'Message',
-        'validationErrors' => 'ValidationErrors'
+        'merchantCancellationNo' => 'MerchantCancellationNo',
+        'merchantOrderNo' => 'MerchantOrderNo',
+        'channelOrderNo' => 'ChannelOrderNo',
+        'lines' => 'Lines',
+        'createdAt' => 'CreatedAt',
+        'reason' => 'Reason',
+        'reasonCode' => 'ReasonCode'
     ];
 
     /**
@@ -127,13 +127,13 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'content' => 'setContent',
-        'statusCode' => 'setStatusCode',
-        'requestId' => 'setRequestId',
-        'logId' => 'setLogId',
-        'success' => 'setSuccess',
-        'message' => 'setMessage',
-        'validationErrors' => 'setValidationErrors'
+        'merchantCancellationNo' => 'setMerchantCancellationNo',
+        'merchantOrderNo' => 'setMerchantOrderNo',
+        'channelOrderNo' => 'setChannelOrderNo',
+        'lines' => 'setLines',
+        'createdAt' => 'setCreatedAt',
+        'reason' => 'setReason',
+        'reasonCode' => 'setReasonCode'
     ];
 
     /**
@@ -142,13 +142,13 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'content' => 'getContent',
-        'statusCode' => 'getStatusCode',
-        'requestId' => 'getRequestId',
-        'logId' => 'getLogId',
-        'success' => 'getSuccess',
-        'message' => 'getMessage',
-        'validationErrors' => 'getValidationErrors'
+        'merchantCancellationNo' => 'getMerchantCancellationNo',
+        'merchantOrderNo' => 'getMerchantOrderNo',
+        'channelOrderNo' => 'getChannelOrderNo',
+        'lines' => 'getLines',
+        'createdAt' => 'getCreatedAt',
+        'reason' => 'getReason',
+        'reasonCode' => 'getReasonCode'
     ];
 
     /**
@@ -208,13 +208,13 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->container['content'] = $data['content'] ?? null;
-        $this->container['statusCode'] = $data['statusCode'] ?? null;
-        $this->container['requestId'] = $data['requestId'] ?? null;
-        $this->container['logId'] = $data['logId'] ?? null;
-        $this->container['success'] = $data['success'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['validationErrors'] = $data['validationErrors'] ?? null;
+        $this->container['merchantCancellationNo'] = $data['merchantCancellationNo'] ?? null;
+        $this->container['merchantOrderNo'] = $data['merchantOrderNo'] ?? null;
+        $this->container['channelOrderNo'] = $data['channelOrderNo'] ?? null;
+        $this->container['lines'] = $data['lines'] ?? null;
+        $this->container['createdAt'] = $data['createdAt'] ?? null;
+        $this->container['reason'] = $data['reason'] ?? null;
+        $this->container['reasonCode'] = $data['reasonCode'] ?? null;
     }
 
     /**
@@ -226,6 +226,23 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
     {
         $invalidProperties = [];
 
+        if ($this->container['merchantCancellationNo'] === null) {
+            $invalidProperties[] = "'merchantCancellationNo' can't be null";
+        }
+        if ((mb_strlen($this->container['merchantCancellationNo']) > 250)) {
+            $invalidProperties[] = "invalid value for 'merchantCancellationNo', the character length must be smaller than or equal to 250.";
+        }
+
+        if ((mb_strlen($this->container['merchantCancellationNo']) < 0)) {
+            $invalidProperties[] = "invalid value for 'merchantCancellationNo', the character length must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['merchantOrderNo'] === null) {
+            $invalidProperties[] = "'merchantOrderNo' can't be null";
+        }
+        if ($this->container['lines'] === null) {
+            $invalidProperties[] = "'lines' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -242,169 +259,176 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets content
+     * Gets merchantCancellationNo
      *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantSettingsResponse|null
+     * @return string
      */
-    public function getContent()
+    public function getMerchantCancellationNo()
     {
-        return $this->container['content'];
+        return $this->container['merchantCancellationNo'];
     }
 
     /**
-     * Sets content
+     * Sets merchantCancellationNo
      *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantSettingsResponse|null $content content
+     * @param string $merchantCancellationNo The unique cancellation reference used by the Merchant (sku).
      *
      * @return self
      */
-    public function setContent($content)
+    public function setMerchantCancellationNo($merchantCancellationNo)
     {
-        $this->container['content'] = $content;
+        if ((mb_strlen($merchantCancellationNo) > 250)) {
+            throw new \InvalidArgumentException('invalid length for $merchantCancellationNo when calling MerchantCancellationResponse., must be smaller than or equal to 250.');
+        }
+        if ((mb_strlen($merchantCancellationNo) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $merchantCancellationNo when calling MerchantCancellationResponse., must be bigger than or equal to 0.');
+        }
+
+        $this->container['merchantCancellationNo'] = $merchantCancellationNo;
 
         return $this;
     }
 
     /**
-     * Gets statusCode
+     * Gets merchantOrderNo
      *
-     * @return int|null
+     * @return string
      */
-    public function getStatusCode()
+    public function getMerchantOrderNo()
     {
-        return $this->container['statusCode'];
+        return $this->container['merchantOrderNo'];
     }
 
     /**
-     * Sets statusCode
+     * Sets merchantOrderNo
      *
-     * @param int|null $statusCode statusCode
+     * @param string $merchantOrderNo The unique order reference used by the Merchant.
      *
      * @return self
      */
-    public function setStatusCode($statusCode)
+    public function setMerchantOrderNo($merchantOrderNo)
     {
-        $this->container['statusCode'] = $statusCode;
+        $this->container['merchantOrderNo'] = $merchantOrderNo;
 
         return $this;
     }
 
     /**
-     * Gets requestId
+     * Gets channelOrderNo
      *
      * @return string|null
      */
-    public function getRequestId()
+    public function getChannelOrderNo()
     {
-        return $this->container['requestId'];
+        return $this->container['channelOrderNo'];
     }
 
     /**
-     * Sets requestId
+     * Sets channelOrderNo
      *
-     * @param string|null $requestId requestId
+     * @param string|null $channelOrderNo The unique order reference used by the Channel.
      *
      * @return self
      */
-    public function setRequestId($requestId)
+    public function setChannelOrderNo($channelOrderNo)
     {
-        $this->container['requestId'] = $requestId;
+        $this->container['channelOrderNo'] = $channelOrderNo;
 
         return $this;
     }
 
     /**
-     * Gets logId
+     * Gets lines
+     *
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationLineResponse[]
+     */
+    public function getLines()
+    {
+        return $this->container['lines'];
+    }
+
+    /**
+     * Sets lines
+     *
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantCancellationLineResponse[] $lines lines
+     *
+     * @return self
+     */
+    public function setLines($lines)
+    {
+        $this->container['lines'] = $lines;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param \DateTime|null $createdAt The date at which the cancellation was created in ChannelEngine.
+     *
+     * @return self
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets reason
      *
      * @return string|null
      */
-    public function getLogId()
+    public function getReason()
     {
-        return $this->container['logId'];
+        return $this->container['reason'];
     }
 
     /**
-     * Sets logId
+     * Sets reason
      *
-     * @param string|null $logId logId
+     * @param string|null $reason Reason for cancellation (text).
      *
      * @return self
      */
-    public function setLogId($logId)
+    public function setReason($reason)
     {
-        $this->container['logId'] = $logId;
+        $this->container['reason'] = $reason;
 
         return $this;
     }
 
     /**
-     * Gets success
+     * Gets reasonCode
      *
-     * @return bool|null
+     * @return \ChannelEngine\Merchant\ApiClient\Model\MancoReason|null
      */
-    public function getSuccess()
+    public function getReasonCode()
     {
-        return $this->container['success'];
+        return $this->container['reasonCode'];
     }
 
     /**
-     * Sets success
+     * Sets reasonCode
      *
-     * @param bool|null $success success
+     * @param \ChannelEngine\Merchant\ApiClient\Model\MancoReason|null $reasonCode reasonCode
      *
      * @return self
      */
-    public function setSuccess($success)
+    public function setReasonCode($reasonCode)
     {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string|null
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string|null $message message
-     *
-     * @return self
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets validationErrors
-     *
-     * @return array<string,string[]>|null
-     */
-    public function getValidationErrors()
-    {
-        return $this->container['validationErrors'];
-    }
-
-    /**
-     * Sets validationErrors
-     *
-     * @param array<string,string[]>|null $validationErrors validationErrors
-     *
-     * @return self
-     */
-    public function setValidationErrors($validationErrors)
-    {
-        $this->container['validationErrors'] = $validationErrors;
+        $this->container['reasonCode'] = $reasonCode;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * SingleOfMerchantSettingsResponse
+ * MerchantCancellationLineResponse
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
 
 /**
- * SingleOfMerchantSettingsResponse Class Doc Comment
+ * MerchantCancellationLineResponse Class Doc Comment
  *
  * @category Class
  * @package  ChannelEngine\Merchant\ApiClient
@@ -42,7 +42,7 @@ use \ChannelEngine\Merchant\ApiClient\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class MerchantCancellationLineResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SingleOfMerchantSettingsResponse';
+    protected static $openAPIModelName = 'MerchantCancellationLineResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,13 +59,9 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'content' => '\ChannelEngine\Merchant\ApiClient\Model\MerchantSettingsResponse',
-        'statusCode' => 'int',
-        'requestId' => 'string',
-        'logId' => 'string',
-        'success' => 'bool',
-        'message' => 'string',
-        'validationErrors' => 'array<string,string[]>'
+        'merchantProductNo' => 'string',
+        'channelProductNo' => 'string',
+        'quantity' => 'int'
     ];
 
     /**
@@ -76,13 +72,9 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'content' => null,
-        'statusCode' => 'int32',
-        'requestId' => null,
-        'logId' => null,
-        'success' => null,
-        'message' => null,
-        'validationErrors' => null
+        'merchantProductNo' => null,
+        'channelProductNo' => null,
+        'quantity' => 'int32'
     ];
 
     /**
@@ -112,13 +104,9 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'content' => 'Content',
-        'statusCode' => 'StatusCode',
-        'requestId' => 'RequestId',
-        'logId' => 'LogId',
-        'success' => 'Success',
-        'message' => 'Message',
-        'validationErrors' => 'ValidationErrors'
+        'merchantProductNo' => 'MerchantProductNo',
+        'channelProductNo' => 'ChannelProductNo',
+        'quantity' => 'Quantity'
     ];
 
     /**
@@ -127,13 +115,9 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'content' => 'setContent',
-        'statusCode' => 'setStatusCode',
-        'requestId' => 'setRequestId',
-        'logId' => 'setLogId',
-        'success' => 'setSuccess',
-        'message' => 'setMessage',
-        'validationErrors' => 'setValidationErrors'
+        'merchantProductNo' => 'setMerchantProductNo',
+        'channelProductNo' => 'setChannelProductNo',
+        'quantity' => 'setQuantity'
     ];
 
     /**
@@ -142,13 +126,9 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'content' => 'getContent',
-        'statusCode' => 'getStatusCode',
-        'requestId' => 'getRequestId',
-        'logId' => 'getLogId',
-        'success' => 'getSuccess',
-        'message' => 'getMessage',
-        'validationErrors' => 'getValidationErrors'
+        'merchantProductNo' => 'getMerchantProductNo',
+        'channelProductNo' => 'getChannelProductNo',
+        'quantity' => 'getQuantity'
     ];
 
     /**
@@ -208,13 +188,9 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->container['content'] = $data['content'] ?? null;
-        $this->container['statusCode'] = $data['statusCode'] ?? null;
-        $this->container['requestId'] = $data['requestId'] ?? null;
-        $this->container['logId'] = $data['logId'] ?? null;
-        $this->container['success'] = $data['success'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['validationErrors'] = $data['validationErrors'] ?? null;
+        $this->container['merchantProductNo'] = $data['merchantProductNo'] ?? null;
+        $this->container['channelProductNo'] = $data['channelProductNo'] ?? null;
+        $this->container['quantity'] = $data['quantity'] ?? null;
     }
 
     /**
@@ -225,6 +201,13 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['quantity'] === null) {
+            $invalidProperties[] = "'quantity' can't be null";
+        }
+        if (($this->container['quantity'] < 0)) {
+            $invalidProperties[] = "invalid value for 'quantity', must be bigger than or equal to 0.";
+        }
 
         return $invalidProperties;
     }
@@ -242,169 +225,78 @@ class SingleOfMerchantSettingsResponse implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets content
-     *
-     * @return \ChannelEngine\Merchant\ApiClient\Model\MerchantSettingsResponse|null
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     *
-     * @param \ChannelEngine\Merchant\ApiClient\Model\MerchantSettingsResponse|null $content content
-     *
-     * @return self
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Gets statusCode
-     *
-     * @return int|null
-     */
-    public function getStatusCode()
-    {
-        return $this->container['statusCode'];
-    }
-
-    /**
-     * Sets statusCode
-     *
-     * @param int|null $statusCode statusCode
-     *
-     * @return self
-     */
-    public function setStatusCode($statusCode)
-    {
-        $this->container['statusCode'] = $statusCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets requestId
+     * Gets merchantProductNo
      *
      * @return string|null
      */
-    public function getRequestId()
+    public function getMerchantProductNo()
     {
-        return $this->container['requestId'];
+        return $this->container['merchantProductNo'];
     }
 
     /**
-     * Sets requestId
+     * Sets merchantProductNo
      *
-     * @param string|null $requestId requestId
+     * @param string|null $merchantProductNo The unique product reference used by the Merchant.
      *
      * @return self
      */
-    public function setRequestId($requestId)
+    public function setMerchantProductNo($merchantProductNo)
     {
-        $this->container['requestId'] = $requestId;
+        $this->container['merchantProductNo'] = $merchantProductNo;
 
         return $this;
     }
 
     /**
-     * Gets logId
+     * Gets channelProductNo
      *
      * @return string|null
      */
-    public function getLogId()
+    public function getChannelProductNo()
     {
-        return $this->container['logId'];
+        return $this->container['channelProductNo'];
     }
 
     /**
-     * Sets logId
+     * Sets channelProductNo
      *
-     * @param string|null $logId logId
+     * @param string|null $channelProductNo The unique product reference used by the Channel.
      *
      * @return self
      */
-    public function setLogId($logId)
+    public function setChannelProductNo($channelProductNo)
     {
-        $this->container['logId'] = $logId;
+        $this->container['channelProductNo'] = $channelProductNo;
 
         return $this;
     }
 
     /**
-     * Gets success
+     * Gets quantity
      *
-     * @return bool|null
+     * @return int
      */
-    public function getSuccess()
+    public function getQuantity()
     {
-        return $this->container['success'];
+        return $this->container['quantity'];
     }
 
     /**
-     * Sets success
+     * Sets quantity
      *
-     * @param bool|null $success success
+     * @param int $quantity Quantity of the product to cancel.
      *
      * @return self
      */
-    public function setSuccess($success)
+    public function setQuantity($quantity)
     {
-        $this->container['success'] = $success;
 
-        return $this;
-    }
+        if (($quantity < 0)) {
+            throw new \InvalidArgumentException('invalid value for $quantity when calling MerchantCancellationLineResponse., must be bigger than or equal to 0.');
+        }
 
-    /**
-     * Gets message
-     *
-     * @return string|null
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string|null $message message
-     *
-     * @return self
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets validationErrors
-     *
-     * @return array<string,string[]>|null
-     */
-    public function getValidationErrors()
-    {
-        return $this->container['validationErrors'];
-    }
-
-    /**
-     * Sets validationErrors
-     *
-     * @param array<string,string[]>|null $validationErrors validationErrors
-     *
-     * @return self
-     */
-    public function setValidationErrors($validationErrors)
-    {
-        $this->container['validationErrors'] = $validationErrors;
+        $this->container['quantity'] = $quantity;
 
         return $this;
     }
