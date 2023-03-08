@@ -1,5 +1,5 @@
 .gitignore
-.php_cs
+.php-cs-fixer.dist.php
 .travis.yml
 composer.json
 git_push.sh
@@ -12,6 +12,7 @@ lib/Api/NotificationApi.php
 lib/Api/OfferApi.php
 lib/Api/OrderApi.php
 lib/Api/ProductApi.php
+lib/Api/ProductAttributeGroupApi.php
 lib/Api/ProductBundleApi.php
 lib/Api/ReturnApi.php
 lib/Api/SettingsApi.php
@@ -20,6 +21,7 @@ lib/Api/StockLocationApi.php
 lib/Api/WebhookApi.php
 lib/Configuration.php
 lib/HeaderSelector.php
+lib/Model/AddProductExtraDataRequests.php
 lib/Model/AdvanceSettingsResponse.php
 lib/Model/ApiResponse.php
 lib/Model/ChannelCarrierCollectionMethodApi.php
@@ -33,6 +35,8 @@ lib/Model/CollectionOfMerchantCancellationResponse.php
 lib/Model/CollectionOfMerchantNotificationResponse.php
 lib/Model/CollectionOfMerchantOfferGetStockResponse.php
 lib/Model/CollectionOfMerchantOrderResponse.php
+lib/Model/CollectionOfMerchantProductAttributeGroupWithLinkedChannelsResponse.php
+lib/Model/CollectionOfMerchantProductAttributeGroupWithProductExtraDataResponse.php
 lib/Model/CollectionOfMerchantProductBundleResponse.php
 lib/Model/CollectionOfMerchantProductResponse.php
 lib/Model/CollectionOfMerchantProductWithBuyBoxPrice.php
@@ -47,7 +51,6 @@ lib/Model/CreatorFilter.php
 lib/Model/ExtraDataType.php
 lib/Model/FulfillmentType.php
 lib/Model/Gender.php
-lib/Model/JsonPatchOperationOfMerchantProductRequest.php
 lib/Model/ListedProductChannelStatus.php
 lib/Model/ListedProductExportStatus.php
 lib/Model/MancoReason.php
@@ -65,10 +68,15 @@ lib/Model/MerchantOrderCommentUpdateRequest.php
 lib/Model/MerchantOrderLineExtraDataResponse.php
 lib/Model/MerchantOrderLineResponse.php
 lib/Model/MerchantOrderResponse.php
+lib/Model/MerchantProductAttributeGroupChannelInfoResponse.php
+lib/Model/MerchantProductAttributeGroupWithLinkedChannelsResponse.php
+lib/Model/MerchantProductAttributeGroupWithProductExtraDataResponse.php
 lib/Model/MerchantProductBundlePartResponse.php
 lib/Model/MerchantProductBundleResponse.php
 lib/Model/MerchantProductExtraDataItemRequest.php
 lib/Model/MerchantProductExtraDataItemResponse.php
+lib/Model/MerchantProductExtraDataRequest.php
+lib/Model/MerchantProductExtraDataResponse.php
 lib/Model/MerchantProductRequest.php
 lib/Model/MerchantProductResponse.php
 lib/Model/MerchantProductWithBuyBoxPrice.php
@@ -106,8 +114,12 @@ lib/Model/OrderSupport.php
 lib/Model/PackageDimensionsUnit.php
 lib/Model/PackageWeightUnit.php
 lib/Model/PatchMerchantProductDto.php
+lib/Model/ProductAttributeGroupRequest.php
 lib/Model/ProductCreationResult.php
+lib/Model/ProductExtraDataRequest.php
 lib/Model/ProductMessage.php
+lib/Model/RemoveProductExtraDataRequests.php
+lib/Model/RenameProductAttributeGroupRequests.php
 lib/Model/ReturnReason.php
 lib/Model/ReturnStatus.php
 lib/Model/SettingsResponse.php
