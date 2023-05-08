@@ -1,4 +1,12 @@
 # ChannelEngine
+[![No Maintenance Intended](https://img.shields.io/badge/STATUS-DEPRECATED-%23cf0000?style=for-the-badge)](https://support.channelengine.com/hc/en-us/articles/4409503691165-Merchant-API-API-clients)
+
+### Deprecated, and now?
+This library is no longer supported, please consider generating your own library with **OpenAPI generator**. There is extended documentation on how to create it for your programming language of choice: https://support.channelengine.com/hc/en-us/articles/4409503691165-Merchant-API-API-clients
+
+The reason for no longer supporting this library is that developers can easily construct it in their programming language of choice. **ChannelEngine** provides an API that follows the OpenAPI specifications and has an API reference in [Swagger](https://demo.channelengine.net/api/swagger/ui/index). 
+
+### More information for developers
 Please visit https://www.channelengine.com/developers/ for more information.
 The API reference can be found at https://demo.channelengine.net/api/swagger/ui/index
 
